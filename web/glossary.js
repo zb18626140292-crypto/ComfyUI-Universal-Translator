@@ -2,6 +2,8 @@
 // Product/model names are deliberately preserved.
 export const PHRASES = Object.freeze({
   "custom data reader": "自定义数据读取器",
+  "naiba textbox": "naiba文本盒",
+  "naiba wan block swap": "naibawan模型分块卸载节点",
   "triggerwords": "LoRA 触发词",
   "trigger words": "触发词",
   "lora trigger words": "LoRA 触发词",

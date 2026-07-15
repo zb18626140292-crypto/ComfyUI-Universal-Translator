@@ -1,6 +1,10 @@
 import { api } from "../../../scripts/api.js";
 import { resolveNodeTranslation } from "./translator.js";
 
+const BUTTON_POSITION_KEY = "comfyui-universal-translator.button-position";
+const BUTTON_EDGE_GAP = 6;
+const DRAG_THRESHOLD = 5;
+
 function element(tag, className, text) {
   const node = document.createElement(tag);
   if (className) node.className = className;
@@ -29,12 +33,95 @@ function downloadJSON(filename, value) {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
+function clamp(value, minimum, maximum) {
+  return Math.min(Math.max(value, minimum), Math.max(minimum, maximum));
+}
+
+function placeFloatingButton(button, left, top) {
+  const maxLeft = window.innerWidth - button.offsetWidth - BUTTON_EDGE_GAP;
+  const maxTop = window.innerHeight - button.offsetHeight - BUTTON_EDGE_GAP;
+  button.style.left = `${clamp(left, BUTTON_EDGE_GAP, maxLeft)}px`;
+  button.style.top = `${clamp(top, BUTTON_EDGE_GAP, maxTop)}px`;
+  button.style.right = "auto";
+  button.style.bottom = "auto";
+}
+
+function installButtonDragging(button) {
+  let drag = null;
+  let suppressNextClick = false;
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(BUTTON_POSITION_KEY) || "null");
+    if (Number.isFinite(saved?.left) && Number.isFinite(saved?.top)) {
+      placeFloatingButton(button, saved.left, saved.top);
+    }
+  } catch {
+    localStorage.removeItem(BUTTON_POSITION_KEY);
+  }
+
+  button.title = "可拖动调整位置；点击打开翻译管理面板";
+
+  button.addEventListener("pointerdown", event => {
+    if (event.button !== 0) return;
+    const rect = button.getBoundingClientRect();
+    drag = {
+      pointerId: event.pointerId,
+      startX: event.clientX,
+      startY: event.clientY,
+      left: rect.left,
+      top: rect.top,
+      moved: false,
+    };
+    button.setPointerCapture?.(event.pointerId);
+    button.classList.add("ut-dragging");
+  });
+
+  button.addEventListener("pointermove", event => {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    const deltaX = event.clientX - drag.startX;
+    const deltaY = event.clientY - drag.startY;
+    if (!drag.moved && Math.hypot(deltaX, deltaY) < DRAG_THRESHOLD) return;
+    drag.moved = true;
+    event.preventDefault();
+    placeFloatingButton(button, drag.left + deltaX, drag.top + deltaY);
+  });
+
+  const finishDrag = (event, suppressClick) => {
+    if (!drag || event.pointerId !== drag.pointerId) return;
+    button.releasePointerCapture?.(event.pointerId);
+    button.classList.remove("ut-dragging");
+    suppressNextClick = suppressClick && drag.moved;
+    if (drag.moved) {
+      const rect = button.getBoundingClientRect();
+      localStorage.setItem(BUTTON_POSITION_KEY, JSON.stringify({ left: rect.left, top: rect.top }));
+    }
+    drag = null;
+  };
+
+  button.addEventListener("pointerup", event => finishDrag(event, true));
+  button.addEventListener("pointercancel", event => finishDrag(event, false));
+  button.addEventListener("click", event => {
+    if (!suppressNextClick) return;
+    suppressNextClick = false;
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, true);
+
+  window.addEventListener("resize", () => {
+    if (button.style.left && button.style.top) {
+      const rect = button.getBoundingClientRect();
+      placeFloatingButton(button, rect.left, rect.top);
+    }
+  });
+}
+
 export function installTranslationPanel({ config, bundle }) {
   if (!config.show_floating_button || document.getElementById("ut-open-button")) return;
 
   const button = element("button", "ut-open-button", "🌐 全节点翻译");
   button.id = "ut-open-button";
   document.body.appendChild(button);
+  installButtonDragging(button);
 
   let modal = null;
   button.addEventListener("click", async () => {
@@ -181,4 +268,3 @@ export function installTranslationPanel({ config, bundle }) {
     }
   });
 }
-

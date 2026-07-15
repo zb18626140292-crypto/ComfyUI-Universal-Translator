@@ -19,7 +19,7 @@ from .translation_core import (
 )
 
 
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
 OVERRIDES_PATH = ROOT / "user" / "overrides.json"

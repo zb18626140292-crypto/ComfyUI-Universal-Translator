@@ -14,6 +14,8 @@ assert.equal(translateIdentifier("initial_value1"), "初始值 1");
 assert.equal(translateIdentifier("triggerwords"), "LoRA 触发词");
 assert.equal(translateIdentifier("trigger_words"), "触发词");
 assert.equal(translateIdentifier("LoRA Trigger Words"), "LoRA 触发词");
+assert.equal(translateIdentifier("NaibaTextbox"), "naiba文本盒");
+assert.equal(translateIdentifier("NaibaWANBlockSwap"), "naibawan模型分块卸载节点");
 assert.equal(translateCategory("naiba-node"), "naiba 节点");
 
 const customDataReader = {
