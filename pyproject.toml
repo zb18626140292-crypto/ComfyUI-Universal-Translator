@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-universal-translator"
-version = "1.0.4"
+version = "1.0.6"
 description = "Translate every installed ComfyUI node, including unknown third-party nodes."
 requires-python = ">=3.10"
 license = { text = "MIT" }

@@ -19,7 +19,7 @@ from .translation_core import (
 )
 
 
-VERSION = "1.0.4"
+VERSION = "1.0.6"
 ROOT = Path(__file__).resolve().parent
 CONFIG_PATH = ROOT / "config.json"
 OVERRIDES_PATH = ROOT / "user" / "overrides.json"
@@ -73,11 +73,6 @@ async def set_config(request: web.Request) -> web.Response:
 async def get_translations(request: web.Request) -> web.Response:
     config = load_config(ROOT)
     locale = request.query.get("locale", config["locale"])
-    if not config["enabled"]:
-        return json_response({
-            "Nodes": {}, "NodeCategory": {}, "Menu": {},
-            "meta": {"locale": locale, "dictionary_nodes": 0, "user_overrides": 0},
-        })
     return json_response(load_bundle(ROOT, locale))
 
 

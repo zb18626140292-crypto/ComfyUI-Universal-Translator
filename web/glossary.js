@@ -3,10 +3,12 @@
 export const PHRASES = Object.freeze({
   "custom data reader": "自定义数据读取器",
   "naiba textbox": "naiba文本盒",
+  "naiba node": "naiba 节点",
   "naiba wan block swap": "naibawan模型分块卸载节点",
   "triggerwords": "LoRA 触发词",
   "trigger words": "触发词",
   "lora trigger words": "LoRA 触发词",
+  "lo ra trigger words": "LoRA 触发词",
   "load images for loop": "加载图像并循环",
   "load image": "加载图像",
   "save image": "保存图像",
@@ -67,7 +69,8 @@ export const PHRASES = Object.freeze({
   "enable preview": "启用预览",
   "force offload": "强制卸载",
   "use cache": "使用缓存",
-  "default value": "默认值"
+  "default value": "默认值",
+  "return with leftover noise": "携带剩余噪声返回"
 });
 
 export const WORDS = Object.freeze({

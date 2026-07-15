@@ -70,6 +70,10 @@ export function translateIdentifierDetailed(value) {
     const key = stem(lower);
     if (BRANDS[lower]) {
       pieces.push(BRANDS[lower]);
+      translatedTokens++;
+    } else if (/^\d+(?:\.\d+)?$/.test(original)) {
+      pieces.push(original);
+      translatedTokens++;
     } else if (WORDS[key]) {
       pieces.push(WORDS[key]);
       translatedTokens++;
@@ -79,7 +83,11 @@ export function translateIdentifierDetailed(value) {
     index++;
   }
 
-  const text = joinPieces(pieces) || source;
+  // A partially translated label is harder to understand than the original
+  // identifier (for example "return 与 leftover 噪声"). Only publish the
+  // automatic result when every token is known, a brand, or a number.
+  const complete = tokens.length > 0 && translatedTokens === tokens.length;
+  const text = complete ? (joinPieces(pieces) || source) : source;
   return { text, translatedTokens, totalTokens: tokens.length, changed: text !== source };
 }
 
@@ -144,4 +152,3 @@ export function translateCategory(category, categoryDictionary = {}) {
     return categoryDictionary[part] || translateIdentifier(part);
   }).join("/");
 }
-

@@ -115,7 +115,7 @@ function installButtonDragging(button) {
   });
 }
 
-export function installTranslationPanel({ config, bundle }) {
+export function installTranslationPanel({ config, bundle, onEnabledChange }) {
   if (!config.show_floating_button || document.getElementById("ut-open-button")) return;
 
   const button = element("button", "ut-open-button", "🌐 全节点翻译");
@@ -200,6 +200,7 @@ export function installTranslationPanel({ config, bundle }) {
       try {
         await postJSON("/universal_translation/config", { enabled: nextEnabled });
         config.enabled = nextEnabled;
+        await onEnabledChange?.(nextEnabled);
         updateToggle(nextEnabled);
         translationToggle.textContent = nextEnabled ? "已开启，正在刷新…" : "已关闭，正在刷新…";
         setTimeout(() => location.reload(), 180);

@@ -15,6 +15,9 @@ assert.equal(translateIdentifier("initial_value1"), "初始值 1");
 assert.equal(translateIdentifier("triggerwords"), "LoRA 触发词");
 assert.equal(translateIdentifier("trigger_words"), "触发词");
 assert.equal(translateIdentifier("LoRA Trigger Words"), "LoRA 触发词");
+assert.equal(translateIdentifier("return_with_leftover_noise"), "携带剩余噪声返回");
+assert.equal(translateIdentifier("grow_mask_by"), "grow_mask_by");
+assert.equal(translateIdentifier("start_percent"), "start_percent");
 assert.equal(translateIdentifier("NaibaTextbox"), "naiba文本盒");
 assert.equal(translateIdentifier("NaibaWANBlockSwap"), "naibawan模型分块卸载节点");
 assert.equal(translateCategory("naiba-node"), "naiba 节点");
@@ -69,5 +72,39 @@ const restoredCount = restoreNodeTranslation({
 });
 assert.equal(restoredCount, 3);
 assert.equal(dirtyCalls, 1);
+
+const persistedBrand = { name: "vae", localized_name: "vae", label: "VAE" };
+assert.equal(restoreTranslatedLabel(persistedBrand), true);
+assert.equal("label" in persistedBrand, false);
+
+const translatedTitleNode = {
+  title: "\u81ea\u5b9a\u4e49\u6570\u636e\u8bfb\u53d6\u5668",
+  inputs: [],
+  outputs: [],
+  widgets: [],
+};
+assert.equal(restoreNodeTranslation(translatedTitleNode, {
+  originalTitle: "Custom Data Reader",
+  translatedTitles: ["\u81ea\u5b9a\u4e49\u6570\u636e\u8bfb\u53d6\u5668"],
+}), 1);
+assert.equal(translatedTitleNode.title, "Custom Data Reader");
+
+const disabledKSampler = {
+  title: "K\u91c7\u6837\u5668(\u9ad8\u7ea7)",
+  inputs: [{ name: "model", localized_name: "\u6a21\u578b" }],
+  outputs: [{ name: "LATENT", localized_name: "Latent" }],
+  widgets: [{
+    name: "return_with_leftover_noise",
+    label: "return \u4e0e leftover \u566a\u58f0",
+  }],
+};
+restoreNodeTranslation(disabledKSampler, {
+  forceOriginal: true,
+  originalTitle: "KSamplerAdvanced",
+});
+assert.equal(disabledKSampler.title, "KSamplerAdvanced");
+assert.equal(disabledKSampler.inputs[0].label, "model");
+assert.equal(disabledKSampler.outputs[0].label, "LATENT");
+assert.equal(disabledKSampler.widgets[0].label, "return_with_leftover_noise");
 
 console.log("translator tests passed");

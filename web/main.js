@@ -54,7 +54,12 @@ function addSettings(appInstance) {
       name: "🌐 全节点翻译：启用",
       type: "boolean",
       defaultValue: state.config.enabled,
-      onChange: async value => { if (!registrationFinished) return; await saveConfig({ enabled: value }); location.reload(); },
+      onChange: async value => {
+        if (!registrationFinished) return;
+        await saveConfig({ enabled: value });
+        if (!value) restoreAllNodes(appInstance);
+        location.reload();
+      },
     },
     {
       id: "UniversalTranslator.AutoUnknown",
@@ -84,7 +89,9 @@ function classNameOf(node) {
 
 function setTranslatedLabel(item, translation) {
   if (!item || !translation) return;
-  if (item.label && hasChinese(item.label) && !item.__utApplied) return;
+  const baseline = item.label || item.localized_name || item.name;
+  if (translation === baseline) return;
+  if (baseline && hasChinese(baseline) && !item.__utApplied) return;
   if (!item.__utOriginalLabel) item.__utOriginalLabel = item.label || item.name;
   item.label = translation;
   item.__utApplied = true;
@@ -92,6 +99,28 @@ function setTranslatedLabel(item, translation) {
 
 function automaticSlotLabel(name) {
   return state.config.auto_translate_unknown && name ? translateIdentifier(name) : null;
+}
+
+function restoreNode(node) {
+  const className = classNameOf(node);
+  const originalTitle = node?.properties?.["Node name for S&R"] || className;
+  const translatedTitles = [
+    state.bundle.Nodes?.[className]?.title,
+    translateIdentifier(className),
+  ];
+  return restoreNodeTranslation(node, {
+    forceOriginal: true,
+    originalTitle,
+    translatedTitles,
+  });
+}
+
+function restoreAllNodes(appInstance) {
+  let restored = 0;
+  for (const node of appInstance.graph?._nodes || []) restored += restoreNode(node);
+  appInstance.graph?.setDirtyCanvas?.(true, true);
+  if (restored) console.info(`[Universal Translator] restored ${restored} original labels`);
+  return restored;
 }
 
 function applyToNode(node, loaded = false) {
@@ -113,8 +142,13 @@ function applyToNode(node, loaded = false) {
   const originals = new Set([className, resolved.__originalTitle, node.constructor?.type].filter(Boolean));
   const isCustomTitle = loaded && node.title && !originals.has(node.title) && node.title !== resolved.title;
   if (!isCustomTitle && resolved.title) {
+    if (!node.__utTitleApplied) {
+      node.__utOriginalTitle = node.title;
+      node.__utOriginalConstructorTitle = node.constructor?.title;
+    }
     node.title = resolved.title;
     if (node.constructor) node.constructor.title = resolved.title;
+    node.__utTitleApplied = true;
   }
 
   if (!node.__utDynamicWrapped) {
@@ -166,7 +200,8 @@ function applyDefinition(nodeType, nodeData) {
       if (!Array.isArray(spec)) continue;
       if (spec[1] === undefined) spec[1] = {};
       if (!spec[1] || typeof spec[1] !== "object" || Array.isArray(spec[1])) continue;
-      spec[1].label = resolved.widgets?.[name] || resolved.inputs?.[name] || name;
+      const label = resolved.widgets?.[name] || resolved.inputs?.[name];
+      if (label && label !== name) spec[1].label = label;
     }
   }
 }
@@ -201,12 +236,10 @@ app.registerExtension({
   async init(appInstance) {
     loadStyle();
     state.config = await fetchJSON("/universal_translation/config", state.config);
-    if (state.config.enabled) {
-      state.bundle = await fetchJSON(
-        `/universal_translation/translations?locale=${encodeURIComponent(state.config.locale)}`,
-        state.bundle
-      );
-    }
+    state.bundle = await fetchJSON(
+      `/universal_translation/translations?locale=${encodeURIComponent(state.config.locale)}`,
+      state.bundle
+    );
     addSettings(appInstance);
   },
 
@@ -228,20 +261,24 @@ app.registerExtension({
 
   nodeCreated(node) {
     if (state.config.enabled) applyToNode(node, false);
-    else restoreNodeTranslation(node);
+    else restoreNode(node);
   },
   loadedGraphNode(node) {
     if (state.config.enabled) applyToNode(node, true);
-    else restoreNodeTranslation(node);
+    else restoreNode(node);
   },
 
   async setup(appInstance) {
-    installTranslationPanel(state);
+    installTranslationPanel({
+      config: state.config,
+      bundle: state.bundle,
+      onEnabledChange: enabled => {
+        state.config.enabled = enabled;
+        if (!enabled) restoreAllNodes(appInstance);
+      },
+    });
     if (!state.config.enabled) {
-      let restored = 0;
-      for (const node of appInstance.graph?._nodes || []) restored += restoreNodeTranslation(node);
-      appInstance.graph?.setDirtyCanvas?.(true, true);
-      if (restored) console.info(`[Universal Translator] restored ${restored} original labels`);
+      restoreAllNodes(appInstance);
       console.info("[Universal Translator] 翻译已关闭；管理按钮仍可用于重新开启。");
       return;
     }
