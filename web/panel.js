@@ -134,12 +134,25 @@ export function installTranslationPanel({ config, bundle }) {
     modal = element("div", "ut-overlay");
     const dialog = element("section", "ut-dialog");
     const header = element("header", "ut-header");
-    const heading = element("div");
+    const heading = element("div", "ut-heading");
     heading.append(element("h2", "", "ComfyUI 全节点翻译"));
     heading.append(element("p", "", "扫描本机全部节点；人工词典优先，未知第三方节点使用本地术语引擎。"));
+    const headerActions = element("div", "ut-header-actions");
+    const translationToggle = element("button", "ut-translation-toggle");
+    translationToggle.type = "button";
+    translationToggle.setAttribute("role", "switch");
+    const updateToggle = enabled => {
+      translationToggle.classList.toggle("ut-toggle-enabled", enabled);
+      translationToggle.classList.toggle("ut-toggle-disabled", !enabled);
+      translationToggle.setAttribute("aria-checked", String(enabled));
+      translationToggle.textContent = enabled ? "翻译开启" : "翻译关闭";
+      translationToggle.title = enabled ? "点击关闭全部节点翻译" : "点击开启全部节点翻译";
+    };
+    updateToggle(Boolean(config.enabled));
     const close = element("button", "ut-icon-button", "×");
     close.title = "关闭";
-    header.append(heading, close);
+    headerActions.append(translationToggle, close);
+    header.append(heading, headerActions);
     dialog.appendChild(header);
 
     const stats = element("div", "ut-stats");
@@ -180,6 +193,22 @@ export function installTranslationPanel({ config, bundle }) {
     close.addEventListener("click", dismiss);
     modal.addEventListener("click", event => { if (event.target === modal) dismiss(); });
     reloadButton.addEventListener("click", () => location.reload());
+    translationToggle.addEventListener("click", async () => {
+      const nextEnabled = !Boolean(config.enabled);
+      translationToggle.disabled = true;
+      translationToggle.textContent = nextEnabled ? "正在开启…" : "正在关闭…";
+      try {
+        await postJSON("/universal_translation/config", { enabled: nextEnabled });
+        config.enabled = nextEnabled;
+        updateToggle(nextEnabled);
+        translationToggle.textContent = nextEnabled ? "已开启，正在刷新…" : "已关闭，正在刷新…";
+        setTimeout(() => location.reload(), 180);
+      } catch (error) {
+        updateToggle(Boolean(config.enabled));
+        translationToggle.disabled = false;
+        alert(`切换翻译失败：${error.message}`);
+      }
+    });
 
     try {
       const response = await api.fetchApi("/object_info");

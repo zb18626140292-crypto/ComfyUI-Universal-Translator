@@ -228,10 +228,13 @@ app.registerExtension({
   loadedGraphNode(node) { applyToNode(node, true); },
 
   async setup(appInstance) {
-    if (!state.config.enabled) return;
+    installTranslationPanel(state);
+    if (!state.config.enabled) {
+      console.info("[Universal Translator] 翻译已关闭；管理按钮仍可用于重新开启。");
+      return;
+    }
     for (const node of appInstance.graph?._nodes || []) applyToNode(node, true);
     installDomMenuTranslation();
-    installTranslationPanel(state);
     console.info(`[Universal Translator] 已加载：${state.bundle.meta?.dictionary_nodes || 0} 条人工节点词典，未知节点自动翻译=${state.config.auto_translate_unknown}`);
   },
 });
