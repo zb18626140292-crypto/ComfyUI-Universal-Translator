@@ -1,0 +1,686 @@
+{
+    "VHS_SplitLatents": {
+        "title": "拆分Latent",
+        "inputs": {
+            "latents": "Latent"
+        },
+        "widgets": {
+            "split_index": "拆分索引"
+        },
+        "outputs": {
+            "LATENT_A": "Latent_A",
+            "A_count": "A组计数",
+            "LATENT_B": "Latent_B",
+            "B_count": "B组计数"
+        },
+        "description": "将一组潜空间分成两组 \n\n"
+    },
+    "VHS_MergeLatents": {
+        "title": "融合Latent",
+        "inputs": {
+            "latents_A": "Latent_A",
+            "latents_B": "Latent_B"
+        },
+        "widgets": {
+            "merge_strategy": "融合策略",
+                "match A": "匹配A",
+                "match B": "匹配B",
+                "match smaller": "匹配更小的",
+                "match larger": "匹配更大的",
+            "scale_method": "缩放方法",
+                "nearest-exact": "邻近-精确",
+                "bilinear": "双线性插值",
+                "area": "区域",
+                "bislerp": "双球面线性",
+                "bicubic": "双三次插值",
+            "crop": "裁剪",
+                "disabled": "关闭",
+                "ceter": "中心"
+        },
+        "outputs": {
+            "LATENT": "Latent",
+            "count": "计数"
+        },
+        "description": "将两组潜空间合并为一组潜空间 \n\n"
+    },
+    "VHS_SelectEveryNthLatent": {
+        "title": "选择Latent（间隔）",
+        "inputs": {
+            "latents": "Latent"
+        },
+        "widgets": {  
+            "select_every_nth": "间隔",
+            "skip_first_latents":"跳过前X张"
+        },
+        "outputs": {
+            "LATENT": "Latent",
+            "count": "计数"
+        },
+        "description": "每个间隔只保留1个潜空间 \n\n"
+    },
+    "VHS_SelectLatents": {
+        "title": "选择Latent（索引）",
+        "inputs": {
+            "latent": "Latent"
+        },
+        "widgets": {
+            "indexes": "索引",
+            "err_if_missing": "缺失时报错",
+            "err_if_empty": "为空时报错"
+        },
+        "outputs": {
+            "LATENT": "Latent"
+        },
+        "description": "使用逗号分隔的编号索引按给定顺序选择输入项\n\n支持负索引、Python样式范围（不包括结束索引）以及范围步长\n\n示例（假设输入16个项，索引0-15）：\n\n• 0         → 输出 [0]\n• -1        → 输出 [15]\n• 0,1,13    → 输出 [0,1,13]\n• 0:5,13    → 输出 [0,1,2,3,4,13]\n• 0:-1      → 输出 [0,1,2,...,14]\n• 0:5:-1    → 输出 [4,3,2,1,0]\n• 0:5:2     → 输出 [0,2,4]\n• ::-1      → 输出 [15,14,...,0]"
+    },
+    "VHS_GetLatentCount": {
+        "title": "获取Latent数量",
+        "inputs": {
+            "latents": "Latent"
+        },
+        "widgets": {},
+        "outputs": {
+            "count": "计数"
+        },
+        "description": "以整数形式返回输入中的潜空间 \n\n"
+    },
+    "VHS_DuplicateLatents": {
+        "title": "复制Latent",
+        "inputs": {
+            "latents": "Latent"
+        },
+        "widgets": {
+            "multiply_by": "系数"
+        },
+        "outputs": {
+            "LATENT": "Latent",
+            "count": "计数"
+        },
+        "description": "将潜空间的副本附加到自身，使其重复 \n\n"
+    },
+
+
+    "VHS_SplitImages": {
+        "title": "拆分图像",
+        "inputs": {
+            "images": "图像"
+        },
+        "widgets": {
+            "split_index": "拆分索引"
+        },
+        "outputs": {
+            "IMAGE_A": "图像_A",
+            "A_count": "A组计数",
+            "IMAGE_B": "图像_B",
+            "B_count": "B组计数"
+        },
+        "description": "将一组图像分成两组 \n\n"
+    },
+    "VHS_MergeImages": {
+        "title": "融合图像",
+        "inputs": {
+            "images_A": "图像_A",
+            "images_B": "图像_B"
+        },
+        "widgets": {
+            "merge_strategy": "融合策略",
+                "match A": "匹配A",
+                "match B": "匹配B",
+                "match smaller": "匹配更小的",
+                "match larger": "匹配更大的",
+            "scale_method": "缩放方法",
+                "nearest-exact": "邻近-精确",
+                "bilinear": "双线性插值",
+                "area": "区域",
+                "bislerp": "双球面线性",
+                "bicubic": "双三次插值",
+            "crop": "裁剪",
+                "disabled": "关闭",
+                "ceter": "中心"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "count": "计数"
+        },
+        "description": "将两组图像合并为一组图像 \n\n"
+    },
+    "VHS_SelectEveryNthImage": {
+        "title": "选择图像（间隔）",
+        "inputs": {
+            "images": "图像"
+        },
+        "widgets": {  
+            "select_every_nth": "间隔",
+            "skip_first_images": "跳过前X张"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "count": "计数"
+        },
+        "description": "每个间隔只保留一个图像 \n\n"
+    },
+    "VHS_SelectImages": {
+        "title": "选择图像（索引）",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "indexes": "索引",
+            "err_if_missing": "缺失时报错",
+            "err_if_empty": "为空时报错"
+        },
+        "outputs": {
+            "IMAGE": "图像"
+        },
+        "description": "使用逗号分隔的编号索引按给定顺序选择输入项\n\n支持负索引、Python样式范围（不包括结束索引）以及范围步长\n\n示例（假设输入16个项，索引0-15）：\n\n• 0         → 输出 [0]\n• -1        → 输出 [15]\n• 0,1,13    → 输出 [0,1,13]\n• 0:5,13    → 输出 [0,1,2,3,4,13]\n• 0:-1      → 输出 [0,1,2,...,14]\n• 0:5:-1    → 输出 [4,3,2,1,0]\n• 0:5:2     → 输出 [0,2,4]\n• ::-1      → 输出 [15,14,...,0]"
+    },
+    "VHS_GetImageCount": {
+        "title": "获取图像数量",
+        "inputs": {
+            "images": "图像"
+        },
+        "widgets": {},
+        "outputs": {
+            "count": "计数"
+        },
+        "description": "以整数形式返回输入中的图像数量 \n\n"
+    },
+    "VHS_DuplicateImages": {
+        "title": "复制图像",
+        "inputs": {
+            "images": "图像"
+        },
+        "widgets": {
+            "multiply_by": "系数"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "count": "计数"
+        },
+        "description": "将图像的副本附加到自身，使其重复 \n\n"
+    },
+
+
+
+    "VHS_SplitMasks": {
+        "title": "分割遮罩",
+        "inputs": {
+            "mask": "遮罩"
+        },
+        "widgets": {
+            "split_index": "拆分索引"
+        },
+        "outputs": {
+            "MASK_A": "遮罩_A",
+            "A_count": "A组计数",
+            "MASK_B": "遮罩_B",
+            "B_count": "B组计数"
+        },
+        "description": "将一组遮罩分成两组 \n\n"
+    },
+    "VHS_MergeMasks": {
+        "title": "融合遮罩",
+        "inputs": {
+            "mask_A": "遮罩_A",
+            "mask_B": "遮罩_B"
+        },
+        "widgets": {
+            "merge_strategy": "融合策略",
+            "scale_method": "缩放方法",
+            "crop": "裁剪"
+        },
+        "outputs": {
+            "MASK": "遮罩",
+            "count": "计数"
+        },
+        "description": "将两组遮罩合并为一组遮罩 \n\n"
+    },
+    "VHS_SelectEveryNthMask": {
+        "title": "遮罩选择（间隔）",
+        "inputs": {
+            "mask": "遮罩"
+        },
+        "widgets": {
+            "select_every_nth": "间隔",
+            "skip_first_masks": "跳过前X张"
+        },
+        "outputs": {
+            "MASK": "遮罩",
+            "count": "计数"
+        },
+        "description": "每个间隔只保留一个遮罩 \n\n"
+    },
+    "VHS_SelectMasks": {
+        "title": "选择遮罩（索引）",
+        "inputs": {
+            "mask": "遮罩"
+        },
+        "widgets": {
+            "indexes": "索引",
+            "err_if_missing": "缺失时报错",
+            "err_if_empty": "为空时报错"
+        },
+        "outputs": {
+            "MASK": "遮罩"
+        },
+        "description": "使用逗号分隔的编号索引按给定顺序选择输入项\n\n支持：\n• 负索引\n• Python样式范围（不包括结束索引）\n• 范围步长\n\n示例（假设输入16个项，索引0-15）：\n• 0        → 输出 [0]\n• -1       → 输出 [15]\n• 0,1,13   → 输出 [0,1,13]\n• 0:5,13   → 输出 [0,1,2,3,4,13]\n• 0:-1     → 输出 [0,1,2,...,14]\n• 0:5:-1   → 输出 [4,3,2,1,0]\n• 0:5:2    → 输出 [0,2,4]\n• ::-1     → 输出 [15,14,...,0]"
+    },
+    "VHS_GetMaskCount": {
+        "title": "遮罩计数",
+        "inputs": {
+            "mask": "遮罩"
+        },
+        "widgets": {},
+        "outputs": {
+            "count": "计数"
+        },
+        "description": "以整数形式返回输入中的遮罩数 \n\n"
+    },
+    "VHS_DuplicateMasks": {
+        "title": "遮罩复制",
+        "inputs": {
+            "mask": "遮罩"
+        },
+        "widgets": {
+            "multiply_by": "系数"
+        },
+        "outputs": {
+            "MASK": "遮罩",
+            "count": "计数"
+        },
+        "description": "将一个遮罩的副本附加到自身，使其重复 \n\n"
+    },
+
+
+
+    "VHS_VAEEncodeBatched": {
+        "title": "VAE编码(批次)",
+        "inputs": {
+            "pixels": "图像",
+            "vae": "VAE"
+        },
+        "widgets": {
+            "per_batch": "每批"
+        },
+        "outputs": {
+            "LATENT": "Latent"
+        },
+        "description": "用手动指定的批处理大小将图像编码为潜空间。 \n\n"
+    },
+    "VHS_VAEDecodeBatched": {
+        "title": "VAE解码(批次)",
+        "inputs": {
+            "samples": "Latent",
+            "vae": "VAE"
+        },
+        "widgets": {
+            "per_batch": "每批"
+        },
+        "outputs": {
+            "IMAGE": "图像"
+        },
+        "description": "将潜空间解码为具有手动指定批处理大小的图像 \n\n"
+    },
+
+
+
+    "VHS_VideoCombine": {
+        "title": "合并为视频",
+        "inputs": {
+            "images": "图像",
+            "audio": "音频",
+            "batch_manager": "批次管理",
+            "meta_batch": "批次管理"
+        },
+        "widgets": {
+            "frame_rate": "帧率",
+            "loop_count": "循环次数",
+            "filename_prefix": "文件名前缀",
+            "format": "格式",
+            "pix_fmt": "像素格式",
+            "pingpong": "Ping-Pong循环",
+            "save_image": "保存图像",
+            "Sync playback": "同步播放",
+            "save_metadata": "保存元数据",
+            "save metadata": "保存元数据",
+            "audio_file": "音频文件",
+            "trim_to_audio": "修剪音频",
+            "lossless": "无损",
+            "pix_fmt": "像素格式",
+            "input_color_depth": "输入颜色深度",
+            "save_metadata": "保存元数据",
+            "dither": "颤振",
+            "level": "级别",
+            "coder": "程序员",
+            "context": "上下文",
+            "gop_size": "GOP 大小",
+            "slices": "切片",
+            "slicecrc": "切片校验和",
+            "bitrate": "比特率",
+            "megabit": "兆比特",
+            "profile": "个人简介",
+            "save_output": "保存到输出文件夹"
+        },
+        "outputs": {
+            "Filenames": "文件名"
+        },
+        "description": "将图像序列组合成视频 \n\n"
+    },
+
+
+    
+    "VHS_LoadVideo": {
+        "title": "加载视频",
+        "inputs": {
+            "meta_batch": "批次管理"
+        },
+        "widgets": {
+            "video": "视频",
+            "force_rate": "强制帧率",
+            "custom_width": "自定义宽度",
+            "custom_height": "自定义高度",
+            "frame_load_cap": "帧数读取上限",
+            "skip_first_frames": "跳过前X帧",
+            "select_every_nth": "间隔",
+            "format": "格式",
+            "choose video to upload": "选择视频上传"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "frame_count": "帧计数",
+            "audio": "音频",
+            "video_info": "视频信息"
+        },
+        "description": "从输入文件夹加载视频 \n\n"
+    },
+    "VHS_LoadVideoPath": {
+        "title": "加载视频（路径）",
+        "inputs": {
+            "meta_batch": "批次管理"
+        },
+        "widgets": {
+            "video": "视频",
+            "force_rate": "强制帧率",
+            "custom_width": "自定义宽度",
+            "custom_height": "自定义高度",
+            "frame_load_cap": "帧数读取上限",
+            "skip_first_frames": "跳过前X帧",
+            "format": "格式",
+            "select_every_nth": "间隔"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "frame_count": "帧计数",
+            "audio": "音频",
+            "video_info": "视频信息"
+        },
+        "description": "从任意路径加载视频 \n\n"
+    },
+    "VHS_LoadVideoFFmpeg": {
+        "title": "加载视频FFmpeg(上传)🎥🅥🅗🅢",
+        "inputs": {
+            "meta_batch": "批次管理"
+        },
+        "widgets": {
+            "video": "视频",
+            "force_rate": "强制帧率",
+            "custom_width": "自定义宽度",
+            "custom_height": "自定义高度",
+            "frame_load_cap": "帧数读取上限",
+            "start_time": "开始时间",
+            "format": "格式",
+            "choose video to upload": "选择视频上传"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "mask": "遮罩",
+            "audio": "音频",
+            "video_info": "视频信息"
+        },
+        "description": "使用ffmpeg而不是opencv \n 从输入文件夹加载视频 \n"
+    },
+    "VHS_LoadVideoFFmpegPath": {
+        "title": "加载视频FFmpeg(路径)🎥🅥🅗🅢",
+        "inputs": {
+            "meta_batch": "批次管理"
+        },
+        "widgets": {
+            "video": "视频",
+            "force_rate": "强制帧率",
+            "custom_width": "自定义宽度",
+            "custom_height": "自定义高度",
+            "frame_load_cap": "帧数读取上限",
+            "start_time": "开始时间",
+            "format": "格式"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "mask": "遮罩",
+            "audio": "音频",
+            "video_info": "视频信息"
+        },
+        "description": "使用ffmpeg而不是opencv \n 从任意路径加载视频 \n"
+    },
+    "VHS_LoadImagePath": {
+        "title": "加载图像(路径)🎥🅥🅗🅢",
+        "inputs": {
+            "meta_batch": "批次管理"
+        },
+        "widgets": {
+            "image": "图像",
+            "directory": "路径",
+            "custom_width": "自定义宽度",
+            "custom_height": "自定义高度",
+            "frame_load_cap": "帧数读取上限",
+            "choose folder to upload": "选择文件夹上传"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "mask": "遮罩"
+        },
+        "description": "从既定路径加载单个图像 \n\n"
+    },
+
+    "VHS_LoadImages": {
+        "title": "加载图像",
+        "inputs": {
+            "meta_batch": "批次管理"
+        },
+        "widgets": {
+            "directory": "路径",
+            "choose folder to upload": "选择文件夹上传",
+            "image_load_cap": "图像读取上限",
+            "skip_first_images": "跳过前X张",
+            "select_every_nth": "间隔"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "MASK": "遮罩",
+            "frame_count": "帧数"
+        },
+        "description": "从输入文件夹的子目录加载一系列图像 \n\n"
+    },
+    "VHS_LoadImagesPath": {
+        "title": "加载图像（路径）",
+        "inputs": {
+            "meta_batch": "批次管理"
+        },
+        "widgets": {
+            "image": "图像",
+            "directory": "路径",
+            "image_load_cap": "图像读取上限",
+            "skip_first_images": "跳过前X张",
+            "select_every_nth": "间隔",
+            "choose folder to upload": "选择文件夹上传"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "MASK": "遮罩",
+            "frame_count": "帧数"
+        },
+        "description": "从任意路径加载一系列图像 \n\n"
+    },
+    "VHS_LoadAudioUpload": {
+        "title": "加载音频",
+        "inputs": {},
+        "widgets": {
+            "audio": "音频",
+            "start_time": "起始时间",
+            "duration": "时长",
+            "choose audio to upload": "选择音频上传",
+            "seek_secods": "起始秒数"
+        },
+        "outputs": {
+            "duration": "时长",
+            "audio": "音频"
+        },
+        "description": "从输入目录加载音频文件 \n\n"
+    },
+    "VHS_LoadAudio": {
+        "title": "加载音频（路径）",
+        "inputs": {},
+        "widgets": {
+            "audio_file": "音频文件",
+            "duration": "时长",
+            "start_time": "起始时间",
+            "seek_seconds": "起始秒数"
+        },
+        "outputs": {
+            "duration": "时长",
+            "audio": "音频"
+        },
+        "description": "从任意路径加载音频文件 \n\n"
+    },
+    "VHS_AudioToVHSAudio": {
+        "title": "音频转换VHS音频",
+        "inputs": {
+            "audio": "音频"
+        },
+        "widgets": {},
+        "outputs": {
+            "vhs_audio": "VHS音频"
+        },
+        "description": "用于与外部节点兼容的实用函数 \n\n"
+    },
+    "VHS_VHSAudioToAudio": {
+        "title": "VHS音频转换音频",
+        "inputs": {
+            "vhs_audio": "VHS音频"
+        },
+        "widgets": {},
+        "outputs": {
+            "audio": "音频"
+        },
+        "description": "用于与外部节点兼容的实用函数 \n\n"
+    },
+    "VHS_PruneOutputs": {
+        "title": "调整输出",
+        "inputs": {
+            "filenames": "文件名"
+        },
+        "widgets": {
+            "options": "选项"
+        },
+        "description": "自动删除不需要的输出从视频组合节点 \n\n"
+    },
+    "VHS_BatchManager": {
+        "title": "批次管理",
+        "inputs": {},
+        "widgets": {
+            "frames_per_batch": "每批次帧数"
+        },
+        "outputs": {
+            "VHS_BatchManager": "批次管理",
+            "meta_batch": "批次管理"
+        },
+        "description": "将非常长的视频的处理工作拆分成若干组较小的元批次 \n\n"
+    },
+    "VHS_VideoInfo": {
+        "title": "视频信息",
+        "inputs": {
+            "video_info": "视频信息"
+        },
+        "widgets": {},
+        "outputs": {
+            "source_fps🟨": "初始FPS🟨",
+            "source_frame_count🟨": "初始帧数🟨",
+            "source_duration🟨": "初始时长🟨",
+            "source_width🟨": "初始宽度🟨",
+            "source_height🟨": "初始高度🟨",
+            "loaded_fps🟦": "选中FPS🟦",
+            "loaded_frame_count🟦": "选中帧数🟦",
+            "loaded_duration🟦": "选中时长🟦",
+            "loaded_width🟦": "选中宽度🟦",
+            "loaded_height🟦": "选中高度🟦"
+        },
+        "description": "将视频上的信息拆分为多个输出 \n\n"
+    },
+    "VHS_VideoInfoSource": {
+        "title": "视频信息（初始）",
+        "inputs": {
+            "video_info": "视频信息"
+        },
+        "widgets": {},
+        "outputs": {
+            "fps🟨": "FPS🟨",
+            "frame_count🟨": "帧数🟨",
+            "duration🟨": "时长🟨",
+            "width🟨": "宽度🟨",
+            "height🟨": "高度🟨"
+        },
+        "description": "将视频上的信息拆分为描述文件本身的多个输出 \n 而不考虑加载选项\n"
+    },
+    "VHS_VideoInfoLoaded": {
+        "title": "视频信息（已选中）",
+        "inputs": {
+            "video_info": "视频信息"
+        },
+        "widgets": {},
+        "outputs": {
+            "fps🟦": "FPS🟦",
+            "frame_count🟦": "帧数🟦",
+            "duration🟦": "时长🟦",
+            "width🟦": "宽度🟦",
+            "height🟦": "高度🟦"
+        },
+        "description": "在考虑加载选项后 \n 将视频上的信息拆分为描述文件本身的多个输出 \n"
+    },
+    "VHS_SelectFilename": {
+        "title": "选择文件名",
+        "inputs": {
+            "filenames": "文件名"
+        },
+        "widgets": {
+            "index": "编号"
+        },
+        "outputs": {
+            "Filename": "文件名"
+        },
+        "description": "从视频输出的VHS文件名中选择一个文件名 \n 组合并将其作为字符串返回 \n"
+    },
+    "VHS_SelectLatest": {
+        "title": "选择最新版 🎥🅥🅗🅢",
+        "inputs": {
+            "filenames": "文件名"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀",
+            "filename_postfix": "文件名后缀"
+        },
+        "outputs": {
+            "Filename": "文件名"
+        },
+        "description": " Select Latest 🎥🅥🅗🅢\n\n"
+    },
+    "VHS_Unbatch": {
+        "title": "拆解批次",
+        "inputs": {
+            "batched": "批次"
+        },
+        "widgets": {},
+        "outputs": {
+            "unbatched": "拆解批次"
+        },
+        "description": "将项目列表取消批处理为单个连接的项目 \n\n"
+    }
+}

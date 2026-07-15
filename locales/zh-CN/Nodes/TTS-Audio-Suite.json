@@ -1,0 +1,1043 @@
+{
+    "ChatterboxSRTTTSNode": {
+        "title": "🔄聊天箱 SRT字幕文本转语音节点",
+        "inputs": {
+            "language": "语言",
+            "reference_audio": "参考音频"
+        },
+        "widgets": {
+            "device": "设备",
+            "timing_mode": "计时模式",
+            "srt_content": "SRT字幕内容",
+            "exaggeration": "情感强度",
+            "temperature": "随机性",
+            "cfg_weight": "引导强度",
+            "seed": "种子",
+            "audio_prompt_path": "音频提示路径",
+            "enable_audio_cache": "启用音频缓存",
+            "fade_for_StretchToFit": "为拉伸适配进行淡入淡出",
+            "max_stretch_ratio": "最大拉伸比例",
+            "min_stretch_ratio": "最小拉伸比例",
+            "timing_tolerance": "计时容差",
+            "crash_protection_template": "崩溃保护模板",
+            "batch_size": "批次大小"
+        },
+        "outputs": {
+            "audio": "音频",
+            "generation_info": "生成信息",
+            "timing_report": "计时报告",
+            "Adjusted_SRT": "调整后的SRT字幕"
+        }
+    },
+    "ChatterBoxAudioAnalyzer": {
+        "title": "🌊 音频波形分析器",
+        "inputs": {
+            "audio": "音频",
+            "options": "选项"
+        },
+        "widgets": {
+            "audio_file": "音频文件",
+            "analysis_method": "分析方法",
+            "precision_level": "精度级别",
+            "visualization_points": "可视化点数",
+            "manual_regions": "手动区域",
+            "region_labels": "区域标签",
+            "node_id": "节点ID",
+            "export_format": "导出格式"
+        },
+        "outputs": {
+            "processed_audio": "音频",
+            "timing_data": "计时数据",
+            "analysis_info": "分析信息",
+            "segmented_audio": "音频"
+        }
+    },
+    "ChatterBoxAudioAnalyzerOptions": {
+        "title": "🔧 音频分析器选项",
+        "inputs": {},
+        "widgets": {
+            "silence_threshold": "静音阈值",
+            "silence_min_duration": "最小静音持续时间",
+            "invert_silence_regions": "反转静音区域",
+            "energy_sensitivity": "能量敏感度",
+            "peak_threshold": "峰值阈值",
+            "peak_min_distance": "峰值最小距离",
+            "peak_region_size": "峰值区域大小",
+            "group_regions_threshold": "分组区域阈值"
+        },
+        "outputs": {
+            "options": "高级音频选项"
+        }
+    },
+    "MergeAudioNode": {
+        "title": "🥪合并音频",
+        "inputs": {
+            "audio1": "音频_1",
+            "audio2": "音频_2",
+            "audio3": "音频_3",
+            "audio4": "音频_4"
+        },
+        "widgets": {
+            "merge_algorithm": "合并算法",
+            "sample_rate": "采样率",
+            "normalize": "标准化",
+            "crossfade_duration": "交叉淡入淡出持续时间",
+            "volume_balance": "音量平衡",
+            "vocal_pitch_shift": "人声音高偏移",
+            "instrumental_pitch_shift": "乐器音高偏移",
+            "enable_pitch_control": "启用音高控制"
+        },
+        "outputs": {
+            "merged_audio": "音频",
+            "merge_info": "合并信息"
+        }
+    },
+    "ChatterBoxVoiceCapture": {
+        "title": "🎙️聊天箱 录制音频",
+        "inputs": {},
+        "widgets": {
+            "voice_device": "语音设备",
+            "error_message": "错误信息",
+            "voice_sample_rate": "音频质量",
+            "voice_max_recording_time": "语音最大录制时间",
+            "voice_volume_gain": "语音音量增益",
+            "voice_silence_threshold": "语音静音阈值",
+            "voice_silence_duration": "语音静音持续时间",
+            "voice_auto_normalize": "语音自动标准化",
+            "voice_trigger": "录制触发"
+        },
+        "outputs": {
+            "voice_audio": "音频"
+        }
+    },
+    "RVCPitchOptionsNode": {
+        "title": "🔧 RVC音高选项",
+        "inputs": {},
+        "widgets": {
+            "pitch_detection": "音高检测",
+            "crepe_hop_length": "Crepe跳变长度",
+            "filter_radius": "滤波半径",
+            "pitch_guidance": "音高引导",
+            "f0_autotune": "F0自动调音",
+            "use_cache": "使用缓存",
+            "batch_size": "批次大小"
+        },
+        "outputs": {
+            "rvc_pitch_options": "RVC音高选项"
+        },
+        "description": "RVC 音高提取选项\n  为 RVC 语音转换提供高级音高控制 提供了详细的音高提取算法配置和高级处理选项。\n可通过连接至 RVC 引擎节点来增强语音转换控制。\n\n语音转换质量参数（指数率、保护、均方混合率）在 RVC 引擎节点中进行配置。\n\n主要功能：多种音高提取算法（RMVPE、Crepe、PM、Harvest 等） \n 高级处理选项（滤波、引导、自动调谐）\n  性能优化（缓存、批量处理、重采样） 方法特定参数（Crepe 跳步长度等） \n\n 音高方法指南：RMVPE：在质量与速度之间达到最佳平衡（推荐）\n Crepe/Mangio-Crepe：最高质量，处理速度较慢\n PM：最快，适用于实时应用\n Harvest：传统算法，适用于语音\n DIO/FCPE：针对特定用例的替代方法"
+    },
+    "VocalRemovalNode": {
+        "title": "🔧 人声分离节点",
+        "inputs": {
+            "audio": "音频"
+        },
+        "widgets": {
+            "use_cache": "使用缓存",
+            "aggressiveness": "激进程度",
+            "model": "模型",
+            "format": "格式"
+        },
+        "outputs": {
+            "extracted voice/noise/echo": "提取的音频",
+            "remaining": "剩余音频"
+        }
+    },
+    "ChatterboxTTSNode": {
+        "title": "🎙️ 聊天箱 文本转语音",
+        "inputs": {
+            "language": "语言",
+            "device": "设备",
+            "reference_audio": "参考音频",
+            "chunk_combination_method": "分块组合方法"
+        },
+        "widgets": {
+            "text": "文本",
+            "exaggeration": "情感强度",
+            "temperature": "随机性",
+            "cfg_weight": "引导强度",
+            "seed": "种子",
+            "audio_prompt_path": "音频提示路径",
+            "enable_chunking": "启用分块",
+            "max_chars_per_chunk": "每块最大字符数",
+            "silence_between_chunks_ms": "块间静音毫秒数",
+            "crash_protection_template": "崩溃保护模板",
+            "enable_audio_cache": "启用音频缓存",
+            "batch_size": "批次大小"
+        },
+        "outputs": {
+            "audio": "音频",
+            "generation_info": "生成信息"
+        }
+    },
+    "ChatterboxVCNode": {
+        "title": "🔄 聊天箱 语音转换",
+        "inputs": {
+            "source_audio": "源音频",
+            "target_audio": "目标音频",
+            "device": "设备"
+        },
+        "widgets": {
+            "refinement_passes": "优化次数"
+        },
+        "outputs": {
+            "converted_audio": "音频"
+        }
+    },
+    "ChatterboxOfficial23LangTTSNode": {
+        "title": "🌊 A聊天箱 官方23语言 文本转语音节点",
+        "inputs": {
+            "language": "语言",
+            "reference_audio": "参考音频"
+        },
+        "widgets": {
+            "device": "设备",
+            "text": "文本",
+            "exaggeration": "情感强度",
+            "temperature": "随机性",
+            "cfg_weight": "引导强度",
+            "seed": "种子",
+            "audio_prompt_path": "音频提示路径",
+            "enable_chunking": "启用分块",
+            "max_chars_per_chunk": "每块最大字符数",
+            "silence_between_chunks_ms": "块间静音毫秒数",
+            "repetition_penalty": "重复惩罚",
+            "min_p": "最小核采样概率",
+            "top_p": "核采样概率",
+            "enable_audio_cache": "启用音频缓存",
+            "batch_size": "批次大小",
+            "chunk_combination_method": "分块组合方法"
+        },
+        "outputs": {
+            "audio": "音频",
+            "generation_info": "生成信息"
+        }
+    },
+    "ChatterboxOfficial23LangVCProcessor": {
+        "title": "⚙️ 聊天箱 官方23语言语音转换处理器",
+        "inputs": {
+            "source_audio": "源音频",
+            "target_audio": "目标音频"
+        },
+        "widgets": {
+            "refinement_passes": "优化次数",
+            "language": "语言",
+            "device": "设备"
+        },
+        "outputs": {
+            "converted_audio": "音频"
+        }
+    },
+    "ChatterBoxEngineNode": {
+        "title": "⚙️ 聊天箱 文本转语音引擎",
+        "inputs": {},
+        "widgets": {
+            "language": "语言",
+            "device": "设备",
+            "exaggeration": "情感强度",
+            "temperature": "随机性",
+            "cfg_weight": "引导强度",
+            "crash_protection_template": "崩溃保护模板"
+        },
+        "outputs": {
+            "TTS_engine": "文本转语音引擎"
+        }
+    },
+    "ChatterBoxOfficial23LangEngineNode": {
+        "title": "⚙️ 聊天箱 官方 23 语言引擎",
+        "inputs": {},
+        "widgets": {
+            "model_version": "模型版本",
+            "language": "语言",
+            "device": "设备",
+            "exaggeration": "情感强度",
+            "temperature": "随机性",
+            "cfg_weight": "引导强度",
+            "repetition_penalty": "重复惩罚",
+            "min_p": "最小p值",
+            "top_p": "最高p值"
+        },
+        "outputs": {
+            "TTS_engine": "TTS引擎"
+        }
+    },
+    "F5TTSEngineNode": {
+        "title": "⚙️ F5语音 TTS 引擎",
+        "inputs": {},
+        "widgets": {
+            "language": "语言",
+            "device": "设备",
+            "temperature": "随机性",
+            "speed": "语速",
+            "target_rms": "目标均方根",
+            "cross_fade_duration": "交叉淡入淡出持续时间",
+            "nfe_step": "质量与速度",
+            "cfg_strength": "cfg强度",
+            "auto_phonemization": "自动音素化"
+        },
+        "outputs": {
+            "TTS_engine": "TTS引擎"
+        }
+    },
+    "HiggsAudioEngineNode": {
+        "title": "⚙️ Higgs 音频 2 引擎",
+        "inputs": {
+            "opt_second_narrator": "第二讲述人 可选"
+        },
+        "widgets": {
+            "model": "模型",
+            "device": "设备",
+            "multi_speaker_mode": "多说话人模式",
+            "system_prompt": "系统提示",
+            "temperature": "随机性",
+            "top_p": "最高p值",
+            "top_k": "最高k值",
+            "max_new_tokens": "最大新增字数",
+            "force_audio_gen": "强制音频生成",
+            "ras_win_len": "ras窗口长度",
+            "ras_max_num_repeat": "ras最大重复次数",
+            "enable_cuda_graphs": "启用CUDA图形"
+        },
+        "outputs": {
+            "tts_engine": "TTS引擎"
+        }
+    },
+    "IndexTTSEmotionOptionsNode": {
+        "title": "🌈 IndexTTS - 2 情感选项",
+        "inputs": {},
+        "widgets": {
+            "Happy": "快乐",
+            "Angry": "愤怒",
+            "Sad": "悲伤",
+            "Surprised": "惊讶",
+            "Afraid": "害怕",
+            "Disgusted": "厌恶",
+            "Calm": "平静",
+            "Melancholic": "忧郁"
+        },
+        "outputs": {
+            "emotion_control": "情感控制"
+        },
+        "description": "为 IndexTTS-2 配置情绪向量强度。\n 连接至 IndexTTS-2 引擎节点\n 使用 8 种不同的情绪类型进行高级情绪控制"
+    },
+    "IndexTTSEngineNode": {
+        "title": "⚙️IndexTTS - 2 引擎",
+        "inputs": {
+            "emotion_control": "情感控制"
+        },
+        "widgets": {
+            "model_path": "模型路径",
+            "device": "设备",
+            "emotion_alpha": "情感阿尔法",
+            "use_cuda_kernel": "使用CUDA内核",
+            "use_random": "使用随机",
+            "max_text_tokens_per_segment": "每段最大文本数",
+            "interval_silence": "间隔静音",
+            "temperature": "随机性",
+            "top_p": "最高p值",
+            "top_k": "最高k值",
+            "do_sample": "进行采样",
+            "length_penalty": "长度惩罚",
+            "num_beams": "光束数量",
+            "repetition_penalty": "重复惩罚",
+            "max_mel_tokens": "最大mel数",
+            "use_fp16": "使用fp16",
+            "use_deepspeed": "使用DeepSpeed",
+            "use_torch_compile": "使用torch编译",
+            "use_accel": "使用加速功能",
+            "stream_return": "流式返回",
+            "more_segment_before": "更多分段"
+        },
+        "outputs": {
+            "TTS_engine": "TTS引擎"
+        }
+    },
+    "RVCEngineNode": {
+        "title": "⚙ RVC引擎",
+        "inputs": {
+            "rvc_pitch_options": "RVC音高选项"
+        },
+        "widgets": {
+            "pitch": "音高",
+            "index_ratio": "索引比率",
+            "consonant_protection": "辅音保护",
+            "volume_envelope": "音量包络",
+            "hubert_model": "hubert模型",
+            "output_sample_rate": "输出采样率",
+            "device": "设备"
+        },
+        "outputs": {
+            "TTS_engine": "TTS引擎"
+        }
+    },
+    "VibeVoiceEngineNode": {
+        "title": "⚙ Vibe语音 引擎",
+        "inputs": {
+            "speaker2_voice": "说话人2语音",
+            "speaker3_voice": "说话人3语音",
+            "speaker4_voice": "说话人4语音"
+        },
+        "widgets": {
+            "model": "模型",
+            "device": "设备",
+            "attention_mode": "注意力模式",
+            "multi_speaker_mode": "多说话人模式",
+            "quantize_llm_4bit": "量化大语言模型为4比特",
+            "cfg_scale": "CFG缩放",
+            "inference_steps": "推理步数",
+            "use_sampling": "使用采样",
+            "temperature": "随机性",
+            "top_p": "核心采样参数p",
+            "chunk_minutes": "分块采样 时长（分钟）",
+            "max_new_tokens": "最大新增字数"
+        },
+        "outputs": {
+            "TTS_engine": "TTS引擎"
+        }
+    },
+    "ChatterBoxF5TTSEditVoice": {
+        "title": "👄 F5-TTS语音编辑器",
+        "inputs": {
+            "original_audio": "原始音频",
+            "edit_options": "编辑选项"
+        },
+        "widgets": {
+            "original_text": "原始文本",
+            "target_text": "目标文本",
+            "device": "设备",
+            "model": "模型",
+            "edit_regions": "编辑区域",
+            "seed": "种子",
+            "fix_durations": "固定时长",
+            "temperature": "随机性",
+            "nfe_step": "质量与速度",
+            "cfg_strength": "CFG强度",
+            "sway_sampling_coef": "摇摆采样系数",
+            "ode_method": "常微分方程方法"
+        },
+        "outputs": {
+            "edited_audio": "音频",
+            "edit_info": "编辑信息"
+        }
+    },
+    "ChatterBoxF5TTSEditOptions": {
+        "title": "🔧聊天箱 F5 - TTS 编辑选项",
+        "inputs": {},
+        "widgets": {
+            "crossfade_curve": "交叉渐变曲线",
+            "crossfade_duration_ms": "交叉渐变时长（毫秒）",
+            "adaptive_crossfade": "自适应交叉渐变",
+            "enable_cache": "启用缓存",
+            "cache_size_limit": "缓存大小限制",
+            "boundary_volume_matching": "边界音量匹配",
+            "full_segment_normalization": "全片段标准化",
+            "spectral_matching": "频谱匹配",
+            "noise_floor_matching": "本底噪声匹配",
+            "dynamic_range_compression": "动态范围压缩",
+            "post_rms_normalization": "后 RMS 标准化",
+            "force_cache_clear": "强制清除缓存"
+        },
+        "outputs": {
+            "edit_options": "F5TTS编辑选项"
+        },
+        "description": "渐变- 平滑音频混合\n "
+    },
+    "F5TTSNode": {
+        "title": "👄 F5TTS音频",
+        "inputs": {},
+        "widgets": {},
+        "outputs": {
+            "audio": "音频",
+            "generation_info": "生成信息"
+        }
+    },
+    "F5TTSSRTNode": {
+        "title": "📺 F5TTS SRT字幕节点",
+        "inputs": {
+            "reference_audio_file": "参考音频文件",
+            "opt_reference_audio": "可选参考音频"
+        },
+        "widgets": {
+            "device": "设备",
+            "model": "模型",
+            "timing_mode": "定时模式",
+            "srt_content": "SRT字幕内容",
+            "opt_reference_text": "可选参考文本",
+            "seed": "种子",
+            "temperature": "随机性",
+            "speed": "语速",
+            "target_rms": "目标均方根值",
+            "cross_fade_duration": "交叉渐变时长",
+            "nfe_step": "质量与速度",
+            "cfg_strength": "CFG强度",
+            "enable_audio_cache": "启用音频缓存",
+            "fade_for_StretchToFit": "为拉伸适配进行渐变",
+            "max_stretch_ratio": "最大拉伸比例",
+            "min_stretch_ratio": "最小拉伸比例",
+            "timing_tolerance": "定时容差"
+        },
+        "outputs": {
+            "audio": "音频",
+            "generation_info": "生成信息",
+            "timing_report": "定时报告",
+            "Adjusted_SRT": "调整后的SRT字幕"
+        }
+    },
+    "QwenEmotionNode": {
+        "title": "🌈 IndexTTS - 2 文本情感",
+        "inputs": {
+            "emotion_text": "情感文本"
+        },
+        "widgets": {
+            "qwen_model": "千问模型"
+        },
+        "outputs": {
+            "emotion_control": "情感控制"
+        }
+    },
+    "LoadRVCModelNode": {
+        "title": "🎭加载RVC模型",
+        "inputs": {},
+        "widgets": {
+            "model": "模型",
+            "index_file": "索引文件",
+            "auto_download": "自动下载"
+        },
+        "outputs": {
+            "rvc_model": "RVC模型",
+            "model_info": "模型信息"
+        }
+    },
+    "CharacterVoicesNode": {
+        "title": "🎭 角色 语音",
+        "inputs": {
+            "opt_audio_input": "可选音频输入"
+        },
+        "widgets": {
+            "voice_name": "语音名称",
+            "reference_text": "参考文本"
+        },
+        "outputs": {
+            "opt_narrator": "旁白语音",
+            "character_name": "角色名称"
+        }
+    },
+    "UnifiedTTSSRTNode": {
+        "title": "📺 SRT字幕转语音",
+        "inputs": {
+            "TTS_engine": "文本转语音引擎",
+            "opt_narrator": "可选旁白"
+        },
+        "widgets": {
+            "srt_content": "SRT字幕内容",
+            "narrator_voice": "旁白语音",
+            "timing_mode": "计时模式",
+            "seed": "种子",
+            "enable_audio_cache": "启用音频缓存",
+            "fade_for_StretchToFit": "为拉伸适配进行淡入淡出",
+            "max_stretch_ratio": "最大拉伸比例",
+            "min_stretch_ratio": "最小拉伸比例",
+            "timing_tolerance": "计时容差",
+            "batch_size": "批次大小"
+        },
+        "outputs": {
+            "audio": "音频",
+            "generation_info": "生成信息",
+            "timing_report": "计时报告",
+            "Adjusted_SRT": "调整后的SRT字幕"
+        }
+    },
+    "UnifiedTTSTextNode": {
+        "title": "🎤 文本转语音",
+        "inputs": {
+            "TTS_engine": "文本转语音引擎",
+            "opt_narrator": "可选旁白"
+        },
+        "widgets": {
+            "narrator_voice": "旁白语音",
+            "text": "文本",
+            "seed": "种子",
+            "enable_chunking": "启用智能分块",
+            "max_chars_per_chunk": "块大小限制",
+            "chunk_combination_method": "如何加入音频",
+            "silence_between_chunks_ms": "静音持续时间(毫秒)",
+            "enable_audio_cache": "启用音频缓存",
+            "batch_size": "批次大小"
+        },
+        "outputs": {
+            "audio": "音频",
+            "generation_info": "生成信息"
+        }
+    },
+    "UnifiedVoiceChangerNode": {
+        "title": "🔄 语音转换器",
+        "inputs": {
+            "TTS_engine": "文本转语音引擎",
+            "source_audio": "源音频",
+            "narrator_target": "旁白目标"
+        },
+        "widgets": {
+            "refinement_passes": "转换迭代次数(推荐1-5)"
+        },
+        "outputs": {
+            "converted_audio": "转换后的音频",
+            "conversion_info": "转换信息"
+        },
+        "description": "转换迭代次数\n 每通过一次，输出的声音就会更接近目标\n 智能缓存：结果缓存最多5次以进行即时实验\n \n🧠 智能缓存示例：\n 运行 3次通过 → 缓存迭代 1, 2, 3\n更改为 5次传递 → 从缓存的3恢复，运行4, 5\n 更改为 2次传递 → 立即返回缓存的第2次迭代\n  更改为 4次传递 → 从缓存的3恢复，运行4 \n\n 💡 专业提示：\n 从1次处理开始，然后尝试2-5次处理，以找到适合您音频的最佳效果。每次迭代都可以提高语音相似度！"
+    },
+    "MouthMovementAnalyzer": {
+        "title": "🗣️ 无声语音分析器",
+        "inputs": {
+            "video": "视频",
+            "viseme_options": "视位选项"
+        },
+        "widgets": {
+            "provider": "设备",
+            "output_format": "输出格式",
+            "srt_placeholder_format": "SRT字幕格式",
+            "sensitivity": "灵敏度",
+            "min_duration": "最小持续时间",
+            "preview_mode": "预览模式",
+            "clean_subtitle_output": "清理字幕输出",
+            "merge_threshold": "合并阈值",
+            "confidence_threshold": "置信度阈值"
+        },
+        "outputs": {
+            "video": "视频",
+            "srt_output": "SRT字幕输出",
+            "timing_data": "计时数据",
+            "movement_frames": "列表",
+            "confidence_scores": "列表"
+        }
+    },
+    "PhonemeTextNormalizer": {
+        "title": "📝 音素 文本标准化",
+        "inputs": {},
+        "widgets": {
+            "method": "方法",
+            "language": "语言",
+            "show_debug": "显示调试信息"
+        },
+        "outputs": {
+            "normalized_text": "标准化 文本"
+        }
+    },
+    "VoiceFixerNode": {
+        "title": "🤐 语音修复器",
+        "inputs": {
+            "audio": "音频"
+        },
+        "widgets": {
+            "restoration_mode": "恢复模式",
+            "use_cuda": "使用 CUDA"
+        },
+        "outputs": {
+            "restored_audio": "恢复音频",
+            "info": "信息"
+        }
+    },
+    "StringMultilineTagEditor": {
+        "title": "🏷️ 多行文本转语音标签 编辑器",
+        "inputs": {},
+        "widgets": {
+            "text": "文本"
+        },
+        "outputs": {
+            "text": "文本"
+        }
+    },
+    "VisemeDetectionOptionsNode": {
+        "title": "🔧 口型 音素 检测选项",
+        "inputs": {},
+        "widgets": {
+            "enable_viseme_detection": "启用视位检测",
+            "viseme_sensitivity": "视位敏感度",
+            "viseme_confidence_threshold": "视位置信度阈值",
+            "viseme_smoothing": "视位平滑处理",
+            "enable_consonant_detection": "启用辅音检测",
+            "enable_temporal_analysis": "启用时间分析",
+            "enable_word_prediction": "启用单词预测"
+        },
+        "outputs": {
+            "viseme_options": "视位选项"
+        }
+    },
+    "StepAudioEditXAudioEditorNode": {
+        "title": "🎨 Step Audio EditX 音频快速编辑器",
+        "inputs": {
+            "input_audio": "输入音频",
+            "audio_text": "音频文本",
+            "edit_type": "编辑类型",
+            "emotion": "情感",
+            "style": "风格",
+            "speed": "速度",
+            "n_edit_iterations": "编辑迭代次数",
+            "tts_engine": "文本转语音引擎"
+        },
+        "widgets": {
+            "audio_text": "音频文本",
+            "edit_type": "编辑类型",
+            "emotion": "情感",
+            "style": "风格",
+            "speed": "速度",
+            "n_edit_iterations": "编辑迭代次数"
+        },
+        "outputs": {
+            "edited_audio": "编辑后的音频",
+            "edit_info": "编辑信息"
+        },
+        "description": "Step Audio EditX 专用音频编辑节点，具有独特功能：\n- 情感编辑（14种情感）\n- 风格编辑（32种风格）\n- 速度控制（4个级别）\n- 副语言效果（10种类型）\n- 降噪和语音活动检测\n\n这不是语音转换 - 这是专门的音频操作，在保留内容的同时修改现有音频的特性。\n\n对于副语言模式：在audio_text中直接插入<tags>标签。\n示例：\"Hello <Laughter> how are you?\" - 自动生成的转录为\"Hello how are you?\""
+    },
+    "CosyVoiceEngineNode": {
+        "title": "⚙️ CosyVoice舒适语音 引擎3",
+        "inputs": {},
+        "widgets": {
+            "model_path": "模型路径",
+            "device": "设备",
+            "speed": "语速",
+            "use_fp16": "使用FP16精度",
+            "instruct_text": "指令文本",
+            "load_trt": "加载TensorRT",
+            "load_vllm": "加载vLLM"
+        },
+        "outputs": {
+            "tts_engine": "TTS引擎",
+            "TTS_engine": "TTS引擎"
+        }
+    },
+    "UnifiedASRTranscribeNode": {
+        "title": "✏️  ASR 自动语音转录",
+        "inputs": {
+            "engine": "引擎",
+            "audio": "音频",
+            "language": "语言",
+            "task": "任务",
+            "timestamps": "时间戳",
+            "srt_options": "SRT选项"
+        },
+        "widgets": {
+            "chunk_size": "切片大小",
+            "overlap": "重叠",
+            "enable_asr_cache": "启用ASR缓存"
+        },
+        "outputs": {
+            "text": "文本",
+            "srt": "SRT",
+            "timestamps": "时间戳",
+            "info": "信息"
+        },
+        "description": "Category: TTS Audio Suite/✏️ ASR"
+    },
+    "ASRSRTAdvancedOptionsNode": {
+        "title": "🔧 ASR SRT 高级选项",
+        "inputs": {},
+        "widgets": {
+            "srt_preset": "SRT预设",
+            "srt_mode": "SRT模式",
+            "srt_max_chars_per_line": "每行最大字符数",
+            "srt_max_lines": "最大行数",
+            "srt_max_duration": "最大持续时间",
+            "srt_min_duration": "最小持续时间",
+            "srt_min_gap": "最小间隔",
+            "srt_max_cps": "最大字符每秒",
+            "dedupe_overlaps": "去重重叠",
+            "dedupe_window_ms": "去重窗口毫秒",
+            "dedupe_min_words": "最小单词数",
+            "dedupe_overlap_ratio": "重叠比率",
+            "punctuation_grace_chars": "标点宽容字符",
+            "min_words_per_segment": "每个片段最小单词数",
+            "min_segment_seconds": "最小片段秒数",
+            "merge_trailing_punct_word": "合并尾部标点词",
+            "merge_trailing_punct_max_gap": "合并尾部标点最大间隔",
+            "merge_leading_short_phrase": "合并前缀短语",
+            "merge_leading_short_max_words": "合并前缀短语最大单词数",
+            "merge_leading_short_max_gap": "合并前缀短语最大间隔",
+            "merge_dangling_tail": "合并 悬垂 尾部",
+            "merge_dangling_tail_max_words": "合并 悬垂 尾部最大单词数",
+            "merge_dangling_tail_max_gap": "合并 悬垂 尾部最大间隔",
+            "merge_dangling_tail_allowlist": "合并 悬垂 尾部允许列表",
+            "merge_leading_short_no_punct": "合并前缀无标点",
+            "merge_leading_short_no_punct_max_words": "合并前缀无标点最大单词数",
+            "merge_leading_short_no_punct_max_gap": "合并前缀无标点最大间隔",
+            "merge_incomplete_sentence": "合并不完整句子",
+            "merge_incomplete_max_gap": "合并不完整最大间隔",
+            "merge_incomplete_keywords": "合并不完整关键词",
+            "merge_incomplete_split_next": "合并不完整分割下一个",
+            "merge_allow_overlong": "允许过长"
+        },
+        "outputs": {
+            "asr_srt_options": "ASR SRT选项"
+        },
+        "description": "类别：TTS音频套件/✏️ ASR"
+    },
+    "Qwen3TTSEngineNode": {
+        "title": "⚙️ Qwen3-TTS 引擎",
+        "inputs": {
+            "model_size": "模型大小",
+            "device": "设备",
+            "voice_preset": "语音预设",
+            "language": "语言",
+            "dtype": "数据类型",
+            "attn_implementation": "注意力实现",
+            "compile_mode": "编译模式",
+            "asr_translate_target_language": "ASR翻译目标语言"
+        },
+        "widgets": {
+            "instruct": "指令",
+            "top_k": "top-k",
+            "top_p": "top-p",
+            "temperature": "温度",
+            "repetition_penalty": "重复惩罚",
+            "max_new_tokens": "最大新标记",
+            "x_vector_only_mode": "仅X向量模式",
+            "use_torch_compile": "使用PyTorch编译",
+            "use_cuda_graphs": "使用CUDA图",
+            "asr_use_forced_aligner": "ASR使用强制对齐器",
+            "Translate the speech from {source_language} into {target_language} text. Return only the translated text.": "将语音从{源语言}翻译为{目标语言}文本。仅返回翻译后的文本。"
+        },
+        "outputs": {
+            "TTS_engine": "TTS引擎"
+        },
+        "description": "类别：TTS 音频套件/⚙️ 引擎"
+    },
+    "EchoTTSEngineNode": {
+        "title": "Echo-TTS 引擎",
+        "inputs": {},
+        "widgets": {
+            "preset": "预设",
+            "device": "设备",
+            "num_steps": "步骤数",
+            "cfg_scale_text": "配置比例文本",
+            "cfg_scale_speaker": "配置比例说话人",
+            "cfg_min_t": "最小配置比例",
+            "cfg_max_t": "最大配置比例",
+            "truncation_factor": "截断因子",
+            "rescale_k": "重缩放K",
+            "rescale_sigma": "重缩放σ",
+            "force_speaker_kv": "强制说话人KV",
+            "speaker_kv_scale": "说话人KV缩放",
+            "speaker_kv_max_layers": "说话人KV最大层数",
+            "speaker_kv_min_t": "说话人KV最小时间",
+            "sequence_length": "序列长度"
+        },
+        "outputs": {
+            "TTS_engine": "TTS引擎"
+        },
+        "description": "类别：TTS 音频套件/Engines"
+    },
+    "Qwen3TTSVoiceDesignerNode": {
+        "title": "🎨 Qwen3TTS语音设计师节点",
+        "inputs": {
+            "TTS_engine": "TTS引擎"
+        },
+        "widgets": {
+            "voice_description": "语音描述",
+            "reference_text": "参考文本",
+            "character_name": "角色名称",
+            "overwrite_character": "覆盖角色",
+            "language": "语言"
+        },
+        "outputs": {
+            "opt_narrator": "选项_叙述者",
+            "preview_audio": "预览音频",
+            "voice_info": "语音信息"
+        },
+        "description": "类别：TTS 音频套件/🎨 Qwen3-TTS"
+    },
+    "RefreshVoiceCacheNode": {
+        "title": "♻️ 更新语音缓存",
+        "inputs": {
+            "signal": "信号",
+            "signal2": "信号2"
+        },
+        "widgets": {
+            "force_refresh": "强制刷新"
+        },
+        "outputs": {
+            "signal": "信号",
+            "signal2": "信号2",
+            "info": "信息"
+        },
+        "description": "类别：TTS 音频套件/🎭 语音与角色"
+    },
+    "StepAudioEditXEngineNode": {
+        "title": "⚙️ Step Audio EditX 音频快速编辑X引擎",
+        "inputs": {},
+        "widgets": {
+            "model_path": "模型路径",
+            "device": "设备",
+            "torch_dtype": "Torch数据类型",
+            "quantization": "量化",
+            "temperature": "随机性",
+            "do_sample": "是否采样",
+            "max_new_tokens": "最大新增字数"
+        },
+        "outputs": {
+            "TTS_engine": "TTS引擎"
+        },
+        "description": "Step Audio EditX TTS引擎配置节点。\n提供零样本语音克隆的配置，支持情感/风格/速度编辑。"
+    },
+    "GraniteASREngineNode": {
+        "title": "🎤 Granite ASR 引擎",
+        "inputs": {},
+        "widgets": {
+            "model_name": "模型名称",
+            "device": "设备",
+            "max_new_tokens": "最大新标记",
+            "dtype": "数据类型",
+            "attn_implementation": "注意力实现",
+            "asr_use_forced_aligner": "ASR使用强制对齐器",
+            "asr_translate_target_language": "ASR翻译目标语言",
+            "translate_the_speech_from_source_language_into": "翻译语音（从源语言到目标语言）",
+            "translate_the_speech_from_source_language_into_return_only_the_translated_text": "仅返回翻译文本",
+            "do_sample": "采样",
+            "num_beams": "beam数量",
+            "temperature": "温度",
+            "top_k": "top-k",
+            "top_p": "top-p",
+            "repetition_penalty": "重复惩罚",
+            "length_penalty": "长度惩罚",
+            "no_repeat_ngram_size": "无重复n-gram大小",
+            "early_stopping": "提前停止"
+        },
+        "outputs": {
+            "engine": "引擎"
+        }
+    },
+    "RVCDatasetPrepNode": {
+        "title": "📊 RVC 数据集准备",
+        "inputs": {
+            "opt_audio1": "音频(可选)",
+            "model_name": "模型名称"
+        },
+        "widgets": {
+            "dataset_name": "数据集名称",
+            "dataset_source": "数据集来源",
+            "training_sample_rate": "训练采样率",
+            "cpu_workers": "CPU工作线程数",
+            "chunk_seconds": "分块秒数",
+            "overlap_seconds": "重叠秒数",
+            "max_volume": "最大音量",
+            "mute_ratio": "静音比例",
+            "reuse_existing": "重用现有数据",
+            "Upload Files / Zip": "上传文件/Zip包",
+            "Upload Folder": "上传文件夹"
+        },
+        "outputs": {
+            "dataset": "训练数据集",
+            "info": "数据集信息"
+        }
+    },
+    "RVCTrainingConfigNode": {
+        "title": "🎛️ RVC 训练配置",
+        "inputs": {},
+        "widgets": {
+            "epochs": "训练周期",
+            "batch_size": "批次大小",
+            "learning_rate": "学习率",
+            "gpu_ids": "GPU IDs",
+            "num_workers": "工作线程数",
+            "fp16_run": "FP16运行",
+            "save_every_epoch": "每N个周期保存检查点",
+            "cache_data_in_gpu": "GPU缓存数据",
+            "max_checkpoints": "保留最多检查点",
+            "save_every_weights": "每次保存时导出额外权重",
+            "train_index": "训练索引",
+            "save_best_model": "保存最佳模型",
+            "best_model_threshold": "最佳模型阈值",
+            "log_every_epoch": "每周期日志",
+            "pretrained_generator": "预训练生成器",
+            "pretrained_discriminator": "预训练判别器",
+            "c_adv": "对抗损失系数",
+            "c_mel": "梅尔损失系数",
+            "c_kl": "KL正则化系数",
+            "c_fm": "特征匹配系数",
+            "c_tefs": "TEFS系数",
+            "c_hd": "谐波失真系数",
+            "c_tsi": "TSI系数",
+            "c_gp": "梯度惩罚系数",
+            "use_multiscale": "使用多尺度",
+            "use_balancer": "使用平衡器",
+            "use_pareto": "使用帕累托",
+            "fast_mode": "快速模式"
+        },
+        "outputs": {
+            "training_config": "训练配置",
+            "config_info": "配置信息"
+        },
+        "description": "类别：TTS音频套件/🎓 训练"
+    },
+    "ASRPunctuationTruecaseNode": {
+        "title": "📝 ASR 标点恢复/大小写转换",
+        "inputs": {
+            "text": "文本"
+        },
+        "widgets": {
+            "model": "模型",
+            "processing_scope": "处理范围",
+            "output_mode": "输出模式",
+            "lowercase_input_first": "首字母小写输入"
+        },
+        "outputs": {
+            "text": "文本"
+        }
+    },
+    "TextToSRTBuilderNode": {
+        "title": "📝 文本转 SRT 构建器",
+        "inputs": {
+            "asr_data": "ASR数据",
+            "srt_options": "SRT选项"
+        },
+        "widgets": {
+            "text": "文本"
+        },
+        "outputs": {
+            "srt": "SRT字幕",
+            "timing_info": "时间信息"
+        }
+    },
+    "SRTAdvancedOptionsNode": {
+        "title": "⚙️ SRT 高级选项",
+        "inputs": {},
+        "widgets": {
+            "srt_preset": "SRT预设",
+            "srt_mode": "SRT模式",
+            "heuristic_language_profile": "启发式语言配置",
+            "tts_ready_mode": "TTS就绪模式",
+            "paragraph_mode": "段落模式",
+            "srt_max_lines": "最大行数",
+            "srt_max_chars_per_line": "每行最大字符数",
+            "srt_max_duration": "最大持续时间",
+            "srt_min_duration": "最小持续时间",
+            "srt_min_gap": "最小间隙",
+            "srt_max_cps": "最大字符/秒"
+        },
+        "outputs": {
+            "srt_options": "SRT选项"
+        }
+    },
+    "UnifiedModelTrainingNode": {
+        "title": "🎓 模型训练",
+        "inputs": {
+            "TTS_engine": "TTS引擎",
+            "training_dataset": "训练数据集",
+            "training_config": "训练配置",
+            "continue_from": "从...继续"
+        },
+        "widgets": {
+            "output_name": "输出名称",
+            "resume": "恢复训练",
+            "overwrite": "覆盖",
+            "Training Dashboard": "训练仪表板",
+            "No Active Job": "无活动任务",
+            "IDLE": "空闲",
+            "Run the node to see live training progress": "运行节点查看实时训练进度",
+            "The widget updates live while the backend writes training metrics": "当后端写入训练指标时，小部件会实时更新"
+        },
+        "outputs": {
+            "training_artifacts": "训练产物",
+            "training_info": "训练信息"
+        },
+        "description": "类别：TTS音频套件/🎓 训练"
+    }
+}

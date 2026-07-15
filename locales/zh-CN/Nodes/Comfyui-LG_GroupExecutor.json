@@ -1,0 +1,151 @@
+{
+    "GroupExecutor": {
+        "title": "🎈组执行器",
+        "description": "执行给定组中的节点",
+        "widgets": {
+            "groupCount": "组数量",
+            "repeatCount": "重复次数",
+            "delaySeconds": "延迟秒数",
+            "Group #1": "组 #1",
+            "Execute Groups": "执行组",
+            "Cancel": "取消"
+        }
+    },
+    "GroupExecutorSingle": {
+        "title": "🎈单次组执行器",
+        "description": "执行单个指定组中的节点",
+        "inputs": {
+            "signal": "信号"
+        },
+        "outputs": {
+            "SIGNAL": "信号"
+        },
+        "widgets": {
+            "group_name": "组名称",
+            "repeat_count": "重复次数",
+            "delay_seconds": "延迟秒数",
+            "Execute Groups": "执行组",
+            "Cancel": "取消" 
+        }
+    },
+    "GroupExecutorRepeater": {
+        "title": "🎈组重复执行器",
+        "description": "重复执行指定组中的节点",
+        "inputs": {
+            "signal": "信号"
+        },
+        "outputs": {
+            "SIGNAL": "信号"
+        },
+        "widgets": {
+            "group_name": "组名称",
+            "repeat_count": "重复次数",
+            "delay_seconds": "延迟秒数",
+            "group_delay": "组延迟",
+            "Execute Groups": "执行组",
+            "Cancel": "取消"
+        }
+    },
+    "GroupExecutorSender": {
+        "title": "🎈组发送器",
+        "description": "向组执行器发送信号",
+        "inputs": {
+            "signal": "信号"
+        },
+        "widgets": {
+            "group_name": "组名称",
+            "group_delay": "组延迟"
+        }
+    },
+    "LG_ImageSender": {
+        "title": "🎈图像发送器",
+        "description": "发送图像到接收器节点",
+        "inputs": {
+            "images": "图像",
+            "masks": "遮罩"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀",
+            "link_id": "链接ID",
+            "accumulate": "累积",
+            "preview_rgba": "预览RGBA"
+        }
+    },
+    "LG_ImageReceiver": {
+        "title": "🎈图像接收器",
+        "description": "接收来自发送器节点的图像",
+        "outputs": {
+            "images": "图像",
+            "masks": "遮罩"
+        },
+        "widgets": {
+            "image": "图像",
+            "link_id": "链接ID"
+        }
+    },
+    "ImageListSplitter": {
+        "title": "🎈列表图像分割器",
+        "description": "将图像列表分割成多个部分",
+        "inputs": {
+            "images": "图像"
+        },
+        "outputs": {
+            "images": "图像"
+        },
+        "widgets": {
+            "indices": "索引"
+        }
+    },
+    "MaskListSplitter": {
+        "title": "🎈列表遮罩分割器",
+        "description": "将遮罩列表分割成多个部分",
+        "inputs": {
+            "masks": "遮罩"
+        },
+        "outputs": {
+            "masks": "遮罩"
+        },
+        "widgets": {
+            "indices": "索引"
+        }
+    },
+    "ImageListRepeater": {
+        "title": "🎈列表图像重复器",
+        "description": "重复图像列表指定次数",
+        "inputs": {
+            "images": "图像"
+        },
+        "outputs": {
+            "images": "图像"
+        },
+        "widgets": {
+            "repeat_times": "重复次数"
+        }
+    },
+    "MaskListRepeater": {
+        "title": "🎈列表遮罩重复器",
+        "description": "重复遮罩列表指定次数",
+        "inputs": {
+            "masks": "遮罩"
+        },
+        "outputs": {
+            "masks": "遮罩"
+        },
+        "widgets": {
+            "repeat_times": "重复次数"
+        }
+    },
+    "LG_AccumulatePreview": {
+        "title": "🎈累积预览",
+        "description": "累积并预览多个图像",
+        "inputs": {
+            "images": "图像",
+            "mask": "遮罩"
+        },
+        "outputs": {
+            "images": "图像",
+            "masks": "遮罩",
+            "image_count": "图像数量"
+        }
+    }
+}

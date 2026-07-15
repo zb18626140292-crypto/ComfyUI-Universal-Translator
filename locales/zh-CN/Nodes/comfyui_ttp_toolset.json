@@ -1,0 +1,196 @@
+{
+    "TTPlanet_Tile_Preprocessor_Simple": {
+        "title": "分块预处理器-简易版(TTP)",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "scale_factor": "缩放因子",
+            "blur_strength": "模糊强度"
+        },
+        "outputs": {
+            "image_output": "图像输出"
+        }
+    },
+    "TTP_Image_Tile_Batch": {
+        "title": "图像分块 批处理(TTP)",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "tile_width": "分块宽度",
+            "tile_height": "分块高度"
+        },
+        "outputs": {
+            "IMAGES": "图像",
+            "POSITIONS": "位置",
+            "ORIGINAL_SIZE": "原始尺寸",
+            "GRID_SIZE": "网格大小"
+        }
+    },
+    "TTP_Image_Assy": {
+        "title": "图像拼接/重组(TTP)",
+        "inputs": {
+            "tiles": "分块图像",
+            "positions": "位置",
+            "original_size": "原始尺寸",
+            "grid_size": "网格大小"
+        },
+        "widgets": {
+            "padding": "填充值"
+        },
+        "outputs": {
+            "RECONSTRUCTED_IMAGE": "拼接/重组后的图像"
+        }
+    },
+    "TTP_Tile_image_size": {
+        "title": "分块图像尺寸(TTP)",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "width_factor": "宽度因子",
+            "height_factor": "高度因子",
+            "overlap_rate": "重叠率"
+        },
+        "outputs": {
+            "tile_width": "分块宽度",
+            "tile_height": "分块高度"
+        }
+    },
+    "TTP_Expand_And_Mask": {
+        "title": "图像扩展与遮罩(TTP)",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "fill_mode": "填充模式",
+            "fill_alpha_decision": "填充透明度决策",
+            "fill_color": "填充颜色",
+            "expand_left": "向左扩展",
+            "expand_right": "向右扩展",
+            "expand_top": "向上扩展",
+            "expand_bottom": "向下扩展",
+            "num_blocks_left": "左侧块数量",
+            "num_blocks_right": "右侧块数量",
+            "num_blocks_top": "顶部块数量",
+            "num_blocks_bottom": "底部块数量"
+        },
+        "outputs": {
+            "EXPANDED_IMAGE": "扩展后的图像"
+        }
+    },
+    "TTP_text_mix": {
+        "title": "文本混合(TTP)",
+        "outputs": {
+            "text1": "文本1",
+            "text2": "文本2",
+            "text3": "文本3",
+            "final_text": "输出文本"
+        }
+    },
+    "TTP_CoordinateSplitter": {
+        "title": "坐标拆分器(TTP)",
+        "inputs": {
+            "Positions": "位置"
+        },
+        "outputs": {
+            "Coordinates": "坐标"
+        }
+    },
+    "TTP_condtobatch": {
+        "title": "条件 批次处理(TTP)",
+        "inputs": {
+            "conditionings": "条件"
+        }
+    },
+    "TTP_condsetarea_merge": {
+        "title": "条件坐标合并(TTP)",
+        "inputs": {
+            "conditioning_batch": "条件批次",
+            "coordinates": "坐标"
+        },
+        "widgets": {
+            "strength": "强度"
+        }
+    },
+    "TeaCacheHunyuanVideoSampler": {
+        "title": "Tea缓存 混元视频采样器(TTP)",
+        "inputs": {
+            "noise": "噪声",
+            "guider": "引导器",
+            "sampler": "采样器",
+            "sigmas": "调度器",
+            "latent_image": "Latent 图像"
+        },
+        "widgets": {
+            "speedup": "加速",
+            "enable_custom_speed": "启用自定义速度",
+            "custom_speed": "自定义速度"
+        },
+        "outputs": {
+            "output": "Latent",
+            "denoised_output": "降噪Latent"
+        }
+    },
+    "LTXVFirstLastFrameControl_TTP": {
+        "title": "LTX视频 首尾帧控制(TTP)",
+        "inputs": {
+            "vae": "VAE",
+            "latent": "Latent",
+            "first_image": "首帧图像",
+            "last_image": "尾帧图像",
+            "latent_image": "Latent 图像"
+        },
+        "widgets": {
+            "first_strength": "首帧强度",
+            "last_strength": "尾帧强度"
+        },
+        "outputs": {
+            "latent": "Latent",
+            "denoised_output": "降噪Latent"
+        }
+    },
+    "LTXVMiddleFrame_TTP": {
+        "title": "LTX视频 中间帧(TTP)",
+        "inputs": {
+            "image": "图像",
+            "middle_frames": "中间帧图像"
+        },
+        "widgets": {
+            "position": "位置",
+            "strength": "强度"
+        },
+        "outputs": {
+            "middle_frames": "中间帧图像"
+        }
+    },
+    "LTXVContext_TTP": {
+        "title": "LTX视频 上下文(TTP)",
+        "inputs": {
+            "vae": "VAE",
+            "latent": "Latent",
+            "image": "图像",
+            "previous_video": "前一个视频"
+        },
+        "widgets": {
+            "context_latent_frames": "上下文Latent帧",
+            "context_strength": "上下文强度"
+        },
+        "outputs": {
+            "latent": "Latent",
+            "denoised_output": "降噪Latent"
+        }
+    },
+    "TTP_condsetarea_merge_test": {
+        "title": "条件集区域合并测试(TTP)",
+        "inputs": {
+            "conditioning_batch": "条件批次",
+            "coordinates": "坐标"
+        },
+        "widgets": {
+            "group_size": "组大小",
+            "strength": "强度"
+        }
+    }
+}

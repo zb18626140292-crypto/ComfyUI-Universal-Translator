@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "locale": "zh-CN",
+  "auto_translate_unknown": true,
+  "translate_menus": true,
+  "show_floating_button": true
+}

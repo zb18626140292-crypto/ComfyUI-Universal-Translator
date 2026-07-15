@@ -1,0 +1,41 @@
+{
+    "Nui.OpenPoseEditor": {
+        "title": "OpenPose编辑器",
+        "inputs": {
+            "pose_image": "姿态图像",
+            "pose_point": "姿态点",
+            "prev_image": "前一图像",
+            "bridge_anything": "桥接任何事物"
+        },
+        "widgets": {
+            "image": "图像",
+            "output_width_for_dwpose": "DWPOSE输出宽度",
+            "output_height_for_dwpose": "DWPOSE输出高度",
+            "scale_for_xinsr_for_dwpose": "XINSR缩放",
+            "stop_for_edit": "停止编辑",
+            "backgroundlmage": "背景图像",
+            "poses_datas": "提供数据"
+        },
+        "outputs": {
+            "dw_pose_image": "DW姿态 图像",
+            "dw_comb_image": "组合图像",
+            "dw_pose_image_width": "DW姿态 图像宽度",
+            "dw_pose_image_height": "DW姿态 图像高度"
+        },
+        "description": "类别：图像"
+    },
+    "SavePoseToJson": {
+        "title": "将姿态点和图像保存为JSON",
+        "inputs": {
+            "pose_point": "姿态点",
+            "pose_image": "姿态图像"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀"
+        },
+        "outputs": {
+            "filename": "文件名"
+        },
+        "description": "类别：图像"
+    }
+}

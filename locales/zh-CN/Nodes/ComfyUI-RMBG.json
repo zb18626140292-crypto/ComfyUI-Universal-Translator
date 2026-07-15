@@ -1,0 +1,986 @@
+{
+  "BiRefNetRMBG": {
+    "title": "BiRefNet 去除背景 (RMBG)",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "model": "模型",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "background": "背景",
+      "invert_output": "反转输出",
+      "refine_foreground": "精细前景优化",
+      "background_color": "背景颜色"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "BodySegment": {
+    "title": "身体部位分割 (RMBG)",
+    "inputs": {
+      "images": "图像"
+    },
+    "widgets": {
+      "Hair": "头发",
+      "Glasses": "眼镜",
+      "Top-clothes": "上身服饰",
+      "Bottom-clothes": "下身服饰",
+      "Torso-skin": "躯干皮肤",
+      "Face": "面部",
+      "Left-arm": "左臂",
+      "Right-arm": "右臂",
+      "Left-leg": "左腿",
+      "Right-leg": "右腿",
+      "Left-foot": "左脚",
+      "Right-foot": "右脚",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "background_color": "背景颜色",
+      "invert_output": "反转输出"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "ClothesSegment": {
+    "title": "衣物分割 (RMBG)",
+    "inputs": {
+      "images": "图像"
+    },
+    "widgets": {
+      "Hat": "帽子",
+      "Hair": "头发",
+      "Face": "面部",
+      "Sunglasses": "太阳镜",
+      "Upper-clothes": "上衣",
+      "Skirt": "裙子",
+      "Dress": "连衣裙",
+      "Belt": "腰带",
+      "Pants": "裤子",
+      "Left-arm": "左臂",
+      "Right-arm": "右臂",
+      "Left-leg": "左腿",
+      "Right-leg": "右腿",
+      "Bag": "背包",
+      "Scarf": "围巾",
+      "Left-shoe": "左鞋",
+      "Right-shoe": "右鞋",
+      "Background": "背景",
+      "process_res": "处理分辨率",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "background_color": "背景颜色",
+      "invert_output": "反转输出"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "FaceSegment": {
+    "title": "面部分割 (RMBG)",
+    "inputs": {
+      "images": "图像"
+    },
+    "widgets": {
+      "Skin": "皮肤",
+      "Nose": "鼻子",
+      "Eyeglasses": "眼镜",
+      "Left-eye": "左眼",
+      "Right-eye": "右眼",
+      "Left-eyebrow": "左眉毛",
+      "Right-eyebrow": "右眉毛",
+      "Left-ear": "左耳",
+      "Right-ear": "右耳",
+      "Mouth": "嘴巴",
+      "Upper-lip": "上唇",
+      "Lower-lip": "下唇",
+      "Hair": "头发",
+      "Earring": "耳环",
+      "Neck": "脖子",
+      "process_res": "处理分辨率",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "background_color": "背景颜色",
+      "invert_output": "反转输出"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "FashionSegmentAccessories": {
+    "title": "时尚配饰分割 (RMBG)",
+    "inputs": {
+      "images": "图像"
+    },
+    "widgets": {
+      "hat": "帽子",
+      "glasses": "眼镜",
+      "headband, head covering, hair accessory": "头带/头巾/发饰",
+      "scarf": "围巾",
+      "tie": "领带",
+      "glove": "手套",
+      "watch": "手表",
+      "belt": "腰带",
+      "leg warmer": "护腿",
+      "bag, wallet": "包/钱包",
+      "umbrella": "雨伞",
+      "collar": "衣领",
+      "lapel": "翻领",
+      "neckline": "领口",
+      "epaulette": "肩章",
+      "pocket": "口袋",
+      "buckle": "皮带扣",
+      "zipper": "拉链",
+      "applique": "刺绣",
+      "bow": "蝴蝶结",
+      "flower": "花朵",
+      "bead": "珠子",
+      "fringe": "流苏",
+      "ribbon": "丝带",
+      "rivet": "铆钉",
+      "ruffle": "荷叶边",
+      "sequin": "亮片",
+      "tassel": "穗子",
+      "background_color": "背景颜色"
+    },
+    "outputs": {
+      "accessories_options": "配饰选项"
+    }
+  },
+  "FashionSegmentClothing": {
+    "title": "时尚服装分割 (RMBG)",
+    "inputs": {
+      "images": "图像",
+      "accessories_options": "配饰选项"
+    },
+    "widgets": {
+      "coat": "外套",
+      "jacket": "夹克",
+      "cardigan": "开衫",
+      "vest": "背心",
+      "sweater": "毛衣",
+      "hood": "帽子",
+      "shirt, blouse": "衬衫",
+      "top, t-shirt, sweatshirt": "上衣/T恤/卫衣",
+      "sleeve": "袖子",
+      "dress": "连衣裙",
+      "jumpsuit": "连体裤",
+      "cape": "披风",
+      "pants": "裤子",
+      "shorts": "短裤",
+      "skirt": "裙子",
+      "tights, stockings": "紧身裤/长袜",
+      "sock": "袜子",
+      "shoe": "鞋子",
+      "process_res": "处理分辨率",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "background_color": "背景颜色",
+      "invert_output": "反转输出"
+    },
+    "outputs": {
+      "images": "图像",
+      "mask": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "AILab_Preview": {
+    "title": "图像/遮罩 预览 (RMBG)🖼️🎭",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_MaskOverlay": {
+    "title": "遮罩叠加(RMBG)🖼️🎭",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "mask_opacity": "遮罩透明度",
+      "mask_color": "遮罩颜色"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_MaskPreview": {
+    "title": "遮罩预览 (RMBG)🎭",
+    "inputs": {
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_ImagePreview": {
+    "title": "图像预览 (RMBG)🖼️",
+    "inputs": {
+      "image": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "AILab_ImageMaskConvert": {
+    "title": "图像/遮罩转换器 (RMBG) 🖼️🎭",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "mask_channel": "遮罩通道"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_MaskEnhancer": {
+    "title": "遮罩增强器 (RMBG) 🎭",
+    "inputs": {
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "sensitivity": "灵敏度",
+      "mask_blur": "遮罩模糊",
+      "mask_offset": "遮罩伸缩",
+      "smooth": "平滑",
+      "fill_region": "填充区域",
+      "invert_output": "反转输出",
+      "mask_pil": "PIL遮罩"
+    },
+    "outputs": {
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_MaskCombiner": {
+    "title": "遮罩组合器 (RMBG) 🎭",
+    "inputs": {
+      "mask 1": "遮罩1",
+      "mask 2": "遮罩2",
+      "mask 3": "遮罩3",
+      "mask 4": "遮罩4",
+      "mask 5": "遮罩5"
+    },
+    "widgets": {
+      "target_shape": "目标尺寸",
+      "mode": "模式"
+    },
+    "outputs": {
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_LoadImage": {
+    "title": "加载图像 (RMBG)🖼️",
+    "inputs": {},
+    "widgets": {
+      "Image": "图像",
+      "Image_Path_or_URL": "图像路径或网址",
+      "Mask_Channel": "遮罩通道",
+      "megapixels": "百万像素",
+      "Upscale_Method": "高级方法",
+      "Scale_By": "缩放比例",
+      "Resize_Mode": "调整模式",
+      "Size": "大小"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "int": "整数"
+    }
+  },
+  "AILab_LoadImageSimple": {
+    "title": "加载图像 简易(RMBG)🖼️",
+    "inputs": {},
+    "widgets": {
+      "image": "图像",
+      "image_path_or_URL": "图像路径或网址",
+      "upscale_method": "高级方法",
+      "scale_by": "缩放比例",
+      "resize_mode": "调整模式",
+      "size": "大小"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "int": "整数"
+    }
+  },
+  "AILab_LoadImageAdvanced": {
+    "title": "加载图像 高级(RMBG)🖼️",
+    "inputs": {},
+    "widgets": {
+      "Image": "图像",
+      "Image_Path_or_URL": "图像路径或网址",
+      "Mask_Channel": "遮罩通道",
+      "megapixels": "百万像素",
+      "Upscale_Method": "高级方法",
+      "Scale_By": "缩放比例",
+      "Resize_Mode": "调整模式",
+      "Size": "大小"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "METADATA": "元数据"
+    }
+  },
+  "AILab_LoadImageBatch": {
+    "title": "批量加载图像 (RMBG)🖼️",
+    "inputs": {},
+    "widgets": {
+      "Path to a directory, comma/new-line separated file paths, OR comma/new-line separated URLs": "指向目录的路径、以逗号/换行符分隔的文件路径，或者以逗号/换行符分隔的网址",
+      "image_path_or_URL": "图像路径或网址",
+      "upscale_method": "高级方法",
+      "megapixels": "百万像素",
+      "scale_by": "缩放比例",
+      "resize_mode": "调整模式",
+      "size": "大小",
+      "batch_size": "批次大小",
+      "start_from": "从何处开始",
+      "sort_method": "排序方法"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "int": "整数"
+    }
+  },
+  "AILab_ImageCombiner": {
+    "title": "图像组合器 (RMBG) 🖼️",
+    "inputs": {
+      "foreground": "前景",
+      "background": "背景",
+      "foreground mask": "前景遮罩"
+    },
+    "widgets": {
+      "mode": "模式",
+      "foreground_opacity": "前景不透明度",
+      "foreground_scale": "前景缩放",
+      "position_x": "X轴位置",
+      "position_y": "Y轴位置",
+      "Mode": "模式",
+      "Foreground_Opacity": "前景不透明度",
+      "Foreground_Scale": "前景缩放",
+      "Position_X": "X轴位置",
+      "Position_Y": "Y轴位置",
+      "foreground_mask": "前景遮罩",
+      "mask_pil": "PIL遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_MaskExtractor": {
+    "title": "遮罩提取器 (RMBG) 🎭",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "Mode": "模式",
+      "Background": "背景",
+      "mask_np": "NumPy遮罩",
+      "image_shape": "图像尺寸",
+      "background_color": "背景颜色"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_ImageStitch": {
+    "title": "图像缝合(RMBG) 🖼️",
+    "inputs": {
+      "image1": "图像1",
+      "image2": "图像2",
+      "image3": "图像3"
+    },
+    "widgets": {
+      "Direction": "方向",
+      "match_image_size": "匹配图像尺寸",
+      "max_width": "最大宽度",
+      "max_height": "最大高度",
+      "spacing_width": "间距宽度",
+      "concat_direction": "拼接方向",
+      "width": "宽度",
+      "height": "高度",
+      "image_shape": "图像尺寸"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_ImageCrop": {
+    "title": "图像裁剪(RMBG) 🖼️",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "position": "位置",
+      "width": "宽度",
+      "height": "高度",
+      "x_offset": "x抵消",
+      "y_offset": "y抵消",
+      "split": "分裂"
+    },
+    "outputs": {
+      "crop": "裁剪",
+      "rest": "剩余部分"
+    }
+  },
+  "AILab_CropObject": {
+    "title": "裁剪到对象 (RMBG) 🖼️🎭",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "padding": "填充",
+      "width": "宽度",
+      "height": "高度",
+      "split": "分裂"
+    },
+    "outputs": {
+      "image": "图像",
+      "mask": "遮罩",
+      "IMAGE": "图像",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_ICLoRAConcat": {
+    "title": "图像拼接(RMBG) 🖼️",
+    "inputs": {
+      "object_image": "目标图像",
+      "base_image": "源图像",
+      "object_mask": "目标遮罩",
+      "base_mask": "源遮罩"
+    },
+    "widgets": {
+      "layout": "布局",
+      "custom_size": "自定义大小"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "OBJECT_MASK": "目标遮罩",
+      "BASE_MASK": "源图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_ImageCompare": {
+    "title": "图像比较 (RMBG) 🖼️",
+    "inputs": {
+      "image1": "图像1",
+      "image2": "图像2"
+    },
+    "widgets": {
+      "text1": "文本1",
+      "text2": "文本2"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_ReferenceLatentMask": {
+    "title": "Kontext 参考Latent遮罩 (RMBG) 🎭",
+    "inputs": {
+      "image1": "图像1",
+      "mask": "遮罩",
+      "latent": "Latent"
+    },
+    "widgets": {
+      "Expansion": "扩展",
+      "Vague": "模糊",
+      "mask_only": "仅遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "latent": "Latent"
+    }
+  },
+  "RMBG": {
+    "title": "去除背景 (RMBG)",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "Model": "模型",
+      "Mensitivity": "灵敏度(0.0-1.0)",
+      "Processing Resolution": "处理分辨率（512-2048）",
+      "Mask_Blur": "遮罩羽化（0-64）",
+      "Mask_Offset": "遮罩伸缩(-20到20)",
+      "Background": "背景",
+      "Invert_Output": "反转输出",
+      "optimize": "优化",
+      "Refine_Foreground": "精细前景优化",
+      "background_color": "背景颜色"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "AILab_ColorInput": {
+    "title": "颜色输入 (RMBG) 🎨",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "preset": "预设",
+      "color": "颜色",
+      "optimize": "优化",
+      "refine_foreground": "精细前景优化"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "COLOR": "颜色"
+    }
+  },
+  "AILab_LamaRemover": {
+    "title": "去除对象 (RMBG) 🖼️🎭",
+    "inputs": {
+      "Image": "图像",
+      "Masks": "遮罩"
+    },
+    "widgets": {
+      "Removal_Strength": "去除强度",
+      "Edge_Smoothness": "边缘平滑度"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "images": "图像"
+    }
+  },
+  "SAM2Segment": {
+    "title": "SAM2 语义分割  (RMBG)",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "prompt": "提示词",
+      "SAM_Model": "SAM模型",
+      "Dino_Model": "DINO模型",
+      "Device": "设备",
+      "threshold": "阈值",
+      "Mask Blur": "遮罩羽化",
+      "Mask Offset": "遮罩伸缩",
+      "Background": "背景",
+      "background_color": "背景颜色",
+      "Invert Output": "反转输出",
+      "sam2_model": "SAM2模型",
+      "dino_model": "DINO模型",
+      "device": "设备",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "background": "背景",
+      "invert_output": "反转输出"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "SAM3Segment": {
+    "title": "SAM3 语义分割 (RMBG)",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "prompt": "提示词",
+      "sam3_model": "SAM3模型",
+      "output_mode": "输出模式",
+      "device": "设备",
+      "confidence_threshold": "置信阈值",
+      "max_segments": "最大段数",
+      "segment_pick": "段落选择",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "background": "背景",
+      "background_color": "背景颜色",
+      "unload_model": "卸载模型",
+      "invert_output": "反转输出"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "SegmentV2": {
+    "title": "局部分割  V2(RMBG)",
+    "inputs": {
+      "background_color": "背景颜色",
+      "image": "图像"
+    },
+    "widgets": {
+      "prompt": "提示词",
+      "SAM_Model": "SAM模型",
+      "Dino_Model": "DINO模型",
+      "Device": "设备",
+      "threshold": "阈值",
+      "Mask Blur": "遮罩羽化",
+      "Mask Offset": "遮罩伸缩",
+      "Background": "背景",
+      "background_color": "背景颜色",
+      "Invert Output": "反转输出"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "AILab_SDMatte": {
+    "title": "SDM 背景抠图 (RMBG) 🖼️🎭",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "model": "模型",
+      "Device": "设备",
+      "Processing Resolution": "处理分辨率",
+      "Transparent Object": "透明对象",
+      "Mask Refine": "遮罩优化",
+      "Sensitivity": "灵敏度",
+      "threshold": "阈值",
+      "Mask Blur": "遮罩羽化",
+      "Mask Offset": "遮罩伸缩",
+      "Background": "背景",
+      "background_color": "背景颜色",
+      "Invert Output": "反转输出",
+      "sam2_model": "SAM2模型",
+      "dino_model": "DINO模型",
+      "device": "设备",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "invert_output": "反转输出"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "MASK_IMAGE": "遮罩图像"
+    }
+  },
+  "AILab_ImageMaskResize": {
+    "title": "图像遮罩缩放 (RMBG) 🖼️",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "width": "宽度",
+      "height": "高度",
+      "scale_by": "按比例缩放",
+      "upscale_method": "放大方法",
+      "resize_mode": "缩放模式",
+      "pad_color": "填充颜色",
+      "crop_position": "裁剪位置",
+      "divisible_by": "能被......整除的",
+      "device": "设备"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_UnbatchImages": {
+    "title": "批量处理图像（RMBG）🖼️",
+    "inputs": {
+      "images": "图像组"
+    },
+    "widgets": {
+      "images": "图像组"
+    },
+    "outputs": {
+      "image_1": "图像1",
+      "image_2": "图像2",
+      "image_3": "图像3",
+      "image_4": "图像4",
+      "image_5": "图像5",
+      "image_6": "图像6",
+      "image_7": "图像7",
+      "image_8": "图像8",
+      "image": "图像"
+    }
+  },
+  "AILab_ImageResize": {
+    "title": "图像缩放（RMBG）🖼️🎭",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "hex_color": "十六进制颜色",
+      "pad_left": "左侧填充",
+      "pad_right": "右侧填充",
+      "pad_top": "顶部填充",
+      "pad_bottom": "底部填充",
+      "pad_color": "填充颜色",
+      "pad_mode": "填充模式",
+      "custom_width": "自定义宽度",
+      "custom_height": "自定义高度",
+      "megapixels": "百万像素",
+      "scale_by": "缩放比例",
+      "resize_mode": "调整大小模式",
+      "resize_value": "调整大小值",
+      "upscale_method": "放大方法",
+      "device": "设备",
+      "divisible_by": "可被整除值",
+      "output_mode": "输出模式",
+      "crop_position": "裁剪位置"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_ImageToList": {
+    "title": "图像到列表（RMBG）🖼️",
+    "inputs": {
+      "image_1": "图像1",
+      "image_2": "图像2",
+      "image_3": "图像3",
+      "image_4": "图像4",
+      "image_5": "图像5",
+      "image_6": "图像6",
+      "img": "图像",
+      "target_h": "目标高度",
+      "target_w": "目标宽度"
+    },
+    "widgets": {
+      "resize_mode": "调整大小模式",
+      "target_h": "目标高度",
+      "target_w": "目标宽度"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "MASK": "遮罩",
+      "BATCH_SIZE": "批次大小"
+    }
+  },
+  "AILab_MaskToList": {
+    "title": "遮罩到列表（RMBG）🖼️",
+    "inputs": {
+      "mask_1": "遮罩1",
+      "mask_2": "遮罩2",
+      "mask_3": "遮罩3",
+      "mask_4": "遮罩4",
+      "mask_5": "遮罩5",
+      "mask_6": "遮罩6",
+      "mask": "遮罩",
+      "target_h": "目标高度",
+      "target_w": "目标宽度"
+    },
+    "widgets": {
+      "resize_mode": "调整大小模式",
+      "mask": "遮罩",
+      "target_h": "目标高度",
+      "target_w": "目标宽度"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "MASK": "遮罩",
+      "BATCH_SIZE": "批次大小"
+    }
+  },
+  "AILab_ImageMaskToList": {
+    "title": "图像和遮罩转列表（RMBG）🖼️",
+    "inputs": {
+      "image_1": "图像1",
+      "mask_1": "遮罩1",
+      "image_2": "图像2",
+      "mask_2": "遮罩2",
+      "image_3": "图像3",
+      "mask_3": "遮罩3",
+      "image_4": "图像4",
+      "mask_4": "遮罩4",
+      "image_5": "图像5",
+      "mask_5": "遮罩5",
+      "image_6": "图像6",
+      "mask_6": "遮罩6"
+    },
+    "widgets": {
+      "resize_mode": "调整大小模式",
+      "target_h": "目标高度",
+      "target_w": "目标宽度",
+      "height": "高度",
+      "width": "宽度",
+      "batch_size": "批处理大小",
+      "device": "设备"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "MASK": "遮罩",
+      "BATCH_SIZE": "批次大小"
+    }
+  },
+  "AILab_Florence2": {
+    "title": "Florence2（RMBG）",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "model_name": "模型名称",
+      "task": "任务",
+      "precision": "精度",
+      "attention": "注意力机制",
+      "fill_mask": "填充遮罩",
+      "output_mask_select": "输出遮罩选择",
+      "keep_model_loaded": "保持模型加载",
+      "text_prompt": "文本提示词",
+      "image_pil": "PIL图像",
+      "predictions": "预测结果",
+      "select_filter": "选择过滤器"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩",
+      "DATA": "数据"
+    }
+  },
+  "AILab_Florence2ToCoordinates": {
+    "title": "Florence2边界框坐标（RMBG）",
+    "inputs": {
+      "data": "数据",
+      "image": "图像"
+    },
+    "widgets": {
+      "index": "索引",
+      "batch": "批次",
+      "default_count": "默认数量",
+      "selections": "选择项",
+      "max_dims": "最大维度",
+      "batch_mode": "批次模式",
+      "record_count": "记录数量"
+    },
+    "outputs": {
+      "CENTER_COORDINATES": "中心坐标",
+      "BBOXES": "边界框",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_YoloV8Adv": {
+    "title": "YOLO检测 8代 高级（RMBG）",
+    "inputs": {
+      "images": "图像组"
+    },
+    "widgets": {
+      "yolo_model": "yolo 模型",
+      "mask_count": "遮罩数量",
+      "select_mask_index": "选择遮罩索引",
+      "conf": "置信度",
+      "iou": "交并比",
+      "classes": "课程",
+      "device": "设备",
+      "max_det": "最大检测",
+      "retina_masks": "视网膜遮罩",
+      "agnostic_nms": "无目标非极大值抑制"
+    },
+    "outputs": {
+      "ANNOTATED_IMAGE": "注释图像",
+      "MASK_LIST": "遮罩列表",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_YoloV8": {
+    "title": "YOLO检测 8代（RMBG）",
+    "inputs": {
+      "images": "图像组"
+    },
+    "widgets": {
+      "yolo_model": "yolo 模型",
+      "mask_count": "遮罩数量",
+      "select_mask_index": "选择遮罩索引"
+    },
+    "outputs": {
+      "ANNOTATED_IMAGE": "注释图像",
+      "MASK_LIST": "遮罩列表",
+      "MASK": "遮罩"
+    }
+  },
+  "AILab_ColorToMask": {
+    "title": "颜色到遮罩（RMBG） 🎭",
+    "inputs": {
+      "images": "图像组"
+    },
+    "widgets": {
+      "invert": "反转",
+      "threshold": "阈值",
+      "mask_color": "遮罩颜色"
+    },
+    "outputs": {
+      "MASK": "遮罩"
+    }
+  },
+  "Segment": {
+    "title": "局部分割 (RMBG)🖼️",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "prompt": "提示词",
+      "sam_model": "SAM模型",
+      "dino_model": "DINO模型",
+      "threshold": "阈值",
+      "mask_blur": "遮罩羽化",
+      "mask_offset": "遮罩伸缩",
+      "background_color": "背景颜色",
+      "invert_output": "反转输出"
+    },
+    "outputs": {
+      "image": "图像",
+      "MASK": "遮罩"
+    }
+  }
+}

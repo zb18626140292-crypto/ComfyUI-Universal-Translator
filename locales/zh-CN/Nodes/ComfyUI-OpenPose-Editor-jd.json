@@ -1,0 +1,50 @@
+{
+    "Nui.OpenPoseEditor": {
+        "title": "OpenPose姿态编辑器（集成DW姿态）",
+        "inputs": {
+            "pose_image": "姿态图像",
+            "pose_point": "姿态点",
+            "prev_image": "前一图像",
+            "bridge_anything": "桥接任何事物"
+        },
+        "widgets": {
+            "image": "图像",
+            "output_width_for_dwpose": "DW姿态输出宽度",
+            "output_height_for_dwpose": "DW姿态输出高度",
+            "scale_for_xinsr_for_dwpose": "DW姿态的Xinsr缩放",
+            "savedPose": "保存的姿态",
+            "backgroundImage": "背景图像",
+            "pose_json": "姿态JSON",
+            "width": "宽度",
+            "height": "高度",
+            "scale_for_xinsr": "Xinsr缩放",
+            "open editor": "打开编辑器",
+            "stop_for_edit": "停止编辑",
+            "poses_datas": "提供数据"
+        },
+        "outputs": {
+            "pose_image": "姿态图像",
+            "combined_image": "组合图像",
+            "dw_combined_image": "深度组合图像",
+            "dw_pose_image": "DW姿态 图像",
+            "dw_comb_image": "组合图像",
+            "dw_pose_image_width": "DW姿态 图像宽度",
+            "dw_pose_image_height": "DW姿态 图像高度"
+        }
+    },
+    "SavePoseToJson": {
+        "title": "保存姿态到JSON（从关键点）",
+        "inputs": {
+            "image": "图像",
+            "pose_keypoint": "姿态关键点",
+            "pose_point": "姿态点",
+            "pose_image": "姿态图像"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀"
+        },
+        "outputs": {
+            "filename": "文件名"
+        }
+    }
+}

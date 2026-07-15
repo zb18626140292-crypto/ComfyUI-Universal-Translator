@@ -1,0 +1,82 @@
+{
+    "SeedVR2VideoUpscaler": {
+        "title": "SeedVR2 视频超分放大",
+        "inputs": {
+            "image": "输入图像",
+            "dit": "DiT模型配置",
+            "vae": "VAE模型配置"
+        },
+        "widgets": {
+            "seed": "随机种子",
+            "resolution": "目标分辨率",
+            "max_resolution": "最大分辨率限制",
+            "batch_size": "批次大小",
+            "uniform_batch_size": "统一批次大小",
+            "temporal_overlap": "时序重叠帧数",
+            "prepend_frames": "前置帧数",
+            "color_correction": "色彩校正",
+            "input_noise_scale": "输入噪声系数",
+            "latent_noise_scale": "Latent噪声系数",
+            "offload_device": "中间张量卸载设备",
+            "enable_debug": "启用调试"
+        },
+        "outputs": {
+            "IMAGE": "超分输出图像"
+        }
+    },
+    "SeedVR2LoadDiTModel": {
+        "title": "SeedVR2 加载DiT模型",
+        "inputs": {
+            "torch_compile_args": "Torch编译参数"
+        },
+        "widgets": {
+            "model": "模型选择",
+            "device": "推理设备",
+            "blocks_to_swap": "BlockSwap交换块数",
+            "swap_io_components": "交换IO组件",
+            "offload_device": "卸载设备",
+            "cache_model": "缓存模型",
+            "attention_mode": "注意力模式"
+        },
+        "outputs": {
+            "SEEDVR2_DIT": "DiT模型配置"
+        }
+    },
+    "SeedVR2LoadVAEModel": {
+        "title": "SeedVR2 加载VAE模型",
+        "inputs": {
+            "torch_compile_args": "Torch编译参数"
+        },
+        "widgets": {
+            "model": "模型选择",
+            "device": "推理设备",
+            "encode_tiled": "分块编码",
+            "encode_tile_size": "编码分块尺寸",
+            "encode_tile_overlap": "编码分块重叠",
+            "decode_tiled": "分块解码",
+            "decode_tile_size": "解码分块尺寸",
+            "decode_tile_overlap": "解码分块重叠",
+            "tile_debug": "分块调试模式",
+            "offload_device": "卸载设备",
+            "cache_model": "缓存模型"
+        },
+        "outputs": {
+            "SEEDVR2_VAE": "VAE模型配置"
+        }
+    },
+    "SeedVR2TorchCompileSettings": {
+        "title": "SeedVR2 Torch编译设置",
+        "inputs": {},
+        "widgets": {
+            "backend": "编译后端",
+            "mode": "优化模式",
+            "fullgraph": "完整图编译",
+            "dynamic": "动态形状",
+            "dynamo_cache_size_limit": "缓存大小限制",
+            "dynamo_recompile_limit": "重编译次数限制"
+        },
+        "outputs": {
+            "TORCH_COMPILE_ARGS": "Torch编译配置"
+        }
+    }
+}

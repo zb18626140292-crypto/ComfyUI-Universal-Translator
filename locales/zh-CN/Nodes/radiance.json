@@ -1,0 +1,2097 @@
+{
+    "◎ RadianceDenoise": {
+        "title": "◎ Radiance去噪",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "d": "滤波直径",
+            "sigmaColor": "颜色标准差",
+            "sigmaSpace": "空间标准差",
+            "hdr_auto_sigma": "HDR自动标准差"
+        },
+        "outputs": {
+            "IMAGE": "图像"
+        },
+        "description": "32位浮点双边滤波去噪。在平滑噪声的同时保留边缘。适用于SDR [0,1]和HDR线性光图像。启用HDR自动标准差（默认开启）可获得正确的HDR效果。",
+        "api_version": "V1"
+    },
+    "◎ RadianceDepthMapGenerator": {
+        "title": "◎ Radiance深度图生成器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "model_size": "模型大小",
+            "normalize": "标准化",
+            "invert": "反转",
+            "blur_edges": "边缘模糊",
+            "use_gpu": "使用GPU"
+        },
+        "outputs": {
+            "depth_map": "深度图",
+            "IMAGE": "图像"
+        },
+        "description": "Depth Anything V2单目深度估计。视频安全——通过时空对齐标准化每一帧，防止闪烁。输出3通道灰度深度图。连接到景深节点可获得真实的散焦模糊效果。",
+        "api_version": "V1"
+    },
+    "RadianceDNAReader": {
+        "title": "◎ Radiance DNA读取器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {},
+        "outputs": {
+            "is_signed": "是否签名",
+            "signature_data": "签名数据"
+        },
+        "description": "类别: FXTD Studios/Radiance/Data"
+    },
+    "RadianceDNAWriter": {
+        "title": "◎ Radiance DNA写入器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "project": "项目",
+            "artist": "艺术家",
+            "notes": "备注"
+        },
+        "outputs": {
+            "image": "图像",
+            "success": "成功",
+            "status": "状态"
+        },
+        "description": "写入作者信息"
+    },
+    "RadianceDNAValidator": {
+        "title": "◎ Radiance DNA验证器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "require_signed": "要求签名"
+        },
+        "outputs": {
+            "image": "图像",
+            "is_valid": "有效",
+            "status": "状态"
+        },
+        "description": ""
+    },
+    "RadianceGrade": {
+        "title": "◎ Radiance 等级调整",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "preset_strength": "预设强度",
+            "lift_r": "红色提升",
+            "lift_g": "绿色提升",
+            "lift_b": "蓝色提升",
+            "gamma_r": "红色伽马",
+            "gamma_g": "绿色伽马",
+            "gamma_b": "蓝色伽马",
+            "gain_r": "红色增益",
+            "gain_g": "绿色增益",
+            "gain_b": "蓝色增益",
+            "offset_r": "红色偏移",
+            "offset_g": "绿色偏移",
+            "offset_b": "蓝色偏移",
+            "contrast": "对比度",
+            "pivot": "中性色",
+            "saturation": "饱和度",
+            "preset": "预设"
+        },
+        "outputs": {
+            "image": "图像",
+            "grade_info": "等级信息"
+        },
+        "description": "每通道可调节增益/伽玛/增益/偏移，提供 13 种电影级预设、LAB 匹配调色和 JSON 导出功能"
+    },
+    "RadianceApplyGradeInfo": {
+        "title": "◎ Radiance 应用分级信息",
+        "inputs": {
+            "grade_info": "分级信息",
+            "image": "图像"
+        },
+        "widgets": {
+            "strength": "强度"
+        },
+        "outputs": {
+            "grade_info": "分级信息",
+            "image": "图像"
+        },
+        "description": "将已保存的 grade_info JSON 应用于任何图像"
+    },
+    "RadianceGradeMatch": {
+        "title": "◎ Radiance 分级匹配",
+        "inputs": {
+            "source": "源",
+            "reference": "参考"
+        },
+        "widgets": {
+            "strength": "强度"
+        },
+        "outputs": {
+            "matched_image": "匹配图像",
+            "grade_info": "分级信息"
+        },
+        "description": "通过 CIE L*a*b* 平均值/标准差转移实现逐帧色彩匹配"
+    },
+    "◎ RadianceDigitalCinemaRead": {
+        "title": "◎ Radiance数字影院读取器",
+        "inputs": {},
+        "widgets": {
+            "source_path": "源文件路径",
+            "start_frame": "起始帧",
+            "frame_limit": "帧数限制",
+            "input_colorspace": "输入色彩空间",
+            "fps_override": "帧率覆盖"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "MASK": "遮罩",
+            "frame_count": "帧数",
+            "width": "宽度",
+            "height": "高度",
+            "fps": "帧率",
+            "audio": "音频",
+            "video": "视频",
+            "INT": "整数",
+            "FLOAT": "浮点数",
+            "AUDIO": "音频",
+            "STRING": "字符串"
+        },
+        "description": "",
+        "api_version": "V1"
+    },
+    "◎ RadianceDigitalCinemaWrite": {
+        "title": "◎ Radiance数字影院写入",
+        "inputs": {
+            "image": "图像",
+            "audio": "音频"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀",
+            "write_mode": "写入模式",
+            "output_format": "输出格式",
+            "fps": "帧率",
+            "quality": "质量",
+            "output_color_space": "输出色彩空间",
+            "broadcast_safe": "广播安全",
+            "output_path": "输出路径",
+            "start_frame": "起始帧",
+            "bit_depth": "位深",
+            "compression": "压缩",
+            "alpha_mode": "Alpha模式",
+            "custom_metadata": "自定义元数据"
+        },
+        "outputs": {},
+        "description": "",
+        "api_version": "V1"
+    },
+    "RadianceReroute": {
+        "title": "◎ Radiance 重定向器",
+        "inputs": {
+            "data": "数据"
+        },
+        "widgets": {},
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "行业标准重路由节点"
+    },
+    "RadianceAdvancedReroute": {
+        "title": "◎ Radiance 高级重定向器",
+        "inputs": {
+            "data": "数据"
+        },
+        "widgets": {
+            "label": "标签",
+            "color": "颜色"
+        },
+        "outputs": {
+            "data": "数据"
+        },
+        "description": "高级重定向功能，带标签和自动类型颜色检测"
+    },
+    "RadianceMux": {
+        "title": "Radiance多路复用器",
+        "inputs": {
+            "A": "A",
+            "B": "B",
+            "C": "C",
+            "D": "D"
+        },
+        "widgets": {
+            "index": "索引",
+            "label": "标签"
+        },
+        "outputs": {
+            "selected": "已选",
+            "*": "*"
+        },
+        "description": "A/B/C/D 输入多路复用器——使用索引（0=A, 1=B, 2=C, 3=D）选择最多 4 个输入中的一个进行传递。非常适合无需重新连线即可进行快速比较。",
+        "api_version": "V1"
+    },
+    "RadianceGate": {
+        "title": "Radiance门控",
+        "inputs": {
+            "data": "数据",
+            "fallback": "回退值"
+        },
+        "widgets": {
+            "open": "开启",
+            "label": "标签"
+        },
+        "outputs": {
+            "data": "选定的数据（开启时为输入，关闭时为回退值）。",
+            "is_open": "回显开启状态——连接到另一个门控或条件节点。",
+            "*": "*",
+            "BOOLEAN": "BOOLEAN"
+        },
+        "description": "布尔门控——当 open=True 时传递数据，当 open=False 时返回回退值（或 None）。用于启用/禁用分支而无需重新连线。",
+        "api_version": "V1"
+    },
+    "RadianceNote": {
+        "title": "Radiance备注",
+        "inputs": {},
+        "widgets": {
+            "text": "文本",
+            "title": "标题",
+            "color": "颜色",
+            "font_size": "字号"
+        },
+        "outputs": {},
+        "description": "用于工作流文档的便签。无数据连接——纯展示。支持标题、正文文本和颜色选择。",
+        "api_version": "V1"
+    },
+    "RadianceDebugProbe": {
+        "title": "Radiance调试探针",
+        "inputs": {
+            "data": "数据"
+        },
+        "widgets": {
+            "label": "标签",
+            "enabled": "启用",
+            "log_level": "日志级别"
+        },
+        "outputs": {
+            "data": "输入数据，原样传递。",
+            "probe_report": "人类可读的诊断字符串——连接到文本预览节点。",
+            "*": "*",
+            "STRING": "STRING"
+        },
+        "description": "非破坏性调试探针。记录张量形状/范围/数据类型、字符串值、列表/字典长度。数据原样传递。",
+        "api_version": "V1"
+    },
+    "RadianceLoraStack": {
+        "title": "◎ Radiance Lora堆",
+        "inputs": {
+            "lora_stack": "Lora堆"
+        },
+        "widgets": {
+            "lora_1": "Lora 1",
+            "lora_1_model": "Lora 1 模型",
+            "lora_1_clip": "Lora 1 CLIP",
+            "lora_2": "Lora 2",
+            "lora_2_model": "Lora 2 模型",
+            "lora_2_clip": "Lora 2 CLIP",
+            "lora_3": "Lora 3",
+            "lora_3_model": "Lora 3 模型",
+            "lora_3_clip": "Lora 3 CLIP",
+            "lora_4": "Lora 4",
+            "lora_4_model": "Lora 4 模型",
+            "lora_4_clip": "Lora 4 CLIP",
+            "lora_5": "Lora 5",
+            "lora_5_model": "Lora 5 模型",
+            "lora_5_clip": "Lora 5 CLIP"
+        },
+        "outputs": {
+            "lora_stack": "Lora堆"
+        },
+        "description": "可将多达 5 个 Lora 协议栈组合成一个累加型 Lora堆。\n 将多个栈串联起来。然后输入到 Radiance 统一加载器中。"
+    },
+    "RadianceUnifiedLoader": {
+        "title": "◎ Radiance 统一加载器",
+        "inputs": {},
+        "widgets": {
+            "preset": "预设",
+            "unet_name": "UNet名称",
+            "weight_dtype": "权重数据类型",
+            "clip_name1": "CLIP名称1",
+            "model_type": "模型类型",
+            "clip_dtype": "CLIP数据类型",
+            "device": "设备",
+            "vae_name": "VAE名称",
+            "clip_name2": "CLIP名称2",
+            "lora_1": "LORA1",
+            "lora_2": "LORA2",
+            "lora_3": "LORA3",
+            "controlnet_name": "ControlNet名称",
+            "check_vram": "检查VRAM",
+            "use_cache": "使用缓存",
+            "lora_on_error": "LORA错误处理",
+            "lora_1_model_str": "LORA1模型字符串",
+            "lora_1_clip_str": "LORA1 CLIP字符串",
+            "lora_2_model_str": "LORA2模型字符串",
+            "lora_2_clip_str": "LORA2 CLIP字符串",
+            "lora_3_model_str": "LORA3模型字符串",
+            "lora_3_clip_str": "LORA3 CLIP字符串",
+            "controlnet_strength": "ControlNet强度",
+            "controlnet_start": "ControlNet开始",
+            "controlnet_end": "ControlNet结束"
+        },
+        "outputs": {
+            "MODEL": "模型",
+            "CLIP": "CLIP",
+            "VAE": "VAE",
+            "CONTROLNET": "ControlNet",
+            "load_info": "加载信息"
+        },
+        "description": "在一个节点中加载Checkpoint大模型、CLIP 和 VAE"
+    },
+    "RadianceControlApply": {
+        "title": "Radiance ControlNet 应用",
+        "inputs": {
+            "conditioning": "条件",
+            "control_net": "Control Net",
+            "image": "图像"
+        },
+        "widgets": {
+            "strength": "强度",
+            "start_percent": "开始百分比",
+            "end_percent": "结束百分比",
+            "control_type": "控制类型"
+        },
+        "outputs": {
+            "conditioning": "条件",
+            "CONDITIONING": "条件"
+        },
+        "description": "Radiance 套件的高级 ControlNet 应用节点。\n- 如果 CONTROL_NET 为 None 则优雅绕过（防止 AttributeError 崩溃）。\n- 支持标准的开始/结束百分比和强度控制。",
+        "api_version": "V1"
+    },
+    "◎ RadianceNukeBridge": {
+        "title": "◎ Radiance Nuke 桥接",
+        "inputs": {
+            "depth_map": "深度图",
+            "images": "图像"
+        },
+        "widgets": {
+            "host": "主机",
+            "port": "端口",
+            "stream_name": "流名称",
+            "send_mode": "发送模式",
+            "color_space": "色彩空间",
+            "bit_depth": "位深",
+            "compression": "压缩",
+            "connect_viewer": "连接查看器",
+            "raw": "原始数据",
+            "start_frame": "起始帧",
+            "output_path": "输出路径"
+        },
+        "outputs": {
+            "image": "图像",
+            "nuke_status": "Nuke 状态",
+            "IMAGE": "图像",
+            "STRING": "字符串"
+        },
+        "description": "通过 EXR + TCP 将图像直接发送到 Nuke 的查看器。使用 Radiance IO 写入包含 RGBA + 深度的完整 float32 EXR，然后在 Nuke 中创建一个连接到查看器的 Read 节点。需要在 Nuke 内部运行 scripts/start_nuke_server.py。",
+        "api_version": "V1"
+    },
+    "◎ RadianceMetadataOverlay": {
+        "title": "◎ Radiance 元数据叠加",
+        "inputs": {
+            "image": "图像",
+            "report_text": "报告文本"
+        },
+        "widgets": {
+            "enabled": "启用",
+            "project": "项目",
+            "shot": "镜头",
+            "frame": "帧",
+            "timecode": "时码",
+            "position": "位置",
+            "font_size": "字体大小",
+            "opacity": "不透明度",
+            "user_text": "用户文本"
+        },
+        "outputs": {
+            "image": "图像",
+            "IMAGE": "图像"
+        },
+        "description": "将元数据、时码和报告烧录到图像上（Slate/烧录）。",
+        "api_version": "V1"
+    },
+    "◎ RadianceBlendComposite": {
+        "title": "◎ Radiance 混合合成",
+        "inputs": {
+            "base": "基础图像",
+            "blend": "混合图像"
+        },
+        "widgets": {
+            "mode": "模式",
+            "opacity": "不透明度",
+            "mask": "遮罩"
+        },
+        "outputs": {
+            "image": "图像",
+            "IMAGE": "图像"
+        },
+        "description": "使用正常、添加、滤色、正片叠底、叠加、柔光、差值或除法混合模式合成两个图像。",
+        "api_version": "V1"
+    },
+    "RadianceCinematicPromptEncoder": {
+        "title": "◎ Radiance 电影提示编码器",
+        "inputs": {
+            "clip": "clip"
+        },
+        "widgets": {
+            "style_preset": "风格预设",
+            "context_window": "上下文窗口",
+            "framing": "构图",
+            "camera_type": "摄像机类型",
+            "lens_focal": "焦距",
+            "aperture_dof": "光圈景深",
+            "lighting": "照明",
+            "style_aesthetic": "风格美学",
+            "film_stock": "胶片种类",
+            "shutter_speed": "快门速度",
+            "color_grading": "色彩分级",
+            "aspect_ratio": "宽高比",
+            "negative_strength": "负片强度",
+            "base_prompt": "基础提示",
+            "custom_details": "自定义细节",
+            "year_era": "年代",
+            "clip_skip": "跳过帧数",
+            "lora_keywords": "LORA关键词",
+            "use_break": "使用断点"
+        },
+        "outputs": {
+            "positive": "正面提示",
+            "negative": "负面提示"
+        },
+        "description": "传感器特性、白平衡、预设"
+    },
+    "◎ RadianceQC": {
+        "title": "◎ Radiance 质检",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "black_threshold": "黑色阈值",
+            "white_threshold": "白色阈值",
+            "overlay_opacity": "叠加不透明度",
+            "banding_threshold": "色带阈值",
+            "enable_focus_check": "启用对焦检查",
+            "enable_artifacts_check": "启用伪影检查",
+            "enable_noise_check": "启用噪点检查",
+            "fail_on_errors": "出错时失败"
+        },
+        "outputs": {
+            "overlay_image": "叠加图像",
+            "qc_report_text": "质检报告文本",
+            "qc_report_json": "质检报告 JSON",
+            "status": "状态",
+            "IMAGE": "IMAGE",
+            "STRING": "STRING"
+        },
+        "description": "具有全面检查和结构化报告的生产质检",
+        "api_version": "V1"
+    },
+    "◎ RadianceQCExport": {
+        "title": "◎ Radiance 质检导出",
+        "inputs": {
+            "qc_report_json": "质检报告 JSON"
+        },
+        "widgets": {
+            "output_path": "输出路径",
+            "filename_prefix": "文件名前缀",
+            "export_format": "导出格式"
+        },
+        "outputs": {
+            "export_status": "导出状态",
+            "STRING": "STRING"
+        },
+        "description": "将质检报告导出为文件以便集成到流程中。\n支持 JSON、CSV 和 HTML 格式。",
+        "api_version": "V1"
+    },
+    "RadianceLoadImageMask": {
+        "title": "◎ Radiance 加载图像",
+        "inputs": {},
+        "widgets": {
+            "🎬 Radiance Mask": "🎬Radiance遮罩",
+            "image": "图像"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "MASK": "遮罩"
+        },
+        "description": "增强型图像加载器，集成柔笔刷遮罩编辑器"
+    },
+    "FXTD_RadianceViewer": {
+        "title": "FXTD_查看器",
+        "inputs": {
+            "image": "图像",
+            "compare_image": "比较图像",
+            "zdepth": "Z深度"
+        },
+        "widgets": {
+            "bit_depth": "位深度"
+        },
+        "outputs": {
+            "image": "图像",
+            "metadata": "元数据"
+        },
+        "description": ""
+    },
+    "FXTD_RadianceGradeApply": {
+        "title": "◎ Radiance 应用方法",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "exposure": "曝光",
+            "offset": "偏移",
+            "lift": "提升",
+            "gamma": "伽玛",
+            "gain": "增益",
+            "contrast": "对比度",
+            "shadows": "阴影",
+            "highlights": "高光",
+            "saturation": "饱和度",
+            "temperature": "温度",
+            "hue_shift": "色调偏移",
+            "lut_name": "lut名称",
+            "lut_intensity": "lut强度",
+            "color_science": "色彩科学"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": ""
+    },
+    "RadianceResolution": {
+        "title": "◎ Radiance 分辨率",
+        "inputs": {},
+        "widgets": {
+            "preset": "预设",
+            "model_type": "模型类型",
+            "orientation": "目标",
+            "scale_factor": "缩放比例",
+            "latent_channels": "Latent通道",
+            "custom_width": "自定义宽度",
+            "custom_height": "自定义高度",
+            "use_custom": "使用自定义",
+            "batch_size": "批量大小",
+            "width": "宽度",
+            "height": "高度",
+            "swap_dimensions": "交换维度"
+        },
+        "outputs": {
+            "latent": "Latent",
+            "preview": "预览",
+            "width": "宽度",
+            "height": "高度",
+            "info": "信息"
+        },
+        "description": ""
+    },
+    "RadianceSamplerPro": {
+        "title": "◎ Radiance 高级采样器",
+        "inputs": {
+            "model": "模型",
+            "positive": "正面提示",
+            "negative": "负面提示",
+            "latent_image": "Latent图像",
+            "refiner_model": "细化模型",
+            "noise_override": "噪声覆盖"
+        },
+        "widgets": {
+            "preset": "预设",
+            "sampler": "采样器",
+            "sampler_mode": "采样器模式",
+            "scheduler": "调度器",
+            "scheduler_mode": "调度器模式",
+            "flux_guidance_profile": "流引导配置文件",
+            "model_type": "模型类型",
+            "preview_method": "预览方法",
+            "steps": "步骤",
+            "start_step": "起始步骤",
+            "end_step": "结束步骤",
+            "cfg": "CFG",
+            "phase_split": "阶段划分",
+            "denoise": "降噪",
+            "flux_shift": "流偏移",
+            "flux_guidance": "流引导",
+            "add_noise": "添加噪声",
+            "return_with_leftover_noise": "返回剩余噪声",
+            "seed": "种子",
+            "pag_scale": "PAG缩放",
+            "sigma_blend_steps": "σ混合步骤",
+            "refiner_start_step": "细化开始步骤"
+        },
+        "outputs": {
+            "latent": "Latent",
+            "sigmas": "σ值",
+            "sigma_report": "σ报告"
+        },
+        "description": "具有相移、CFG++、PAG 和动态制导的通量优化采样器"
+    },
+    "◎ RadianceWaveform": {
+        "title": "◎ Radiance 波形图",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "mode": "模式",
+            "size": "尺寸",
+            "opacity": "不透明度"
+        },
+        "outputs": {
+            "waveform_image": "波形图像",
+            "IMAGE": "图像"
+        },
+        "description": "使用波形监视器可视化图像曝光和通道平衡。",
+        "api_version": "V1"
+    },
+    "◎ RadianceVectorscope": {
+        "title": "◎ Radiance 矢量示波器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "size": "尺寸",
+            "opacity": "不透明度",
+            "skin_tone_line": "肤色线"
+        },
+        "outputs": {
+            "vectorscope_image": "矢量示波器图像",
+            "IMAGE": "图像"
+        },
+        "description": "可视化颜色饱和度和色调分布（U/V 图）。",
+        "api_version": "V1"
+    },
+    "◎ RadianceFalseColor": {
+        "title": "◎ Radiance 伪彩色",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "is_linear": "是否线性",
+            "blend": "混合",
+            "exposure_offset": "曝光偏移"
+        },
+        "outputs": {
+            "false_color": "伪彩色曝光可视化（7分区行业标准调色板）。",
+            "original": "原始图像直通。",
+            "IMAGE": "图像"
+        },
+        "description": "将 7 分区伪彩色曝光叠加层烘焙为图像，用于流水线/批处理。",
+        "api_version": "V1"
+    },
+    "◎ RadianceCinemaStudio": {
+        "title": "◎ Radiance 电影摄影棚",
+        "inputs": {},
+        "widgets": {
+            "base_prompt": "基础提示词",
+            "camera": "相机",
+            "lens_series": "镜头系列",
+            "focal_length": "焦距",
+            "aperture": "光圈",
+            "shutter": "快门",
+            "iso": "ISO",
+            "shot_type": "镜头类型",
+            "camera_movement": "运镜"
+        },
+        "outputs": {
+            "prompt": "提示词",
+            "technical_data_str": "技术数据字符串",
+            "STRING": "字符串"
+        },
+        "description": "使用真实世界的相机和镜头配置文件生成逼真的电影摄影提示词。",
+        "api_version": "V1"
+    },
+    "◎ RadianceTemporalSmooth": {
+        "title": "◎ Radiance 时域平滑",
+        "inputs": {
+            "images": "图像"
+        },
+        "widgets": {
+            "alpha": "Alpha",
+            "motion_aware": "运动感知",
+            "motion_threshold": "运动阈值",
+            "warmup_frames": "预热帧数"
+        },
+        "outputs": {
+            "images": "时域平滑后的图像批次。",
+            "stats": "JSON 统计数据：每帧平滑前后的平均差值。",
+            "IMAGE": "图像",
+            "STRING": "字符串"
+        },
+        "description": "通过每像素指数移动平均（EMA）及可选的运动感知遮罩，减少视频批次中的帧间闪烁。",
+        "api_version": "V1"
+    },
+    "◎ RadianceFlickerAnalyze": {
+        "title": "◎ Radiance 闪烁分析",
+        "inputs": {
+            "images": "图像"
+        },
+        "widgets": {
+            "channel": "通道"
+        },
+        "outputs": {
+            "images": "图像",
+            "flicker_report": "闪烁报告",
+            "IMAGE": "图像",
+            "STRING": "字符串"
+        },
+        "description": "计算每帧闪烁指数（亮度差值 %）用于视频质量检查。直通图像，输出 JSON 报告。",
+        "api_version": "V1"
+    },
+    "◎ RadianceShowText": {
+        "title": "◎ Radiance 显示文本",
+        "inputs": {},
+        "widgets": {
+            "any_input": "任意输入"
+        },
+        "outputs": {
+            "text": "文本",
+            "STRING": "字符串"
+        },
+        "description": "直接在节点 UI 上将任意输入数据显示为文本。",
+        "api_version": "V1"
+    },
+    "RadianceWorkspace": {
+        "title": "◎ Radiance .rad 工作区",
+        "inputs": {},
+        "widgets": {
+            "Export .rad": "导出 .rad",
+            "Import .rad": "导入 .rad",
+            "Save to Library": "保存到库",
+            "Open Library": "打开库",
+            "Docs": "文档",
+            "FXTD Studios": "FXTD工作室"
+        },
+        "outputs": {},
+        "description": "定义工作区范围的变量和设置"
+    },
+    "RadianceLUTApply": {
+        "title": "◎ Radiance  LUT应用",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "strength": "强度",
+            "log_space": "对数空间",
+            "clamp_output": "钳制输出",
+            "lut_file": "LUT文件",
+            "log_encoding": "对数编码",
+            "interpolation": "插值"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "应用任何带有三线性插值和混合强度的 .cube LUT"
+    },
+    "RadianceLUTBlend": {
+        "title": "◎ Radiance LUT混合",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "blend_factor": "混合因子",
+            "strength": "强度",
+            "clamp_output": "钳制输出",
+            "lut_a": "LUT A",
+            "lut_b": "LUT B",
+            "blend_mode": "混合模式"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "RadianceOCIODisplayView": {
+        "title": "◎ Radiance OCIO显示视图",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "config_path": "配置路径",
+            "display": "显示器",
+            "view": "视图",
+            "look": "外观",
+            "exposure_adjust": "曝光调整",
+            "context_key": "上下文键",
+            "context_value": "上下文值"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "RadianceOCIOCDL": {
+        "title": "◎ Radiance  OCIO CDL",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "cdl_file": "CDL文件",
+            "slope_r": "红色斜率",
+            "slope_g": "绿色斜率",
+            "slope_b": "蓝色斜率",
+            "offset_r": "红色偏移",
+            "offset_g": "绿色偏移",
+            "offset_b": "蓝色偏移",
+            "power_r": "红色幂",
+            "power_g": "绿色幂",
+            "power_b": "蓝色幂",
+            "saturation": "饱和度"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "RadianceGPUColorMatrix": {
+        "title": "◎ Radiance GPU颜色矩阵",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "r_vector": "R向量",
+            "g_vector": "G向量",
+            "b_vector": "B向量",
+            "a_vector": "A向量",
+            "offset": "偏移",
+            "clamp_output": "钳制输出",
+            "preset": "预设",
+            "matrix_type": "矩阵类型"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "RadianceOCIOColorTransform": {
+        "title": "◎ Radiance OCIO颜色转换",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "config_file": "配置文件",
+            "input_space": "输入空间",
+            "output_space": "输出空间",
+            "direction": "方向"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "打开 颜色输入输出 集成"
+    },
+    "RadianceSceneLinearWorkflow": {
+        "title": "◎ Radiance 场景线性工作流",
+        "inputs": {},
+        "widgets": {
+            "preset": "预设"
+        },
+        "outputs": {
+            "decode": "解码",
+            "working_space": "工作空间",
+            "encode": "编码"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "RadianceLogCurveDecode": {
+        "title": "◎ Radiance 对数曲线解码",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "use_gpu": "使用GPU",
+            "curve": "曲线",
+            "target_gamut": "目标色域",
+            "exposure_index": "曝光指数"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "ARRI LogC3/4, V-Log, ACEScct, S-Log3, Canon Log3, RED Log3G10"
+    },
+    "RadianceLogCurveEncode": {
+        "title": "◎ Radiance 对数曲线编码",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "apply_gamma": "应用伽马",
+            "gamma": "伽马",
+            "exposure": "曝光",
+            "clamp_output": "裁剪输出",
+            "curve": "曲线",
+            "source_gamut": "源色域",
+            "exposure_index": "曝光指数"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "RadianceWhiteBalance": {
+        "title": "◎ Radiance 白平衡",
+        "inputs": {
+            "image": "图像",
+            "preset": "预设"
+        },
+        "widgets": {
+            "temperature": "温度",
+            "tint": "色调",
+            "source_temperature": "源温度",
+            "intensity": "强度",
+            "use_gpu": "使用GPU"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "RadianceDepthOfField": {
+        "title": "◎ Radiance 景深",
+        "inputs": {
+            "image": "图像",
+            "depth_map": "深度图"
+        },
+        "widgets": {
+            "blur_amount": "模糊量",
+            "focus_distance": "聚焦距离",
+            "focus_range": "聚焦范围",
+            "highlight_boost": "高光增强",
+            "foreground_blur": "前景模糊",
+            "use_gpu": "使用GPU",
+            "bokeh_shape": "散景形状"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/滤镜"
+    },
+    "RadianceMotionBlur": {
+        "title": "◎ Radiance 运动模糊",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "amount": "量",
+            "angle": "角度",
+            "center_x": "中心X",
+            "center_y": "中心Y",
+            "samples": "样本数",
+            "use_gpu": "使用GPU",
+            "blur_type": "模糊类型"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/滤镜"
+    },
+    "RadianceRollingShutter": {
+        "title": "◎ Radiance 滚动快门",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "skew_amount": "倾斜量",
+            "wobble_frequency": "抖动频率",
+            "wobble_amplitude": "抖动幅度",
+            "flash_band_position": "闪光带位置",
+            "flash_band_width": "闪光带宽度",
+            "use_gpu": "使用GPU",
+            "shutter_direction": "快门方向"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/滤镜"
+    },
+    "RadianceCompressionArtifacts": {
+        "title": "◎ Radiance 压缩伪影",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "quality": "质量",
+            "block_size": "块大小",
+            "color_subsampling": "色彩子采样",
+            "banding_levels": "色带等级",
+            "noise_amount": "噪声量",
+            "artifact_type": "伪影类型"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/滤镜"
+    },
+    "RadianceFilmGrain": {
+        "title": "◎ Radiance 胶片颗粒",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "intensity": "强度",
+            "seed": "种子",
+            "size": "尺寸",
+            "iso": "ISO",
+            "halation": "晕轮",
+            "gate_weave": "栅格编织",
+            "use_gpu": "使用GPU",
+            "profile": "配置文件",
+            "blend_mode": "混合模式"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "照片级逼真颗粒感——30多种相机传感器，20多种胶片"
+    },
+    "HDRHistogram": {
+        "title": "HDR直方图",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "show_clipping": "显示裁剪",
+            "stops_range": "停止范围",
+            "mode": "模式"
+        },
+        "outputs": {
+            "histogram": "直方图",
+            "stats": "统计信息"
+        },
+        "description": "HDR 感知直方图分析"
+    },
+    "ImageToFloat32": {
+        "title": "图像转为浮点32",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "normalize": "标准化",
+            "source_gamma": "源伽马"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "将任何图像转换为 32 位浮点数"
+    },
+    "Float32ColorCorrect": {
+        "title": "浮点32颜色校正",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "exposure": "曝光",
+            "contrast": "对比度",
+            "brightness": "亮度",
+            "saturation": "饱和度",
+            "gamma": "伽马",
+            "lift_r": "红色提升",
+            "lift_g": "绿色提升",
+            "lift_b": "蓝色提升",
+            "gain_r": "红色增益",
+            "gain_g": "绿色增益",
+            "gain_b": "蓝色增益",
+            "clamp_output": "裁剪输出",
+            "luma_space": "亮度空间"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "fp32 格式下的曝光、对比度、饱和度、高光/阴影"
+    },
+    "ColorSpaceConvert": {
+        "title": "颜色空间转换",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "source_space": "源颜色空间",
+            "exposure": "曝光",
+            "gamma_adjust": "伽马调整",
+            "use_gpu": "使用GPU",
+            "target_space": "目标颜色空间",
+            "chromatic_adaptation": "色度适应"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "sRGB、ACEScg、Rec.2020、XYZ、DWG、AWG4"
+    },
+    "DaVinciWideGamut": {
+        "title": "达芬奇宽色域",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "transform": "转换"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "ARRIWideGamut4": {
+        "title": "ARRI 广色域 4",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "direction": "方向"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/Color"
+    },
+    "ACES2OutputTransform": {
+        "title": "ACES2 输出转换器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "peak_luminance": "峰值亮度",
+            "creative_white_scale": "创意白色比例",
+            "exposure_adjust": "曝光调整",
+            "gamut_compress": "色域压缩",
+            "input_colorspace": "输入色彩空间",
+            "output_transform": "输出变换",
+            "surround": "环境"
+        },
+        "outputs": {
+            "output_image": "输出图像",
+            "transform_info": "变换信息"
+        },
+        "description": "完整的 ACES 2.0 管道"
+    },
+    "LoadImageEXR": {
+        "title": "加载EXR图像",
+        "inputs": {},
+        "widgets": {
+            "file_path": "文件路径",
+            "input_folder_file": "输入文件夹或文件",
+            "exposure_adjust": "曝光调整"
+        },
+        "outputs": {
+            "image": "图像",
+            "alpha_mask": "alpha遮罩",
+            "depth_mask": "深度遮罩",
+            "metadata": "元数据"
+        },
+        "description": "OpenEXR 导入"
+    },
+    "LoadImageEXRSequence": {
+        "title": "加载图像EXR序列",
+        "inputs": {},
+        "widgets": {
+            "folder_path": "文件夹路径",
+            "file_pattern": "文件模式",
+            "start_frame": "起始帧",
+            "end_frame": "结束帧",
+            "frame_step": "帧步长",
+            "max_frames": "最大帧数",
+            "exposure_adjust": "曝光调整"
+        },
+        "outputs": {
+            "images": "图像序列",
+            "alpha_masks": "alpha遮罩序列",
+            "depth_masks": "深度遮罩序列",
+            "metadata": "元数据",
+            "frame_count": "帧数"
+        },
+        "description": "类别: FXTD Studios/Radiance/Image"
+    },
+    "SaveImage16bit": {
+        "title": "保存16bit图像",
+        "inputs": {
+            "images": "图像序列"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀",
+            "format": "格式",
+            "tonemap": "色调映射"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "16 位导出带抖动"
+    },
+    "RadianceSaveEXR": {
+        "title": "◎ Radiance 保存为EXR图像",
+        "inputs": {
+            "images": "图像序列"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀",
+            "format": "格式",
+            "bit_depth": "位深度",
+            "compression": "压缩",
+            "input_color_space": "输入色彩空间",
+            "output_color_space": "输出色彩空间",
+            "alpha_mode": "alpha模式",
+            "premultiply_alpha": "预乘alpha",
+            "subfolder": "子文件夹",
+            "start_frame": "起始帧",
+            "frame_padding": "帧填充",
+            "add_metadata": "添加元数据",
+            "custom_metadata": "自定义元数据",
+            "channel_format": "通道格式"
+        },
+        "outputs": {
+            "file_paths": "文件路径列表",
+            "folder_path": "文件夹路径",
+            "frame_count": "帧数"
+        },
+        "description": "OpenEXR 导出（含元数据）"
+    },
+    "OCIOColorTransform": {
+        "title": "OCIO 色彩变换",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "source_colorspace": "源色彩空间",
+            "target_colorspace": "目标色彩空间",
+            "ocio_config_path": "OCIO 配置路径",
+            "look": "外观",
+            "exposure_stops": "曝光档位",
+            "direction": "方向",
+            "clamp_output": "钳制输出"
+        },
+        "outputs": {
+            "image": "图像",
+            "metadata": "元数据",
+            "IMAGE": "图像",
+            "STRING": "字符串"
+        },
+        "description": "对图像应用 OCIO 色彩空间变换。支持活动 OCIO 配置中的任何源/目标对，包括所有对数格式（LogC4, S-Log3, V-Log, DaVinci Intermediate, Log3G10）。",
+        "api_version": "V1"
+    },
+    "ACESConfigManager": {
+        "title": "ACES配置管理器",
+        "inputs": {},
+        "widgets": {
+            "action": "操作",
+            "custom_config_path": "自定义配置路径",
+            "install_path": "安装路径"
+        },
+        "outputs": {
+            "config_path": "配置路径",
+            "colorspaces_list": "色彩空间列表",
+            "status_info": "状态信息"
+        },
+        "description": "类别: FXTD Studios/Radiance/Color"
+    },
+    "OCIOListColorspaces": {
+        "title": "OCIO 列出颜色空间",
+        "inputs": {},
+        "widgets": {
+            "ocio_config_path": "OCIO配置路径",
+            "filter_role": "过滤角色"
+        },
+        "outputs": {
+            "colorspaces_list": "色彩空间列表"
+        },
+        "description": "类别: FXTD Studios/Radiance/Color"
+    },
+    "HDR360Generate": {
+        "title": "HDR 360全景图生成器",
+        "inputs": {
+            "source_image": "源图像"
+        },
+        "widgets": {
+            "output_width": "输出宽度",
+            "output_height": "输出高度",
+            "horizontal_fov": "水平视场角",
+            "vertical_fov": "垂直视场角",
+            "rotation_x": "旋转X轴",
+            "rotation_y": "旋转Y轴",
+            "rotation_z": "旋转Z轴",
+            "exposure_adjust": "曝光调整",
+            "projection_type": "投影类型",
+            "interpolation": "插值方法",
+            "fill_mode": "填充模式"
+        },
+        "outputs": {
+            "panorama": "全景图",
+            "projection_map": "投影图"
+        },
+        "description": "类别: FXTD Studios/Radiance/Image"
+    },
+    "HDRExposureBlend": {
+        "title": "HDR 光照融合",
+        "inputs": {
+            "low_exposure": "低曝光图像",
+            "high_exposure": "高曝光图像",
+            "mid_exposure": "中间曝光图像"
+        },
+        "widgets": {
+            "blend_method": "混合方法",
+            "shadow_weight": "阴影权重",
+            "highlight_weight": "高光权重",
+            "transition_smoothness": "过渡平滑度",
+            "exposure_offset_low": "低曝光偏移",
+            "exposure_offset_high": "高曝光偏移",
+            "exposure_offset_mid": "曝光偏移量（中间值）",
+            "ghost_removal": "鬼影去除"
+        },
+        "outputs": {
+            "blended_hdr": "混合后的HDR图像",
+            "blend_mask": "混合遮罩",
+            "blend_info": "混合信息"
+        },
+        "description": "默滕斯融合，拉普拉斯金字塔融合"
+    },
+    "HDRShadowHighlightRecovery": {
+        "title": "HDR 阴影高光恢复",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "shadow_amount": "阴影恢复量",
+            "highlight_amount": "高光恢复量",
+            "shadow_tone": "阴影色调",
+            "highlight_tone": "高光色调",
+            "color_correction": "颜色校正",
+            "local_contrast": "局部对比度"
+        },
+        "outputs": {
+            "recovered_image": "恢复后的图像"
+        },
+        "description": "提亮阴影，恢复高光"
+    },
+    "GPUTensorOps": {
+        "title": "GPU 张量运算操作",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "value": "值",
+            "force_gpu": "强制使用GPU",
+            "operation": "操作"
+        },
+        "outputs": {
+            "processed_image": "处理后的图像",
+            "performance_info": "性能信息"
+        },
+        "description": "GPU 加速色调映射"
+    },
+    "RadianceHighlightSynthesis": {
+        "title": "◎ Radiance 辉光高光合成",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "threshold": "阈值",
+            "expansion": "扩展",
+            "detail_amount": "细节量",
+            "detail_scale": "细节缩放",
+            "blend_mode": "混合模式",
+            "seed": "随机种子"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "从邻近区域重建被剪掉的精彩片段"
+    },
+    "HDRExpandDynamicRange": {
+        "title": "HDR 扩展动态范围",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "source_gamma": "源伽玛",
+            "highlight_recovery": "高光恢复",
+            "black_point": "黑点",
+            "target_stops": "目标停止数",
+            "highlight_rolloff": "高光滚降"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "合成扩展动态范围"
+    },
+    "HDRToneMap": {
+        "title": "HDR 色调映射",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "exposure": "曝光",
+            "gamma": "伽玛",
+            "white_point": "白点",
+            "contrast": "对比度",
+            "saturation": "饱和度",
+            "highlight_compression": "高光压缩",
+            "shadow_lift": "阴影提升",
+            "use_gpu": "使用GPU",
+            "preset": "预设",
+            "operator": "操作符"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "10+ 操作：ACES、Filmic、AgX、Reinhard、Hable"
+    },
+    "RadianceVAE4KEncode": {
+        "title": "◎ Radiance VAE4K编码",
+        "inputs": {
+            "pixels": "像素",
+            "vae": "vae",
+            "source_space": "源空间",
+            "tile_size": "分块尺寸",
+            "alpha_handling": "透明处理",
+            "hdr_mode": "HDR模式"
+        },
+        "widgets": {
+            "overlap": "重叠",
+            "exposure": "曝光"
+        },
+        "outputs": {
+            "samples": "样本",
+            "alpha": "透明度",
+            "metadata": "元数据"
+        },
+        "description": "类别: FXTD Studios/Radiance/生成"
+    },
+    "RadianceVAE4KDecode": {
+        "title": "◎ Radiance VAE4K解码",
+        "inputs": {
+            "samples": "样本",
+            "vae": "vae",
+            "target_space": "目标空间",
+            "tile_size": "分块尺寸",
+            "alpha": "透明度",
+            "hdr_mode": "HDR模式"
+        },
+        "widgets": {
+            "overlap": "重叠",
+            "exposure_adjust": "曝光调整",
+            "inverse_tonemap": "反调色板",
+            "target_stops": "目标曝光级",
+            "crop_padding": "裁剪填充",
+            "export_rhdr": "导出HDR"
+        },
+        "outputs": {
+            "image": "图像",
+            "metadata": "元数据"
+        },
+        "description": "类别: FXTD Studios/Radiance/生成"
+    },
+    "RadianceVAE4KRoundtrip": {
+        "title": "◎ Radiance VAE4K往返",
+        "inputs": {
+            "pixels": "像素",
+            "vae": "vae",
+            "source_space": "源空间",
+            "target_space": "目标空间",
+            "tile_size": "分块尺寸",
+            "hdr_mode": "HDR模式"
+        },
+        "widgets": {
+            "overlap": "重叠",
+            "exposure": "曝光",
+            "export_rhdr": "导出HDR"
+        },
+        "outputs": {
+            "image": "图像",
+            "latent": "Latent变量",
+            "metadata": "元数据"
+        },
+        "description": "类别: FXTD Studios/Radiance/生成"
+    },
+    "RadianceProUpscale": {
+        "title": "◎ Radiance Pro放大",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "scale_factor": "放大倍数",
+            "sharpening": "锐化",
+            "sharpen_radius": "锐化半径",
+            "detail_enhancement": "细节增强",
+            "antialiasing": "抗锯齿",
+            "process_in_linear": "在线性空间处理",
+            "use_tiles": "使用分块",
+            "tile_size": "分块尺寸",
+            "tile_overlap": "分块重叠",
+            "preset": "预设",
+            "method": "方法",
+            "input_color_space": "输入色彩空间",
+            "output_bit_depth": "输出位深度"
+        },
+        "outputs": {
+            "upscaled_image": "放大后的图像",
+            "width": "宽度",
+            "height": "高度",
+            "info": "信息"
+        },
+        "description": "Lanczos / Mitchell — 无伪影"
+    },
+    "RadianceUpscaleBySize": {
+        "title": "◎ Radiance 按尺寸放大",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "width": "宽度",
+            "height": "高度",
+            "maintain_aspect": "保持宽高比",
+            "sharpening": "锐化",
+            "process_in_linear": "在线性空间处理",
+            "method": "方法",
+            "aspect_mode": "宽高比模式"
+        },
+        "outputs": {
+            "upscaled_image": "放大后的图像",
+            "final_width": "最终宽度",
+            "final_height": "最终高度"
+        },
+        "description": "目标分辨率（带 AR 锁定）"
+    },
+    "RadianceDownscale32bit": {
+        "title": "◎ Radiance 32位缩小",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "scale_factor": "缩小倍数",
+            "antialiasing": "抗锯齿",
+            "pre_blur": "预模糊",
+            "process_in_linear": "在线性空间处理",
+            "use_gpu": "使用GPU",
+            "method": "方法"
+        },
+        "outputs": {
+            "downscaled_image": "缩小后的图像",
+            "width": "宽度",
+            "height": "高度"
+        },
+        "description": "抗锯齿降采样"
+    },
+    "RadianceBitDepthConvert": {
+        "title": "◎ Radiance 位深度转换",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "dither_strength": "抖动强度",
+            "output_depth": "输出位深度",
+            "dithering": "抖动"
+        },
+        "outputs": {
+            "converted_image": "转换后的图像",
+            "bit_depth_info": "位深度信息"
+        },
+        "description": "抖动 8/16/32 位转换"
+    },
+    "RadianceAIUpscale": {
+        "title": "◎ Radiance AI放大",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "tile_size": "分块尺寸",
+            "tile_overlap": "分块重叠",
+            "auto_download": "自动下载",
+            "unload_model": "卸载模型",
+            "model_name": "模型名称",
+            "mode": "模式"
+        },
+        "outputs": {
+            "image": "图像",
+            "info": "信息"
+        },
+        "description": "RealESRGAN, SUPIR  RealESRGAN，SUPIR"
+    },
+    "RadianceSharpen32bit": {
+        "title": "Radiance 32位锐化",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "mode": "模式",
+            "amount": "强度",
+            "radius": "半径",
+            "threshold": "阈值",
+            "process_in_linear": "线性空间处理"
+        },
+        "outputs": {
+            "sharpened_image": "锐化图像",
+            "IMAGE": "图像"
+        },
+        "description": "专业 32 位锐化 —— 反遮罩或高通，真正的 float32 精度，HDR 安全。",
+        "api_version": "V1"
+    },
+    "RadianceDenoise": {
+        "title": "◎ Radiance 降噪",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "d": "d",
+            "sigmaColor": "sigma颜色",
+            "sigmaSpace": "sigma空间"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "32 位浮点图像的边缘保持双边滤波器"
+    },
+    "RadianceDepthMapGenerator": {
+        "title": "◎ Radiance 深度图生成器",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "normalize": "标准化",
+            "invert": "反转",
+            "blur_edges": "模糊边缘",
+            "use_gpu": "使用GPU",
+            "model_size": "模型尺寸"
+        },
+        "outputs": {
+            "depth_map": "深度图"
+        },
+        "description": "对深度图进行标准化和着色"
+    },
+    "RadianceReadVideo": {
+        "title": "◎ Radiance 视频读取器",
+        "inputs": {},
+        "widgets": {
+            "input_colorspace": "输入色彩空间",
+            "video_path": "视频路径",
+            "start_frame": "起始帧",
+            "frame_count": "帧数",
+            "frame_stride": "帧间隔",
+            "extract_audio": "提取音频"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "MASK": "遮罩",
+            "frame_count": "帧数",
+            "width": "宽度",
+            "height": "高度",
+            "fps": "帧率",
+            "audio": "音频"
+        },
+        "description": "读取带有对数颜色变换的 MP4/MOV/AVI 格式文件"
+    },
+    "RadianceReadSequence": {
+        "title": "◎ Radiance 序列读取器",
+        "inputs": {},
+        "widgets": {
+            "folder_path": "文件夹路径",
+            "pattern": "模式",
+            "start_frame": "起始帧",
+            "frame_limit": "帧限制",
+            "input_colorspace": "输入色彩空间",
+            "fps": "帧率"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "MASK": "遮罩",
+            "frame_count": "帧数",
+            "width": "宽度",
+            "height": "高度",
+            "fps": "帧率",
+            "filename_list": "文件名列表"
+        },
+        "description": "EXR/PNG/TIFF 序列读取器"
+    },
+    "RadianceWrite": {
+        "title": "◎ Radiance 写入器",
+        "inputs": {
+            "images": "图像",
+            "audio": "音频"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀",
+            "output_format": "输出格式",
+            "output_color_space": "输出色彩空间",
+            "fps": "帧率",
+            "quality": "质量",
+            "subfolder": "子文件夹"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "file_path": "文件路径"
+        },
+        "description": "类别: FXTD Studios/Radiance/IO"
+    },
+    "RadianceWriteVideo": {
+        "title": "◎ Radiance 视频写入器",
+        "inputs": {
+            "images": "图像",
+            "audio": "音频"
+        },
+        "widgets": {
+            "filename_prefix": "文件名前缀",
+            "fps": "帧率",
+            "codec": "编解码器",
+            "output_color_space": "输出色彩空间",
+            "quality": "质量",
+            "subfolder": "子文件夹"
+        },
+        "outputs": {
+            "IMAGE": "图像",
+            "file_path": "文件路径"
+        },
+        "description": "导出 ProRes 4444、H.264、H.265、EXR 序列"
+    },
+    "RadianceNukeBridge": {
+        "title": "◎ Radiance NUKE桥接器",
+        "inputs": {
+            "images": "图像",
+            "depth_map": "深度图"
+        },
+        "widgets": {
+            "host": "主机",
+            "port": "端口",
+            "stream_name": "流名称",
+            "send_mode": "发送模式",
+            "color_space": "色彩空间",
+            "bit_depth": "位深度",
+            "compression": "压缩",
+            "connect_viewer": "连接查看器",
+            "raw": "原始",
+            "start_frame": "起始帧",
+            "output_path": "输出路径"
+        },
+        "outputs": {
+            "image": "图像",
+            "nuke_status": "NUKE状态"
+        },
+        "description": "向 Nuke 发送/接收图像"
+    },
+    "RadianceMetadataOverlay": {
+        "title": "◎ Radiance 元数据叠加器",
+        "inputs": {
+            "image": "图像",
+            "report_text": "报告文本"
+        },
+        "widgets": {
+            "enabled": "启用",
+            "project": "项目",
+            "shot": "镜头",
+            "frame": "帧",
+            "timecode": "时间码",
+            "font_size": "字体大小",
+            "opacity": "透明度",
+            "user_text": "用户文本",
+            "position": "位置"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "烧录时间码、镜头信息和质量控制报告（片头/样片风格）"
+    },
+    "RadianceQC": {
+        "title": "◎ Radiance 质量检查",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "black_threshold": "黑色阈值",
+            "white_threshold": "白色阈值",
+            "overlay_opacity": "叠加透明度",
+            "banding_threshold": "色带阈值",
+            "enable_focus_check": "启用聚焦检查",
+            "enable_artifacts_check": "启用伪影检查",
+            "enable_noise_check": "启用噪声检查",
+            "fail_on_errors": "遇到错误时失败"
+        },
+        "outputs": {
+            "overlay_image": "叠加图像",
+            "qc_report_text": "质量报告文本",
+            "qc_report_json": "质量报告JSON",
+            "status": "状态"
+        },
+        "description": "自动缺陷检测（削波、条纹、噪声、色域）"
+    },
+    "RadianceQCExport": {
+        "title": "◎ Radiance 质量检查导出",
+        "inputs": {
+            "qc_report_json": "质量报告JSON"
+        },
+        "widgets": {
+            "export_format": "导出格式",
+            "output_path": "输出路径",
+            "filename_prefix": "文件名前缀"
+        },
+        "outputs": {
+            "export_status": "导出状态"
+        },
+        "description": "类别: FXTD Studios/Radiance/分析"
+    },
+    "RadianceWaveform": {
+        "title": "◎ Radiance 波形图",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "size": "尺寸",
+            "opacity": "透明度",
+            "mode": "模式"
+        },
+        "outputs": {
+            "waveform_image": "波形图"
+        },
+        "description": "RGB 叠加、亮度、以及 Parade 波形监视器"
+    },
+    "RadianceVectorscope": {
+        "title": "◎ Radiance 向量视图",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "size": "尺寸",
+            "opacity": "透明度",
+            "skin_tone_line": "肤色线"
+        },
+        "outputs": {
+            "vectorscope_image": "向量视图"
+        },
+        "description": "带有肤色线和网格线的 YUV 矢量示波器"
+    },
+    "RadianceCinemaStudio": {
+        "title": "◎ Radiance 电影工作室",
+        "inputs": {},
+        "widgets": {
+            "base_prompt": "基础提示",
+            "camera": "摄像机",
+            "lens_series": "镜头系列",
+            "focal_length": "焦距",
+            "aperture": "光圈",
+            "shutter": "快门",
+            "iso": "ISO",
+            "shot_type": "拍摄类型",
+            "camera_movement": "摄像机运动"
+        },
+        "outputs": {
+            "prompt": "提示",
+            "technical_data_str": "技术数据字符串"
+        },
+        "description": "真实世界的摄像机物理特性（ARRI、RED、索尼、Blackmagic）"
+    },
+    "RadianceACES2OutputTransform": {
+        "title": "◎ Radiance ACES2输出变换",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "peak_luminance": "峰值亮度",
+            "contrast": "对比度",
+            "gamut_compress": "色域压缩",
+            "gamut_threshold": "色域阈值",
+            "display_target": "显示目标"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "类别: FXTD Studios/Radiance/颜色"
+    },
+    "RadianceVAEEncode": {
+        "title": "◎ Radiance VAE 编码器专业版",
+        "inputs": {
+            "pixels": "图像"
+        },
+        "widgets": {
+            "source_space": "源颜色空间",
+            "tile_size": "分块尺寸",
+            "overlap": "重叠",
+            "exposure": "曝光",
+            "alpha_handling": "透明处理",
+            "hdr_mode": "HDR模式"
+        },
+        "outputs": {
+            "samples": "样本",
+            "alpha": "透明度",
+            "metadata": "元数据"
+        },
+        "description": ""
+    },
+    "RadianceVAEDecode": {
+        "title": "◎ Radiance VAE 解码器专业版",
+        "inputs": {
+            "samples": "样本",
+            "alpha": "透明度"
+        },
+        "widgets": {
+            "target_space": "目标空间",
+            "tile_size": "分块尺寸",
+            "overlap": "重叠",
+            "exposure_adjust": "曝光调整",
+            "inverse_tonemap": "反调色板",
+            "target_stops": "目标曝光级",
+            "crop_padding": "裁剪填充",
+            "export_rhdr": "导出HDR",
+            "hdr_mode": "HDR模式"
+        },
+        "outputs": {
+            "image": "图像",
+            "metadata": "元数据"
+        },
+        "description": ""
+    },
+    "RadianceBlendComposite": {
+        "title": "◎ Radiance 混合复合物",
+        "inputs": {
+            "base": "基础图像",
+            "blend": "混合图像",
+            "mask": "遮罩"
+        },
+        "widgets": {
+            "mode": "模式",
+            "opacity": "透明度"
+        },
+        "outputs": {
+            "image": "图像"
+        },
+        "description": "8 种混合模式 + 可选遮罩 — 正常、添加、屏幕、正片叠底、叠加、柔光、差值、分割"
+    },
+    "RadianceFalseColor": {
+        "title": "◎ Radiance 虚假色彩",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "is_linear": "使用线性",
+            "blend": "混合",
+            "exposure_offset": "曝光偏移"
+        },
+        "outputs": {
+            "false_color": "虚假色彩",
+            "original": "原始"
+        },
+        "description": "7区伪彩色烘焙为图像 — 压缩/欠曝/暗淡/校正/过曝/过热/裁剪"
+    },
+    "RadianceTemporalSmooth": {
+        "title": "◎ Radiance 时间平滑性",
+        "inputs": {
+            "images": "图像"
+        },
+        "widgets": {
+            "alpha": "透明度",
+            "motion_aware": "运动感知",
+            "motion_thresholdt": "运动阈值",
+            "warmup_frames": "预热帧"
+        },
+        "outputs": {
+            "images": "图像",
+            "stats": "统计数据"
+        },
+        "description": "基于运动感知掩蔽的逐像素 EMA 闪烁抑制"
+    },
+    "RadianceFlickerAnalyze": {
+        "title": "◎ Radiance 闪烁分析",
+        "inputs": {
+            "images": "图像"
+        },
+        "widgets": {
+            "channel": "频道"
+        },
+        "outputs": {
+            "images": "图像",
+            "flicker_report": "统计数据"
+        },
+        "description": "帧间闪烁指数测量和 JSON 报告"
+    },
+    "RadianceLUTBake": {
+        "title": "◎ Radiance LUT 烘焙",
+        "inputs": {
+            "image": "图像"
+        },
+        "widgets": {
+            "output_path": "输出路径",
+            "lut_title": "lut标题",
+            "lut_size": "LUT_大小",
+            "lift_r": "提升R",
+            "lift_g": "提升G",
+            "lift_b": "提升B",
+            "gamma_r": "伽玛R",
+            "gamma_g": "伽玛G",
+            "gamma_b": "伽玛B",
+            "gain_r": "增益R",
+            "gain_g": "增益G",
+            "gain_b": "增益B",
+            "offset_r": "偏移R",
+            "offset_g": "偏移G",
+            "offset_b": "偏移B",
+            "contrast": "对比度",
+            "pivot": "枢轴",
+            "saturation": "饱和度"
+        },
+        "outputs": {
+            "preview_image": "预览图像",
+            "cube_path": "立方体路径"
+        },
+        "description": "将烘焙等级参数导出到 33³ .cube LUT 文件"
+    },
+    "RadianceShowText": {
+        "title": "◎Radiance 显示文本",
+        "inputs": {
+            "any_input": "任何输入"
+        },
+        "widgets": {},
+        "outputs": {
+            "text": "文本"
+        },
+        "description": "将任何输入数据直接以文本形式显示在节点 Ul 上。"
+    },
+    "FXTDCinematicPromptEncoder": {
+        "title": "◎ Radiance 电影提示词编辑器",
+        "inputs": {
+            "clip": "片段",
+            "image_ref": "图像参考"
+        },
+        "widgets": {
+            "active_prompt": "激活提示",
+            "style_preset": "样式预设",
+            "target_arch": "目标架构",
+            "context_window": "上下文窗口",
+            "framing": "构图",
+            "camera_type": "摄像机类型",
+            "lens_focal": "镜头焦距",
+            "aperture_dof": "光圈景深",
+            "lighting": "照明",
+            "style_aesthetic": "风格美学",
+            "film_stock": "胶片库存",
+            "shutter_speed": "快门速度",
+            "color_grading": "色彩分级",
+            "aspect_ratio": "宽高比",
+            "scene_mood": "场景氛围",
+            "prompt_weight_mode": "提示权重模式",
+            "negative_strength": "负面强度",
+            "use_break": "使用中断",
+            "prompt_enhancer": "提示增强器",
+            "base_prompt": "基础提示",
+            "base_prompt_b": "基础提示B",
+            "art_direction": "艺术方向",
+            "subject_weight": "主题权重",
+            "custom_details": "自定义细节",
+            "year_era": "年代时期",
+            "negative_custom": "负面自定义",
+            "clip_skip": "片段跳过",
+            "lora_keywords": "LORA关键词"
+        },
+        "outputs": {
+            "positive": "正向提示词",
+            "negative": "负向提示词",
+            "image_ref": "图像参考",
+            "positive_text": "正向文本",
+            "negative_text": "负向文本",
+            "token_count": "令牌计数"
+        },
+        "description": "v3.0 - 通用电影编码器。\n 可自动为 Flux/T5/Kolors 选择散文格式，为 SD1.5/SDXL 选择结构化格式。\n 支持场景氛围、A/B 提示、主题权重、实际令牌数量、艺术指导以及与建筑相关的负面因素。"
+    }
+}

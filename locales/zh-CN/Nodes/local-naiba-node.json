@@ -1,0 +1,40 @@
+{
+  "CustomDataReader": {
+    "title": "自定义数据读取器",
+    "inputs": {
+      "lora_names": "LoRA 名称"
+    },
+    "widgets": {
+      "lora_names": "LoRA 名称"
+    },
+    "outputs": {
+      "preview_image": "预览图像",
+      "custom_prompt": "自定义提示词",
+      "model_description": "模型描述",
+      "download_link": "下载链接",
+      "nsfw_level": "NSFW 级别",
+      "raw_json": "原始 JSON"
+    }
+  },
+  "CivitaiInfoReader": {
+    "title": "Civitai 信息读取器",
+    "inputs": {
+      "lora_names": "LoRA 名称"
+    },
+    "widgets": {
+      "lora_names": "LoRA 名称"
+    },
+    "outputs": {
+      "preview_image": "预览图像",
+      "model_info": "模型信息",
+      "trigger_words": "LoRA 触发词",
+      "rating_info": "评分信息",
+      "model_tags": "模型标签",
+      "nsfw_level": "NSFW 级别",
+      "preview_url": "预览图链接",
+      "civitai_url": "Civitai 链接",
+      "raw_json": "原始 JSON",
+      "custom_prompt": "自定义提示词"
+    }
+  }
+}
