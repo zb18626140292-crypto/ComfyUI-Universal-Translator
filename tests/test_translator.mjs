@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { restoreNodeTranslation, restoreTranslatedLabel } from "../web/label_state.js";
 import {
   buildAutoNodeTranslation,
   resolveNodeTranslation,
@@ -40,5 +41,33 @@ assert.equal(curated._source, "dictionary");
 assert.equal(curated.title, "我的读取器");
 assert.equal(curated.outputs.preview_image, "预览图像");
 assert.equal(curated.outputs.raw_json, "原始数据");
+
+const persistedSlot = {
+  name: "trigger_words",
+  localized_name: "trigger_words",
+  label: "LoRA \u89e6\u53d1\u8bcd",
+};
+assert.equal(restoreTranslatedLabel(persistedSlot), true);
+assert.equal("label" in persistedSlot, false);
+
+const runtimeSlot = {
+  name: "preview_image",
+  label: "\u9884\u89c8\u56fe\u50cf",
+  __utOriginalLabel: "Preview Image",
+  __utApplied: true,
+};
+assert.equal(restoreTranslatedLabel(runtimeSlot), true);
+assert.equal(runtimeSlot.label, "Preview Image");
+assert.equal("__utApplied" in runtimeSlot, false);
+
+let dirtyCalls = 0;
+const restoredCount = restoreNodeTranslation({
+  inputs: [{ name: "model_info", label: "\u6a21\u578b\u4fe1\u606f" }],
+  outputs: [{ name: "raw_json", label: "\u539f\u59cb JSON" }],
+  widgets: [{ name: "rating", label: "rating \u4fe1\u606f" }],
+  setDirtyCanvas: () => { dirtyCalls += 1; },
+});
+assert.equal(restoredCount, 3);
+assert.equal(dirtyCalls, 1);
 
 console.log("translator tests passed");

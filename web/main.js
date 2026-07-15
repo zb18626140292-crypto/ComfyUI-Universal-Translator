@@ -1,5 +1,6 @@
 import { app } from "../../../scripts/app.js";
 import { api } from "../../../scripts/api.js";
+import { restoreNodeTranslation } from "./label_state.js";
 import { installTranslationPanel } from "./panel.js";
 import { hasChinese, resolveNodeTranslation, translateCategory, translateIdentifier } from "./translator.js";
 
@@ -122,6 +123,7 @@ function applyToNode(node, loaded = false) {
       if (typeof original !== "function") continue;
       node[method] = function(...args) {
         const result = original.apply(this, args);
+        if (!state.config.enabled) return result;
         const name = method === "addWidget" ? args[1] : args[0];
         const list = section === "inputs" ? this.inputs : section === "outputs" ? this.outputs : this.widgets;
         const item = [...(list || [])].reverse().find(candidate => candidate?.name === name)
@@ -224,12 +226,22 @@ app.registerExtension({
     }
   },
 
-  nodeCreated(node) { applyToNode(node, false); },
-  loadedGraphNode(node) { applyToNode(node, true); },
+  nodeCreated(node) {
+    if (state.config.enabled) applyToNode(node, false);
+    else restoreNodeTranslation(node);
+  },
+  loadedGraphNode(node) {
+    if (state.config.enabled) applyToNode(node, true);
+    else restoreNodeTranslation(node);
+  },
 
   async setup(appInstance) {
     installTranslationPanel(state);
     if (!state.config.enabled) {
+      let restored = 0;
+      for (const node of appInstance.graph?._nodes || []) restored += restoreNodeTranslation(node);
+      appInstance.graph?.setDirtyCanvas?.(true, true);
+      if (restored) console.info(`[Universal Translator] restored ${restored} original labels`);
       console.info("[Universal Translator] 翻译已关闭；管理按钮仍可用于重新开启。");
       return;
     }
