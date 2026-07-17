@@ -139,7 +139,13 @@ function applyToNode(node, loaded = false) {
     setTranslatedLabel(item, resolved.widgets?.[item.name] || resolved.inputs?.[item.name] || automaticSlotLabel(item.name));
   }
 
-  const originals = new Set([className, resolved.__originalTitle, node.constructor?.type].filter(Boolean));
+  const legacyAutoTitle = translateIdentifier(resolved.__originalTitle || className);
+  const originals = new Set([
+    className,
+    resolved.__originalTitle,
+    node.constructor?.type,
+    legacyAutoTitle,
+  ].filter(Boolean));
   const isCustomTitle = loaded && node.title && !originals.has(node.title) && node.title !== resolved.title;
   if (!isCustomTitle && resolved.title) {
     if (!node.__utTitleApplied) {
@@ -209,10 +215,57 @@ function applyDefinition(nodeType, nodeData) {
 function installDomMenuTranslation() {
   if (!state.config.translate_menus) return;
   const dictionary = state.bundle.Menu || {};
+  const booleanOptions = Object.freeze({
+    true: "是",
+    yes: "是",
+    on: "是",
+    enable: "是",
+    enabled: "是",
+    false: "否",
+    no: "否",
+    off: "否",
+    disable: "否",
+    disabled: "否",
+  });
+
+  const isCurrentComboMenu = menu => {
+    if (!(menu instanceof Element) || !menu.matches(".litecontextmenu")) return false;
+    // ComfyUI adds this input only to long combo-value menus.
+    if (menu.querySelector(".comfy-context-menu-filter")) return true;
+
+    // Short combo menus do not have a filter. Match their immutable data-value
+    // list against the currently active node widget, while leaving ordinary
+    // right-click/context menus eligible for normal UI translation.
+    const entries = [...menu.querySelectorAll(":scope > .litemenu-entry:not(.separator)")];
+    if (!entries.length) return false;
+    const menuValues = entries.map(entry => String(entry.dataset.value ?? entry.textContent ?? "").trim());
+    const widgets = app.canvas?.current_node?.widgets || app.graph?.current_node?.widgets || [];
+    return widgets.some(widget => {
+      const values = widget?.options?.values;
+      return Array.isArray(values)
+        && values.length === menuValues.length
+        && values.every((value, index) => String(value) === menuValues[index]);
+    });
+  };
+
+  const comboTranslation = element => {
+    const menu = element.closest?.(".litecontextmenu");
+    if (!isCurrentComboMenu(menu) || !element.matches?.(".litemenu-entry")) return undefined;
+    const original = String(element.dataset.value ?? element.textContent ?? "").trim().toLocaleLowerCase();
+    // Returning null explicitly means this is a combo option that must remain
+    // unchanged. Only boolean meanings are localized to 是 / 否.
+    return booleanOptions[original] || null;
+  };
+
   const translateElement = root => {
     if (!(root instanceof Element) || root.closest?.(".ut-overlay")) return;
     const candidates = root.children.length === 0 ? [root] : root.querySelectorAll("*:not(:has(*))");
     for (const element of candidates) {
+      const optionTranslation = comboTranslation(element);
+      if (optionTranslation !== undefined) {
+        if (optionTranslation) element.textContent = optionTranslation;
+        continue;
+      }
       for (const attr of ["title", "placeholder", "aria-label"]) {
         const value = element.getAttribute?.(attr);
         if (value && dictionary[value]) element.setAttribute(attr, dictionary[value]);

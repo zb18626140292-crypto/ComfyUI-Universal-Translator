@@ -71,6 +71,11 @@ export function translateIdentifierDetailed(value) {
     if (BRANDS[lower]) {
       pieces.push(BRANDS[lower]);
       translatedTokens++;
+    } else if (/^[A-Z][A-Z0-9]*$/.test(original)) {
+      // Preserve unknown acronyms/type names and one-letter plugin suffixes,
+      // but count them as understood so surrounding labels can be translated.
+      pieces.push(original);
+      translatedTokens++;
     } else if (/^\d+(?:\.\d+)?$/.test(original)) {
       pieces.push(original);
       translatedTokens++;
@@ -93,6 +98,32 @@ export function translateIdentifierDetailed(value) {
 
 export function translateIdentifier(value) {
   return translateIdentifierDetailed(value).text;
+}
+
+export function translateNaturalTitle(value, technicalFallback = "") {
+  const source = String(value ?? "").trim();
+  if (!source || hasChinese(source)) return source;
+
+  // A compact program identifier is not natural-language UI copy. Keep class
+  // names such as ZEngineerCLIPLoader, KSamplerAdvanced and load_image_batch
+  // intact unless a curated dictionary explicitly provides a title.
+  const normalized = splitIdentifier(source);
+  const expandedTokens = normalized.split(" ").filter(Boolean);
+  if (!/\s/.test(source) && expandedTokens.length > 1) return source;
+
+  const translated = translateIdentifier(source);
+  // Mixed product names and Chinese fragments are harder to read than the
+  // original technical title. If the backend provides a compact class name,
+  // use that stable identifier instead (for example ZEngineerCLIPLoader).
+  if (hasChinese(translated) && /[A-Za-z]{2,}/.test(translated)) {
+    const fallback = String(technicalFallback ?? "").trim();
+    if (fallback && !/\s/.test(fallback) && splitIdentifier(fallback).split(" ").length > 1) {
+      return fallback;
+    }
+    return source;
+  }
+
+  return translated;
 }
 
 function visibleInputNames(nodeData) {
@@ -121,7 +152,7 @@ export function buildAutoNodeTranslation(nodeData = {}) {
   }
 
   return {
-    title: translateIdentifier(titleSource),
+    title: translateNaturalTitle(titleSource, nodeData.name),
     inputs,
     outputs,
     widgets,

@@ -5,6 +5,7 @@ import {
   resolveNodeTranslation,
   translateCategory,
   translateIdentifier,
+  translateNaturalTitle,
 } from "../web/translator.js";
 
 assert.equal(translateIdentifier("Custom Data Reader"), "自定义数据读取器");
@@ -18,6 +19,16 @@ assert.equal(translateIdentifier("LoRA Trigger Words"), "LoRA 触发词");
 assert.equal(translateIdentifier("return_with_leftover_noise"), "携带剩余噪声返回");
 assert.equal(translateIdentifier("grow_mask_by"), "grow_mask_by");
 assert.equal(translateIdentifier("start_percent"), "start_percent");
+assert.equal(translateIdentifier("Qwen3ASRBatchTranscribe"), "Qwen3ASR \u6279\u6b21\u8f6c\u5f55");
+assert.equal(translateIdentifier("Chat completion _O"), "\u5bf9\u8bdd\u8865\u5168 O");
+assert.equal(translateNaturalTitle("ZEngineerCLIPLoader"), "ZEngineerCLIPLoader");
+assert.equal(translateNaturalTitle("KSamplerAdvanced"), "KSamplerAdvanced");
+assert.equal(translateNaturalTitle("load_image_batch"), "load_image_batch");
+assert.equal(translateNaturalTitle("Load Image From Folder"), "\u52a0\u8f7d\u56fe\u50cf\u4ece\u6587\u4ef6\u5939");
+assert.equal(
+  translateNaturalTitle("Z-Engineer CLIP Loader (Safetensors / Shards)", "ZEngineerCLIPLoader"),
+  "ZEngineerCLIPLoader",
+);
 assert.equal(translateIdentifier("NaibaTextbox"), "naiba文本盒");
 assert.equal(translateIdentifier("NaibaWANBlockSwap"), "naibawan模型分块卸载节点");
 assert.equal(translateCategory("naiba-node"), "naiba 节点");
