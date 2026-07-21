@@ -9,6 +9,9 @@ export function hasChinese(value) {
 
 export function splitIdentifier(value) {
   return String(value ?? "")
+    // LoRA uses mixed acronym casing and otherwise splits into "Lo RA" when
+    // embedded in names such as VisualLoRALoader.
+    .replace(/lora/gi, " LORA ")
     .replace(/([A-Z]+)([A-Z][a-z])/g, "$1 $2")
     .replace(/([a-z0-9])([A-Z])/g, "$1 $2")
     .replace(/([A-Za-z])(\d)/g, "$1 $2")
@@ -40,6 +43,23 @@ export function translateIdentifierDetailed(value) {
   const source = String(value ?? "").trim();
   if (!source || hasChinese(source)) {
     return { text: source, translatedTokens: 0, totalTokens: 0, changed: false };
+  }
+
+  // Dynamic ComfyUI widgets commonly use names such as string_1/string_2.
+  // Translate the semantic part while retaining the original numbered suffix,
+  // so every item in the generated series uses the same readable convention.
+  const numbered = source.match(/^(.+?)([_-])(\d+)$/);
+  if (numbered) {
+    const base = translateIdentifierDetailed(numbered[1]);
+    if (base.totalTokens > 0 && base.translatedTokens === base.totalTokens) {
+      const text = `${base.text}${numbered[2]}${numbered[3]}`;
+      return {
+        text,
+        translatedTokens: base.translatedTokens + 1,
+        totalTokens: base.totalTokens + 1,
+        changed: text !== source,
+      };
+    }
   }
 
   const normalized = splitIdentifier(source);
@@ -79,6 +99,11 @@ export function translateIdentifierDetailed(value) {
     } else if (/^\d+(?:\.\d+)?$/.test(original)) {
       pieces.push(original);
       translatedTokens++;
+    } else if (/^[A-Z][A-Z0-9]{1,7}$/.test(original) || /^[xyzrgbuvwhcktsdolm]$/i.test(original)) {
+      // Keep established acronyms and coordinate/channel variables intact,
+      // while still treating them as understood parts of a complete label.
+      pieces.push(original);
+      translatedTokens++;
     } else if (WORDS[key]) {
       pieces.push(WORDS[key]);
       translatedTokens++;
@@ -108,6 +133,8 @@ export function translateNaturalTitle(value, technicalFallback = "") {
   // names such as ZEngineerCLIPLoader, KSamplerAdvanced and load_image_batch
   // intact unless a curated dictionary explicitly provides a title.
   const normalized = splitIdentifier(source);
+  const exact = PHRASES[normalized.toLowerCase()];
+  if (exact) return exact;
   const expandedTokens = normalized.split(" ").filter(Boolean);
   if (!/\s/.test(source) && expandedTokens.length > 1) return source;
 
@@ -159,17 +186,32 @@ export function buildAutoNodeTranslation(nodeData = {}) {
   };
 }
 
+function naturalizeCuratedLabel(curated, generated) {
+  if (typeof curated !== "string" || !curated) return curated ?? generated;
+  if (hasChinese(curated)) return curated;
+  const translated = translateIdentifier(curated);
+  return translated !== curated ? translated : curated;
+}
+
 function mergeSection(generated, curated) {
-  return Object.assign({}, generated || {}, curated || {});
+  const result = { ...(generated || {}) };
+  for (const [key, value] of Object.entries(curated || {})) {
+    result[key] = naturalizeCuratedLabel(value, result[key]);
+  }
+  return result;
 }
 
 export function resolveNodeTranslation(className, nodeData, staticNodes = {}, autoEnabled = true) {
   const curated = staticNodes[className];
   if (!curated && !autoEnabled) return null;
   const generated = autoEnabled ? buildAutoNodeTranslation(nodeData) : {};
+  const title = curated?.title === undefined
+    ? generated.title
+    : naturalizeCuratedLabel(curated.title, generated.title);
   return {
     ...generated,
     ...(curated || {}),
+    title,
     inputs: mergeSection(generated.inputs, curated?.inputs),
     outputs: mergeSection(generated.outputs, curated?.outputs),
     widgets: mergeSection(generated.widgets, curated?.widgets),

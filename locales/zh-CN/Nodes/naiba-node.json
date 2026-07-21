@@ -4,5 +4,8 @@
   },
   "NaibaWANBlockSwap": {
     "title": "naibawan模型分块卸载节点"
+  },
+  "VisualLoRALoader": {
+    "title": "可视化LoRA加载器"
   }
 }

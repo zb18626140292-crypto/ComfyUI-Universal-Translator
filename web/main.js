@@ -88,13 +88,15 @@ function classNameOf(node) {
 }
 
 function setTranslatedLabel(item, translation) {
-  if (!item || !translation) return;
+  if (!item || !translation) return false;
   const baseline = item.label || item.localized_name || item.name;
-  if (translation === baseline) return;
-  if (baseline && hasChinese(baseline) && !item.__utApplied) return;
+  if (translation === baseline) return false;
+  const isNumberedDynamicSlot = /^.+[_-]\d+$/.test(item.name || "");
+  if (baseline && hasChinese(baseline) && !item.__utApplied && !isNumberedDynamicSlot) return false;
   if (!item.__utOriginalLabel) item.__utOriginalLabel = item.label || item.name;
   item.label = translation;
   item.__utApplied = true;
+  return true;
 }
 
 function automaticSlotLabel(name) {
@@ -123,21 +125,52 @@ function restoreAllNodes(appInstance) {
   return restored;
 }
 
+function slotTranslation(resolved, section, item) {
+  const name = item?.name;
+  if (!name) return null;
+  if (section === "inputs") {
+    return resolved.inputs?.[name] || resolved.widgets?.[item.widget?.name] || automaticSlotLabel(name);
+  }
+  if (section === "outputs") return resolved.outputs?.[name] || automaticSlotLabel(name);
+  return resolved.widgets?.[name] || resolved.inputs?.[name] || automaticSlotLabel(name);
+}
+
+function applySlotLabels(node, resolved) {
+  let changed = 0;
+  for (const [section, items] of [
+    ["inputs", node.inputs],
+    ["outputs", node.outputs],
+    ["widgets", node.widgets],
+  ]) {
+    for (const item of items || []) {
+      if (setTranslatedLabel(item, slotTranslation(resolved, section, item))) changed++;
+    }
+  }
+  return changed;
+}
+
+function slotSignature(node) {
+  return ["inputs", "outputs", "widgets"].flatMap(section =>
+    (node[section] || []).map(item => `${section}:${item?.name || ""}:${item?.label || ""}`)
+  ).join("|");
+}
+
+function syncDynamicLabels(node, resolved) {
+  const before = slotSignature(node);
+  if (node.__utSlotSignature === before) return 0;
+  const changed = applySlotLabels(node, resolved);
+  node.__utSlotSignature = slotSignature(node);
+  if (changed) node.setDirtyCanvas?.(true, true);
+  return changed;
+}
+
 function applyToNode(node, loaded = false) {
   if (!state.config.enabled || !node) return;
   const className = classNameOf(node);
   const resolved = state.resolved.get(className);
   if (!resolved) return;
 
-  for (const item of node.inputs || []) {
-    setTranslatedLabel(item, resolved.inputs?.[item.name] || resolved.widgets?.[item.widget?.name] || automaticSlotLabel(item.name));
-  }
-  for (const item of node.outputs || []) {
-    setTranslatedLabel(item, resolved.outputs?.[item.name] || automaticSlotLabel(item.name));
-  }
-  for (const item of node.widgets || []) {
-    setTranslatedLabel(item, resolved.widgets?.[item.name] || resolved.inputs?.[item.name] || automaticSlotLabel(item.name));
-  }
+  applySlotLabels(node, resolved);
 
   const legacyAutoTitle = translateIdentifier(resolved.__originalTitle || className);
   const originals = new Set([
@@ -168,12 +201,30 @@ function applyToNode(node, loaded = false) {
         const list = section === "inputs" ? this.inputs : section === "outputs" ? this.outputs : this.widgets;
         const item = [...(list || [])].reverse().find(candidate => candidate?.name === name)
           || (method === "addWidget" && result && typeof result === "object" ? result : null);
-        setTranslatedLabel(item, resolved[section]?.[name] || resolved.inputs?.[name] || automaticSlotLabel(name));
+        setTranslatedLabel(item, slotTranslation(resolved, section, item));
+        this.__utSlotSignature = slotSignature(this);
         return result;
       };
     }
     node.__utDynamicWrapped = true;
   }
+
+  // Some extensions create widgets through ComfyWidgets helpers after
+  // nodeCreated, bypassing addWidget. Recheck only when the slot fingerprint
+  // changes, which also repairs labels overwritten by a later extension hook.
+  if (!node.__utDynamicLabelSyncWrapped) {
+    const originalDrawForeground = node.onDrawForeground;
+    node.onDrawForeground = function(...args) {
+      const result = originalDrawForeground?.apply(this, args);
+      if (state.config.enabled) syncDynamicLabels(this, resolved);
+      return result;
+    };
+    node.__utDynamicLabelSyncWrapped = true;
+  }
+  node.__utSlotSignature = slotSignature(node);
+  queueMicrotask(() => {
+    if (state.config.enabled) syncDynamicLabels(node, resolved);
+  });
   node.setDirtyCanvas?.(true, true);
 }
 

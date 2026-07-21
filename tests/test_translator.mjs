@@ -17,20 +17,30 @@ assert.equal(translateIdentifier("triggerwords"), "LoRA 触发词");
 assert.equal(translateIdentifier("trigger_words"), "触发词");
 assert.equal(translateIdentifier("LoRA Trigger Words"), "LoRA 触发词");
 assert.equal(translateIdentifier("return_with_leftover_noise"), "携带剩余噪声返回");
-assert.equal(translateIdentifier("grow_mask_by"), "grow_mask_by");
-assert.equal(translateIdentifier("start_percent"), "start_percent");
+assert.equal(translateIdentifier("grow_mask_by"), "遮罩扩展量");
+assert.equal(translateIdentifier("start_percent"), "起始百分比");
 assert.equal(translateIdentifier("Qwen3ASRBatchTranscribe"), "Qwen3ASR \u6279\u6b21\u8f6c\u5f55");
 assert.equal(translateIdentifier("Chat completion _O"), "\u5bf9\u8bdd\u8865\u5168 O");
 assert.equal(translateNaturalTitle("ZEngineerCLIPLoader"), "ZEngineerCLIPLoader");
 assert.equal(translateNaturalTitle("KSamplerAdvanced"), "KSamplerAdvanced");
 assert.equal(translateNaturalTitle("load_image_batch"), "load_image_batch");
+assert.equal(translateNaturalTitle("VisualLoRALoader"), "可视化LoRA加载器");
 assert.equal(translateNaturalTitle("Load Image From Folder"), "\u52a0\u8f7d\u56fe\u50cf\u4ece\u6587\u4ef6\u5939");
 assert.equal(
   translateNaturalTitle("Z-Engineer CLIP Loader (Safetensors / Shards)", "ZEngineerCLIPLoader"),
   "ZEngineerCLIPLoader",
 );
+assert.equal(translateIdentifier("string_1"), "字符串_1");
+assert.equal(translateIdentifier("string_2"), "字符串_2");
+assert.equal(translateIdentifier("string_10"), "字符串_10");
+assert.equal(translateIdentifier("inputcount"), "输入数量");
+assert.equal(translateIdentifier("delimiter"), "分隔符");
+assert.equal(translateIdentifier("return_list"), "返回列表");
 assert.equal(translateIdentifier("NaibaTextbox"), "naiba文本盒");
 assert.equal(translateIdentifier("NaibaWANBlockSwap"), "naibawan模型分块卸载节点");
+assert.equal(translateIdentifier("LoRALoader"), "LoRA加载器");
+assert.equal(translateIdentifier("VisualLoRALoader"), "可视化LoRA加载器");
+assert.equal(translateIdentifier("VisualModelLoader"), "可视化模型加载器");
 assert.equal(translateCategory("naiba-node"), "naiba 节点");
 
 const customDataReader = {
@@ -55,6 +65,17 @@ assert.equal(curated._source, "dictionary");
 assert.equal(curated.title, "我的读取器");
 assert.equal(curated.outputs.preview_image, "预览图像");
 assert.equal(curated.outputs.raw_json, "原始数据");
+
+const naturalizedCurated = resolveNodeTranslation("ImageResize", {
+  name: "ImageResize",
+  display_name: "Image Resize",
+  input: { required: { scale_by: ["FLOAT", {}] } },
+  output_name: ["IMAGE"],
+}, {
+  ImageResize: { title: "Image Resize", inputs: { scale_by: "scale_by" } },
+}, true);
+assert.equal(naturalizedCurated.title, "图像缩放");
+assert.equal(naturalizedCurated.inputs.scale_by, "按比例缩放");
 
 const persistedSlot = {
   name: "trigger_words",
