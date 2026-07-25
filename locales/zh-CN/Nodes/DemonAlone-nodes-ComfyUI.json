@@ -1,0 +1,1017 @@
+{
+  "AnyAdapterNode": {
+    "title": "任意类型转换器",
+    "inputs": {
+      "input_any": "输入任意值"
+    },
+    "widgets": {
+      "input_any": "输入任意值"
+    },
+    "outputs": {
+      "*": "输出"
+    }
+  },
+  "AnyConcatNode": {
+    "title": "任意类型拼接",
+    "inputs": {
+      "delimiter": "分隔符",
+      "text1": "文本1",
+      "text2": "文本2",
+      "text3": "文本_3",
+      "text4": "文本_4",
+      "text5": "文本_5"
+    },
+    "widgets": {
+      "delimiter": "分隔符",
+      "text1": "文本1",
+      "text2": "文本2",
+      "text3": "文本_3",
+      "text4": "文本_4",
+      "text5": "文本_5"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "AnytoIntegerAdapterNode": {
+    "title": "任意类型转整数",
+    "inputs": {
+      "input_any": "输入任意值"
+    },
+    "widgets": {
+      "input_any": "输入任意值"
+    },
+    "outputs": {
+      "INT": "整数"
+    }
+  },
+  "AnytoFloatAdapterNode": {
+    "title": "任意类型转浮点数",
+    "inputs": {
+      "input_any": "输入任意值"
+    },
+    "widgets": {
+      "input_any": "输入任意值"
+    },
+    "outputs": {
+      "FLOAT": "浮点"
+    }
+  },
+  "BooleanSwitchNode": {
+    "title": "布尔切换",
+    "inputs": {
+      "state": "状态",
+      "on_true": "为真时",
+      "on_false": "为假时"
+    },
+    "widgets": {
+      "state": "状态",
+      "on_true": "为真时",
+      "on_false": "为假时"
+    },
+    "outputs": {
+      "*": "输出"
+    }
+  },
+  "CheckpointSelectorNode": {
+    "title": "Checkpoint模型选择器",
+    "inputs": {
+      "ckpt_name": "模型名称"
+    },
+    "widgets": {
+      "ckpt_name": "模型名称"
+    },
+    "outputs": {
+      "ckpt_name": "模型名称",
+      "ckpt_name_str": "Checkpoint大模型名称 字符串"
+    }
+  },
+  "ClipSkipSliderNode": {
+    "title": "CLIP跳层滑块",
+    "inputs": {
+      "value": "值"
+    },
+    "widgets": {
+      "value": "值"
+    },
+    "outputs": {
+      "value": "值"
+    }
+  },
+  "ConditionalVAEDecodePreview": {
+    "title": "条件VAE解码预览",
+    "inputs": {
+      "samples": "采样",
+      "vae": "VAE模型",
+      "preview": "预览"
+    },
+    "widgets": {
+      "samples": "采样",
+      "vae": "VAE模型",
+      "preview": "预览"
+    },
+    "outputs": {
+      "LATENT": "潜在表示",
+      "IMAGE": "图像"
+    }
+  },
+  "CountListNode": {
+    "title": "列表计数",
+    "inputs": {
+      "input_list": "输入列表"
+    },
+    "widgets": {
+      "input_list": "输入列表"
+    },
+    "outputs": {
+      "INT": "整数"
+    }
+  },
+  "DA_AudioDebugNode": {
+    "title": "DA 音频调试",
+    "inputs": {
+      "audio": "音频"
+    },
+    "widgets": {
+      "audio": "音频"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "DA_Base_KSampler": {
+    "title": "DA 基础K采样器",
+    "inputs": {
+      "model": "模型",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "denoise": "降噪"
+    },
+    "widgets": {
+      "model": "模型",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "denoise": "降噪"
+    },
+    "outputs": {
+      "LATENT": "潜在表示"
+    }
+  },
+  "DA_BusInNode": {
+    "title": "DA 总线输入",
+    "inputs": {
+      "input1": "输入1",
+      "input2": "输入2",
+      "input3": "输入3",
+      "input4": "输入4",
+      "input5": "输入5",
+      "input6": "输入6",
+      "input7": "输入7",
+      "input8": "输入8",
+      "input9": "输入9",
+      "input10": "输入10"
+    },
+    "widgets": {
+      "input1": "输入1",
+      "input2": "输入2",
+      "input3": "输入3",
+      "input4": "输入4",
+      "input5": "输入5",
+      "input6": "输入6",
+      "input7": "输入7",
+      "input8": "输入8",
+      "input9": "输入9",
+      "input10": "输入10"
+    },
+    "outputs": {
+      "bus_pipe": "bus管道"
+    }
+  },
+  "DA_BusOutNode": {
+    "title": "DA 总线输出",
+    "inputs": {
+      "bus_pipe": "bus管道"
+    },
+    "widgets": {
+      "bus_pipe": "bus管道"
+    },
+    "outputs": {
+      "output1": "图像",
+      "output2": "图像",
+      "output3": "图像",
+      "output4": "图像",
+      "output5": "输出5",
+      "output6": "输出6",
+      "output7": "输出7",
+      "output8": "输出8",
+      "output9": "输出9",
+      "output10": "输出10"
+    }
+  },
+  "DA_Enhanced_KSampler": {
+    "title": "DA 增强K采样器",
+    "inputs": {
+      "model": "模型",
+      "seed": "种子",
+      "shift": "偏移",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "denoise": "降噪",
+      "preview_freq": "预览freq"
+    },
+    "widgets": {
+      "model": "模型",
+      "seed": "种子",
+      "shift": "偏移",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "denoise": "降噪",
+      "preview_freq": "预览freq"
+    },
+    "outputs": {
+      "LATENT": "潜在表示"
+    }
+  },
+  "DA_LatentLoader": {
+    "title": "DA Latent加载器",
+    "inputs": {
+      "latent_file": "Latent文件"
+    },
+    "widgets": {
+      "latent_file": "Latent文件"
+    },
+    "outputs": {
+      "LATENT": "潜在表示"
+    }
+  },
+  "DiffusionModelGeneratorNode": {
+    "title": "动态扩散模型选择器",
+    "inputs": {
+      "diff_model_1": "diff模型1",
+      "diff_model_2": "diff模型2",
+      "diff_model_3": "diff模型3",
+      "diff_model_4": "diff模型4",
+      "diff_model_5": "diff模型5",
+      "diff_model_6": "diff模型6",
+      "diff_model_7": "diff模型7",
+      "diff_model_8": "diff模型8",
+      "diff_model_9": "diff模型9",
+      "diff_model_10": "diff模型10"
+    },
+    "widgets": {
+      "diff_model_1": "diff模型1",
+      "diff_model_2": "diff模型2",
+      "diff_model_3": "diff模型3",
+      "diff_model_4": "diff模型4",
+      "diff_model_5": "diff模型5",
+      "diff_model_6": "diff模型6",
+      "diff_model_7": "diff模型7",
+      "diff_model_8": "diff模型8",
+      "diff_model_9": "diff模型9",
+      "diff_model_10": "diff模型10"
+    },
+    "outputs": {
+      "STRING": "字符串",
+      "LIST": "列表"
+    }
+  },
+  "DiffusionModelSelectorNode": {
+    "title": "扩散模型选择器",
+    "inputs": {
+      "model_name": "模型名称"
+    },
+    "widgets": {
+      "model_name": "模型名称"
+    },
+    "outputs": {
+      "model_name": "模型名称",
+      "model_name_str": "模型名称str"
+    }
+  },
+  "ImageResizeNode": {
+    "title": "图像与遮罩缩放",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩",
+      "width": "宽度",
+      "height": "高度",
+      "method": "方法",
+      "interpolation": "插值方式",
+      "condition": "条件",
+      "multiple_of": "倍数"
+    },
+    "widgets": {
+      "image": "图像",
+      "mask": "遮罩",
+      "width": "宽度",
+      "height": "高度",
+      "method": "方法",
+      "interpolation": "插值方式",
+      "condition": "条件",
+      "multiple_of": "倍数"
+    },
+    "outputs": {
+      "image_out": "图像输出",
+      "mask_out": "遮罩输出",
+      "width": "宽度",
+      "height": "高度"
+    }
+  },
+  "FloatSelectorNode": {
+    "title": "浮点数选择器",
+    "inputs": {
+      "float": "浮点数"
+    },
+    "widgets": {
+      "float": "浮点数"
+    },
+    "outputs": {
+      "float": "浮点数"
+    }
+  },
+  "ListCombinerNode": {
+    "title": "列表合并",
+    "inputs": {
+      "list_a": "文本_A",
+      "list_b": "文本_B"
+    },
+    "widgets": {
+      "list_a": "文本_A",
+      "list_b": "文本_B"
+    },
+    "outputs": {
+      "LIST": "列表"
+    }
+  },
+  "ListCreaterNode": {
+    "title": "创建列表",
+    "inputs": {
+      "Separator": "分隔符",
+      "RemoveEmptyValues": "移除Empty值",
+      "Text": "文本"
+    },
+    "widgets": {
+      "Separator": "分隔符",
+      "RemoveEmptyValues": "移除Empty值",
+      "Text": "文本"
+    },
+    "outputs": {
+      "LIST": "列表"
+    }
+  },
+  "ListRerouteNode": {
+    "title": "列表转接",
+    "inputs": {
+      "input_list": "输入列表"
+    },
+    "widgets": {
+      "input_list": "输入列表"
+    },
+    "outputs": {
+      "LIST": "列表"
+    }
+  },
+  "LoadImageWithMetadataNode": {
+    "title": "加载带元数据图像",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "image": "图像"
+    },
+    "outputs": {
+      "image": "图像",
+      "mask": "遮罩",
+      "Metadata RAW": "元数据",
+      "Metadata Clean": "元数据Clean"
+    }
+  },
+  "LORASelectorNode": {
+    "title": "动态LoRA选择器",
+    "inputs": {
+      "lora_1": "LoRA堆_1",
+      "weight_1": "权重1",
+      "lora_2": "LoRA堆_2",
+      "weight_2": "权重2",
+      "lora_3": "LoRA3",
+      "weight_3": "权重3",
+      "lora_4": "LoRA4",
+      "weight_4": "权重_4",
+      "lora_5": "LoRA5",
+      "weight_5": "权重_5",
+      "lora_6": "LoRA6",
+      "weight_6": "权重_6",
+      "lora_7": "LoRA7",
+      "weight_7": "权重_7",
+      "lora_8": "LoRA8",
+      "weight_8": "权重_8",
+      "lora_9": "LoRA9",
+      "weight_9": "权重_9",
+      "lora_10": "LoRA10",
+      "weight_10": "权重10"
+    },
+    "widgets": {
+      "lora_1": "LoRA堆_1",
+      "weight_1": "权重1",
+      "lora_2": "LoRA堆_2",
+      "weight_2": "权重2",
+      "lora_3": "LoRA3",
+      "weight_3": "权重3",
+      "lora_4": "LoRA4",
+      "weight_4": "权重_4",
+      "lora_5": "LoRA5",
+      "weight_5": "权重_5",
+      "lora_6": "LoRA6",
+      "weight_6": "权重_6",
+      "lora_7": "LoRA7",
+      "weight_7": "权重_7",
+      "lora_8": "LoRA8",
+      "weight_8": "权重_8",
+      "lora_9": "LoRA9",
+      "weight_9": "权重_9",
+      "lora_10": "LoRA10",
+      "weight_10": "权重10"
+    },
+    "outputs": {
+      "STRING": "字符串",
+      "LIST": "列表"
+    }
+  },
+  "MaskDebugNode": {
+    "title": "遮罩调试",
+    "inputs": {
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "ModelGeneratorNode": {
+    "title": "动态Checkpoint选择器",
+    "inputs": {
+      "model_1": "模型1",
+      "model_2": "模型2",
+      "model_3": "模型3",
+      "model_4": "模型4",
+      "model_5": "模型5",
+      "model_6": "模型6",
+      "model_7": "模型7",
+      "model_8": "模型8",
+      "model_9": "模型9",
+      "model_10": "模型10"
+    },
+    "widgets": {
+      "model_1": "模型1",
+      "model_2": "模型2",
+      "model_3": "模型3",
+      "model_4": "模型4",
+      "model_5": "模型5",
+      "model_6": "模型6",
+      "model_7": "模型7",
+      "model_8": "模型8",
+      "model_9": "模型9",
+      "model_10": "模型10"
+    },
+    "outputs": {
+      "STRING": "字符串",
+      "LIST": "列表"
+    }
+  },
+  "MultiPlaceholderPromptList": {
+    "title": "多占位符提示词列表",
+    "inputs": {
+      "Template": "模板",
+      "values_separator": "值分隔符",
+      "placeholder1": "占位符1",
+      "values1": "值1",
+      "placeholder2": "占位符2",
+      "values2": "值2",
+      "placeholder3": "占位符3",
+      "values3": "值3"
+    },
+    "widgets": {
+      "Template": "模板",
+      "values_separator": "值分隔符",
+      "placeholder1": "占位符1",
+      "values1": "值1",
+      "placeholder2": "占位符2",
+      "values2": "值2",
+      "placeholder3": "占位符3",
+      "values3": "值3"
+    },
+    "outputs": {
+      "LIST": "列表"
+    }
+  },
+  "MyXYZHelper": {
+    "title": "XYZ辅助器",
+    "inputs": {
+      "row_list": "行列表",
+      "column_list": "column列表",
+      "page_list": "page列表",
+      "index": "索引",
+      "row_prefix": "行前缀",
+      "column_prefix": "column前缀",
+      "page_prefix": "page前缀",
+      "font_size": "字体大小",
+      "grid_gap": "网格间距"
+    },
+    "widgets": {
+      "row_list": "行列表",
+      "column_list": "column列表",
+      "page_list": "page列表",
+      "index": "索引",
+      "row_prefix": "行前缀",
+      "column_prefix": "column前缀",
+      "page_prefix": "page前缀",
+      "font_size": "字体大小",
+      "grid_gap": "网格间距"
+    },
+    "outputs": {
+      "row_value": "行值",
+      "column_value": "column值",
+      "page_value": "page值",
+      "XYZ_GRID_CONTROL": "XYZGRID控制"
+    }
+  },
+  "MyXYGridAccumulator": {
+    "title": "XY网格累加器",
+    "inputs": {
+      "images": "图像",
+      "XYZ_GRID_CONTROL": "XYZGRID控制",
+      "show_previews": "开启预览"
+    },
+    "widgets": {
+      "images": "图像",
+      "XYZ_GRID_CONTROL": "XYZGRID控制",
+      "show_previews": "开启预览"
+    },
+    "outputs": {
+      "images": "图像"
+    }
+  },
+  "MyXYZSuperStacker": {
+    "title": "XYZ超级堆叠器",
+    "inputs": {
+      "image": "图像",
+      "XYZ_GRID_CONTROL": "XYZGRID控制"
+    },
+    "widgets": {
+      "image": "图像",
+      "XYZ_GRID_CONTROL": "XYZGRID控制"
+    },
+    "outputs": {
+      "images": "图像"
+    }
+  },
+  "OptionalCondMergeNode": {
+    "title": "可选条件合并",
+    "inputs": {
+      "cond1": "条件1",
+      "cond2": "条件2",
+      "cond3": "条件3"
+    },
+    "widgets": {
+      "cond1": "条件1",
+      "cond2": "条件2",
+      "cond3": "条件3"
+    },
+    "outputs": {
+      "CONDITIONING": "条件"
+    }
+  },
+  "PatchModelSelectorNode": {
+    "title": "补丁模型选择器",
+    "inputs": {
+      "patch_name": "patch名称"
+    },
+    "widgets": {
+      "patch_name": "patch名称"
+    },
+    "outputs": {
+      "patch_name": "patch名称",
+      "patch_name_str": "patch名称str"
+    }
+  },
+  "PonyPrefixesNode": {
+    "title": "Pony评级、分数与来源",
+    "inputs": {
+      "score": "分数",
+      "rating": "评级",
+      "source": "源"
+    },
+    "widgets": {
+      "score": "分数",
+      "rating": "评级",
+      "source": "源"
+    },
+    "outputs": {
+      "combined_string": "combined字符串"
+    }
+  },
+  "ResizeInterpolationControlNode": {
+    "title": "缩放插值控制",
+    "inputs": {
+      "interpolation": "插值方式"
+    },
+    "widgets": {
+      "interpolation": "插值方式"
+    },
+    "outputs": {
+      "interpolation": "插值方式"
+    }
+  },
+  "ResizeMethodControlNode": {
+    "title": "缩放方式控制",
+    "inputs": {
+      "method": "方法"
+    },
+    "widgets": {
+      "method": "方法"
+    },
+    "outputs": {
+      "method": "方法"
+    }
+  },
+  "SamplerGeneratorNode": {
+    "title": "动态采样器选择器",
+    "inputs": {
+      "sampler_1": "采样器_1",
+      "sampler_2": "采样器_2",
+      "sampler_3": "采样器_3",
+      "sampler_4": "采样器_4",
+      "sampler_5": "采样器_5",
+      "sampler_6": "采样器_6",
+      "sampler_7": "采样器_7",
+      "sampler_8": "采样器_8",
+      "sampler_9": "采样器_9",
+      "sampler_10": "采样器_10"
+    },
+    "widgets": {
+      "sampler_1": "采样器_1",
+      "sampler_2": "采样器_2",
+      "sampler_3": "采样器_3",
+      "sampler_4": "采样器_4",
+      "sampler_5": "采样器_5",
+      "sampler_6": "采样器_6",
+      "sampler_7": "采样器_7",
+      "sampler_8": "采样器_8",
+      "sampler_9": "采样器_9",
+      "sampler_10": "采样器_10"
+    },
+    "outputs": {
+      "STRING": "字符串",
+      "LIST": "列表"
+    }
+  },
+  "SamplerSelectorFromStringNode": {
+    "title": "从字符串选择采样器",
+    "inputs": {
+      "sampler_name_str": "采样器名称str"
+    },
+    "widgets": {
+      "sampler_name_str": "采样器名称str"
+    },
+    "outputs": {
+      "sampler_name": "采样器"
+    }
+  },
+  "SaveImageNoMetaNode": {
+    "title": "保存无元数据图像",
+    "inputs": {
+      "image": "图像",
+      "path": "路径",
+      "format": "格式",
+      "preview": "预览",
+      "date_mask": "日期遮罩",
+      "custom_date_format": "custom日期格式"
+    },
+    "widgets": {
+      "image": "图像",
+      "path": "路径",
+      "format": "格式",
+      "preview": "预览",
+      "date_mask": "日期遮罩",
+      "custom_date_format": "custom日期格式"
+    },
+    "outputs": {}
+  },
+  "ScaleImageAspectNode": {
+    "title": "按比例缩放图像",
+    "inputs": {
+      "image": "图像",
+      "max_side": "最大边长",
+      "interpolation": "插值方式"
+    },
+    "widgets": {
+      "image": "图像",
+      "max_side": "最大边长",
+      "interpolation": "插值方式"
+    },
+    "outputs": {
+      "image_out": "图像输出"
+    }
+  },
+  "SchedulerGeneratorNode": {
+    "title": "动态调度器选择器",
+    "inputs": {
+      "scheduler_1": "调度器_1",
+      "scheduler_2": "调度器_2",
+      "scheduler_3": "调度器_3",
+      "scheduler_4": "调度器_4",
+      "scheduler_5": "调度器_5",
+      "scheduler_6": "调度器_6",
+      "scheduler_7": "调度器_7",
+      "scheduler_8": "调度器_8",
+      "scheduler_9": "调度器_9",
+      "scheduler_10": "调度器_10"
+    },
+    "widgets": {
+      "scheduler_1": "调度器_1",
+      "scheduler_2": "调度器_2",
+      "scheduler_3": "调度器_3",
+      "scheduler_4": "调度器_4",
+      "scheduler_5": "调度器_5",
+      "scheduler_6": "调度器_6",
+      "scheduler_7": "调度器_7",
+      "scheduler_8": "调度器_8",
+      "scheduler_9": "调度器_9",
+      "scheduler_10": "调度器_10"
+    },
+    "outputs": {
+      "STRING": "字符串",
+      "LIST": "列表"
+    }
+  },
+  "SchedulerSelectorFromStringNode": {
+    "title": "从字符串选择调度器",
+    "inputs": {
+      "scheduler_str": "调度器str"
+    },
+    "widgets": {
+      "scheduler_str": "调度器str"
+    },
+    "outputs": {
+      "scheduler": "调度器"
+    }
+  },
+  "ShiftSliderNode": {
+    "title": "Shift偏移滑块",
+    "inputs": {
+      "shift": "偏移"
+    },
+    "widgets": {
+      "shift": "偏移"
+    },
+    "outputs": {
+      "shift": "偏移"
+    }
+  },
+  "StringToAnyNode": {
+    "title": "字符串转任意类型",
+    "inputs": {
+      "input_string": "输入字符串"
+    },
+    "widgets": {
+      "input_string": "输入字符串"
+    },
+    "outputs": {
+      "any_output": "任意输出"
+    }
+  },
+  "StringToIntNode": {
+    "title": "字符串转整数",
+    "inputs": {
+      "text_value": "文本值"
+    },
+    "widgets": {
+      "text_value": "文本值"
+    },
+    "outputs": {
+      "INT": "整数"
+    }
+  },
+  "StringToFloatNode": {
+    "title": "字符串转浮点数",
+    "inputs": {
+      "text_value": "文本值"
+    },
+    "widgets": {
+      "text_value": "文本值"
+    },
+    "outputs": {
+      "FLOAT": "浮点"
+    }
+  },
+  "TextConcatNode": {
+    "title": "文本拼接",
+    "inputs": {
+      "delimiter": "分隔符",
+      "text1": "文本1",
+      "text2": "文本2",
+      "text3": "文本_3",
+      "text4": "文本_4",
+      "text5": "文本_5"
+    },
+    "widgets": {
+      "delimiter": "分隔符",
+      "text1": "文本1",
+      "text2": "文本2",
+      "text3": "文本_3",
+      "text4": "文本_4",
+      "text5": "文本_5"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "TextEncoderGeneratorNode": {
+    "title": "动态文本编码器选择器",
+    "inputs": {
+      "text_enc_1": "文本enc1",
+      "text_enc_2": "文本enc2",
+      "text_enc_3": "文本enc3",
+      "text_enc_4": "文本enc4",
+      "text_enc_5": "文本enc5",
+      "text_enc_6": "文本enc6",
+      "text_enc_7": "文本enc7",
+      "text_enc_8": "文本enc8",
+      "text_enc_9": "文本enc9",
+      "text_enc_10": "文本enc10"
+    },
+    "widgets": {
+      "text_enc_1": "文本enc1",
+      "text_enc_2": "文本enc2",
+      "text_enc_3": "文本enc3",
+      "text_enc_4": "文本enc4",
+      "text_enc_5": "文本enc5",
+      "text_enc_6": "文本enc6",
+      "text_enc_7": "文本enc7",
+      "text_enc_8": "文本enc8",
+      "text_enc_9": "文本enc9",
+      "text_enc_10": "文本enc10"
+    },
+    "outputs": {
+      "STRING": "字符串",
+      "LIST": "列表"
+    }
+  },
+  "TextEncoderSelectorNode": {
+    "title": "文本编码器选择器",
+    "inputs": {
+      "enc_name": "enc名称"
+    },
+    "widgets": {
+      "enc_name": "enc名称"
+    },
+    "outputs": {
+      "enc_name": "enc名称",
+      "enc_name_str": "enc名称str"
+    }
+  },
+  "DA_TiledUpscaler": {
+    "title": "DA 分块放大（实验性）",
+    "inputs": {
+      "model": "模型",
+      "vae": "VAE模型",
+      "upscale_factor": "放大系数",
+      "tile_size": "分块尺寸",
+      "overlap": "重叠",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "denoise": "降噪",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "image": "图像",
+      "preview_freq": "预览freq",
+      "force_full_tiles": "强制完整分块",
+      "upscale_model_opt": "放大模型"
+    },
+    "widgets": {
+      "model": "模型",
+      "vae": "VAE模型",
+      "upscale_factor": "放大系数",
+      "tile_size": "分块尺寸",
+      "overlap": "重叠",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "denoise": "降噪",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "image": "图像",
+      "preview_freq": "预览freq",
+      "force_full_tiles": "强制完整分块",
+      "upscale_model_opt": "放大模型"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "VAEGeneratorNode": {
+    "title": "动态VAE选择器",
+    "inputs": {
+      "vae_1": "VAE1",
+      "vae_2": "VAE2",
+      "vae_3": "VAE3",
+      "vae_4": "VAE4",
+      "vae_5": "VAE5",
+      "vae_6": "VAE6",
+      "vae_7": "VAE7",
+      "vae_8": "VAE8",
+      "vae_9": "VAE9",
+      "vae_10": "VAE10"
+    },
+    "widgets": {
+      "vae_1": "VAE1",
+      "vae_2": "VAE2",
+      "vae_3": "VAE3",
+      "vae_4": "VAE4",
+      "vae_5": "VAE5",
+      "vae_6": "VAE6",
+      "vae_7": "VAE7",
+      "vae_8": "VAE8",
+      "vae_9": "VAE9",
+      "vae_10": "VAE10"
+    },
+    "outputs": {
+      "STRING": "字符串",
+      "LIST": "列表"
+    }
+  },
+  "VAESelectorNode": {
+    "title": "VAE选择器",
+    "inputs": {
+      "vae_name": "VAE名称"
+    },
+    "widgets": {
+      "vae_name": "VAE名称"
+    },
+    "outputs": {
+      "vae_name": "VAE名称",
+      "vae_name_str": "VAE名称str"
+    }
+  },
+  "WanNumFramesNode": {
+    "title": "Wan帧数",
+    "inputs": {
+      "num_frames": "帧数"
+    },
+    "widgets": {
+      "num_frames": "帧数"
+    },
+    "outputs": {
+      "num_frames": "帧数"
+    }
+  },
+  "XYZConflictValidatorAndSwitch": {
+    "title": "XYZ冲突校验与切换",
+    "inputs": {
+      "output_type": "输出类型",
+      "global_val": "全局值",
+      "row": "行",
+      "column": "列",
+      "pages": "页面"
+    },
+    "widgets": {
+      "output_type": "输出类型",
+      "global_val": "全局值",
+      "row": "行",
+      "column": "列",
+      "pages": "页面"
+    },
+    "outputs": {
+      "output": "输出"
+    }
+  }
+}

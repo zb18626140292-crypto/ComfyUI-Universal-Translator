@@ -1,0 +1,1608 @@
+{
+  "Lora Loader (JPS)": {
+    "title": "LoRA加载器（JPS）",
+    "inputs": {
+      "model": "模型",
+      "clip": "CLIP模型",
+      "switch": "开关",
+      "lora_name": "LoRA名称",
+      "strength_model": "模型强度",
+      "strength_clip": "CLIP强度"
+    },
+    "widgets": {
+      "model": "模型",
+      "clip": "CLIP模型",
+      "switch": "开关",
+      "lora_name": "LoRA名称",
+      "strength_model": "模型强度",
+      "strength_clip": "CLIP强度"
+    },
+    "outputs": {
+      "MODEL": "模型",
+      "CLIP": "CLIP模型"
+    }
+  },
+  "SDXL Resolutions (JPS)": {
+    "title": "SDXL分辨率（JPS）",
+    "inputs": {
+      "resolution": "分辨率"
+    },
+    "widgets": {
+      "resolution": "分辨率"
+    },
+    "outputs": {
+      "width": "宽度",
+      "height": "高度"
+    }
+  },
+  "SDXL Basic Settings (JPS)": {
+    "title": "SDXL基础设置（JPS）",
+    "inputs": {
+      "resolution": "分辨率",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "steps_total": "总步数",
+      "base_percentage": "基础占比",
+      "cfg": "CFG缩放系数",
+      "cfg_rescale": "CFG重缩放",
+      "cfg_refiner": "精炼器CFG",
+      "ascore_refiner": "精炼器美学分数",
+      "res_factor": "res系数",
+      "clip_skip": "Clip跳过层",
+      "filename": "文件名"
+    },
+    "widgets": {
+      "resolution": "分辨率",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "steps_total": "总步数",
+      "base_percentage": "基础占比",
+      "cfg": "CFG缩放系数",
+      "cfg_rescale": "CFG重缩放",
+      "cfg_refiner": "精炼器CFG",
+      "ascore_refiner": "精炼器美学分数",
+      "res_factor": "res系数",
+      "clip_skip": "Clip跳过层",
+      "filename": "文件名"
+    },
+    "outputs": {
+      "sdxl_basic_settings": "SDXL基础设置"
+    }
+  },
+  "SDXL Settings (JPS)": {
+    "title": "SDXL设置（JPS）",
+    "inputs": {
+      "resolution": "分辨率",
+      "res_factor": "res系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "cfg_rescale": "CFG重缩放",
+      "clip_skip": "Clip跳过层",
+      "filename": "文件名"
+    },
+    "widgets": {
+      "resolution": "分辨率",
+      "res_factor": "res系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "cfg_rescale": "CFG重缩放",
+      "clip_skip": "Clip跳过层",
+      "filename": "文件名"
+    },
+    "outputs": {
+      "sdxl_settings": "SDXL设置"
+    }
+  },
+  "Generation TXT IMG Settings (JPS)": {
+    "title": "文生图生成设置（JPS）",
+    "inputs": {
+      "mode": "模式",
+      "img_percentage": "图像占比"
+    },
+    "widgets": {
+      "mode": "模式",
+      "img_percentage": "图像占比"
+    },
+    "outputs": {
+      "gen_mode": "gen模式",
+      "img_strength": "图像强度"
+    }
+  },
+  "Crop Image Settings (JPS)": {
+    "title": "裁剪图像 设置（JPS）",
+    "inputs": {
+      "source_crop_pos": "来源裁剪pos",
+      "source_crop_offset": "来源裁剪偏移",
+      "support_crop_pos": "support裁剪pos",
+      "support_crop_offset": "support裁剪偏移",
+      "crop_intpol": "裁剪intpol"
+    },
+    "widgets": {
+      "source_crop_pos": "来源裁剪pos",
+      "source_crop_offset": "来源裁剪偏移",
+      "support_crop_pos": "support裁剪pos",
+      "support_crop_offset": "support裁剪偏移",
+      "crop_intpol": "裁剪intpol"
+    },
+    "outputs": {
+      "cropimage_settings": "cropimage设置"
+    }
+  },
+  "ImageToImage Settings (JPS)": {
+    "title": "图生图 设置（JPS）",
+    "inputs": {
+      "img2img_strength": "图生图强度",
+      "inpaint_strength": "inpaint强度",
+      "inpaint_grow_mask": "inpaintgrow遮罩",
+      "unsampler_strength": "unsampler强度",
+      "unsampler_cfg": "反采样器CFG",
+      "unsampler_sampler": "unsampler采样器",
+      "unsampler_scheduler": "unsampler调度器"
+    },
+    "widgets": {
+      "img2img_strength": "图生图强度",
+      "inpaint_strength": "inpaint强度",
+      "inpaint_grow_mask": "inpaintgrow遮罩",
+      "unsampler_strength": "unsampler强度",
+      "unsampler_cfg": "反采样器CFG",
+      "unsampler_sampler": "unsampler采样器",
+      "unsampler_scheduler": "unsampler调度器"
+    },
+    "outputs": {
+      "img2img_settings": "img2img设置"
+    }
+  },
+  "CtrlNet CannyEdge Settings (JPS)": {
+    "title": "ControlNet Canny边缘 设置（JPS）",
+    "inputs": {
+      "cannyedge_from": "Canny边缘来源",
+      "cannyedge_strength": "cannyedge强度",
+      "cannyedge_start": "cannyedge开始",
+      "cannyedge_end": "cannyedge结束",
+      "cannyedge_low": "Canny边缘低阈值",
+      "cannyedge_high": "Canny边缘高阈值"
+    },
+    "widgets": {
+      "cannyedge_from": "Canny边缘来源",
+      "cannyedge_strength": "cannyedge强度",
+      "cannyedge_start": "cannyedge开始",
+      "cannyedge_end": "cannyedge结束",
+      "cannyedge_low": "Canny边缘低阈值",
+      "cannyedge_high": "Canny边缘高阈值"
+    },
+    "outputs": {
+      "cannyedge_settings": "cannyedge设置"
+    }
+  },
+  "CtrlNet ZoeDepth Settings (JPS)": {
+    "title": "ControlNet Zoe深度 设置（JPS）",
+    "inputs": {
+      "zoe_from": "Zoe深度来源",
+      "zoe_strength": "Zoe强度",
+      "zoe_start": "Zoe开始",
+      "zoe_end": "Zoe结束"
+    },
+    "widgets": {
+      "zoe_from": "Zoe深度来源",
+      "zoe_strength": "Zoe强度",
+      "zoe_start": "Zoe开始",
+      "zoe_end": "Zoe结束"
+    },
+    "outputs": {
+      "zoedepth_settings": "zoedepth设置"
+    }
+  },
+  "CtrlNet MiDaS Settings (JPS)": {
+    "title": "ControlNet MiDaS深度 设置（JPS）",
+    "inputs": {
+      "midas_from": "MiDaS来源",
+      "midas_strength": "midas强度",
+      "midas_start": "midas开始",
+      "midas_end": "midas结束",
+      "midas_a": "MiDaS参数A",
+      "midas_bg": "MiDaS背景阈值"
+    },
+    "widgets": {
+      "midas_from": "MiDaS来源",
+      "midas_strength": "midas强度",
+      "midas_start": "midas开始",
+      "midas_end": "midas结束",
+      "midas_a": "MiDaS参数A",
+      "midas_bg": "MiDaS背景阈值"
+    },
+    "outputs": {
+      "midas_settings": "midas设置"
+    }
+  },
+  "CtrlNet OpenPose Settings (JPS)": {
+    "title": "ControlNet OpenPose 设置（JPS）",
+    "inputs": {
+      "openpose_from": "OpenPose来源",
+      "openpose_strength": "OpenPose强度",
+      "openpose_start": "OpenPose开始",
+      "openpose_end": "OpenPose结束",
+      "openpose_body": "OpenPose身体",
+      "openpose_face": "OpenPose面部",
+      "openpose_hand": "OpenPose手部"
+    },
+    "widgets": {
+      "openpose_from": "OpenPose来源",
+      "openpose_strength": "OpenPose强度",
+      "openpose_start": "OpenPose开始",
+      "openpose_end": "OpenPose结束",
+      "openpose_body": "OpenPose身体",
+      "openpose_face": "OpenPose面部",
+      "openpose_hand": "OpenPose手部"
+    },
+    "outputs": {
+      "openpose_settings": "OpenPose设置"
+    }
+  },
+  "Revision Settings (JPS)": {
+    "title": "Revision设置（JPS）",
+    "inputs": {
+      "rev1_strength": "rev1强度",
+      "rev2_strength": "rev2强度",
+      "rev1_noiseaug": "Revision 1噪声增强",
+      "rev2_noiseaug": "Revision 2噪声增强",
+      "rev1_crop": "rev1裁剪",
+      "rev1_offset": "rev1偏移",
+      "rev2_crop": "rev2裁剪",
+      "rev2_offset": "rev2偏移",
+      "crop_intpol": "裁剪intpol",
+      "crop_res": "裁剪res"
+    },
+    "widgets": {
+      "rev1_strength": "rev1强度",
+      "rev2_strength": "rev2强度",
+      "rev1_noiseaug": "Revision 1噪声增强",
+      "rev2_noiseaug": "Revision 2噪声增强",
+      "rev1_crop": "rev1裁剪",
+      "rev1_offset": "rev1偏移",
+      "rev2_crop": "rev2裁剪",
+      "rev2_offset": "rev2偏移",
+      "crop_intpol": "裁剪intpol",
+      "crop_res": "裁剪res"
+    },
+    "outputs": {
+      "revision_settings": "revision设置"
+    }
+  },
+  "IP Adapter Settings (JPS)": {
+    "title": "IPAdapter 设置（JPS）",
+    "inputs": {
+      "ipa_weight": "IPAdapter权重",
+      "ipa_wtype": "IPAdapter权重类型",
+      "ipa_noise": "IPAdapter噪声",
+      "ipa_start": "IPAdapter开始",
+      "ipa_stop": "IPAdapter停止位置",
+      "ipa_crop": "IPAdapter裁剪",
+      "ipa_zoom": "IPAdapter缩放",
+      "ipa_offset_x": "IPAdapter偏移X",
+      "ipa_offset_y": "IPAdapter偏移Y",
+      "ipa_mask": "IPAdapter遮罩",
+      "crop_intpol": "裁剪intpol",
+      "sharpening": "锐化",
+      "ipa_model": "IPAdapter模型"
+    },
+    "widgets": {
+      "ipa_weight": "IPAdapter权重",
+      "ipa_wtype": "IPAdapter权重类型",
+      "ipa_noise": "IPAdapter噪声",
+      "ipa_start": "IPAdapter开始",
+      "ipa_stop": "IPAdapter停止位置",
+      "ipa_crop": "IPAdapter裁剪",
+      "ipa_zoom": "IPAdapter缩放",
+      "ipa_offset_x": "IPAdapter偏移X",
+      "ipa_offset_y": "IPAdapter偏移Y",
+      "ipa_mask": "IPAdapter遮罩",
+      "crop_intpol": "裁剪intpol",
+      "sharpening": "锐化",
+      "ipa_model": "IPAdapter模型"
+    },
+    "outputs": {
+      "ip_adapter_single_settings": "ipadaptersingle设置"
+    }
+  },
+  "IP Adapter Tiled Settings (JPS)": {
+    "title": "IPAdapter分块 设置（JPS）",
+    "inputs": {
+      "ipa_model": "IPAdapter模型",
+      "ipa_wtype": "IPAdapter权重类型",
+      "ipa_weight": "IPAdapter权重",
+      "ipa_noise": "IPAdapter噪声",
+      "ipa_start": "IPAdapter开始",
+      "ipa_end": "IPAdapter结束",
+      "tile_short": "分块short",
+      "tile_weight": "分块权重",
+      "zoom": "缩放",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "prepare_type": "prepare类型",
+      "prepare_intpol": "准备插值方式",
+      "prepare_sharpening": "准备锐化"
+    },
+    "widgets": {
+      "ipa_model": "IPAdapter模型",
+      "ipa_wtype": "IPAdapter权重类型",
+      "ipa_weight": "IPAdapter权重",
+      "ipa_noise": "IPAdapter噪声",
+      "ipa_start": "IPAdapter开始",
+      "ipa_end": "IPAdapter结束",
+      "tile_short": "分块short",
+      "tile_weight": "分块权重",
+      "zoom": "缩放",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "prepare_type": "prepare类型",
+      "prepare_intpol": "准备插值方式",
+      "prepare_sharpening": "准备锐化"
+    },
+    "outputs": {
+      "ip_adapter_tiled_settings": "ipadapter分块设置"
+    }
+  },
+  "InstantID Settings (JPS)": {
+    "title": "InstantID设置（JPS）",
+    "inputs": {
+      "ip_weight": "IP权重",
+      "cn_strength": "ControlNet权重",
+      "noise": "噪声",
+      "start": "起始值",
+      "end": "结束"
+    },
+    "widgets": {
+      "ip_weight": "IP权重",
+      "cn_strength": "ControlNet权重",
+      "noise": "噪声",
+      "start": "起始值",
+      "end": "结束"
+    },
+    "outputs": {
+      "instantid_settings": "InstantID设置"
+    }
+  },
+  "Image Prepare Settings (JPS)": {
+    "title": "图像准备 设置（JPS）",
+    "inputs": {
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    },
+    "widgets": {
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    },
+    "outputs": {
+      "imageprepare_settings": "imageprepare设置"
+    }
+  },
+  "InstantID Source Prepare Settings (JPS)": {
+    "title": "InstantID来源准备 设置（JPS）",
+    "inputs": {
+      "resize_to": "调整大小",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "flip": "翻转"
+    },
+    "widgets": {
+      "resize_to": "调整大小",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "flip": "翻转"
+    },
+    "outputs": {
+      "imageprepare_settings": "imageprepare设置"
+    }
+  },
+  "InstantID Pose Prepare Settings (JPS)": {
+    "title": "InstantID姿态准备 设置（JPS）",
+    "inputs": {
+      "resize_to": "调整大小",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "flip": "翻转"
+    },
+    "widgets": {
+      "resize_to": "调整大小",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "flip": "翻转"
+    },
+    "outputs": {
+      "imageprepare_settings": "imageprepare设置"
+    }
+  },
+  "InstantID Mask Prepare Settings (JPS)": {
+    "title": "InstantID遮罩准备 设置（JPS）",
+    "inputs": {
+      "mask_type": "遮罩类型",
+      "resize_to": "调整大小",
+      "resize_type": "缩放类型",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    },
+    "widgets": {
+      "mask_type": "遮罩类型",
+      "resize_to": "调整大小",
+      "resize_type": "缩放类型",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    },
+    "outputs": {
+      "imageprepare_settings": "imageprepare设置"
+    }
+  },
+  "Sampler Scheduler Settings (JPS)": {
+    "title": "采样器与调度器设置（JPS）",
+    "inputs": {
+      "sampler_name": "采样器",
+      "scheduler": "调度器"
+    },
+    "widgets": {
+      "sampler_name": "采样器",
+      "scheduler": "调度器"
+    },
+    "outputs": {
+      "sampler_name": "采样器",
+      "scheduler": "调度器"
+    }
+  },
+  "Integer Switch (JPS)": {
+    "title": "整数切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "int_1": "整数_1",
+      "int_2": "整数_2",
+      "int_3": "整数3",
+      "int_4": "整数4",
+      "int_5": "整数5"
+    },
+    "widgets": {
+      "select": "选择",
+      "int_1": "整数_1",
+      "int_2": "整数_2",
+      "int_3": "整数3",
+      "int_4": "整数4",
+      "int_5": "整数5"
+    },
+    "outputs": {
+      "int_out": "整数输出"
+    }
+  },
+  "Image Switch (JPS)": {
+    "title": "图像切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "img_1": "前景图",
+      "img_2": "图像2",
+      "img_3": "图像3",
+      "img_4": "图像4",
+      "img_5": "图像5"
+    },
+    "widgets": {
+      "select": "选择",
+      "img_1": "前景图",
+      "img_2": "图像2",
+      "img_3": "图像3",
+      "img_4": "图像4",
+      "img_5": "图像5"
+    },
+    "outputs": {
+      "img_out": "图像输出"
+    }
+  },
+  "Latent Switch (JPS)": {
+    "title": "Latent切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "latent_1": "Latent1",
+      "latent_2": "Latent2",
+      "latent_3": "Latent3",
+      "latent_4": "Latent4",
+      "latent_5": "Latent5"
+    },
+    "widgets": {
+      "select": "选择",
+      "latent_1": "Latent1",
+      "latent_2": "Latent2",
+      "latent_3": "Latent3",
+      "latent_4": "Latent4",
+      "latent_5": "Latent5"
+    },
+    "outputs": {
+      "latent_out": "Latent输出"
+    }
+  },
+  "Conditioning Switch (JPS)": {
+    "title": "条件切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "con_1": "con_1",
+      "con_2": "con_2",
+      "con_3": "con_3",
+      "con_4": "con_4",
+      "con_5": "con_5"
+    },
+    "widgets": {
+      "select": "选择",
+      "con_1": "con_1",
+      "con_2": "con_2",
+      "con_3": "con_3",
+      "con_4": "con_4",
+      "con_5": "con_5"
+    },
+    "outputs": {
+      "con_out": "con输出"
+    }
+  },
+  "Model Switch (JPS)": {
+    "title": "模型切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "model_1": "模型1",
+      "model_2": "模型2",
+      "model_3": "模型3",
+      "model_4": "模型4",
+      "model_5": "模型5"
+    },
+    "widgets": {
+      "select": "选择",
+      "model_1": "模型1",
+      "model_2": "模型2",
+      "model_3": "模型3",
+      "model_4": "模型4",
+      "model_5": "模型5"
+    },
+    "outputs": {
+      "model_out": "模型输出"
+    }
+  },
+  "IPA Switch (JPS)": {
+    "title": "IPAdapter切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "ipa_1": "IPAdapter1",
+      "ipa_2": "IPAdapter2",
+      "ipa_3": "IPAdapter3",
+      "ipa_4": "IPAdapter4",
+      "ipa_5": "IPAdapter5"
+    },
+    "widgets": {
+      "select": "选择",
+      "ipa_1": "IPAdapter1",
+      "ipa_2": "IPAdapter2",
+      "ipa_3": "IPAdapter3",
+      "ipa_4": "IPAdapter4",
+      "ipa_5": "IPAdapter5"
+    },
+    "outputs": {
+      "IPA_out": "IPAdapter输出"
+    }
+  },
+  "VAE Switch (JPS)": {
+    "title": "VAE切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "vae_1": "VAE1",
+      "vae_2": "VAE2",
+      "vae_3": "VAE3",
+      "vae_4": "VAE4",
+      "vae_5": "VAE5"
+    },
+    "widgets": {
+      "select": "选择",
+      "vae_1": "VAE1",
+      "vae_2": "VAE2",
+      "vae_3": "VAE3",
+      "vae_4": "VAE4",
+      "vae_5": "VAE5"
+    },
+    "outputs": {
+      "vae_out": "VAE输出"
+    }
+  },
+  "Mask Switch (JPS)": {
+    "title": "遮罩切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "mask_1": "遮罩1",
+      "mask_2": "遮罩_2",
+      "mask_3": "遮罩_3",
+      "mask_4": "遮罩_4",
+      "mask_5": "遮罩5"
+    },
+    "widgets": {
+      "select": "选择",
+      "mask_1": "遮罩1",
+      "mask_2": "遮罩_2",
+      "mask_3": "遮罩_3",
+      "mask_4": "遮罩_4",
+      "mask_5": "遮罩5"
+    },
+    "outputs": {
+      "mask_out": "遮罩输出"
+    }
+  },
+  "ControlNet Switch (JPS)": {
+    "title": "ControlNet切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "ctrlnet_1": "ctrlnet_1",
+      "ctrlnet_2": "ctrlnet_2",
+      "ctrlnet_3": "ctrlnet_3",
+      "ctrlnet_4": "ctrlnet_4",
+      "ctrlnet_5": "ctrlnet_5"
+    },
+    "widgets": {
+      "select": "选择",
+      "ctrlnet_1": "ctrlnet_1",
+      "ctrlnet_2": "ctrlnet_2",
+      "ctrlnet_3": "ctrlnet_3",
+      "ctrlnet_4": "ctrlnet_4",
+      "ctrlnet_5": "ctrlnet_5"
+    },
+    "outputs": {
+      "ctrlnet_out": "ctrlnet输出"
+    }
+  },
+  "Disable Enable Switch (JPS)": {
+    "title": "禁用/启用切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "compare": "compare",
+      "match": "匹配"
+    },
+    "widgets": {
+      "select": "选择",
+      "compare": "compare",
+      "match": "匹配"
+    },
+    "outputs": {
+      "disable_enable": "禁用启用"
+    }
+  },
+  "Enable Disable Switch (JPS)": {
+    "title": "启用/禁用切换（JPS）",
+    "inputs": {
+      "select": "选择",
+      "compare": "compare",
+      "match": "匹配"
+    },
+    "widgets": {
+      "select": "选择",
+      "compare": "compare",
+      "match": "匹配"
+    },
+    "outputs": {
+      "enable_disable": "启用禁用"
+    }
+  },
+  "SDXL Basic Settings Pipe (JPS)": {
+    "title": "SDXL基础设置管道（JPS）",
+    "inputs": {
+      "sdxl_basic_settings": "SDXL基础设置"
+    },
+    "widgets": {
+      "sdxl_basic_settings": "SDXL基础设置"
+    },
+    "outputs": {
+      "image_res": "图像res",
+      "width": "宽度",
+      "height": "高度",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "steps_total": "总步数",
+      "step_split": "step拆分",
+      "cfg": "CFG缩放系数",
+      "cfg_rescale": "CFG重缩放",
+      "cfg_refiner": "精炼器CFG",
+      "ascore_refiner": "精炼器美学分数",
+      "res_factor": "res系数",
+      "clip_skip": "Clip跳过层",
+      "filename": "文件名"
+    }
+  },
+  "SDXL Settings Pipe (JPS)": {
+    "title": "SDXL设置管道（JPS）",
+    "inputs": {
+      "sdxl_settings": "SDXL设置"
+    },
+    "widgets": {
+      "sdxl_settings": "SDXL设置"
+    },
+    "outputs": {
+      "image_res": "图像res",
+      "width": "宽度",
+      "height": "高度",
+      "res_factor": "res系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "cfg_rescale": "CFG重缩放",
+      "clip_skip": "Clip跳过层",
+      "filename": "文件名"
+    }
+  },
+  "Crop Image Pipe (JPS)": {
+    "title": "裁剪图像管道（JPS）",
+    "inputs": {
+      "cropimage_settings": "cropimage设置"
+    },
+    "widgets": {
+      "cropimage_settings": "cropimage设置"
+    },
+    "outputs": {
+      "source_crop_pos": "来源裁剪pos",
+      "source_crop_offset": "来源裁剪偏移",
+      "support_crop_pos": "support裁剪pos",
+      "support_crop_offset": "support裁剪偏移",
+      "crop_intpol": "裁剪intpol"
+    }
+  },
+  "ImageToImage Pipe (JPS)": {
+    "title": "图生图管道（JPS）",
+    "inputs": {
+      "img2img_settings": "img2img设置"
+    },
+    "widgets": {
+      "img2img_settings": "img2img设置"
+    },
+    "outputs": {
+      "img2img_strength": "图生图强度",
+      "inpaint_strength": "inpaint强度",
+      "inpaint_grow_mask": "inpaintgrow遮罩",
+      "unsampler_strength": "unsampler强度",
+      "unsampler_cfg": "反采样器CFG",
+      "unsampler_sampler": "unsampler采样器",
+      "unsampler_scheduler": "unsampler调度器"
+    }
+  },
+  "CtrlNet CannyEdge Pipe (JPS)": {
+    "title": "ControlNet Canny边缘管道（JPS）",
+    "inputs": {
+      "cannyedge_settings": "cannyedge设置"
+    },
+    "widgets": {
+      "cannyedge_settings": "cannyedge设置"
+    },
+    "outputs": {
+      "cannyedge_source": "cannyedge来源",
+      "cannyedge_strength": "cannyedge强度",
+      "cannyedge_start": "cannyedge开始",
+      "cannyedge_end": "cannyedge结束",
+      "cannyedge_low": "Canny边缘低阈值",
+      "cannyedge_high": "Canny边缘高阈值"
+    }
+  },
+  "CtrlNet ZoeDepth Pipe (JPS)": {
+    "title": "ControlNet Zoe深度管道（JPS）",
+    "inputs": {
+      "zoedepth_settings": "zoedepth设置"
+    },
+    "widgets": {
+      "zoedepth_settings": "zoedepth设置"
+    },
+    "outputs": {
+      "zoe_source": "Zoe来源",
+      "zoe_strength": "Zoe强度",
+      "zoe_start": "Zoe开始",
+      "zoe_end": "Zoe结束"
+    }
+  },
+  "CtrlNet MiDaS Pipe (JPS)": {
+    "title": "ControlNet MiDaS深度管道（JPS）",
+    "inputs": {
+      "midas_settings": "midas设置"
+    },
+    "widgets": {
+      "midas_settings": "midas设置"
+    },
+    "outputs": {
+      "midas_source": "midas来源",
+      "midas_strength": "midas强度",
+      "midas_start": "midas开始",
+      "midas_end": "midas结束",
+      "midas_a": "MiDaS参数A",
+      "midas_bg": "MiDaS背景阈值"
+    }
+  },
+  "CtrlNet OpenPose Pipe (JPS)": {
+    "title": "ControlNet OpenPose管道（JPS）",
+    "inputs": {
+      "openpose_settings": "OpenPose设置"
+    },
+    "widgets": {
+      "openpose_settings": "OpenPose设置"
+    },
+    "outputs": {
+      "openpose_source": "OpenPose来源",
+      "openpose_strength": "OpenPose强度",
+      "openpose_start": "OpenPose开始",
+      "openpose_end": "OpenPose结束",
+      "openpose_body": "OpenPose身体",
+      "openpose_face": "OpenPose面部",
+      "openpose_hand": "OpenPose手部"
+    }
+  },
+  "IP Adapter Settings Pipe (JPS)": {
+    "title": "IPAdapter 设置管道（JPS）",
+    "inputs": {
+      "ip_adapter_settings": "ipadapter设置"
+    },
+    "widgets": {
+      "ip_adapter_settings": "ipadapter设置"
+    },
+    "outputs": {
+      "ipa_weight": "IPAdapter权重",
+      "ipa_wtype": "IPAdapter权重类型",
+      "ipa_noise": "IPAdapter噪声",
+      "ipa_start": "IPAdapter开始",
+      "ipa_stop": "IPAdapter停止位置",
+      "ipa_crop": "IPAdapter裁剪",
+      "ipa_zoom": "IPAdapter缩放",
+      "ipa_offset_x": "IPAdapter偏移X",
+      "ipa_offset_y": "IPAdapter偏移Y",
+      "ipa_mask": "IPAdapter遮罩",
+      "crop_intpol": "裁剪intpol",
+      "sharpening": "锐化",
+      "ipa_model": "IPAdapter模型"
+    }
+  },
+  "IP Adapter Tiled Settings Pipe (JPS)": {
+    "title": "IPAdapter分块 设置管道（JPS）",
+    "inputs": {
+      "ip_adapter_settings": "ipadapter设置"
+    },
+    "widgets": {
+      "ip_adapter_settings": "ipadapter设置"
+    },
+    "outputs": {
+      "ipa_model": "IPAdapter模型",
+      "ipa_wtype": "IPAdapter权重类型",
+      "ipa_weight": "IPAdapter权重",
+      "ipa_noise": "IPAdapter噪声",
+      "ipa_start": "IPAdapter开始",
+      "ipa_end": "IPAdapter结束",
+      "tile_short": "分块short",
+      "tile_weight": "分块权重",
+      "zoom": "缩放",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "prepare_type": "prepare类型",
+      "prepare_intpol": "准备插值方式",
+      "prepare_sharpening": "准备锐化"
+    }
+  },
+  "InstantID Pipe (JPS)": {
+    "title": "InstantID管道（JPS）",
+    "inputs": {
+      "instantid_settings": "InstantID设置"
+    },
+    "widgets": {
+      "instantid_settings": "InstantID设置"
+    },
+    "outputs": {
+      "ip_weight": "IP权重",
+      "cn_strength": "ControlNet权重",
+      "noise": "噪声",
+      "start": "起始值",
+      "end": "结束"
+    }
+  },
+  "Image Prepare Pipe (JPS)": {
+    "title": "图像准备管道（JPS）",
+    "inputs": {
+      "imageprepare_settings": "imageprepare设置"
+    },
+    "widgets": {
+      "imageprepare_settings": "imageprepare设置"
+    },
+    "outputs": {
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    }
+  },
+  "InstantID Source Prepare Pipe (JPS)": {
+    "title": "InstantID来源准备管道（JPS）",
+    "inputs": {
+      "imageprepare_settings": "imageprepare设置"
+    },
+    "widgets": {
+      "imageprepare_settings": "imageprepare设置"
+    },
+    "outputs": {
+      "resize_to": "调整大小",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "flip": "翻转"
+    }
+  },
+  "InstantID Pose Prepare Pipe (JPS)": {
+    "title": "InstantID姿态准备管道（JPS）",
+    "inputs": {
+      "imageprepare_settings": "imageprepare设置"
+    },
+    "widgets": {
+      "imageprepare_settings": "imageprepare设置"
+    },
+    "outputs": {
+      "resize_to": "调整大小",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "flip": "翻转"
+    }
+  },
+  "InstantID Mask Prepare Pipe (JPS)": {
+    "title": "InstantID遮罩准备管道（JPS）",
+    "inputs": {
+      "imageprepare_settings": "imageprepare设置"
+    },
+    "widgets": {
+      "imageprepare_settings": "imageprepare设置"
+    },
+    "outputs": {
+      "mask_type": "遮罩类型",
+      "resize_to": "调整大小",
+      "resize_type": "缩放类型",
+      "offset_width": "偏移宽度",
+      "offset_height": "偏移高度",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    }
+  },
+  "Revision Settings Pipe (JPS)": {
+    "title": "Revision设置管道（JPS）",
+    "inputs": {
+      "revision_settings": "revision设置"
+    },
+    "widgets": {
+      "revision_settings": "revision设置"
+    },
+    "outputs": {
+      "crop_res": "裁剪res",
+      "crop_intpol": "裁剪intpol",
+      "rev1_crop": "rev1裁剪",
+      "rev1_offset": "rev1偏移",
+      "rev2_crop": "rev2裁剪",
+      "rev2_offset": "rev2偏移",
+      "rev1_strength": "rev1强度",
+      "rev2_strength": "rev2强度",
+      "rev1_noiseaug": "Revision 1噪声增强",
+      "rev2_noiseaug": "Revision 2噪声增强"
+    }
+  },
+  "SDXL Fundamentals MultiPipe (JPS)": {
+    "title": "SDXL基础多管道（JPS）",
+    "inputs": {
+      "vae": "VAE模型",
+      "model_base": "模型base",
+      "model_refiner": "模型精炼器",
+      "clip_base": "CLIPbase",
+      "clip_refiner": "CLIP精炼器",
+      "pos_base": "pos_base",
+      "neg_base": "neg_base",
+      "pos_refiner": "pos精炼器",
+      "neg_refiner": "neg精炼器",
+      "seed": "种子"
+    },
+    "widgets": {
+      "vae": "VAE模型",
+      "model_base": "模型base",
+      "model_refiner": "模型精炼器",
+      "clip_base": "CLIPbase",
+      "clip_refiner": "CLIP精炼器",
+      "pos_base": "pos_base",
+      "neg_base": "neg_base",
+      "pos_refiner": "pos精炼器",
+      "neg_refiner": "neg精炼器",
+      "seed": "种子"
+    },
+    "outputs": {
+      "vae": "VAE模型",
+      "model_base": "模型base",
+      "model_refiner": "模型精炼器",
+      "clip_base": "CLIPbase",
+      "clip_refiner": "CLIP精炼器",
+      "pos_base": "pos_base",
+      "neg_base": "neg_base",
+      "pos_refiner": "pos精炼器",
+      "neg_refiner": "neg精炼器",
+      "seed": "种子"
+    }
+  },
+  "Images Masks MultiPipe (JPS)": {
+    "title": "图像遮罩多管道（JPS）",
+    "inputs": {
+      "generation_img": "generation图像",
+      "generation_mask": "generation遮罩",
+      "ipa1_img": "IPAdapter1图像",
+      "ipa2_img": "IPAdapter2图像",
+      "ipa1_mask": "IPAdapter1遮罩",
+      "ipa2_mask": "IPAdapter2遮罩",
+      "revision1_img": "revision1图像",
+      "revision2_img": "revision2图像",
+      "inpaint_model": "修复模型"
+    },
+    "widgets": {
+      "generation_img": "generation图像",
+      "generation_mask": "generation遮罩",
+      "ipa1_img": "IPAdapter1图像",
+      "ipa2_img": "IPAdapter2图像",
+      "ipa1_mask": "IPAdapter1遮罩",
+      "ipa2_mask": "IPAdapter2遮罩",
+      "revision1_img": "revision1图像",
+      "revision2_img": "revision2图像",
+      "inpaint_model": "修复模型"
+    },
+    "outputs": {
+      "generation_img": "generation图像",
+      "generation_mask": "generation遮罩",
+      "ipa1_img": "IPAdapter1图像",
+      "ipa2_img": "IPAdapter2图像",
+      "ipa1_mask": "IPAdapter1遮罩",
+      "ipa2_mask": "IPAdapter2遮罩",
+      "revision1_img": "revision1图像",
+      "revision2_img": "revision2图像",
+      "inpaint_model": "修复模型"
+    }
+  },
+  "SDXL Recommended Resolution Calc (JPS)": {
+    "title": "SDXL推荐分辨率计算（JPS）",
+    "inputs": {
+      "target_width": "目标宽度",
+      "target_height": "目标高度"
+    },
+    "widgets": {
+      "target_width": "目标宽度",
+      "target_height": "目标高度"
+    },
+    "outputs": {
+      "SDXL_width": "SDXL宽度",
+      "SDXL_height": "SDXL高度"
+    }
+  },
+  "Resolution Multiply (JPS)": {
+    "title": "分辨率倍乘（JPS）",
+    "inputs": {
+      "width": "宽度",
+      "height": "高度",
+      "factor": "系数"
+    },
+    "widgets": {
+      "width": "宽度",
+      "height": "高度",
+      "factor": "系数"
+    },
+    "outputs": {
+      "width_resized": "宽度resized",
+      "height_resized": "高度resized"
+    }
+  },
+  "Largest Int (JPS)": {
+    "title": "最大整数（JPS）",
+    "inputs": {
+      "int_a": "整数a",
+      "int_b": "整数b"
+    },
+    "widgets": {
+      "int_a": "整数a",
+      "int_b": "整数b"
+    },
+    "outputs": {
+      "larger_int": "larger整数",
+      "smaller_int": "smaller整数",
+      "is_a_larger": "is_a_larger"
+    }
+  },
+  "Multiply Int Int (JPS)": {
+    "title": "整数×整数（JPS）",
+    "inputs": {
+      "int_a": "整数a",
+      "int_b": "整数b"
+    },
+    "widgets": {
+      "int_a": "整数a",
+      "int_b": "整数b"
+    },
+    "outputs": {
+      "int_multiply": "整数相乘",
+      "float_multiply": "浮点数相乘"
+    }
+  },
+  "Multiply Int Float (JPS)": {
+    "title": "整数×浮点数（JPS）",
+    "inputs": {
+      "int_a": "整数a",
+      "float_b": "浮点数b"
+    },
+    "widgets": {
+      "int_a": "整数a",
+      "float_b": "浮点数b"
+    },
+    "outputs": {
+      "int_multiply": "整数相乘",
+      "float_multiply": "浮点数相乘"
+    }
+  },
+  "Multiply Float Float (JPS)": {
+    "title": "浮点数×浮点数（JPS）",
+    "inputs": {
+      "float_a": "浮点数a",
+      "float_b": "浮点数b"
+    },
+    "widgets": {
+      "float_a": "浮点数a",
+      "float_b": "浮点数b"
+    },
+    "outputs": {
+      "int_multiply": "整数相乘",
+      "float_multiply": "浮点数相乘"
+    }
+  },
+  "Substract Int Int (JPS)": {
+    "title": "整数相减（JPS）",
+    "inputs": {
+      "int_a": "整数a",
+      "int_b": "整数b"
+    },
+    "widgets": {
+      "int_a": "整数a",
+      "int_b": "整数b"
+    },
+    "outputs": {
+      "int_substract": "整数substract",
+      "float_substract": "浮点数substract"
+    }
+  },
+  "Text Concatenate (JPS)": {
+    "title": "文本拼接（JPS）",
+    "inputs": {
+      "delimiter": "分隔符",
+      "text1": "文本1",
+      "text2": "文本2",
+      "text3": "文本_3",
+      "text4": "文本_4",
+      "text5": "文本_5"
+    },
+    "widgets": {
+      "delimiter": "分隔符",
+      "text1": "文本1",
+      "text2": "文本2",
+      "text3": "文本_3",
+      "text4": "文本_4",
+      "text5": "文本_5"
+    },
+    "outputs": {
+      "text": "文本"
+    }
+  },
+  "Get Date Time String (JPS)": {
+    "title": "获取日期时间字符串（JPS）",
+    "inputs": {
+      "style": "风格"
+    },
+    "widgets": {
+      "style": "风格"
+    },
+    "outputs": {
+      "time_format": "时间格式"
+    }
+  },
+  "Get Image Size (JPS)": {
+    "title": "获取图像尺寸（JPS）",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "image": "图像"
+    },
+    "outputs": {
+      "width": "宽度",
+      "height": "高度"
+    }
+  },
+  "Crop Image Square (JPS)": {
+    "title": "裁剪图像 Square（JPS）",
+    "inputs": {
+      "image": "图像",
+      "crop_position": "裁剪位置",
+      "offset_x": "X偏移",
+      "offset_y": "Y偏移",
+      "zoom": "缩放",
+      "interpolation": "插值方式",
+      "target_rez": "目标rez",
+      "sharpening": "锐化"
+    },
+    "widgets": {
+      "image": "图像",
+      "crop_position": "裁剪位置",
+      "offset_x": "X偏移",
+      "offset_y": "Y偏移",
+      "zoom": "缩放",
+      "interpolation": "插值方式",
+      "target_rez": "目标rez",
+      "sharpening": "锐化"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "Crop Image TargetSize (JPS)": {
+    "title": "按目标尺寸裁剪图像（JPS）",
+    "inputs": {
+      "image": "图像",
+      "target_w": "目标宽度",
+      "target_h": "目标高度",
+      "crop_position": "裁剪位置",
+      "offset": "偏移",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    },
+    "widgets": {
+      "image": "图像",
+      "target_w": "目标宽度",
+      "target_h": "目标高度",
+      "crop_position": "裁剪位置",
+      "offset": "偏移",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "Prepare Image (JPS)": {
+    "title": "准备图像（JPS）",
+    "inputs": {
+      "image": "图像",
+      "target_w": "目标宽度",
+      "target_h": "目标高度",
+      "crop_w_percent": "裁剪wpercent",
+      "crop_h_percent": "裁剪hpercent",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    },
+    "widgets": {
+      "image": "图像",
+      "target_w": "目标宽度",
+      "target_h": "目标高度",
+      "crop_w_percent": "裁剪wpercent",
+      "crop_h_percent": "裁剪hpercent",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "interpolation": "插值方式",
+      "sharpening": "锐化"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "Prepare Image Plus (JPS)": {
+    "title": "准备图像增强版（JPS）",
+    "inputs": {
+      "image": "图像",
+      "target_w": "目标宽度",
+      "target_h": "目标高度",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "resize_type": "缩放类型",
+      "flip": "翻转"
+    },
+    "widgets": {
+      "image": "图像",
+      "target_w": "目标宽度",
+      "target_h": "目标高度",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "crop_left": "裁剪左侧",
+      "crop_right": "裁剪右侧",
+      "crop_top": "裁剪顶部",
+      "crop_bottom": "裁剪底部",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "resize_type": "缩放类型",
+      "flip": "翻转"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "Prepare Image Tiled IPA (JPS)": {
+    "title": "准备IPAdapter分块图像（JPS）",
+    "inputs": {
+      "image": "图像",
+      "target_w": "目标宽度",
+      "target_h": "目标高度",
+      "zoom": "缩放",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "tile_short": "分块short",
+      "prepare_type": "prepare类型"
+    },
+    "widgets": {
+      "image": "图像",
+      "target_w": "目标宽度",
+      "target_h": "目标高度",
+      "zoom": "缩放",
+      "offset_w": "偏移w",
+      "offset_h": "偏移h",
+      "interpolation": "插值方式",
+      "sharpening": "锐化",
+      "tile_short": "分块short",
+      "prepare_type": "prepare类型"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "SDXL Prompt Styler (JPS)": {
+    "title": "SDXL提示词风格器（JPS）",
+    "inputs": {
+      "text_positive_g": "正面条件Big-G",
+      "text_positive_l": "正面条件L",
+      "text_negative": "负面条件",
+      "artist": "艺术家",
+      "movie": "movie",
+      "style": "风格",
+      "fooocus_enhance": "fooocus_enhance",
+      "fooocus_negative": "fooocus负向",
+      "universal_negative": "universal负向"
+    },
+    "widgets": {
+      "text_positive_g": "正面条件Big-G",
+      "text_positive_l": "正面条件L",
+      "text_negative": "负面条件",
+      "artist": "艺术家",
+      "movie": "movie",
+      "style": "风格",
+      "fooocus_enhance": "fooocus_enhance",
+      "fooocus_negative": "fooocus负向",
+      "universal_negative": "universal负向"
+    },
+    "outputs": {
+      "text_positive_g": "正面条件Big-G",
+      "text_positive_l": "正面条件L",
+      "text_positive": "正面条件",
+      "text_negative": "负面条件"
+    }
+  },
+  "SDXL Prompt Handling (JPS)": {
+    "title": "SDXL提示词处理（JPS）",
+    "inputs": {
+      "handling": "handling",
+      "pos_g": "正面bigG文本",
+      "pos_l": "正面L文本"
+    },
+    "widgets": {
+      "handling": "handling",
+      "pos_g": "正面bigG文本",
+      "pos_l": "正面L文本"
+    },
+    "outputs": {
+      "pos_g": "正面bigG文本",
+      "pos_l": "正面L文本"
+    }
+  },
+  "SDXL Prompt Handling Plus (JPS)": {
+    "title": "SDXL提示词处理增强版（JPS）",
+    "inputs": {
+      "handling": "handling",
+      "pos_g": "正面bigG文本",
+      "pos_l": "正面L文本"
+    },
+    "widgets": {
+      "handling": "handling",
+      "pos_g": "正面bigG文本",
+      "pos_l": "正面L文本"
+    },
+    "outputs": {
+      "pos_g": "正面bigG文本",
+      "pos_l": "正面L文本"
+    }
+  },
+  "Text Prompt (JPS)": {
+    "title": "文本提示词（JPS）",
+    "inputs": {
+      "text": "文本"
+    },
+    "widgets": {
+      "text": "文本"
+    },
+    "outputs": {
+      "text": "文本"
+    }
+  },
+  "Text Prompt Combo (JPS)": {
+    "title": "组合文本提示词（JPS）",
+    "inputs": {
+      "pos": "正向",
+      "neg": "负向"
+    },
+    "widgets": {
+      "pos": "正向",
+      "neg": "负向"
+    },
+    "outputs": {
+      "pos": "正向",
+      "neg": "负向"
+    }
+  },
+  "Save Images Plus (JPS)": {
+    "title": "保存图像增强版（JPS）",
+    "inputs": {
+      "images": "图像",
+      "filename_prefix": "文件名前缀"
+    },
+    "widgets": {
+      "images": "图像",
+      "filename_prefix": "文件名前缀"
+    },
+    "outputs": {
+      "dummy_out": "dummy输出"
+    }
+  },
+  "CLIPTextEncode SDXL Plus (JPS)": {
+    "title": "CLIP文本编码SDXL增强版（JPS）",
+    "inputs": {
+      "width": "宽度",
+      "height": "高度",
+      "res_factor": "res系数",
+      "text_pos": "文本pos",
+      "text_neg": "文本neg",
+      "clip": "CLIP模型"
+    },
+    "widgets": {
+      "width": "宽度",
+      "height": "高度",
+      "res_factor": "res系数",
+      "text_pos": "文本pos",
+      "text_neg": "文本neg",
+      "clip": "CLIP模型"
+    },
+    "outputs": {
+      "cond_pos": "正面条件",
+      "cond_neg": "负面条件"
+    }
+  },
+  "Time Seed (JPS)": {
+    "title": "时间种子（JPS）",
+    "inputs": {
+      "fixed_seed": "固定种子"
+    },
+    "widgets": {
+      "fixed_seed": "固定种子"
+    },
+    "outputs": {
+      "seed": "种子"
+    }
+  }
+}

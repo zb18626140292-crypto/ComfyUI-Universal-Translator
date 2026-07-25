@@ -118,5 +118,719 @@
       "comment": "备注"
     },
     "outputs": {}
+  },
+  "Checkpoint Loader with Name (Image Saver)": {
+    "title": "带名称的Checkpoint加载器",
+    "inputs": {
+      "ckpt_name": "模型名称"
+    },
+    "widgets": {
+      "ckpt_name": "模型名称"
+    },
+    "outputs": {
+      "MODEL": "模型",
+      "CLIP": "CLIP模型",
+      "VAE": "VAE",
+      "model_name": "模型名称"
+    }
+  },
+  "UNet loader with Name (Image Saver)": {
+    "title": "带名称的UNet加载器",
+    "inputs": {
+      "unet_name": "Unet名称",
+      "weight_dtype": "权重数据类型"
+    },
+    "widgets": {
+      "unet_name": "Unet名称",
+      "weight_dtype": "权重数据类型"
+    },
+    "outputs": {
+      "model": "模型",
+      "filename": "文件名"
+    }
+  },
+  "Image Saver": {
+    "title": "图像保存器",
+    "inputs": {
+      "images": "图像",
+      "filename": "文件名",
+      "path": "路径",
+      "extension": "后缀名",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "modelname": "模型名称",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "seed_value": "种子值",
+      "width": "宽度",
+      "height": "高度",
+      "lossless_webp": "无损WebP",
+      "quality_jpeg_or_webp": "JPEG/WebP质量",
+      "optimize_png": "优化PNG",
+      "counter": "计数器",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "time_format": "时间格式",
+      "save_workflow_as_json": "保存工作流为JSON",
+      "embed_workflow": "嵌入工作流",
+      "additional_hashes": "附加哈希",
+      "download_civitai_data": "downloadcivitai数据",
+      "easy_remix": "简易重混",
+      "show_preview": "显示预览",
+      "custom": "自定义"
+    },
+    "widgets": {
+      "images": "图像",
+      "filename": "文件名",
+      "path": "路径",
+      "extension": "后缀名",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "modelname": "模型名称",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "seed_value": "种子值",
+      "width": "宽度",
+      "height": "高度",
+      "lossless_webp": "无损WebP",
+      "quality_jpeg_or_webp": "JPEG/WebP质量",
+      "optimize_png": "优化PNG",
+      "counter": "计数器",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "time_format": "时间格式",
+      "save_workflow_as_json": "保存工作流为JSON",
+      "embed_workflow": "嵌入工作流",
+      "additional_hashes": "附加哈希",
+      "download_civitai_data": "downloadcivitai数据",
+      "easy_remix": "简易重混",
+      "show_preview": "显示预览",
+      "custom": "自定义"
+    },
+    "outputs": {
+      "hashes": "哈希",
+      "a1111_params": "A1111参数"
+    }
+  },
+  "Image Saver Simple": {
+    "title": "简易图像保存器",
+    "inputs": {
+      "images": "图像",
+      "filename": "文件名",
+      "path": "路径",
+      "extension": "后缀名",
+      "lossless_webp": "无损WebP",
+      "quality_jpeg_or_webp": "JPEG/WebP质量",
+      "optimize_png": "优化PNG",
+      "embed_workflow": "嵌入工作流",
+      "save_workflow_as_json": "保存工作流为JSON",
+      "metadata": "元数据",
+      "counter": "计数器",
+      "time_format": "时间格式",
+      "show_preview": "显示预览"
+    },
+    "widgets": {
+      "images": "图像",
+      "filename": "文件名",
+      "path": "路径",
+      "extension": "后缀名",
+      "lossless_webp": "无损WebP",
+      "quality_jpeg_or_webp": "JPEG/WebP质量",
+      "optimize_png": "优化PNG",
+      "embed_workflow": "嵌入工作流",
+      "save_workflow_as_json": "保存工作流为JSON",
+      "metadata": "元数据",
+      "counter": "计数器",
+      "time_format": "时间格式",
+      "show_preview": "显示预览"
+    },
+    "outputs": {
+      "hashes": "哈希",
+      "a1111_params": "A1111参数"
+    }
+  },
+  "Image Saver Metadata": {
+    "title": "图像保存器（元数据）",
+    "inputs": {
+      "modelname": "模型名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "width": "宽度",
+      "height": "高度",
+      "seed_value": "种子值",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "additional_hashes": "附加哈希",
+      "download_civitai_data": "downloadcivitai数据",
+      "easy_remix": "简易重混",
+      "custom": "自定义"
+    },
+    "widgets": {
+      "modelname": "模型名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "width": "宽度",
+      "height": "高度",
+      "seed_value": "种子值",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "additional_hashes": "附加哈希",
+      "download_civitai_data": "downloadcivitai数据",
+      "easy_remix": "简易重混",
+      "custom": "自定义"
+    },
+    "outputs": {
+      "metadata": "元数据",
+      "hashes": "哈希",
+      "a1111_params": "A1111参数"
+    }
+  },
+  "Make Image Saver Simple Config": {
+    "title": "创建简易图像保存配置",
+    "inputs": {
+      "filename": "文件名",
+      "path": "路径",
+      "extension": "后缀名",
+      "lossless_webp": "无损WebP",
+      "quality_jpeg_or_webp": "JPEG/WebP质量",
+      "optimize_png": "优化PNG",
+      "embed_workflow": "嵌入工作流",
+      "save_workflow_as_json": "保存工作流为JSON",
+      "counter": "计数器",
+      "time_format": "时间格式"
+    },
+    "widgets": {
+      "filename": "文件名",
+      "path": "路径",
+      "extension": "后缀名",
+      "lossless_webp": "无损WebP",
+      "quality_jpeg_or_webp": "JPEG/WebP质量",
+      "optimize_png": "优化PNG",
+      "embed_workflow": "嵌入工作流",
+      "save_workflow_as_json": "保存工作流为JSON",
+      "counter": "计数器",
+      "time_format": "时间格式"
+    },
+    "outputs": {
+      "simple_saver_config": "简易保存配置"
+    }
+  },
+  "Make Image Saver Metadata Config": {
+    "title": "创建元数据图像保存配置",
+    "inputs": {
+      "modelname": "模型名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "width": "宽度",
+      "height": "高度",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "additional_hashes": "附加哈希",
+      "download_civitai_data": "downloadcivitai数据",
+      "easy_remix": "简易重混",
+      "custom": "自定义"
+    },
+    "widgets": {
+      "modelname": "模型名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "width": "宽度",
+      "height": "高度",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "additional_hashes": "附加哈希",
+      "download_civitai_data": "downloadcivitai数据",
+      "easy_remix": "简易重混",
+      "custom": "自定义"
+    },
+    "outputs": {
+      "metadata_config": "元数据配置"
+    }
+  },
+  "Make Image Saver Pipe": {
+    "title": "创建图像保存管道",
+    "inputs": {
+      "simple_saver_config": "简易保存配置",
+      "metadata_config": "元数据配置"
+    },
+    "widgets": {
+      "simple_saver_config": "简易保存配置",
+      "metadata_config": "元数据配置"
+    },
+    "outputs": {
+      "pipe": "节点束"
+    }
+  },
+  "Edit Image Saver Pipe": {
+    "title": "编辑图像保存管道",
+    "inputs": {
+      "pipe": "节点束",
+      "filename": "文件名",
+      "path": "路径",
+      "counter": "计数器",
+      "modelname": "模型名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "width": "宽度",
+      "height": "高度",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "additional_hashes": "附加哈希",
+      "custom": "自定义"
+    },
+    "widgets": {
+      "pipe": "节点束",
+      "filename": "文件名",
+      "path": "路径",
+      "counter": "计数器",
+      "modelname": "模型名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "width": "宽度",
+      "height": "高度",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "additional_hashes": "附加哈希",
+      "custom": "自定义"
+    },
+    "outputs": {
+      "pipe": "节点束"
+    }
+  },
+  "Read Image Saver Pipe": {
+    "title": "读取图像保存管道",
+    "inputs": {
+      "pipe": "节点束"
+    },
+    "widgets": {
+      "pipe": "节点束"
+    },
+    "outputs": {
+      "pipe": "节点束",
+      "filename": "文件名",
+      "path": "路径",
+      "counter": "计数器",
+      "modelname": "模型名称",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "width": "宽度",
+      "height": "高度",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler_name": "调度器名称",
+      "denoise": "降噪",
+      "clip_skip": "Clip跳过层",
+      "additional_hashes": "附加哈希",
+      "custom": "自定义"
+    }
+  },
+  "Image Saver (From Pipe)": {
+    "title": "图像保存器（来自管道）",
+    "inputs": {
+      "pipe": "节点束",
+      "images": "图像",
+      "show_preview": "显示预览"
+    },
+    "widgets": {
+      "pipe": "节点束",
+      "images": "图像",
+      "show_preview": "显示预览"
+    },
+    "outputs": {
+      "pipe": "节点束",
+      "hashes": "哈希",
+      "a1111_params": "A1111参数"
+    }
+  },
+  "Sampler Selector (Image Saver)": {
+    "title": "采样器选择器",
+    "inputs": {
+      "sampler_name": "采样器"
+    },
+    "widgets": {
+      "sampler_name": "采样器"
+    },
+    "outputs": {
+      "sampler": "采样器",
+      "sampler_name": "采样器"
+    }
+  },
+  "Scheduler Selector (Image Saver)": {
+    "title": "调度器选择器",
+    "inputs": {
+      "scheduler": "调度器"
+    },
+    "widgets": {
+      "scheduler": "调度器"
+    },
+    "outputs": {
+      "scheduler": "调度器",
+      "scheduler_name": "调度器名称"
+    }
+  },
+  "Scheduler Selector (inspire) (Image Saver)": {
+    "title": "调度器选择器（Inspire）",
+    "inputs": {
+      "scheduler": "调度器"
+    },
+    "widgets": {
+      "scheduler": "调度器"
+    },
+    "outputs": {
+      "scheduler": "调度器",
+      "scheduler_name": "调度器名称"
+    }
+  },
+  "Scheduler Selector (Eff.) (Image Saver)": {
+    "title": "调度器选择器（Efficiency）",
+    "inputs": {
+      "scheduler": "调度器"
+    },
+    "widgets": {
+      "scheduler": "调度器"
+    },
+    "outputs": {
+      "scheduler": "调度器",
+      "scheduler_name": "调度器名称"
+    }
+  },
+  "Input Parameters (Image Saver)": {
+    "title": "输入参数",
+    "inputs": {
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪"
+    },
+    "widgets": {
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪"
+    },
+    "outputs": {
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪"
+    }
+  },
+  "Any to String (Image Saver)": {
+    "title": "任意类型转字符串",
+    "inputs": {
+      "value": "值"
+    },
+    "widgets": {
+      "value": "值"
+    },
+    "outputs": {
+      "string": "字符串"
+    }
+  },
+  "Workflow Input Value (Image Saver)": {
+    "title": "工作流输入值",
+    "inputs": {
+      "node_id": "节点ID",
+      "input_name": "输入名称"
+    },
+    "widgets": {
+      "node_id": "节点ID",
+      "input_name": "输入名称"
+    },
+    "outputs": {
+      "value": "值"
+    }
+  },
+  "Seed Generator (Image Saver)": {
+    "title": "随机种子生成器",
+    "inputs": {
+      "seed": "种子",
+      "increment": "增加"
+    },
+    "widgets": {
+      "seed": "种子",
+      "increment": "增加"
+    },
+    "outputs": {
+      "INT": "整数"
+    }
+  },
+  "String Literal (Image Saver)": {
+    "title": "字符串常量",
+    "inputs": {
+      "string": "字符串"
+    },
+    "widgets": {
+      "string": "字符串"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "Width/Height Literal (Image Saver)": {
+    "title": "宽高常量",
+    "inputs": {
+      "size": "尺寸"
+    },
+    "widgets": {
+      "size": "尺寸"
+    },
+    "outputs": {
+      "size": "尺寸"
+    }
+  },
+  "Cfg Literal (Image Saver)": {
+    "title": "CFG常量",
+    "inputs": {
+      "cfg": "CFG缩放系数"
+    },
+    "widgets": {
+      "cfg": "CFG缩放系数"
+    },
+    "outputs": {
+      "value": "值"
+    }
+  },
+  "Int Literal (Image Saver)": {
+    "title": "整数常量",
+    "inputs": {
+      "int": "整数"
+    },
+    "widgets": {
+      "int": "整数"
+    },
+    "outputs": {
+      "INT": "整数"
+    }
+  },
+  "Float Literal (Image Saver)": {
+    "title": "浮点数常量",
+    "inputs": {
+      "float": "浮点数"
+    },
+    "widgets": {
+      "float": "浮点数"
+    },
+    "outputs": {
+      "FLOAT": "浮点"
+    }
+  },
+  "Conditioning Concat Optional (Image Saver)": {
+    "title": "可选条件拼接",
+    "inputs": {
+      "conditioning_to": "条件到",
+      "conditioning_from": "条件从"
+    },
+    "widgets": {
+      "conditioning_to": "条件到",
+      "conditioning_from": "条件从"
+    },
+    "outputs": {
+      "CONDITIONING": "条件"
+    }
+  },
+  "RandomShapeGenerator": {
+    "title": "随机形状生成器",
+    "inputs": {
+      "width": "宽度",
+      "height": "高度",
+      "bg_color": "背景颜色",
+      "fg_color": "fg颜色",
+      "shape_type": "形状类型",
+      "seed": "种子",
+      "bg_color_override": "bg颜色override",
+      "fg_color_override": "fg颜色override"
+    },
+    "widgets": {
+      "width": "宽度",
+      "height": "高度",
+      "bg_color": "背景颜色",
+      "fg_color": "fg颜色",
+      "shape_type": "形状类型",
+      "seed": "种子",
+      "bg_color_override": "bg颜色override",
+      "fg_color_override": "fg颜色override"
+    },
+    "outputs": {
+      "image": "图像",
+      "bg_rgb": "背景RGB",
+      "fg_rgb": "前景RGB"
+    }
+  },
+  "Empty Latent (Image Saver)": {
+    "title": "空Latent",
+    "inputs": {
+      "aspect_ratio": "宽高比",
+      "orientation": "方向",
+      "size": "尺寸",
+      "batch_size": "批次大小",
+      "width_override": "宽度覆盖",
+      "height_override": "高度覆盖"
+    },
+    "widgets": {
+      "aspect_ratio": "宽高比",
+      "orientation": "方向",
+      "size": "尺寸",
+      "batch_size": "批次大小",
+      "width_override": "宽度覆盖",
+      "height_override": "高度覆盖"
+    },
+    "outputs": {
+      "latent": "Latent（可选）",
+      "width": "宽度",
+      "height": "高度"
+    }
+  },
+  "Civitai Hash Fetcher (Image Saver)": {
+    "title": "Civitai哈希获取器",
+    "inputs": {
+      "username": "用户名",
+      "model_name": "模型名称",
+      "version": "版本"
+    },
+    "widgets": {
+      "username": "用户名",
+      "model_name": "模型名称",
+      "version": "版本"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "Random Tag Picker (Image Saver)": {
+    "title": "随机标签选择器",
+    "inputs": {
+      "file_path": "文件路径",
+      "count": "计数",
+      "delimiter": "分隔符",
+      "replace_underscore": "替换下划线",
+      "escape_parens": "转义括号",
+      "trailing_comma": "尾随逗号",
+      "weight_by_count": "权重by数量",
+      "seed": "种子",
+      "exclude": "排除项",
+      "filter": "滤波器"
+    },
+    "widgets": {
+      "file_path": "文件路径",
+      "count": "计数",
+      "delimiter": "分隔符",
+      "replace_underscore": "替换下划线",
+      "escape_parens": "转义括号",
+      "trailing_comma": "尾随逗号",
+      "weight_by_count": "权重by数量",
+      "seed": "种子",
+      "exclude": "排除项",
+      "filter": "滤波器"
+    },
+    "outputs": {
+      "tags": "标签"
+    }
+  },
+  "Random Character Picker (Image Saver)": {
+    "title": "随机角色选择器",
+    "inputs": {
+      "file_path": "文件路径",
+      "count": "计数",
+      "delimiter": "分隔符",
+      "replace_underscore": "替换下划线",
+      "escape_parens": "转义括号",
+      "trailing_comma": "尾随逗号",
+      "weight_by_count": "权重by数量",
+      "seed": "种子",
+      "include_core_tags": "包含核心标签",
+      "include_copyright": "包含版权标签",
+      "exclude": "排除项",
+      "filter": "滤波器"
+    },
+    "widgets": {
+      "file_path": "文件路径",
+      "count": "计数",
+      "delimiter": "分隔符",
+      "replace_underscore": "替换下划线",
+      "escape_parens": "转义括号",
+      "trailing_comma": "尾随逗号",
+      "weight_by_count": "权重by数量",
+      "seed": "种子",
+      "include_core_tags": "包含核心标签",
+      "include_copyright": "包含版权标签",
+      "exclude": "排除项",
+      "filter": "滤波器"
+    },
+    "outputs": {
+      "tags": "标签"
+    }
+  },
+  "Random Artist Picker (Image Saver)": {
+    "title": "随机艺术家选择器",
+    "inputs": {
+      "file_path": "文件路径",
+      "count": "计数",
+      "delimiter": "分隔符",
+      "replace_underscore": "替换下划线",
+      "escape_parens": "转义括号",
+      "trailing_comma": "尾随逗号",
+      "weight_by_count": "权重by数量",
+      "seed": "种子",
+      "prefix": "前缀",
+      "exclude": "排除项",
+      "filter": "滤波器"
+    },
+    "widgets": {
+      "file_path": "文件路径",
+      "count": "计数",
+      "delimiter": "分隔符",
+      "replace_underscore": "替换下划线",
+      "escape_parens": "转义括号",
+      "trailing_comma": "尾随逗号",
+      "weight_by_count": "权重by数量",
+      "seed": "种子",
+      "prefix": "前缀",
+      "exclude": "排除项",
+      "filter": "滤波器"
+    },
+    "outputs": {
+      "tags": "标签"
+    }
   }
 }

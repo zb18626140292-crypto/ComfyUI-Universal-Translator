@@ -1,0 +1,119 @@
+{
+  "ProPostVignette": {
+    "title": "专业后期：暗角",
+    "inputs": {
+      "image": "图像",
+      "intensity": "强度",
+      "center_x": "中心X",
+      "center_y": "中心Y"
+    },
+    "widgets": {
+      "image": "图像",
+      "intensity": "强度",
+      "center_x": "中心X",
+      "center_y": "中心Y"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "ProPostFilmGrain": {
+    "title": "专业后期：胶片颗粒",
+    "inputs": {
+      "image": "图像",
+      "gray_scale": "gray缩放",
+      "grain_type": "颗粒类型",
+      "grain_sat": "颗粒饱和度",
+      "grain_power": "颗粒强度",
+      "shadows": "阴影",
+      "highs": "高光",
+      "scale": "缩放",
+      "sharpen": "锐化",
+      "src_gamma": "源Gamma",
+      "seed": "种子"
+    },
+    "widgets": {
+      "image": "图像",
+      "gray_scale": "gray缩放",
+      "grain_type": "颗粒类型",
+      "grain_sat": "颗粒饱和度",
+      "grain_power": "颗粒强度",
+      "shadows": "阴影",
+      "highs": "高光",
+      "scale": "缩放",
+      "sharpen": "锐化",
+      "src_gamma": "源Gamma",
+      "seed": "种子"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "ProPostRadialBlur": {
+    "title": "专业后期：径向模糊",
+    "inputs": {
+      "image": "图像",
+      "blur_strength": "模糊强度",
+      "center_x": "中心X",
+      "center_y": "中心Y",
+      "focus_spread": "焦点扩散",
+      "steps": "步数"
+    },
+    "widgets": {
+      "image": "图像",
+      "blur_strength": "模糊强度",
+      "center_x": "中心X",
+      "center_y": "中心Y",
+      "focus_spread": "焦点扩散",
+      "steps": "步数"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "ProPostDepthMapBlur": {
+    "title": "专业后期：深度图模糊",
+    "inputs": {
+      "image": "图像",
+      "depth_map": "深度图",
+      "blur_strength": "模糊强度",
+      "focal_depth": "模拟虚焦",
+      "focus_spread": "焦点扩散",
+      "steps": "步数",
+      "focal_range": "焦点范围",
+      "mask_blur": "遮罩模糊"
+    },
+    "widgets": {
+      "image": "图像",
+      "depth_map": "深度图",
+      "blur_strength": "模糊强度",
+      "focal_depth": "模拟虚焦",
+      "focus_spread": "焦点扩散",
+      "steps": "步数",
+      "focal_range": "焦点范围",
+      "mask_blur": "遮罩模糊"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "MASK": "遮罩"
+    }
+  },
+  "ProPostApplyLUT": {
+    "title": "专业后期：应用LUT",
+    "inputs": {
+      "image": "图像",
+      "lut_name": "lut名称",
+      "strength": "强度",
+      "log": "日志"
+    },
+    "widgets": {
+      "image": "图像",
+      "lut_name": "lut名称",
+      "strength": "强度",
+      "log": "日志"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  }
+}

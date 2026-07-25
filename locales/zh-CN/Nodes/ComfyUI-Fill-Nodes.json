@@ -1,1785 +1,5291 @@
 {
-    "FL_API_Base64_ImageLoader": {
-        "title": "FL API Base64图像加载器",
-        "widgets": {
-            "job_id": "任务ID",
-            "user_id": "用户ID",
-            "category": "类别",
-            "resize_width": "调整宽度",
-            "resize_height": "调整高度",
-            "maintain_aspect_ratio": "保持宽高比",
-            "auto_clean_base64": "自动清理base64"
-        },
-        "outputs": {
-            "image": "图像",
-            "width": "宽度",
-            "height": "高度",
-            "job_id": "任务ID",
-            "user_id": "用户ID",
-            "category": "类别"
-        }
-    },
-    "FL_API_ImageSaver": {
-        "title": "FL API 图像保存",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "job_id": "任务ID",
-            "user_id": "用户ID",
-            "category": "类别",
-            "base_output_dir": "基础输出目录",
-            "image_format": "图像格式",
-            "image_quality": "图像质量"
-        },
-        "outputs": {
-            "saved_path": "保存路径",
-            "job_id": "任务ID",
-            "user_id": "用户ID",
-            "category": "类别"
-        }
-    },
-    "FL_Hedra_API": {
-        "title": "FL Hedra API",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "audio_file_path": "音频文件路径",
-            "aspect_ratio": "宽高比",
-            "resolution": "分辨率",
-            "duration_seconds": "时长秒数",
-            "seed": "随机种子"
-        },
-        "outputs": {
-            "frames": "帧",
-            "api_log": "API日志"
-        }
-    },
-    "FL_GoogleCloudStorage": {
-        "title": "FL 谷歌云存储上传器",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "bucket_name": "存储桶名称",
-            "folder_path": "文件夹路径",
-            "file_prefix": "文件前缀",
-            "file_format": "文件格式",
-            "jpg_quality": "jpg质量",
-            "compile_video": "编译视频",
-            "video_fps": "视频帧率",
-            "video_codec": "视频编码",
-            "video_quality": "视频质量",
-            "make_public": "设为公开"
-        },
-        "outputs": {
-            "status": "状态",
-            "urls": "链接",
-            "error_message": "错误信息"
-        }
-    },
-    "FL_ClipScanner": {
-        "title": "FL Clip扫描器（Kytra）",
-        "widgets": {
-            "model_type": "模型类型"
-        }
-    },
-    "FL_GoogleDriveDownloader": {
-        "title": "FL 谷歌云盘下载器",
-        "widgets": {
-            "google_drive_link": "谷歌云盘链接",
-            "output_folder_name": "输出文件夹名称"
-        }
-    },
-    "FL_GoogleDriveImageDownloader": {
-        "title": "FL 谷歌云盘图像下载器",
-        "widgets": {
-            "google_drive_link": "谷歌云盘链接",
-            "use_cache": "使用缓存"
-        }
-    },
-    "FL_ProResVideo": {
-        "title": "FL ProRes视频",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "fps": "帧率",
-            "filename": "文件名",
-            "save_directory": "保存目录"
-        }
-    },
-    "FL_VideoCut": {
-        "title": "FL 视频镜头切割检测器",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "fps": "帧率",
-            "threshold": "阈值",
-            "min_scene_length": "最小场景长度",
-            "output_quality": "输出质量",
-            "detection_method": "检测方法",
-            "max_workers": "最大工作线程数",
-            "downsample_detection": "降采样检测",
-            "use_gpu_acceleration": "使用GPU加速",
-            "output_folder": "输出文件夹"
-        },
-        "outputs": {
-            "video_paths": "视频路径",
-            "output_folder": "输出文件夹"
-        }
-    },
-    "FL_VideoTrim": {
-        "title": "FL 视频裁剪",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "trim_start": "裁剪起始点",
-            "trim_end": "裁剪结束点"
-        }
-    },
-    "FL_VideoCadenceCompile": {
-        "title": "FL 视频节奏编译",
-        "widgets": {
-            "cadence_list_str": "节奏列表字符串",
-            "video_directory": "视频目录",
-            "use_gpu_acceleration": "使用GPU加速"
-        },
-        "outputs": {
-            "image_batch": "图像批次"
-        }
-    },
-    "FL_VideoCadence": {
-        "title": "FL 视频节奏",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "fps": "帧率",
-            "threshold": "阈值",
-            "min_scene_length": "最小场景长度",
-            "detection_method": "检测方法",
-            "downsample_detection": "降采样检测",
-            "use_gpu_acceleration": "使用GPU加速"
-        },
-        "outputs": {
-            "scene_lengths_str": "场景长度字符串"
-        }
-    },
-    "FL_Math": {
-        "title": "FL 运算"
-    },
-    "FL_UpscaleModel": {
-        "title": "FL 放大模型",
-        "inputs": {
-            "upscale_model": "放大模型",
-            "image": "图像"
-        },
-        "widgets": {
-            "downscale_by": "缩小比例",
-            "rescale_method": "缩放方法",
-            "precision": "精度",
-            "batch_size": "批量大小"
-        }
-    },
-    "FL_NodeLoader": {
-        "title": "FL 节点加载器",
-        "inputs": {
-            "trigger": "触发信号"
-        },
-        "widgets": {
-            "Columns": "列数",
-            "Node Count": "节点数量",
-            "Load FL Nodes": "加载FL节点"
-        },
-        "outputs": {
-            "TRIGGER": "触发输出"
-        }
-    },
-    "FL_NodePackLoader": {
-        "title": "FL 节点包加载器",
-        "inputs": {
-            "trigger": "触发信号"
-        },
-        "widgets": {
-            "Node Pack": "节点包",
-            "Columns": "列数",
-            "Node Count": "节点数量",
-            "Node List": "节点列表",
-            "Load Nodes": "加载节点"
-        },
-        "outputs": {
-            "TRIGGER": "触发输出"
-        }
-    },
-    "FL_SendToDiscordWebhook": {
-        "title": "FL Kytra Discord Webhook",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "webhook_url": "网络URL",
-            "frame_rate": "帧率",
-            "save_locally": "本地保存",
-            "bot_username": "机器人用户名"
-        }
-    },
-    "FL_FractalKSampler": {
-        "title": "FL 分形K采样器",
-        "inputs": {
-            "model": "模型",
-            "positive": "正面条件",
-            "negative": "负面条件",
-            "latent_image": "Latent图像",
-            "vae": "VAE"
-        },
-        "widgets": {
-            "seed": "随机种子",
-            "steps": "步数",
-            "cfg": "CFG引导系数",
-            "sampler_name": "采样器名称",
-            "scheduler": "调度器",
-            "denoise": "降噪",
-            "scale_factor": "缩放因子",
-            "blend_factor": "混合因子",
-            "fractal_levels": "分形层级"
-        }
-    },
-    "FL_WF_Agent": {
-        "title": "FL 工作流代理",
-        "widgets": {
-            "event": "事件",
-            "api_key": "API 密钥",
-            "scan_nodes": "扫描节点",
-            "🤖 Generate Code": "🤖 生成代码",
-            "🔍 Scan Nodes": "🔍 扫描节点",
-            "Execute": "执行"
-        }
-    },
-    "FL_TimeLine": {
-        "title": "FL 时间线"
-    },
-    "FL_PDFLoader": {
-        "title": "FL PDF加载器",
-        "widgets": {
-            "pdf_path": "PDF路径"
-        }
-    },
-    "FL_PDFSaver": {
-        "title": "FL PDF保存器",
-        "inputs": {
-            "pdf": "PDF"
-        },
-        "widgets": {
-            "output_directory": "输出目录",
-            "filename": "文件名"
-        }
-    },
-    "FL_PDFMerger": {
-        "title": "FL PDF合并器",
-        "inputs": {
-            "pdf1": "PDF1",
-            "pdf2": "PDF2"
-        }
-    },
-    "FL_PDFTextExtractor": {
-        "title": "FL PDF文本提取器",
-        "inputs": {
-            "pdf": "PDF"
-        }
-    },
-    "FL_BulkPDFLoader": {
-        "title": "FL PDF批量加载器",
-        "widgets": {
-            "directory_path": "目录路径"
-        },
-        "outputs": {
-            "pfds": "PDF"
-        }
-    },
-    "FL_TextToPDF": {
-        "title": "FL 文本转PDF",
-        "widgets": {
-            "page_size": "页面尺寸",
-            "font_size": "字体大小",
-            "margin": "页边距",
-            "title": "文档标题"
-        }
-    },
-    "FL_PDFEncryptor": {
-        "title": "FL PDF加密器",
-        "inputs": {
-            "pdf": "PDF"
-        },
-        "widgets": {
-            "user_password": "用户密码",
-            "owner_password": "所有者密码",
-            "encryption_level": "加密级别",
-            "allow_printing": "是否允许打印",
-            "allow_commenting": "是否允许注释",
-            "allow_copying": "是否允许复制",
-            "allow_content_extraction": "是否允许内容提取",
-            "allow_form_filling": "是否允许表单填写",
-            "allow_document_assembly": "是否允许文档汇编",
-            "allow_page_extraction": "是否允许页面提取"
-        }
-    },
-    "FL_PDFToImages": {
-        "title": "FL PDF转图像",
-        "inputs": {
-            "pdf": "PDF"
-        },
-        "widgets": {
-            "dpi": "DPI"
-        }
-    },
-    "FL_ImagesToPDF": {
-        "title": "FL 图像转PDF",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "dpi": "DPI",
-            "page_size": "页面尺寸"
-        }
-    },
-    "FL_PDFImageExtractor": {
-        "title": "FL PDF图像提取器",
-        "inputs": {
-            "pdf": "PDF"
-        },
-        "widgets": {
-            "min_width": "最小宽度",
-            "min_height": "最小高度"
-        },
-        "outputs": {
-            "images": "图像"
-        }
-    },
-    "FL_GPT_Vision": {
-        "title": "FL GPT图像描述生成器",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "model": "模型",
-            "output_directory": "输出目录",
-            "overwrite": "覆盖",
-            "max_tokens": "最大Tokens数",
-            "temperature": "温度系数",
-            "detail": "细节",
-            "batch_size": "批量大小",
-            "input_directory": "输入目录"
-        },
-        "outputs": {
-            "message": "消息",
-            "output_directory": "输出目录"
-        }
-    },
-    "FL_SimpleGPTVision": {
-        "title": "FL 简易GPT视觉",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "model": "模型",
-            "max_tokens": "最大Tokens数",
-            "temperature": "温度系数",
-            "detail": "细节"
-        }
-    },
-    "FL_Dalle3": {
-        "title": "FL Dalle3",
-        "widgets": {
-            "resolution": "分辨率",
-            "dummy_seed": "虚拟种子",
-            "quality": "质量",
-            "style": "风格",
-            "batch_size": "批量大小",
-            "retry": "重试次数",
-            "auto_save": "自动保存",
-            "auto_save_dir": "自动保存目录"
-        },
-        "outputs": {
-            "IMAGES": "图像",
-            "WIDTH": "宽度",
-            "HEIGHT": "高度",
-            "REVISED_PROMPTS": "修正后的提示词"
-        }
-    },
-    "FL_GPT_Text": {
-        "title": "FL GPT文本交互",
-        "widgets": {
-            "api_key": "API密钥",
-            "model": "模型",
-            "max_tokens": "最大Tokens数",
-            "temperature": "温度系数",
-            "top_p": "累积概率",
-            "frequency_penalty": "频率惩罚",
-            "presence_penalty": "存在惩罚",
-            "save_to_file": "保存到文件",
-            "output_directory": "输出目录",
-            "filename": "文件名"
-        },
-        "outputs": {
-            "response": "响应文本"
-        }
-    },
-    "FL_GPT_Image1": {
-        "title": "FL GPT图像生成1",
-        "inputs": {
-            "image": "图像",
-            "mask": "遮罩"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "batch_size": "批量大小",
-            "size": "尺寸",
-            "quality": "质量",
-            "background": "背景",
-            "output_format": "输出格式",
-            "output_compression": "输出压缩",
-            "moderation": "内容审核",
-            "seed": "随机种子"
-        },
-        "outputs": {
-            "image": "图像",
-            "API Response": "API响应"
-        }
-    },
-    "FL_GPT_Image1_ADV": {
-        "title": "FL GPT图像生成1（高级版）",
-        "inputs": {
-            "prompt_1": "提示词",
-            "image_1": "图像"
-        },
-        "widgets": {
-            "inputcount": "输入数量",
-            "api_key": "API密钥",
-            "size_setting": "尺寸",
-            "quality_setting": "质量",
-            "background_setting": "背景",
-            "output_format_setting": "输出格式",
-            "seed_setting": "随机种子",
-            "Update inputs": "更新输入"
-        },
-        "outputs": {
-            "image": "图像",
-            "API Response": "API响应"
-        }
-    },
-    "FL_ZipDirectory": {
-        "title": "FL 文件夹压缩",
-        "widgets": {
-            "directory_path": "文件夹路径",
-            "zip_filename": "压缩包文件名"
-        },
-        "outputs": {
-            "ZIP": "压缩包"
-        }
-    },
-    "FL_ZipSave": {
-        "title": "FL 压缩保存",
-        "widgets": {
-            "input_directory": "输入目录",
-            "output_directory": "输出目录",
-            "zip_filename": "压缩包文件名"
-        },
-        "outputs": {
-            "zip_path": "压缩包路径"
-        }
-    },
-    "FL_HFHubModelUploader": {
-        "title": "FL HFHub模型上传器",
-        "inputs": {
-            "image": "图像",
-            "model_card_header": "模型卡片标题",
-            "zip_file": "压缩文件"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "owner": "所有者",
-            "repo_name": "仓库名称",
-            "create_new_repo": "创建新仓库",
-            "image_folder_path": "图像文件夹路径",
-            "repo_type": "仓库类型",
-            "zip_filename": "压缩包文件名",
-            "zip_folder_path": "压缩包文件夹路径",
-            "model_file_path": "模型文件路径",
-            "model_repo_path": "模型仓库路径"
-        }
-    },
-    "FL_HF_Character": {
-        "title": "FL HF角色配置",
-        "inputs": {
-            "dataset_zip": "数据集压缩包",
-            "caption_layout": "标题布局",
-            "caption_PDF_layout": "标题PDF布局",
-            "csv_file": "CSV文件"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "owner": "所有者",
-            "repo_name": "仓库名称",
-            "studio_name": "工作室名称",
-            "project_name": "项目名称",
-            "character_name": "角色名称",
-            "create_new_repo": "创建新仓库",
-            "repo_type": "仓库类型",
-            "lora_file": "LORA文件"
-        }
-    },
-    "FL_HF_UploaderAbsolute": {
-        "title": "FL HF绝对路径上传器",
-        "inputs": {
-            "dataset_zip": "数据集压缩包",
-            "caption_layout": "标题布局",
-            "caption_PDF_layout": "标题PDF布局",
-            "csv_file": "CSV文件"
-        },
-        "widgets": {
-            "owner": "所有者",
-            "repo_name": "仓库名称",
-            "upload_path": "上传路径",
-            "create_new_repo": "创建新仓库",
-            "repo_type": "仓库类型",
-            "lora_file": "LORA文件"
-        }
-    },
-    "FL_HFDatasetDownloader": {
-        "title": "FL HF数据集下载器",
-        "widgets": {
-            "repo_id": "仓库ID",
-            "repo_type": "仓库类型",
-            "local_dir": "本地目录",
-            "max_workers": "最大工作线程数",
-            "download_trigger": "下载触发"
-        },
-        "outputs": {
-            "download_path": "下载路径"
-        }
-    },
-    "FL_BulletHellGame": {
-        "title": "FL 弹幕地狱游戏",
-        "widgets": {
-            "Reset Game": "重置游戏"
-        }
-    },
-    "FL_TetrisGame": {
-        "title": "FL 俄罗斯方块游戏",
-        "widgets": {
-            "Reset Game": "重置游戏"
-        }
-    },
-    "FL_KsamplerSettings": {
-        "title": "FL K采样器设置",
-        "widgets": {
-            "Aspect_Ratio": "宽高比",
-            "rotation": "旋转",
-            "batch": "批次",
-            "Pass_1_steps": "阶段1步数",
-            "Pass_2_steps": "阶段2步数",
-            "Pass_1_CFG": "阶段1CFG",
-            "Pass_2_CFG": "阶段2CFG",
-            "Pass_2_denoise": "阶段2去噪",
-            "scale_factor": "缩放因子",
-            "sampler": "采样器",
-            "scheduler": "调度器"
-        },
-        "outputs": {
-            "WIDTH": "宽度",
-            "HEIGHT": "高度",
-            "BATCH_SIZE": "批次",
-            "Pass_1_steps": "阶段1步数",
-            "Pass_2_steps": "阶段2步数",
-            "Pass_1_CFG": "阶段1CFG",
-            "Pass_2_CFG": "阶段2CFG",
-            "Pass_2_denoise": "阶段2去噪",
-            "SCALE": "缩放因子",
-            "SAMPLER": "采样器",
-            "SCHEDULER": "调度器"
-        }
-    },
-    "FL_KsamplerPlus": {
-        "title": "FL K采样器增强版",
-        "inputs": {
-            "model": "模型",
-            "positive": "正面条件",
-            "negative": "负面条件",
-            "latent_image": "Latent图像",
-            "vae": "VAE",
-            "image": "图像"
-        },
-        "widgets": {
-            "seed": "随机种子",
-            "steps": "步数",
-            "cfg": "CFG引导系数",
-            "sampler_name": "采样器",
-            "scheduler": "调度器",
-            "denoise": "降噪",
-            "input_type": "输入类型",
-            "x_slices": "X切片数",
-            "y_slices": "Y切片数",
-            "overlap": "重叠",
-            "batch_size": "批量大小",
-            "use_sliced_conditioning": "使用切片条件"
-        },
-        "outputs": {
-            "model": "模型",
-            "positive": "正面条件",
-            "negative": "负面条件",
-            "latent_image": "Latent图像",
-            "vae": "VAE",
-            "image": "图像"
-        }
-    },
-    "FL_KsamplerPlusV2": {
-        "title": "FL K采样器增强版V2",
-        "inputs": {
-            "model": "模型",
-            "positive": "正面条件",
-            "negative": "负面条件",
-            "latent_image": "Latent图像",
-            "vae": "VAE",
-            "image": "图像"
-        },
-        "widgets": {
-            "seed": "随机种子",
-            "steps": "步数",
-            "cfg": "CFG引导系数",
-            "sampler_name": "采样器",
-            "scheduler": "调度器",
-            "denoise": "降噪",
-            "input_type": "输入类型",
-            "x_slices": "X切片数",
-            "y_slices": "Y切片数",
-            "overlap": "重叠",
-            "batch_size": "批量大小",
-            "use_sliced_conditioning": "使用切片条件",
-            "conditioning_strength": "条件强度",
-            "debug_mode": "调试模式"
-        },
-        "outputs": {
-            "model": "模型",
-            "positive": "正面条件",
-            "negative": "负面条件",
-            "latent_image": "Latent图像",
-            "vae": "VAE",
-            "image": "图像",
-            "debug_info": "调试信息"
-        }
-    },
-    "FL_KsamplerBasic": {
-        "title": "FL K采样器基础版",
-        "inputs": {
-            "model": "模型",
-            "positive": "正面条件",
-            "negative": "负面条件",
-            "latent_image": "Latent图像",
-            "vae": "VAE",
-            "image": "图像"
-        },
-        "widgets": {
-            "seed": "随机种子",
-            "steps": "步数",
-            "cfg": "CFG引导系数",
-            "sampler_name": "采样器",
-            "scheduler": "调度器",
-            "denoise": "降噪"
-        },
-        "outputs": {
-            "model": "模型",
-            "positive": "正面条件",
-            "negative": "负面条件",
-            "latent_image": "Latent图像",
-            "vae": "VAE",
-            "image": "图像"
-        }
-    },
-    "FL_KSamplerXYZPlot": {
-        "title": "FL K采样器XYZ绘图",
-        "inputs": {
-            "model": "模型",
-            "positive": "正面条件",
-            "negative": "负面条件",
-            "latent_image": "Latent图像",
-            "vae": "VAE",
-            "image": "图像"
-        },
-        "widgets": {
-            "seed": "随机种子",
-            "input_type": "输入类型",
-            "steps": "步数",
-            "cfg": "CFG引导系数",
-            "sampler_name": "采样器",
-            "scheduler": "调度器",
-            "denoise": "降噪",
-            "x_axis": "X轴",
-            "x_values": "X值",
-            "y_axis": "Y轴",
-            "y_values": "Y值",
-            "z_axis": "Z轴",
-            "z_values": "Z值",
-            "z_stack_mode": "Z堆叠模式"
-        }
-    },
-    "FL_SamplerStrings": {
-        "title": "FL 采样器字符串XYZ"
-    },
-    "FL_SchedulerStrings": {
-        "title": "FL 调度器字符串XYZ"
-    },
-    "FL_PromptSelector": {
-        "title": "FL 提示词选择器",
-        "widgets": {
-            "index": "索引"
-        }
-    },
-    "FL_MadLibGenerator": {
-        "title": "FL 疯狂填词生成器",
-        "widgets": {
-            "delimiter_1": "分隔符1",
-            "delimiter_2": "分隔符2",
-            "delimiter_3": "分隔符3",
-            "delimiter_4": "分隔符4",
-            "delimiter_5": "分隔符5",
-            "word_list_1": "词库列表1",
-            "word_list_2": "词库列表2",
-            "word_list_3": "词库列表3",
-            "word_list_4": "词库列表4",
-            "word_list_5": "词库列表5",
-            "seed": "随机种子"
-        }
-    },
-    "FL_PromptBasic": {
-        "title": "FL 基础提示词"
-    },
-    "FL_PromptMulti": {
-        "title": "FL 多重提示词",
-        "widgets": {
-            "name_prefix": "名称前缀"
-        },
-        "outputs": {
-            "positive": "正面提示词",
-            "negative": "负面提示词",
-            "name": "名称"
-        }
-    },
-    "FL_NFTGenerator": {
-        "title": "FL NFT生成器",
-        "widgets": {
-            "folder_path": "文件夹路径",
-            "dummy_seed": "虚拟种子"
-        }
-    },
-    "FL_BatchAlign": {
-        "title": "FL 批量对齐",
-        "inputs": {
-            "model": "模型"
-        },
-        "widgets": {
-            "share_norm": "归一化共享",
-            "share_attn": "注意力共享",
-            "scale": "缩放"
-        }
-    },
-    "FL_VideoRecompose": {
-        "title": "FL 视频重组",
-        "inputs": {
-            "original_video": "原始视频",
-            "cropped_video": "裁剪视频",
-            "crop_data": "裁剪数据"
-        },
-        "outputs": {
-            "output_video": "输出视频"
-        }
-    },
-    "FL_ColorPicker": {
-        "title": "FL 颜色选择器",
-        "widgets": {
-            "selected_color": "所选颜色",
-            "Reset Color": "重置颜色",
-            "Hex Color": "Hex色值"
-        }
-    },
-    "FL_GradGenerator": {
-        "title": "FL 渐变生成器",
-        "widgets": {
-            "width": "宽度",
-            "height": "高度",
-            "color_mode": "颜色模式",
-            "interpolation": "插值"
-        }
-    },
-    "FL_GeminiVideoCaptioner": {
-        "title": "FL Gemini视频字幕生成器",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "model": "模型",
-            "frames_per_second": "每秒帧数",
-            "max_duration_minutes": "最大时长",
-            "process_audio": "处理音频",
-            "temperature": "温度系数",
-            "max_output_tokens": "最大输出Tokens",
-            "top_p": "核采样",
-            "top_k": "候选词数量",
-            "seed": "随机种子",
-            "video_path": "视频路径"
-        },
-        "outputs": {
-            "caption": "字幕",
-            "sampled_frame": "采样帧"
-        }
-    },
-    "FL_GeminiTextAPI": {
-        "title": "FL Gemini文本 API",
-        "widgets": {
-            "api_key": "API密钥",
-            "model": "模型",
-            "temperature": "温度系数",
-            "max_output_tokens": "最大输出Tokens",
-            "seed": "随机种子",
-            "top_p": "核采样",
-            "top_k": "候选词数量"
-        },
-        "outputs": {
-            "response": "响应"
-        }
-    },
-    "FL_HunyuanDelight": {
-        "title": "FL Hunyuan增效",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "cfg_image": "图像引导系数",
-            "steps": "步数",
-            "seed": "随机种子",
-            "loops": "循环次数"
-        }
-    },
-    "FL_PixVerseAPI": {
-        "title": "FL PixVerse API",
-        "inputs": {
-            "image": "图像",
-            "first_frame_img": "首帧图像",
-            "last_frame_img": "末帧图像"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "prompt": "提示词",
-            "negative_prompt": "负面提示词",
-            "duration": "时长",
-            "quality": "画质",
-            "motion_mode": "运动模式",
-            "seed": "随机种子",
-            "batch_size": "批量大小",
-            "nth_frame": "帧间隔",
-            "use_transition": "使用过渡"
-        },
-        "outputs": {
-            "frames_1": "视频帧1",
-            "frames_2": "视频帧2",
-            "frames_3": "视频帧3",
-            "frames_4": "视频帧4",
-            "frames_5": "视频帧5",
-            "video_urls": "视频链接",
-            "status_msg": "状态消息",
-            "credit_balance": "Credits余额"
-        }
-    },
-    "FL_Fal_Pixverse": {
-        "title": "FL FalPixverse API",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "prompt": "提示词",
-            "negative_prompt": "负面提示词",
-            "duration": "时长",
-            "quality": "画质",
-            "motion_mode": "运动模式",
-            "seed": "随机种子",
-            "batch_size": "批量大小",
-            "nth_frame": "帧间隔"
-        },
-        "outputs": {
-            "frames_1": "视频帧1",
-            "frames_2": "视频帧2",
-            "frames_3": "视频帧3",
-            "frames_4": "视频帧4",
-            "frames_5": "视频帧5",
-            "video_urls": "视频链接",
-            "status_msg": "状态消息"
-        }
-    },
-    "FL_GeminiImageGenADV": {
-        "title": "FL Gemini图像生成（高级版）",
-        "inputs": {
-            "prompt_1": "提示词",
-            "image_1": "图像"
-        },
-        "widgets": {
-            "inputcount": "输入数量",
-            "api_key": "API密钥",
-            "model": "模型",
-            "temperature": "温度系数",
-            "max_retries": "最大重试次数",
-            "seed": "随机种子",
-            "retry_indefinitely": "无限重试",
-            "Update inputs": "更新输入"
-        },
-        "outputs": {
-            "images": "图像",
-            "responses": "API响应"
-        }
-    },
-    "FL_GeminiImageEditor": {
-        "title": "FL Gemini图像编辑器",
-        "inputs": {
-            "image1": "图像1",
-            "image2": "图像2",
-            "image3": "图像3",
-            "image4": "图像4"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "model": "模型",
-            "temperature": "温度系数",
-            "max_retries": "最大重试次数",
-            "batch_size": "批量大小",
-            "seed": "随机种子"
-        },
-        "outputs": {
-            "image": "图像",
-            "API Respond": "API响应"
-        }
-    },
-    "FL_RunwayImageAPI": {
-        "title": "FL Runway图像 API",
-        "inputs": {
-            "image1": "图像1",
-            "image2": "图像2",
-            "image3": "图像3"
-        },
-        "widgets": {
-            "api_key": "API密钥",
-            "ratio": "比例",
-            "runway_api_version": "API版本",
-            "tag1": "标签1",
-            "tag2": "标签2",
-            "tag3": "标签3",
-            "seed": "随机种子",
-            "public_figure_threshold": "公众人物阈值",
-            "polling_interval": "轮询间隔",
-            "max_polling_attempts": "最大轮询次数",
-            "timeout_sdk": "SDK超时",
-            "timeout_download": "下载超时"
-        },
-        "outputs": {
-            "image": "图像",
-            "status_text": "图像"
-        }
-    },
-    "FL_CodeNode": {
-        "title": "FL 代码节点",
-        "inputs": {
-            "input": "输入"
-        },
-        "widgets": {
-            "file": "文件路径",
-            "use_file": "使用文件",
-            "run_always": "始终运行"
-        },
-        "outputs": {
-            "output_1": "输出1",
-            "output_2": "输出2",
-            "output_3": "输出3",
-            "output_0": "输出0"
-        }
-    },
-    "FL_DirectoryCrawl": {
-        "title": "FL 目录遍历",
-        "widgets": {
-            "directory_path": "目录路径",
-            "file_type": "文件类型",
-            "max_files": "最大文件数"
-        },
-        "outputs": {
-            "image_batch": "图像批次",
-            "text_content": "文本内容",
-            "image_list": "图像列表"
-        }
-    },
-    "FL_RandomNumber": {
-        "title": "FL 随机数生成",
-        "widgets": {
-            "min_value": "最小值",
-            "max_value": "最大值",
-            "seed": "随机种子"
-        }
-    },
-    "FL_InpaintCrop": {
-        "title": "FL 图像修复裁剪",
-        "inputs": {
-            "image": "图像",
-            "mask": "遮罩",
-            "optional_context_mask": "可选上下文遮罩"
-        },
-        "widgets": {
-            "mode": "模式",
-            "invert_mask": "遮罩反转",
-            "fill_mask_holes": "填充遮罩孔洞",
-            "use_gpu": "使用GPU",
-            "context_pixels": "上下文像",
-            "context_factor": "上下文因子",
-            "force_square": "强制正方形",
-            "forced_size": "强制尺寸",
-            "minimum_size": "最小尺寸",
-            "maximum_size": "最大尺寸",
-            "target_size": "目标尺寸",
-            "free_rescale": "自由缩放",
-            "free_padding": "自由填充"
-        },
-        "outputs": {
-            "stitch": "拼接结果",
-            "cropped_image": "裁剪后图像",
-            "cropped_mask": "裁剪后遮罩"
-        }
-    },
-    "FL_Inpaint_Stitch": {
-        "title": "FL 修复拼接",
-        "inputs": {
-            "stitch": "拼接",
-            "inpainted_image": "修复后图像"
-        },
-        "outputs": {
-            "image": "图像"
-        }
-    },
-    "FL_SDUltimate_Slices": {
-        "title": "FL SD极致切片",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "slicing": "切片模式",
-            "multiplier": "倍数"
-        },
-        "outputs": {
-            "image": "图像",
-            "slice_width": "切片宽度",
-            "slice_height": "切片高度",
-            "multiplier": "倍数"
-        }
-    },
-    "FL_VideoCropMask": {
-        "title": "FL 视频裁剪遮罩",
-        "inputs": {
-            "video": "视频",
-            "mask": "遮罩"
-        },
-        "widgets": {
-            "output_width": "输出宽度",
-            "output_height": "输出高度",
-            "padding": "填充",
-            "smoothing_factor": "平滑因子"
-        },
-        "outputs": {
-            "cropped_video": "裁剪后视频",
-            "mask": "遮罩",
-            "original_video": "原始视频",
-            "crop_data": "裁剪数据"
-        }
-    },
-    "FL_SeparateMaskComponents": {
-        "title": "FL 分离遮罩组件",
-        "inputs": {
-            "mask": "遮罩"
-        },
-        "outputs": {
-            "MASK_MAPPING": "遮罩映射"
-        }
-    },
-    "FL_PasteOnCanvas": {
-        "title": "FL 粘贴至画布",
-        "inputs": {
-            "image": "图像",
-            "mask": "遮罩",
-            "bg_image_optional": "可选背景图像"
-        },
-        "widgets": {
-            "canvas_width": "画布宽度",
-            "canvas_height": "画布高度",
-            "background_red": "背景色 (红)",
-            "background_green": "背景色 (绿)",
-            "background_blue": "背景色 (蓝)",
-            "padding": "填充",
-            "resize_algorithm": "缩放算法",
-            "include_alpha": "包含Alpha通道",
-            "use_full_mask": "使用完整遮罩"
-        }
-    },
-    "FL_SystemCheck": {
-        "title": "FL 系统检查",
-        "widgets": {
-            "Run System Check": "运行系统检查"
-        }
-    },
-    "FL_PathTypeChecker": {
-        "title": "FL 路径类型检查器",
-        "inputs": {
-            "input_path": "输入路径"
-        },
-        "outputs": {
-            "PATH": "路径"
-        }
-    },
-    "FL_Padding": {
-        "title": "FL 填充",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "padding_left": "填充 (左)",
-            "padding_right": "填充 (右)",
-            "padding_top": "填充 (上)",
-            "padding_bottom": "填充 (下)",
-            "red": "红",
-            "green": "绿",
-            "blue": "蓝",
-            "include_alpha": "包含Alpha通道"
-        }
-    },
-    "FL_JS": {
-        "title": "FL JavaScript",
-        "widgets": {
-            "event": "事件",
-            "Execute": "执行"
-        }
-    },
-    "FL_Switch": {
-        "title": "FL 开关",
-        "inputs": {
-            "on_false": "假（False）",
-            "on_true": "真（True）"
-        },
-        "widgets": {
-            "switch": "开关"
-        }
-    },
-    "FL_Switch_Big": {
-        "title": "FL 多条件开关",
-        "inputs": {
-            "input_default": "默认输入",
-            "input_1": "输入1",
-            "input_2": "输入2",
-            "input_3": "输入3",
-            "input_4": "输入4",
-            "input_5": "输入5"
-        },
-        "widgets": {
-            "switch_condition": "条件判断",
-            "case_1": "条件1",
-            "case_2": "条件2",
-            "case_3": "条件3",
-            "case_4": "条件4",
-            "case_5": "条件5"
-        },
-        "outputs": {
-            "output": "输出"
-        }
-    },
-    "FL_PasteByMask": {
-        "title": "FL 依据遮罩粘贴",
-        "inputs": {
-            "image_base": "基础图像",
-            "image_to_paste": "待粘贴图像",
-            "mask": "遮罩",
-            "mask_mapping_optional": "可选遮罩映射"
-        },
-        "widgets": {
-            "resize_behavior": "缩放行为",
-            "blend_mode": "混合模式",
-            "feather_amount": "羽化量"
-        }
-    },
-    "FL_ModelInspector": {
-        "title": "FL 模型检查器",
-        "widgets": {
-            "ckpt_path": "Ckpt路径",
-            "include_state_dict": "包含状态字典",
-            "include_layer_details": "包含层细节",
-            "show_all_keys": "显示所有键"
-        },
-        "outputs": {
-            "model_info": "模型信息",
-            "model": "模型"
-        }
-    },
-    "FL_Float": {
-        "title": "FL 浮点数",
-        "widgets": {
-            "value": "值"
-        },
-        "outputs": {
-            "value": "值"
-        }
-    },
-    "FL_UnloadModel": {
-        "title": "FL 模型卸载",
-        "inputs": {
-            "value": "值",
-            "model": "模型"
-        }
-    },
-    "FL_UnloadAllModels": {
-        "title": "FL 全部模型卸载",
-        "inputs": {
-            "value": "值"
-        }
-    },
-    "FL_TextOverlayNode": {
-        "title": "FL 文字叠加",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "font": "字体",
-            "font_size": "字体大小",
-            "font_color_r": "字体颜色 (R)",
-            "font_color_g": "字体颜色 (G)",
-            "font_color_b": "字体颜色 (B)",
-            "x_percent": "位置百分比 (X)",
-            "y_percent": "位置百分比 (Y)",
-            "anchor": "锚点"
-        }
-    },
-    "FL_Ascii": {
-        "title": "FL 字符艺术转换",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "spacing": "字符间距",
-            "font_size": "字体大小",
-            "characters": "字符集",
-            "font": "字体",
-            "sequence_toggle": "序列切换"
-        }
-    },
-    "FL_Glitch": {
-        "title": "FL 故障艺术",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "glitch_amount": "故障程度",
-            "color_offset": "颜色偏移",
-            "seed": "随机种子"
-        }
-    },
-    "FL_Ripple": {
-        "title": "FL 波纹效果",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "amplitude": "振幅",
-            "frequency": "频率",
-            "phase": "相位",
-            "center_x": "坐标 (X)",
-            "center_y": "坐标 (Y)",
-            "modulation": "调制"
-        }
-    },
-    "FL_PixelSort": {
-        "title": "FL 像素排序",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "direction": "方向",
-            "threshold": "阈值",
-            "smoothing": "平滑度",
-            "rotation": "旋转"
-        }
-    },
-    "FL_HexagonalPattern": {
-        "title": "FL 六边形图案",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "hexagon_size": "六边形尺寸",
-            "shadow_offset": "阴影偏移",
-            "shadow_color": "阴影颜色",
-            "background_color": "背景颜色",
-            "rotation": "旋转",
-            "spacing": "间距"
-        }
-    },
-    "FL_HalftonePattern": {
-        "title": "FL 半调效果",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "dot_size": "网点大小",
-            "dot_spacing": "网点间距"
-        }
-    },
-    "FL_Shadertoy": {
-        "title": "FL 着色器玩具",
-        "inputs": {
-            "channel_0": "通道0",
-            "channel_1": "通道1",
-            "channel_2": "通道2",
-            "channel_3": "通道3"
-        },
-        "widgets": {
-            "width": "宽度",
-            "height": "高度",
-            "frame_count": "帧数",
-            "fps": "帧率"
-        }
-    },
-    "FL_PixelArtShader": {
-        "title": "FL 像素艺术",
-        "inputs": {
-            "images": "基础图像",
-            "palette_image": "调色板图像",
-            "mask": "遮罩"
-        },
-        "widgets": {
-            "pixel_size": "像素尺寸",
-            "color_depth": "颜色深度",
-            "use_aspect_ratio": "使用宽高比",
-            "palette_colors": "调色板颜色数"
-        }
-    },
-    "FL_InfiniteZoom": {
-        "title": "FL 无限缩放",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "scale": "缩放比例",
-            "mirror": "镜像",
-            "mirror_warp": "镜像扭曲",
-            "iterations": "迭代次数",
-            "speed": "速度",
-            "fps": "帧率"
-        }
-    },
-    "FL_PaperDrawn": {
-        "title": "FL 手绘纸张效果",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "angle_num": "角度数量",
-            "samp_num": "采样数",
-            "line_width": "线条宽度",
-            "vignette": "渐晕效果",
-            "fps": "帧率"
-        }
-    },
-    "FL_RetroEffect": {
-        "title": "FL 复古效果",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "color_offset": "颜色偏移",
-            "scanline_strength": "扫描线强度",
-            "vignette_strength": "渐晕强度",
-            "noise_strength": "噪点强度"
-        }
-    },
-    "FL_Dither": {
-        "title": "FL 抖动效果",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "dither_method": "抖动算法",
-            "num_colors": "颜色数量"
-        }
-    },
-    "FL_ImagePixelator": {
-        "title": "FL 图像像素化",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "scale_factor": "缩放因子",
-            "kernel_size": "核大小",
-            "modulation": "调制"
-        }
-    },
-    "FL_ImageCollage": {
-        "title": "FL 图像拼贴",
-        "inputs": {
-            "base_image": "基础图像",
-            "tile_image": "拼贴图像"
-        },
-        "widgets": {
-            "tile_size": "拼贴尺寸",
-            "spacing": "间距"
-        }
-    },
-    "FL_VideoCaptionSaver": {
-        "title": "FL 视频字幕保存器",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "folder_name": "文件夹名称",
-            "caption_text": "字幕文本",
-            "video_name": "视频名称",
-            "fps": "帧率",
-            "format": "格式",
-            "quality": "质量",
-            "overwrite": "覆盖"
-        }
-    },
-    "FL_MirrorAndAppendCaptions": {
-        "title": "FL 镜像与字幕追加",
-        "widgets": {
-            "image_directory": "图像目录",
-            "caption_extension": "字幕扩展名",
-            "additional_text": "附加文本",
-            "text_position": "文字位置",
-            "create_mirrors": "创建镜像"
-        },
-        "outputs": {
-            "directory": "目录"
-        }
-    },
-    "FL_CaptionToCSV": {
-        "title": "FL 字幕转CSV",
-        "widgets": {
-            "image_directory": "图像目录"
-        }
-    },
-    "FL_SaveCSV": {
-        "title": "FL 保存CSV",
-        "inputs": {
-            "csv_data": "CSV数据"
-        },
-        "widgets": {
-            "output_directory": "输出目录",
-            "filename": "文件名"
-        }
-    },
-    "FL_OllamaCaptioner": {
-        "title": "FL Ollama图像描述器",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "folder_name": "文件夹名称",
-            "use_llm": "使用大语言模型",
-            "url": "地址",
-            "model": "模型",
-            "overwrite": "覆盖"
-        }
-    },
-    "FL_CaptionSaver_V2": {
-        "title": "FL 字幕保存器V2",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "input_type": "输入类型",
-            "caption_input_type": "字幕输入类型",
-            "folder_name": "文件夹名称",
-            "overwrite": "覆盖",
-            "downsize_factor": "缩小因子",
-            "input_directory": "输入目录",
-            "single_caption": "单字幕"
-        }
-    },
-    "FL_ImageCaptionSaver": {
-        "title": "FL 图像字幕保存器",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "folder_name": "文件夹名称",
-            "caption_text": "字幕文本",
-            "overwrite": "覆盖"
-        }
-    },
-    "FL_ImageCaptionLayout": {
-        "title": "FL 图像字幕排版",
-        "widgets": {
-            "image_directory": "图像目录",
-            "images_per_row": "每行图像数",
-            "image_size": "图像尺寸",
-            "caption_height": "字幕高度",
-            "font_size": "字体大小",
-            "padding": "内边距"
-        }
-    },
-    "FL_ImageCaptionLayoutPDF": {
-        "title": "FL 图像字幕排版PDF",
-        "widgets": {
-            "image_directory": "图像目录",
-            "images_per_row": "每行图像数",
-            "display_size": "显示尺寸",
-            "caption_height": "字幕高度",
-            "font_size": "字体大小",
-            "padding": "内边距",
-            "output_directory": "输出目录",
-            "output_filename": "输出文件名",
-            "orientation": "方向"
-        }
-    },
-    "FL_ApplyMask": {
-        "title": "FL 应用遮罩",
-        "inputs": {
-            "image": "图像",
-            "mask": "遮罩"
-        }
-    },
-    "FL_AnimeLineExtractor": {
-        "title": "FL 动漫线条提取器",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "line_threshold": "线条阈值",
-            "line_width": "线条宽度",
-            "detail_level": "细节等级",
-            "noise_reduction": "降噪程度",
-            "invert_output": "反转输出"
-        }
-    },
-    "FL_BlackFrameReject": {
-        "title": "FL 黑帧过滤",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "threshold": "阈值",
-            "black_level": "黑度",
-            "channels": "通道",
-            "invert": "反转",
-            "show_progress": "显示进度"
-        },
-        "outputs": {
-            "filtered_images": "过滤后图像",
-            "kept_count": "保留数量",
-            "rejected_count": "过滤数量"
-        }
-    },
-    "FL_PaddingRemover": {
-        "title": "FL 填充移除器",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "tolerance": "容差",
-            "min_content_size": "最小内容尺寸",
-            "sides_trim": "侧边裁剪",
-            "top_bottom_trim": "上下裁剪",
-            "debug_view": "调试视图",
-            "use_gpu": "使用GPU"
-        }
-    },
-    "FL_ImageBlank": {
-        "title": "FL 空白图像生成",
-        "widgets": {
-            "width": "宽度",
-            "height": "高度",
-            "red": "红色通道",
-            "green": "绿色通道",
-            "blue": "蓝色通道"
-        }
-    },
-    "FL_ImageRandomizer": {
-        "title": "FL 图像随机选择器",
-        "widgets": {
-            "mode": "模式",
-            "directory_path": "目录路径",
-            "seed": "随机种子",
-            "search_subdirectories": "搜索子目录"
-        },
-        "outputs": {
-            "image_batch": "图像批次",
-            "selected_path": "选中路径",
-            "image_list": "图像列表",
-            "filename": "文件名"
-        }
-    },
-    "FL_ImageDimensionDisplay": {
-        "title": "FL 图像尺寸",
-        "inputs": {
-            "image": "图像"
-        }
-    },
-    "FL_ImageAddToBatch": {
-        "title": "FL 图像批次合并",
-        "inputs": {
-            "images1": "图像1",
-            "images2": "图像2"
-        }
-    },
-    "FL_ImageNotes": {
-        "title": "FL 图像标注",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "bar_height": "标注栏高度",
-            "text_size": "文字大小",
-            "border": "边框",
-            "word_wrap": "自动换行",
-            "bar_position": "标注栏位置"
-        }
-    },
-    "FL_SaveImages": {
-        "title": "FL 图像保存",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "base_directory": "基础目录",
-            "file_name_template": "文件名模板",
-            "start_index": "起始索引",
-            "metadata": "元数据",
-            "New Subfolder": "新建子文件夹",
-            "Add Subfolder": "添加子文件夹",
-            "Remove Selected Folder": "移除选中文件夹",
-            "Refresh Folder Structure": "刷新文件夹结构"
-        }
-    },
-    "FL_LoadImage": {
-        "title": "FL 图像加载",
-        "widgets": {
-            "root_directory": "根目录",
-            "Refresh": "刷新",
-            "Favorites": "收藏夹",
-            "Add to Favorites": "添加到收藏夹",
-            "← Back": "← 返回"
-        }
-    },
-    "FL_SaveAndDisplayImage": {
-        "title": "FL 图像保存并显示",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "filename_prefix": "文件名前缀"
-        }
-    },
-    "FL_ImageAdjuster": {
-        "title": "FL 图像调整器",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "Hue": "色调",
-            "Saturation": "饱和度",
-            "Brightness": "亮度",
-            "Contrast": "对比度",
-            "Sharpness": "锐度",
-            "Reset": "重置"
-        }
-    },
-    "FL_SaveWebPImage(SaveImage)": {
-        "title": "FL 保存WebP图像",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "filename_prefix": "文件名前缀",
-            "quality": "质量"
-        }
-    },
-    "FL_ImageSlicer": {
-        "title": "FL 图像切片器",
-        "inputs": {
-            "image": "图像"
-        },
-        "widgets": {
-            "x_subdivisions": "水平分割数",
-            "y_subdivisions": "垂直分割数"
-        }
-    },
-    "FL_ImageSelector": {
-        "title": "FL 图像选择",
-        "inputs": {
-            "images": "images"
-        },
-        "widgets": {
-            "indices": "索引"
-        }
-    },
-    "FL_ImageAspectCropper": {
-        "title": "FL 图像比例裁剪器",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "aspect_ratio_w": "宽比例",
-            "aspect_ratio_h": "高比例"
-        }
-    },
-    "FL_ImageListToImageBatch": {
-        "title": "FL 图像列表转批次",
-        "inputs": {
-            "images": "图像"
-        }
-    },
-    "FL_ImageBatchToImageList": {
-        "title": "FL 图像批次转列表",
-        "inputs": {
-            "image": "图像"
-        }
-    },
-    "FL_ImageBatchToGrid": {
-        "title": "FL 图像批次转网格",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "images_per_row": "每行图像数"
-        }
-    },
-    "FL_ImageBatch": {
-        "title": "FL 图像批次",
-        "inputs": {
-            "image_1": "图像1",
-            "image_2": "图像2"
-        },
-        "widgets": {
-            "inputcount": "输入数量",
-            "Update inputs": "更新输入"
-        }
-    },
-    "FL_SaveWebM": {
-        "title": "FL 保存WebM动画",
-        "inputs": {
-            "images": "图像"
-        },
-        "widgets": {
-            "directory": "目录",
-            "filename_prefix": "文件名前缀",
-            "fps": "帧率",
-            "preserve_alpha": "保留透明度",
-            "loop_count": "循环次数",
-            "quality": "质量"
-        }
+  "FL_API_Base64_ImageLoader": {
+    "title": "FL API Base64图像加载器",
+    "widgets": {
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "category": "类别",
+      "resize_width": "调整宽度",
+      "resize_height": "调整高度",
+      "maintain_aspect_ratio": "保持宽高比",
+      "auto_clean_base64": "自动清理base64",
+      "base64_string": "base64字符串"
+    },
+    "outputs": {
+      "image": "图像",
+      "width": "宽度",
+      "height": "高度",
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "category": "类别"
+    },
+    "inputs": {
+      "base64_string": "base64字符串",
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "category": "类别",
+      "resize_width": "调整宽度",
+      "resize_height": "调整高度",
+      "maintain_aspect_ratio": "保持宽高比",
+      "auto_clean_base64": "自动清理base64"
     }
+  },
+  "FL_API_ImageSaver": {
+    "title": "FL API 图像保存",
+    "inputs": {
+      "image": "图像",
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "category": "类别",
+      "base_output_dir": "基础输出目录",
+      "image_format": "图像格式",
+      "image_quality": "图像质量"
+    },
+    "widgets": {
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "category": "类别",
+      "base_output_dir": "基础输出目录",
+      "image_format": "图像格式",
+      "image_quality": "图像质量",
+      "image": "图像"
+    },
+    "outputs": {
+      "saved_path": "保存路径",
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "category": "类别"
+    }
+  },
+  "FL_Hedra_API": {
+    "title": "FL Hedra接口",
+    "inputs": {
+      "image": "图像",
+      "api_key": "API密钥",
+      "audio_file_path": "音频文件路径",
+      "text_prompt": "文本提示",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "duration_seconds": "时长（秒）",
+      "seed": "种子"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "audio_file_path": "音频文件路径",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "duration_seconds": "时长秒数",
+      "seed": "随机种子",
+      "image": "图像",
+      "text_prompt": "文本提示"
+    },
+    "outputs": {
+      "frames": "帧",
+      "api_log": "API日志"
+    }
+  },
+  "FL_GoogleCloudStorage": {
+    "title": "FL 谷歌云存储上传器",
+    "inputs": {
+      "images": "图像",
+      "bucket_name": "存储桶名称",
+      "folder_path": "文件夹路径",
+      "file_prefix": "文件前缀",
+      "file_format": "文件格式",
+      "jpg_quality": "jpg质量",
+      "compile_video": "编译视频",
+      "video_fps": "视频帧率",
+      "video_codec": "视频编码",
+      "video_quality": "视频质量",
+      "credentials_json": "credentialsJSON",
+      "make_public": "设为公开",
+      "metadata": "元数据"
+    },
+    "widgets": {
+      "bucket_name": "存储桶名称",
+      "folder_path": "文件夹路径",
+      "file_prefix": "文件前缀",
+      "file_format": "文件格式",
+      "jpg_quality": "jpg质量",
+      "compile_video": "编译视频",
+      "video_fps": "视频帧率",
+      "video_codec": "视频编码",
+      "video_quality": "视频质量",
+      "make_public": "设为公开",
+      "images": "图像",
+      "credentials_json": "credentialsJSON",
+      "metadata": "元数据"
+    },
+    "outputs": {
+      "status": "状态",
+      "urls": "链接",
+      "error_message": "错误信息"
+    }
+  },
+  "FL_ClipScanner": {
+    "title": "FL Clip扫描器（Kytra）",
+    "widgets": {
+      "model_type": "模型类型",
+      "text": "文本"
+    },
+    "inputs": {
+      "model_type": "模型类型",
+      "text": "文本"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_GoogleDriveDownloader": {
+    "title": "FL 谷歌云盘下载器",
+    "widgets": {
+      "google_drive_link": "谷歌云盘链接",
+      "output_folder_name": "输出文件夹名称"
+    },
+    "inputs": {
+      "google_drive_link": "谷歌云盘链接",
+      "output_folder_name": "输出文件夹名称"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_GoogleDriveImageDownloader": {
+    "title": "FL 谷歌云盘图像下载器",
+    "widgets": {
+      "google_drive_link": "谷歌云盘链接",
+      "use_cache": "使用缓存",
+      "show_preview": "显示预览"
+    },
+    "inputs": {
+      "google_drive_link": "谷歌云盘链接",
+      "use_cache": "使用缓存",
+      "show_preview": "显示预览"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ProResVideo": {
+    "title": "FL ProRes视频",
+    "inputs": {
+      "images": "图像",
+      "fps": "帧率",
+      "filename": "文件名",
+      "save_directory": "保存路径"
+    },
+    "widgets": {
+      "fps": "帧率",
+      "filename": "文件名",
+      "save_directory": "保存目录",
+      "images": "图像"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_VideoCut": {
+    "title": "FL 视频镜头切割检测器",
+    "inputs": {
+      "images": "图像",
+      "output_folder": "输出文件夹",
+      "fps": "帧率",
+      "threshold": "阈值",
+      "min_scene_length": "最小场景长度",
+      "output_quality": "输出质量",
+      "detection_method": "检测方法",
+      "max_workers": "最大工作线程数",
+      "downsample_detection": "降采样检测",
+      "use_gpu_acceleration": "使用GPU加速"
+    },
+    "widgets": {
+      "fps": "帧率",
+      "threshold": "阈值",
+      "min_scene_length": "最小场景长度",
+      "output_quality": "输出质量",
+      "detection_method": "检测方法",
+      "max_workers": "最大工作线程数",
+      "downsample_detection": "降采样检测",
+      "use_gpu_acceleration": "使用GPU加速",
+      "output_folder": "输出文件夹",
+      "images": "图像"
+    },
+    "outputs": {
+      "video_paths": "视频路径",
+      "output_folder": "输出文件夹"
+    }
+  },
+  "FL_VideoTrim": {
+    "title": "FL 视频裁剪",
+    "inputs": {
+      "images": "图像",
+      "trim_start": "裁剪起始点",
+      "trim_end": "裁剪结束点"
+    },
+    "widgets": {
+      "trim_start": "裁剪起始点",
+      "trim_end": "裁剪结束点",
+      "images": "图像"
+    },
+    "outputs": {
+      "trimmed_video": "trimmed视频",
+      "start_frames": "首帧",
+      "end_frames": "结束帧数"
+    }
+  },
+  "FL_VideoCadenceCompile": {
+    "title": "FL 视频节奏编译",
+    "widgets": {
+      "cadence_list_str": "节奏列表字符串",
+      "video_directory": "视频目录",
+      "use_gpu_acceleration": "使用GPU加速"
+    },
+    "outputs": {
+      "image_batch": "图像批次"
+    },
+    "inputs": {
+      "cadence_list_str": "节奏列表字符串",
+      "video_directory": "视频目录",
+      "use_gpu_acceleration": "使用GPU加速"
+    }
+  },
+  "FL_VideoCadence": {
+    "title": "FL 视频节奏",
+    "inputs": {
+      "images": "图像",
+      "fps": "帧率",
+      "threshold": "阈值",
+      "min_scene_length": "最小场景长度",
+      "detection_method": "检测方法",
+      "downsample_detection": "降采样检测",
+      "use_gpu_acceleration": "使用GPU加速"
+    },
+    "widgets": {
+      "fps": "帧率",
+      "threshold": "阈值",
+      "min_scene_length": "最小场景长度",
+      "detection_method": "检测方法",
+      "downsample_detection": "降采样检测",
+      "use_gpu_acceleration": "使用GPU加速",
+      "images": "图像"
+    },
+    "outputs": {
+      "scene_lengths_str": "场景长度字符串"
+    }
+  },
+  "FL_Math": {
+    "title": "FL 运算",
+    "inputs": {
+      "A": "A通道",
+      "B": "B通道",
+      "C": "C",
+      "equation": "计算公式"
+    },
+    "widgets": {
+      "A": "A通道",
+      "B": "B通道",
+      "C": "C",
+      "equation": "计算公式"
+    },
+    "outputs": {
+      "INT": "整数",
+      "FLOAT": "浮点"
+    }
+  },
+  "FL_UpscaleModel": {
+    "title": "FL 放大模型",
+    "inputs": {
+      "upscale_model": "放大模型",
+      "image": "图像",
+      "downscale_by": "缩小比例",
+      "rescale_method": "缩放方法",
+      "precision": "精度",
+      "batch_size": "批次大小"
+    },
+    "widgets": {
+      "downscale_by": "缩小比例",
+      "rescale_method": "缩放方法",
+      "precision": "精度",
+      "batch_size": "批量大小",
+      "upscale_model": "放大模型",
+      "image": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_NodeLoader": {
+    "title": "FL 节点加载器",
+    "inputs": {
+      "trigger": "触发信号"
+    },
+    "widgets": {
+      "Columns": "列数",
+      "Node Count": "节点数量",
+      "Load FL Nodes": "加载FL节点",
+      "trigger": "触发器"
+    },
+    "outputs": {
+      "TRIGGER": "触发输出"
+    }
+  },
+  "FL_NodePackLoader": {
+    "title": "FL 节点包加载器",
+    "inputs": {
+      "trigger": "触发信号"
+    },
+    "widgets": {
+      "Node Pack": "节点包",
+      "Columns": "列数",
+      "Node Count": "节点数量",
+      "Node List": "节点列表",
+      "Load Nodes": "加载节点",
+      "trigger": "触发器"
+    },
+    "outputs": {
+      "TRIGGER": "触发输出"
+    }
+  },
+  "FL_SendToDiscordWebhook": {
+    "title": "FL Kytra Discord通知",
+    "inputs": {
+      "images": "图像",
+      "webhook_url": "网络URL",
+      "frame_rate": "帧率",
+      "save_locally": "本地保存",
+      "bot_username": "机器人用户名",
+      "message": "消息",
+      "user_id_to_tag": "user_id_to_tag"
+    },
+    "widgets": {
+      "webhook_url": "网络URL",
+      "frame_rate": "帧率",
+      "save_locally": "本地保存",
+      "bot_username": "机器人用户名",
+      "images": "图像",
+      "message": "消息",
+      "user_id_to_tag": "user_id_to_tag"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_FractalKSampler": {
+    "title": "FL 分形K采样器",
+    "inputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "scale_factor": "缩放因子",
+      "blend_factor": "混合因子",
+      "fractal_levels": "分形层级"
+    },
+    "widgets": {
+      "seed": "随机种子",
+      "steps": "步数",
+      "cfg": "CFG引导系数",
+      "sampler_name": "采样器名称",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "scale_factor": "缩放因子",
+      "blend_factor": "混合因子",
+      "fractal_levels": "分形层级",
+      "model": "模型",
+      "vae": "VAE模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像"
+    },
+    "outputs": {
+      "LATENT": "潜在表示",
+      "VAE": "VAE"
+    }
+  },
+  "FL_WF_Agent": {
+    "title": "FL 工作流代理",
+    "widgets": {
+      "event": "事件",
+      "api_key": "API 密钥",
+      "scan_nodes": "扫描节点",
+      "🤖 Generate Code": "🤖 生成代码",
+      "🔍 Scan Nodes": "🔍 扫描节点",
+      "Execute": "执行",
+      "code_prompt": "code提示词",
+      "javascript": "javascript"
+    },
+    "inputs": {
+      "event": "事件",
+      "code_prompt": "code提示词",
+      "api_key": "API密钥",
+      "javascript": "javascript",
+      "scan_nodes": "扫描节点"
+    },
+    "outputs": {}
+  },
+  "FL_TimeLine": {
+    "title": "FL 时间线",
+    "inputs": {
+      "model": "模型",
+      "timeline_data": "时间轴数据",
+      "ipadapter_preset": "ipadapter_preset",
+      "video_width": "视频宽度",
+      "video_height": "视频高度",
+      "interpolation_mode": "插值模式",
+      "number_animation_frames": "数量animation帧数",
+      "frames_per_second": "每秒帧数"
+    },
+    "widgets": {
+      "model": "模型",
+      "timeline_data": "时间轴数据",
+      "ipadapter_preset": "ipadapter_preset",
+      "video_width": "视频宽度",
+      "video_height": "视频高度",
+      "interpolation_mode": "插值模式",
+      "number_animation_frames": "数量animation帧数",
+      "frames_per_second": "每秒帧数"
+    },
+    "outputs": {
+      "MODEL": "模型"
+    }
+  },
+  "FL_PDFLoader": {
+    "title": "FL PDF加载器",
+    "widgets": {
+      "pdf_path": "PDF路径"
+    },
+    "inputs": {
+      "pdf_path": "PDF路径"
+    },
+    "outputs": {
+      "PDF": "PDF"
+    }
+  },
+  "FL_PDFSaver": {
+    "title": "FL PDF保存器",
+    "inputs": {
+      "pdf": "PDF",
+      "output_directory": "输出目录",
+      "filename": "文件名"
+    },
+    "widgets": {
+      "output_directory": "输出目录",
+      "filename": "文件名",
+      "pdf": "pdf"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_PDFMerger": {
+    "title": "FL PDF合并器",
+    "inputs": {
+      "pdf1": "PDF1",
+      "pdf2": "PDF2"
+    },
+    "widgets": {
+      "pdf1": "pdf1",
+      "pdf2": "pdf2"
+    },
+    "outputs": {
+      "PDF": "PDF"
+    }
+  },
+  "FL_PDFTextExtractor": {
+    "title": "FL PDF文本提取器",
+    "inputs": {
+      "pdf": "PDF"
+    },
+    "widgets": {
+      "pdf": "pdf"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_BulkPDFLoader": {
+    "title": "FL PDF批量加载器",
+    "widgets": {
+      "directory_path": "目录路径"
+    },
+    "outputs": {
+      "pfds": "PDF",
+      "pdfs": "pdfs"
+    },
+    "inputs": {
+      "directory_path": "目录路径"
+    }
+  },
+  "FL_TextToPDF": {
+    "title": "FL 文本转PDF",
+    "widgets": {
+      "page_size": "页面尺寸",
+      "font_size": "字体大小",
+      "margin": "页边距",
+      "title": "文档标题",
+      "text": "文本"
+    },
+    "inputs": {
+      "text": "文本",
+      "page_size": "页面尺寸",
+      "font_size": "字体大小",
+      "margin": "边距",
+      "title": "标题"
+    },
+    "outputs": {
+      "PDF": "PDF"
+    }
+  },
+  "FL_PDFEncryptor": {
+    "title": "FL PDF加密器",
+    "inputs": {
+      "pdf": "PDF",
+      "user_password": "用户密码",
+      "owner_password": "所有者密码",
+      "encryption_level": "加密级别",
+      "allow_printing": "是否允许打印",
+      "allow_commenting": "是否允许注释",
+      "allow_copying": "是否允许复制",
+      "allow_content_extraction": "是否允许内容提取",
+      "allow_form_filling": "是否允许表单填写",
+      "allow_document_assembly": "是否允许文档汇编",
+      "allow_page_extraction": "是否允许页面提取"
+    },
+    "widgets": {
+      "user_password": "用户密码",
+      "owner_password": "所有者密码",
+      "encryption_level": "加密级别",
+      "allow_printing": "是否允许打印",
+      "allow_commenting": "是否允许注释",
+      "allow_copying": "是否允许复制",
+      "allow_content_extraction": "是否允许内容提取",
+      "allow_form_filling": "是否允许表单填写",
+      "allow_document_assembly": "是否允许文档汇编",
+      "allow_page_extraction": "是否允许页面提取",
+      "pdf": "pdf"
+    },
+    "outputs": {
+      "PDF": "PDF"
+    }
+  },
+  "FL_PDFToImages": {
+    "title": "FL PDF转图像",
+    "inputs": {
+      "pdf": "PDF",
+      "dpi": "dpi点分辨率"
+    },
+    "widgets": {
+      "dpi": "dpi点分辨率",
+      "pdf": "pdf"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImagesToPDF": {
+    "title": "FL 图像转PDF",
+    "inputs": {
+      "images": "图像",
+      "dpi": "dpi点分辨率",
+      "page_size": "页面尺寸"
+    },
+    "widgets": {
+      "dpi": "dpi点分辨率",
+      "page_size": "页面尺寸",
+      "images": "图像"
+    },
+    "outputs": {
+      "PDF": "PDF"
+    }
+  },
+  "FL_PDFImageExtractor": {
+    "title": "FL PDF图像提取器",
+    "inputs": {
+      "pdf": "PDF",
+      "min_width": "最小宽度",
+      "min_height": "最小高度"
+    },
+    "widgets": {
+      "min_width": "最小宽度",
+      "min_height": "最小高度",
+      "pdf": "pdf"
+    },
+    "outputs": {
+      "images": "图像"
+    }
+  },
+  "FL_GPT_Vision": {
+    "title": "FL GPT图像描述生成器",
+    "inputs": {
+      "images": "图像",
+      "model": "模型",
+      "system_prompt": "系统提示",
+      "request_prompt": "request提示词",
+      "output_directory": "输出目录",
+      "overwrite": "覆盖",
+      "max_tokens": "最大标记数",
+      "temperature": "温度",
+      "detail": "细节",
+      "batch_size": "批次大小",
+      "input_directory": "输入目录"
+    },
+    "widgets": {
+      "model": "模型",
+      "output_directory": "输出目录",
+      "overwrite": "覆盖",
+      "max_tokens": "最大Tokens数",
+      "temperature": "温度系数",
+      "detail": "细节",
+      "batch_size": "批量大小",
+      "input_directory": "输入目录",
+      "system_prompt": "系统提示",
+      "request_prompt": "request提示词",
+      "images": "图像"
+    },
+    "outputs": {
+      "message": "消息",
+      "output_directory": "输出目录"
+    }
+  },
+  "FL_SimpleGPTVision": {
+    "title": "FL 简易GPT视觉",
+    "inputs": {
+      "image": "图像",
+      "model": "模型",
+      "system_prompt": "系统提示",
+      "request_prompt": "request提示词",
+      "max_tokens": "最大标记数",
+      "temperature": "温度",
+      "detail": "细节"
+    },
+    "widgets": {
+      "model": "模型",
+      "max_tokens": "最大Tokens数",
+      "temperature": "温度系数",
+      "detail": "细节",
+      "image": "图像",
+      "system_prompt": "系统提示",
+      "request_prompt": "request提示词"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_Dalle3": {
+    "title": "FL DALL·E 3图像生成",
+    "widgets": {
+      "resolution": "分辨率",
+      "dummy_seed": "虚拟种子",
+      "quality": "质量",
+      "style": "风格",
+      "batch_size": "批量大小",
+      "retry": "重试次数",
+      "auto_save": "自动保存",
+      "auto_save_dir": "自动保存目录",
+      "prompt": "提示词"
+    },
+    "outputs": {
+      "IMAGES": "图像",
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "REVISED_PROMPTS": "修正后的提示词"
+    },
+    "inputs": {
+      "resolution": "分辨率",
+      "dummy_seed": "虚拟种子",
+      "prompt": "提示词",
+      "quality": "质量",
+      "style": "风格",
+      "batch_size": "批次大小",
+      "retry": "重试次数",
+      "auto_save": "自动保存",
+      "auto_save_dir": "自动保存目录"
+    }
+  },
+  "FL_GPT_Text": {
+    "title": "FL GPT文本交互",
+    "widgets": {
+      "api_key": "API密钥",
+      "model": "模型",
+      "max_tokens": "最大Tokens数",
+      "temperature": "温度系数",
+      "top_p": "累积概率",
+      "frequency_penalty": "频率惩罚",
+      "presence_penalty": "存在惩罚",
+      "save_to_file": "保存到文件",
+      "output_directory": "输出目录",
+      "filename": "文件名",
+      "system_prompt": "系统提示",
+      "user_prompt": "用户提示"
+    },
+    "outputs": {
+      "response": "响应文本"
+    },
+    "inputs": {
+      "api_key": "API密钥",
+      "model": "模型",
+      "system_prompt": "系统提示",
+      "user_prompt": "用户提示",
+      "max_tokens": "最大标记数",
+      "temperature": "温度",
+      "top_p": "动态候选集长度",
+      "frequency_penalty": "频率惩罚",
+      "presence_penalty": "存在惩罚",
+      "save_to_file": "保存到文件",
+      "output_directory": "输出目录",
+      "filename": "文件名"
+    }
+  },
+  "FL_GPT_Image1": {
+    "title": "FL GPT图像生成1",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩",
+      "prompt": "提示词",
+      "api_key": "API密钥",
+      "batch_size": "批次大小",
+      "size": "尺寸",
+      "quality": "质量",
+      "background": "背景",
+      "output_format": "输出格式",
+      "output_compression": "输出压缩",
+      "moderation": "审核",
+      "seed": "种子"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "batch_size": "批量大小",
+      "size": "尺寸",
+      "quality": "质量",
+      "background": "背景",
+      "output_format": "输出格式",
+      "output_compression": "输出压缩",
+      "moderation": "内容审核",
+      "seed": "随机种子",
+      "prompt": "提示词",
+      "image": "图像",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "image": "图像",
+      "API Response": "API响应"
+    }
+  },
+  "FL_GPT_Image1_ADV": {
+    "title": "FL GPT图像生成1（高级版）",
+    "inputs": {
+      "prompt_1": "提示词",
+      "image_1": "图像",
+      "inputcount": "输入数量",
+      "api_key": "API密钥",
+      "size_setting": "尺寸",
+      "quality_setting": "质量",
+      "background_setting": "背景",
+      "output_format_setting": "输出格式",
+      "seed_setting": "随机种子"
+    },
+    "widgets": {
+      "inputcount": "输入数量",
+      "api_key": "API密钥",
+      "size_setting": "尺寸",
+      "quality_setting": "质量",
+      "background_setting": "背景",
+      "output_format_setting": "输出格式",
+      "seed_setting": "随机种子",
+      "Update inputs": "更新输入",
+      "prompt_1": "提示词_1",
+      "image_1": "图像_1"
+    },
+    "outputs": {
+      "image": "图像",
+      "API Response": "API响应",
+      "images": "图像",
+      "API_responses": "API_responses"
+    }
+  },
+  "FL_ZipDirectory": {
+    "title": "FL 文件夹压缩",
+    "widgets": {
+      "directory_path": "文件夹路径",
+      "zip_filename": "压缩包文件名"
+    },
+    "outputs": {
+      "ZIP": "压缩包"
+    },
+    "inputs": {
+      "directory_path": "目录路径",
+      "zip_filename": "压缩包文件名"
+    }
+  },
+  "FL_ZipSave": {
+    "title": "FL 压缩保存",
+    "widgets": {
+      "input_directory": "输入目录",
+      "output_directory": "输出目录",
+      "zip_filename": "压缩包文件名"
+    },
+    "outputs": {
+      "zip_path": "压缩包路径"
+    },
+    "inputs": {
+      "input_directory": "输入目录",
+      "output_directory": "输出目录",
+      "zip_filename": "压缩包文件名"
+    }
+  },
+  "FL_HFHubModelUploader": {
+    "title": "FL HFHub模型上传器",
+    "inputs": {
+      "image": "图像",
+      "model_card_header": "模型卡片标题",
+      "zip_file": "压缩文件",
+      "api_key": "API密钥",
+      "owner": "所有者",
+      "repo_name": "仓库名称",
+      "readme_content": "readme_content",
+      "create_new_repo": "创建新仓库",
+      "image_folder_path": "图像文件夹路径",
+      "repo_type": "仓库类型",
+      "zip_filename": "压缩包文件名",
+      "zip_folder_path": "压缩包文件夹路径",
+      "model_file_path": "模型文件路径",
+      "model_repo_path": "模型仓库路径"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "owner": "所有者",
+      "repo_name": "仓库名称",
+      "create_new_repo": "创建新仓库",
+      "image_folder_path": "图像文件夹路径",
+      "repo_type": "仓库类型",
+      "zip_filename": "压缩包文件名",
+      "zip_folder_path": "压缩包文件夹路径",
+      "model_file_path": "模型文件路径",
+      "model_repo_path": "模型仓库路径",
+      "readme_content": "readme_content",
+      "image": "图像",
+      "model_card_header": "模型卡片标题",
+      "zip_file": "压缩文件"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_HF_Character": {
+    "title": "FL HF角色配置",
+    "inputs": {
+      "dataset_zip": "数据集压缩包",
+      "caption_layout": "标题布局",
+      "caption_PDF_layout": "标题PDF布局",
+      "csv_file": "CSV文件",
+      "api_key": "API密钥",
+      "owner": "所有者",
+      "repo_name": "仓库名称",
+      "studio_name": "工作室名称",
+      "project_name": "项目名称",
+      "character_name": "角色名称",
+      "create_new_repo": "创建新仓库",
+      "repo_type": "仓库类型",
+      "lora_file": "LORA文件"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "owner": "所有者",
+      "repo_name": "仓库名称",
+      "studio_name": "工作室名称",
+      "project_name": "项目名称",
+      "character_name": "角色名称",
+      "create_new_repo": "创建新仓库",
+      "repo_type": "仓库类型",
+      "lora_file": "LORA文件",
+      "dataset_zip": "数据集压缩包",
+      "caption_layout": "标题布局",
+      "caption_PDF_layout": "标题PDF布局",
+      "csv_file": "CSV文件"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_HF_UploaderAbsolute": {
+    "title": "FL HF绝对路径上传器",
+    "inputs": {
+      "dataset_zip": "数据集压缩包",
+      "caption_layout": "标题布局",
+      "caption_PDF_layout": "标题PDF布局",
+      "csv_file": "CSV文件",
+      "owner": "所有者",
+      "repo_name": "仓库名称",
+      "upload_path": "上传路径",
+      "create_new_repo": "创建新仓库",
+      "repo_type": "仓库类型",
+      "lora_file": "LORA文件"
+    },
+    "widgets": {
+      "owner": "所有者",
+      "repo_name": "仓库名称",
+      "upload_path": "上传路径",
+      "create_new_repo": "创建新仓库",
+      "repo_type": "仓库类型",
+      "lora_file": "LORA文件",
+      "dataset_zip": "数据集压缩包",
+      "caption_layout": "标题布局",
+      "caption_PDF_layout": "标题PDF布局",
+      "csv_file": "CSV文件"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_HFDatasetDownloader": {
+    "title": "FL HF数据集下载器",
+    "widgets": {
+      "repo_id": "仓库ID",
+      "repo_type": "仓库类型",
+      "local_dir": "本地目录",
+      "max_workers": "最大工作线程数",
+      "download_trigger": "下载触发"
+    },
+    "outputs": {
+      "download_path": "下载路径"
+    },
+    "inputs": {
+      "repo_id": "仓库ID",
+      "repo_type": "仓库类型",
+      "local_dir": "本地目录",
+      "max_workers": "最大工作线程数",
+      "download_trigger": "下载触发"
+    }
+  },
+  "FL_BulletHellGame": {
+    "title": "FL 弹幕地狱游戏",
+    "widgets": {
+      "Reset Game": "重置游戏"
+    },
+    "inputs": {},
+    "outputs": {}
+  },
+  "FL_TetrisGame": {
+    "title": "FL 俄罗斯方块游戏",
+    "widgets": {
+      "Reset Game": "重置游戏"
+    },
+    "inputs": {},
+    "outputs": {}
+  },
+  "FL_KsamplerSettings": {
+    "title": "FL K采样器设置",
+    "widgets": {
+      "Aspect_Ratio": "宽高比",
+      "rotation": "旋转",
+      "batch": "批次",
+      "Pass_1_steps": "阶段1步数",
+      "Pass_2_steps": "阶段2步数",
+      "Pass_1_CFG": "阶段1CFG",
+      "Pass_2_CFG": "阶段2CFG",
+      "Pass_2_denoise": "阶段2去噪",
+      "scale_factor": "缩放因子",
+      "sampler": "采样器",
+      "scheduler": "调度器"
+    },
+    "outputs": {
+      "WIDTH": "宽度",
+      "HEIGHT": "高度",
+      "BATCH_SIZE": "批次",
+      "Pass_1_steps": "阶段1步数",
+      "Pass_2_steps": "阶段2步数",
+      "Pass_1_CFG": "阶段1CFG",
+      "Pass_2_CFG": "阶段2CFG",
+      "Pass_2_denoise": "阶段2去噪",
+      "SCALE": "缩放因子",
+      "SAMPLER": "采样器",
+      "SCHEDULER": "调度器"
+    },
+    "inputs": {
+      "Aspect_Ratio": "宽高比",
+      "rotation": "旋转",
+      "batch": "批次",
+      "Pass_1_steps": "阶段1步数",
+      "Pass_2_steps": "阶段2步数",
+      "Pass_1_CFG": "阶段1CFG",
+      "Pass_2_CFG": "阶段2CFG",
+      "Pass_2_denoise": "阶段2去噪",
+      "scale_factor": "缩放因子",
+      "sampler": "采样器",
+      "scheduler": "调度器"
+    }
+  },
+  "FL_KsamplerPlus": {
+    "title": "FL K采样器增强版",
+    "inputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "input_type": "输入类型",
+      "x_slices": "X切片数",
+      "y_slices": "Y切片数",
+      "overlap": "重叠",
+      "batch_size": "批次大小",
+      "use_sliced_conditioning": "使用切片条件"
+    },
+    "widgets": {
+      "seed": "随机种子",
+      "steps": "步数",
+      "cfg": "CFG引导系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "input_type": "输入类型",
+      "x_slices": "X切片数",
+      "y_slices": "Y切片数",
+      "overlap": "重叠",
+      "batch_size": "批量大小",
+      "use_sliced_conditioning": "使用切片条件",
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像"
+    },
+    "outputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像",
+      "latent": "Latent（可选）"
+    }
+  },
+  "FL_KsamplerPlusV2": {
+    "title": "FL K采样器增强版V2",
+    "inputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "input_type": "输入类型",
+      "x_slices": "X切片数",
+      "y_slices": "Y切片数",
+      "overlap": "重叠",
+      "batch_size": "批次大小",
+      "use_sliced_conditioning": "使用切片条件",
+      "conditioning_strength": "条件强度",
+      "debug_mode": "调试模式"
+    },
+    "widgets": {
+      "seed": "随机种子",
+      "steps": "步数",
+      "cfg": "CFG引导系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "input_type": "输入类型",
+      "x_slices": "X切片数",
+      "y_slices": "Y切片数",
+      "overlap": "重叠",
+      "batch_size": "批量大小",
+      "use_sliced_conditioning": "使用切片条件",
+      "conditioning_strength": "条件强度",
+      "debug_mode": "调试模式",
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像"
+    },
+    "outputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像",
+      "debug_info": "调试信息",
+      "latent": "Latent（可选）"
+    }
+  },
+  "FL_KsamplerBasic": {
+    "title": "FL K采样器基础版",
+    "inputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪"
+    },
+    "widgets": {
+      "seed": "随机种子",
+      "steps": "步数",
+      "cfg": "CFG引导系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像"
+    },
+    "outputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像",
+      "latent": "Latent（可选）"
+    }
+  },
+  "FL_KSamplerXYZPlot": {
+    "title": "FL K采样器XYZ绘图",
+    "inputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像",
+      "seed": "种子",
+      "input_type": "输入类型",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "x_axis": "X轴",
+      "x_values": "X值",
+      "y_axis": "Y轴",
+      "y_values": "Y值",
+      "z_axis": "Z轴",
+      "z_values": "Z值",
+      "z_stack_mode": "Z堆叠模式"
+    },
+    "widgets": {
+      "seed": "随机种子",
+      "input_type": "输入类型",
+      "steps": "步数",
+      "cfg": "CFG引导系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "x_axis": "X轴",
+      "x_values": "X值",
+      "y_axis": "Y轴",
+      "y_values": "Y值",
+      "z_axis": "Z轴",
+      "z_values": "Z值",
+      "z_stack_mode": "Z堆叠模式",
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_SamplerStrings": {
+    "title": "FL 采样器字符串XYZ",
+    "inputs": {
+      "euler": "euler",
+      "euler_cfg_pp": "eulerCFGpp",
+      "euler_ancestral": "euler_ancestral",
+      "euler_ancestral_cfg_pp": "eulerancestralCFGpp",
+      "heun": "heun",
+      "heunpp2": "heunpp2",
+      "exp_heun_2_x0": "expheun2X0",
+      "exp_heun_2_x0_sde": "expheun2X0sde",
+      "dpm_2": "dpm_2",
+      "dpm_2_ancestral": "dpm_2_ancestral",
+      "lms": "lms",
+      "dpm_fast": "dpm_fast",
+      "dpm_adaptive": "dpm_adaptive",
+      "dpmpp_2s_ancestral": "dpmpp_2s_ancestral",
+      "dpmpp_2s_ancestral_cfg_pp": "dpmpp2sancestralCFGpp",
+      "dpmpp_sde": "dpmpp_sde",
+      "dpmpp_sde_gpu": "dpmpp_sde_gpu",
+      "dpmpp_2m": "dpmpp_2m",
+      "dpmpp_2m_cfg_pp": "dpmpp2mCFGpp",
+      "dpmpp_2m_sde": "dpmpp_2m_sde",
+      "dpmpp_2m_sde_gpu": "dpmpp_2m_sde_gpu",
+      "dpmpp_2m_sde_heun": "dpmpp_2m_sde_heun",
+      "dpmpp_2m_sde_heun_gpu": "dpmpp_2m_sde_heun_gpu",
+      "dpmpp_3m_sde": "dpmpp_3m_sde",
+      "dpmpp_3m_sde_gpu": "dpmpp_3m_sde_gpu",
+      "ddpm": "ddpm",
+      "lcm": "lcm",
+      "ipndm": "ipndm",
+      "ipndm_v": "ipndm_v",
+      "deis": "deis",
+      "res_multistep": "res_multistep",
+      "res_multistep_cfg_pp": "resmultistepCFGpp",
+      "res_multistep_ancestral": "res_multistep_ancestral",
+      "res_multistep_ancestral_cfg_pp": "resmultistepancestralCFGpp",
+      "gradient_estimation": "gradient_estimation",
+      "gradient_estimation_cfg_pp": "gradientestimationCFGpp",
+      "er_sde": "er_sde",
+      "seeds_2": "seeds_2",
+      "seeds_3": "seeds_3",
+      "sa_solver": "sa_solver",
+      "sa_solver_pece": "sa_solver_pece",
+      "ddim": "ddim",
+      "uni_pc": "uni_pc",
+      "uni_pc_bh2": "uni_pc_bh2",
+      "legacy_rk": "legacy_rk",
+      "rk": "rk",
+      "rk_beta": "rk_beta",
+      "deis_3m_ode": "deis_3m_ode",
+      "deis_2m_ode": "deis_2m_ode",
+      "deis_3m": "deis_3m",
+      "deis_2m": "deis_2m",
+      "res_6s_ode": "res_6s_ode",
+      "res_5s_ode": "res_5s_ode",
+      "res_3s_ode": "res_3s_ode",
+      "res_2s_ode": "res_2s_ode",
+      "res_3m_ode": "res_3m_ode",
+      "res_2m_ode": "res_2m_ode",
+      "res_6s": "res_6s",
+      "res_5s": "res_5s",
+      "res_3s": "res_3s",
+      "res_2s": "res_2s",
+      "res_3m": "res_3m",
+      "res_2m": "res_2m"
+    },
+    "widgets": {
+      "euler": "euler",
+      "euler_cfg_pp": "eulerCFGpp",
+      "euler_ancestral": "euler_ancestral",
+      "euler_ancestral_cfg_pp": "eulerancestralCFGpp",
+      "heun": "heun",
+      "heunpp2": "heunpp2",
+      "exp_heun_2_x0": "expheun2X0",
+      "exp_heun_2_x0_sde": "expheun2X0sde",
+      "dpm_2": "dpm_2",
+      "dpm_2_ancestral": "dpm_2_ancestral",
+      "lms": "lms",
+      "dpm_fast": "dpm_fast",
+      "dpm_adaptive": "dpm_adaptive",
+      "dpmpp_2s_ancestral": "dpmpp_2s_ancestral",
+      "dpmpp_2s_ancestral_cfg_pp": "dpmpp2sancestralCFGpp",
+      "dpmpp_sde": "dpmpp_sde",
+      "dpmpp_sde_gpu": "dpmpp_sde_gpu",
+      "dpmpp_2m": "dpmpp_2m",
+      "dpmpp_2m_cfg_pp": "dpmpp2mCFGpp",
+      "dpmpp_2m_sde": "dpmpp_2m_sde",
+      "dpmpp_2m_sde_gpu": "dpmpp_2m_sde_gpu",
+      "dpmpp_2m_sde_heun": "dpmpp_2m_sde_heun",
+      "dpmpp_2m_sde_heun_gpu": "dpmpp_2m_sde_heun_gpu",
+      "dpmpp_3m_sde": "dpmpp_3m_sde",
+      "dpmpp_3m_sde_gpu": "dpmpp_3m_sde_gpu",
+      "ddpm": "ddpm",
+      "lcm": "lcm",
+      "ipndm": "ipndm",
+      "ipndm_v": "ipndm_v",
+      "deis": "deis",
+      "res_multistep": "res_multistep",
+      "res_multistep_cfg_pp": "resmultistepCFGpp",
+      "res_multistep_ancestral": "res_multistep_ancestral",
+      "res_multistep_ancestral_cfg_pp": "resmultistepancestralCFGpp",
+      "gradient_estimation": "gradient_estimation",
+      "gradient_estimation_cfg_pp": "gradientestimationCFGpp",
+      "er_sde": "er_sde",
+      "seeds_2": "seeds_2",
+      "seeds_3": "seeds_3",
+      "sa_solver": "sa_solver",
+      "sa_solver_pece": "sa_solver_pece",
+      "ddim": "ddim",
+      "uni_pc": "uni_pc",
+      "uni_pc_bh2": "uni_pc_bh2",
+      "legacy_rk": "legacy_rk",
+      "rk": "rk",
+      "rk_beta": "rk_beta",
+      "deis_3m_ode": "deis_3m_ode",
+      "deis_2m_ode": "deis_2m_ode",
+      "deis_3m": "deis_3m",
+      "deis_2m": "deis_2m",
+      "res_6s_ode": "res_6s_ode",
+      "res_5s_ode": "res_5s_ode",
+      "res_3s_ode": "res_3s_ode",
+      "res_2s_ode": "res_2s_ode",
+      "res_3m_ode": "res_3m_ode",
+      "res_2m_ode": "res_2m_ode",
+      "res_6s": "res_6s",
+      "res_5s": "res_5s",
+      "res_3s": "res_3s",
+      "res_2s": "res_2s",
+      "res_3m": "res_3m",
+      "res_2m": "res_2m"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_SchedulerStrings": {
+    "title": "FL 调度器字符串XYZ",
+    "inputs": {
+      "simple": "简易",
+      "sgm_uniform": "SGM 统一格式",
+      "karras": "karras",
+      "exponential": "指数",
+      "ddim_uniform": "DDIM 统一格式",
+      "beta": "尺度参数β",
+      "normal": "正常",
+      "linear_quadratic": "线性二次",
+      "kl_optimal": "最优控制",
+      "bong_tangent": "bong_tangent",
+      "beta57": "beta57"
+    },
+    "widgets": {
+      "simple": "简易",
+      "sgm_uniform": "SGM 统一格式",
+      "karras": "karras",
+      "exponential": "指数",
+      "ddim_uniform": "DDIM 统一格式",
+      "beta": "尺度参数β",
+      "normal": "正常",
+      "linear_quadratic": "线性二次",
+      "kl_optimal": "最优控制",
+      "bong_tangent": "bong_tangent",
+      "beta57": "beta57"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_PromptSelector": {
+    "title": "FL 提示词选择器",
+    "widgets": {
+      "index": "索引",
+      "prepend_text": "预置文本",
+      "prompts": "提示词",
+      "append_text": "追加文本"
+    },
+    "inputs": {
+      "prepend_text": "预置文本",
+      "prompts": "提示词",
+      "append_text": "追加文本",
+      "index": "索引"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_MadLibGenerator": {
+    "title": "FL 疯狂填词生成器",
+    "widgets": {
+      "delimiter_1": "分隔符1",
+      "delimiter_2": "分隔符2",
+      "delimiter_3": "分隔符3",
+      "delimiter_4": "分隔符4",
+      "delimiter_5": "分隔符5",
+      "word_list_1": "词库列表1",
+      "word_list_2": "词库列表2",
+      "word_list_3": "词库列表3",
+      "word_list_4": "词库列表4",
+      "word_list_5": "词库列表5",
+      "seed": "随机种子",
+      "template": "模板"
+    },
+    "inputs": {
+      "template": "模板",
+      "delimiter_1": "分隔符1",
+      "delimiter_2": "分隔符2",
+      "delimiter_3": "分隔符3",
+      "delimiter_4": "分隔符4",
+      "delimiter_5": "分隔符5",
+      "word_list_1": "词库列表1",
+      "word_list_2": "词库列表2",
+      "word_list_3": "词库列表3",
+      "word_list_4": "词库列表4",
+      "word_list_5": "词库列表5",
+      "seed": "种子"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_PromptBasic": {
+    "title": "FL 基础提示词",
+    "inputs": {
+      "prepend": "prepend",
+      "prompt": "提示词",
+      "append": "相加"
+    },
+    "widgets": {
+      "prepend": "prepend",
+      "prompt": "提示词",
+      "append": "相加"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_PromptMulti": {
+    "title": "FL 多重提示词",
+    "widgets": {
+      "name_prefix": "名称前缀",
+      "positive_text": "正面文本",
+      "negative_text": "负面文本"
+    },
+    "outputs": {
+      "positive": "正面提示词",
+      "negative": "负面提示词",
+      "name": "名称"
+    },
+    "inputs": {
+      "positive_text": "正面文本",
+      "negative_text": "负面文本",
+      "name_prefix": "名称前缀"
+    }
+  },
+  "FL_NFTGenerator": {
+    "title": "FL NFT生成器",
+    "widgets": {
+      "folder_path": "文件夹路径",
+      "dummy_seed": "虚拟种子"
+    },
+    "inputs": {
+      "folder_path": "文件夹路径",
+      "dummy_seed": "虚拟种子"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_BatchAlign": {
+    "title": "FL 批量对齐",
+    "inputs": {
+      "model": "模型",
+      "share_norm": "共享归一化",
+      "share_attn": "共享注意力",
+      "scale": "缩放"
+    },
+    "widgets": {
+      "share_norm": "归一化共享",
+      "share_attn": "注意力共享",
+      "scale": "缩放",
+      "model": "模型"
+    },
+    "outputs": {
+      "MODEL": "模型"
+    }
+  },
+  "FL_VideoRecompose": {
+    "title": "FL 视频重组",
+    "inputs": {
+      "original_video": "原始视频",
+      "cropped_video": "裁剪视频",
+      "crop_data": "裁剪数据"
+    },
+    "outputs": {
+      "output_video": "输出视频"
+    },
+    "widgets": {
+      "original_video": "原始视频",
+      "cropped_video": "裁剪视频",
+      "crop_data": "裁剪数据"
+    }
+  },
+  "FL_ColorPicker": {
+    "title": "FL 颜色选择器",
+    "widgets": {
+      "selected_color": "所选颜色",
+      "Reset Color": "重置颜色",
+      "Hex Color": "Hex色值"
+    },
+    "inputs": {
+      "selected_color": "所选颜色"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_GradGenerator": {
+    "title": "FL 渐变生成器",
+    "widgets": {
+      "width": "宽度",
+      "height": "高度",
+      "color_mode": "颜色模式",
+      "interpolation": "插值",
+      "gradient_colors": "gradient_colors"
+    },
+    "inputs": {
+      "width": "宽度",
+      "height": "高度",
+      "color_mode": "颜色模式",
+      "interpolation": "插值方式",
+      "gradient_colors": "gradient_colors"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_GeminiVideoCaptioner": {
+    "title": "FL Gemini视频字幕生成器",
+    "inputs": {
+      "image": "图像",
+      "api_key": "API密钥",
+      "model": "模型",
+      "frames_per_second": "每秒帧数",
+      "max_duration_minutes": "最大时长",
+      "prompt": "提示词",
+      "process_audio": "处理音频",
+      "temperature": "温度",
+      "max_output_tokens": "最大输出Tokens",
+      "top_p": "动态候选集长度",
+      "top_k": "候选集长度",
+      "seed": "种子",
+      "thinking_level": "思维层次",
+      "video_path": "视频路径"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "model": "模型",
+      "frames_per_second": "每秒帧数",
+      "max_duration_minutes": "最大时长",
+      "process_audio": "处理音频",
+      "temperature": "温度系数",
+      "max_output_tokens": "最大输出Tokens",
+      "top_p": "核采样",
+      "top_k": "候选词数量",
+      "seed": "随机种子",
+      "video_path": "视频路径",
+      "prompt": "提示词",
+      "thinking_level": "思维层次",
+      "image": "图像"
+    },
+    "outputs": {
+      "caption": "字幕",
+      "sampled_frame": "采样帧"
+    }
+  },
+  "FL_GeminiTextAPI": {
+    "title": "FL Gemini文本 API",
+    "widgets": {
+      "api_key": "API密钥",
+      "model": "模型",
+      "temperature": "温度系数",
+      "max_output_tokens": "最大输出Tokens",
+      "seed": "随机种子",
+      "top_p": "核采样",
+      "top_k": "候选词数量",
+      "prompt": "提示词",
+      "system_instructions": "system_instructions",
+      "thinking_level": "思维层次"
+    },
+    "outputs": {
+      "response": "响应"
+    },
+    "inputs": {
+      "prompt": "提示词",
+      "api_key": "API密钥",
+      "model": "模型",
+      "temperature": "温度",
+      "max_output_tokens": "最大输出Tokens",
+      "seed": "种子",
+      "system_instructions": "system_instructions",
+      "top_p": "动态候选集长度",
+      "top_k": "候选集长度",
+      "thinking_level": "思维层次"
+    }
+  },
+  "FL_HunyuanDelight": {
+    "title": "FL Hunyuan增效",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "cfg_image": "图像引导系数",
+      "steps": "步数",
+      "seed": "随机种子",
+      "loops": "循环次数"
+    }
+  },
+  "FL_PixVerseAPI": {
+    "title": "FL PixVerse接口",
+    "inputs": {
+      "image": "图像",
+      "first_frame_img": "首帧图像",
+      "last_frame_img": "末帧图像",
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "negative_prompt": "负向提示词",
+      "duration": "时长",
+      "quality": "质量",
+      "motion_mode": "运动模式",
+      "seed": "种子",
+      "batch_size": "批次大小",
+      "nth_frame": "帧间隔",
+      "use_transition": "使用过渡"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "negative_prompt": "负面提示词",
+      "duration": "时长",
+      "quality": "画质",
+      "motion_mode": "运动模式",
+      "seed": "随机种子",
+      "batch_size": "批量大小",
+      "nth_frame": "帧间隔",
+      "use_transition": "使用过渡",
+      "image": "图像",
+      "first_frame_img": "首帧图像",
+      "last_frame_img": "末帧图像"
+    },
+    "outputs": {
+      "frames_1": "视频帧1",
+      "frames_2": "视频帧2",
+      "frames_3": "视频帧3",
+      "frames_4": "视频帧4",
+      "frames_5": "视频帧5",
+      "video_urls": "视频链接",
+      "status_msg": "状态消息",
+      "credit_balance": "Credits余额"
+    }
+  },
+  "FL_Fal_Pixverse": {
+    "title": "FL Fal Pixverse接口",
+    "inputs": {
+      "image": "图像",
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "duration": "时长",
+      "seed": "种子",
+      "batch_size": "批次大小",
+      "nth_frame": "帧间隔",
+      "negative_prompt": "负向提示词",
+      "style": "风格",
+      "camera_movement": "运镜"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "negative_prompt": "负面提示词",
+      "duration": "时长",
+      "quality": "画质",
+      "motion_mode": "运动模式",
+      "seed": "随机种子",
+      "batch_size": "批量大小",
+      "nth_frame": "帧间隔",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "image": "图像",
+      "style": "风格",
+      "camera_movement": "运镜"
+    },
+    "outputs": {
+      "frames_1": "视频帧1",
+      "frames_2": "视频帧2",
+      "frames_3": "视频帧3",
+      "frames_4": "视频帧4",
+      "frames_5": "视频帧5",
+      "video_urls": "视频链接",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_GeminiImageGenADV": {
+    "title": "FL Gemini图像生成（高级版）",
+    "inputs": {
+      "prompt_1": "提示词",
+      "image_1": "图像",
+      "inputcount": "输入数量",
+      "api_key": "API密钥",
+      "model": "模型",
+      "aspect_ratio": "宽高比",
+      "image_size": "图像大小",
+      "always_square": "always_square",
+      "temperature": "温度",
+      "max_retries": "最大重试次数",
+      "seed": "种子",
+      "retry_indefinitely": "无限重试"
+    },
+    "widgets": {
+      "inputcount": "输入数量",
+      "api_key": "API密钥",
+      "model": "模型",
+      "temperature": "温度系数",
+      "max_retries": "最大重试次数",
+      "seed": "随机种子",
+      "retry_indefinitely": "无限重试",
+      "Update inputs": "更新输入",
+      "aspect_ratio": "宽高比",
+      "image_size": "图像大小",
+      "always_square": "always_square",
+      "prompt_1": "提示词_1",
+      "image_1": "图像_1"
+    },
+    "outputs": {
+      "images": "图像",
+      "responses": "API响应",
+      "API_responses": "API_responses"
+    }
+  },
+  "FL_GeminiImageEditor": {
+    "title": "FL Gemini图像编辑器",
+    "inputs": {
+      "image1": "图像1",
+      "image2": "图像2",
+      "image3": "图像3",
+      "image4": "图像4",
+      "prompt": "提示词",
+      "api_key": "API密钥",
+      "model": "模型",
+      "aspect_ratio": "宽高比",
+      "image_size": "图像大小",
+      "always_square": "always_square",
+      "temperature": "温度",
+      "max_retries": "最大重试次数",
+      "batch_size": "批次大小",
+      "seed": "种子"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "model": "模型",
+      "temperature": "温度系数",
+      "max_retries": "最大重试次数",
+      "batch_size": "批量大小",
+      "seed": "随机种子",
+      "prompt": "提示词",
+      "aspect_ratio": "宽高比",
+      "image_size": "图像大小",
+      "always_square": "always_square",
+      "image1": "图像1",
+      "image2": "图像2",
+      "image3": "图像3",
+      "image4": "图像4"
+    },
+    "outputs": {
+      "image": "图像",
+      "API Respond": "API响应"
+    }
+  },
+  "FL_RunwayImageAPI": {
+    "title": "FL Runway图像 API",
+    "inputs": {
+      "image1": "图像1",
+      "image2": "图像2",
+      "image3": "图像3",
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "ratio": "宽高比",
+      "runway_api_version": "API版本",
+      "tag1": "标签1",
+      "tag2": "标签2",
+      "tag3": "标签3",
+      "seed": "种子",
+      "public_figure_threshold": "公众人物阈值",
+      "polling_interval": "轮询间隔",
+      "max_polling_attempts": "最大轮询次数",
+      "timeout_sdk": "SDK超时",
+      "timeout_download": "下载超时"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "ratio": "比例",
+      "runway_api_version": "API版本",
+      "tag1": "标签1",
+      "tag2": "标签2",
+      "tag3": "标签3",
+      "seed": "随机种子",
+      "public_figure_threshold": "公众人物阈值",
+      "polling_interval": "轮询间隔",
+      "max_polling_attempts": "最大轮询次数",
+      "timeout_sdk": "SDK超时",
+      "timeout_download": "下载超时",
+      "prompt": "提示词",
+      "image1": "图像1",
+      "image2": "图像2",
+      "image3": "图像3"
+    },
+    "outputs": {
+      "image": "图像",
+      "status_text": "图像"
+    }
+  },
+  "FL_CodeNode": {
+    "title": "FL 代码节点",
+    "inputs": {
+      "input": "输入"
+    },
+    "widgets": {
+      "file": "文件路径",
+      "use_file": "使用文件",
+      "run_always": "始终运行"
+    },
+    "outputs": {
+      "output_1": "输出1",
+      "output_2": "输出2",
+      "output_3": "输出3",
+      "output_0": "输出0"
+    }
+  },
+  "FL_DirectoryCrawl": {
+    "title": "FL 目录遍历",
+    "widgets": {
+      "directory_path": "目录路径",
+      "file_type": "文件类型",
+      "max_files": "最大文件数",
+      "start_index": "起始索引"
+    },
+    "outputs": {
+      "image_batch": "图像批次",
+      "text_content": "文本内容",
+      "image_list": "图像列表"
+    },
+    "inputs": {
+      "directory_path": "目录路径",
+      "file_type": "文件类型",
+      "max_files": "最大文件数",
+      "start_index": "起始索引"
+    }
+  },
+  "FL_RandomNumber": {
+    "title": "FL 随机数生成",
+    "widgets": {
+      "min_value": "最小值",
+      "max_value": "最大值",
+      "seed": "随机种子"
+    },
+    "inputs": {
+      "min_value": "最小值",
+      "max_value": "最大值",
+      "seed": "种子"
+    },
+    "outputs": {
+      "INT": "整数",
+      "FLOAT": "浮点"
+    }
+  },
+  "FL_InpaintCrop": {
+    "title": "FL 图像修复裁剪",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩",
+      "optional_context_mask": "可选上下文遮罩",
+      "context_factor": "上下文因子",
+      "target_size": "目标尺寸",
+      "resize_mode": "调整模式",
+      "force_square": "强制正方形",
+      "divisible_by": "可被整除",
+      "invert_mask": "反转遮罩",
+      "fill_mask_holes": "填充遮罩孔洞",
+      "use_gpu": "使用GPU"
+    },
+    "widgets": {
+      "mode": "模式",
+      "invert_mask": "遮罩反转",
+      "fill_mask_holes": "填充遮罩孔洞",
+      "use_gpu": "使用GPU",
+      "context_pixels": "上下文像",
+      "context_factor": "上下文因子",
+      "force_square": "强制正方形",
+      "forced_size": "强制尺寸",
+      "minimum_size": "最小尺寸",
+      "maximum_size": "最大尺寸",
+      "target_size": "目标尺寸",
+      "free_rescale": "自由缩放",
+      "free_padding": "自由填充",
+      "image": "图像",
+      "mask": "遮罩",
+      "resize_mode": "调整模式",
+      "divisible_by": "可被整除",
+      "optional_context_mask": "上下文遮罩(可选)"
+    },
+    "outputs": {
+      "stitch": "拼接结果",
+      "cropped_image": "裁剪后图像",
+      "cropped_mask": "裁剪后遮罩"
+    }
+  },
+  "FL_Inpaint_Stitch": {
+    "title": "FL 修复拼接",
+    "inputs": {
+      "stitch": "拼接",
+      "inpainted_image": "修复后图像"
+    },
+    "outputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "stitch": "拼接数据",
+      "inpainted_image": "修复图像"
+    }
+  },
+  "FL_SDUltimate_Slices": {
+    "title": "FL SD极致切片",
+    "inputs": {
+      "image": "图像",
+      "slicing": "切片模式",
+      "multiplier": "乘数"
+    },
+    "widgets": {
+      "slicing": "切片模式",
+      "multiplier": "倍数",
+      "image": "图像"
+    },
+    "outputs": {
+      "image": "图像",
+      "slice_width": "切片宽度",
+      "slice_height": "切片高度",
+      "multiplier": "倍数"
+    }
+  },
+  "FL_VideoCropMask": {
+    "title": "FL 视频裁剪遮罩",
+    "inputs": {
+      "video": "视频",
+      "mask": "遮罩",
+      "output_width": "输出宽度",
+      "output_height": "输出高度",
+      "padding": "填充",
+      "smoothing_factor": "平滑因子"
+    },
+    "widgets": {
+      "output_width": "输出宽度",
+      "output_height": "输出高度",
+      "padding": "填充",
+      "smoothing_factor": "平滑因子",
+      "video": "视频",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "cropped_video": "裁剪后视频",
+      "mask": "遮罩",
+      "original_video": "原始视频",
+      "crop_data": "裁剪数据"
+    }
+  },
+  "FL_SeparateMaskComponents": {
+    "title": "FL 分离遮罩组件",
+    "inputs": {
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "MASK_MAPPING": "遮罩映射",
+      "IMAGE": "图像"
+    },
+    "widgets": {
+      "mask": "遮罩"
+    }
+  },
+  "FL_PasteOnCanvas": {
+    "title": "FL 粘贴至画布",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩",
+      "bg_image_optional": "可选背景图像",
+      "canvas_width": "画布宽度",
+      "canvas_height": "画布高度",
+      "background_red": "背景色 (红)",
+      "background_green": "背景色 (绿)",
+      "background_blue": "背景色 (蓝)",
+      "padding": "填充",
+      "resize_algorithm": "缩放算法",
+      "include_alpha": "包含Alpha通道",
+      "use_full_mask": "使用完整遮罩",
+      "show_preview": "显示预览"
+    },
+    "widgets": {
+      "canvas_width": "画布宽度",
+      "canvas_height": "画布高度",
+      "background_red": "背景色 (红)",
+      "background_green": "背景色 (绿)",
+      "background_blue": "背景色 (蓝)",
+      "padding": "填充",
+      "resize_algorithm": "缩放算法",
+      "include_alpha": "包含Alpha通道",
+      "use_full_mask": "使用完整遮罩",
+      "image": "图像",
+      "show_preview": "显示预览",
+      "mask": "遮罩",
+      "bg_image_optional": "可选背景图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_SystemCheck": {
+    "title": "FL 系统检查",
+    "widgets": {
+      "Run System Check": "运行系统检查"
+    },
+    "inputs": {},
+    "outputs": {}
+  },
+  "FL_PathTypeChecker": {
+    "title": "FL 路径类型检查器",
+    "inputs": {
+      "input_path": "输入路径"
+    },
+    "outputs": {
+      "PATH": "路径"
+    },
+    "widgets": {
+      "input_path": "输入路径"
+    }
+  },
+  "FL_Padding": {
+    "title": "FL 填充",
+    "inputs": {
+      "image": "图像",
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "red": "红色",
+      "green": "绿色",
+      "blue": "蓝色",
+      "include_alpha": "包含Alpha通道"
+    },
+    "widgets": {
+      "padding_left": "填充 (左)",
+      "padding_right": "填充 (右)",
+      "padding_top": "填充 (上)",
+      "padding_bottom": "填充 (下)",
+      "red": "红",
+      "green": "绿",
+      "blue": "蓝",
+      "include_alpha": "包含Alpha通道",
+      "image": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_JS": {
+    "title": "FL JavaScript脚本",
+    "widgets": {
+      "event": "事件",
+      "Execute": "执行",
+      "javascript": "javascript"
+    },
+    "inputs": {
+      "event": "事件",
+      "javascript": "javascript"
+    },
+    "outputs": {}
+  },
+  "FL_Switch": {
+    "title": "FL 开关",
+    "inputs": {
+      "on_false": "假（False）",
+      "on_true": "真（True）",
+      "switch": "开关"
+    },
+    "widgets": {
+      "switch": "开关",
+      "on_false": "为假时",
+      "on_true": "为真时"
+    },
+    "outputs": {
+      "*": "输出"
+    }
+  },
+  "FL_Switch_Big": {
+    "title": "FL 多条件开关",
+    "inputs": {
+      "input_default": "默认输入",
+      "input_1": "输入1",
+      "input_2": "输入2",
+      "input_3": "输入3",
+      "input_4": "输入4",
+      "input_5": "输入5",
+      "switch_condition": "条件判断",
+      "case_1": "条件1",
+      "case_2": "条件2",
+      "case_3": "条件3",
+      "case_4": "条件4",
+      "case_5": "条件5"
+    },
+    "widgets": {
+      "switch_condition": "条件判断",
+      "case_1": "条件1",
+      "case_2": "条件2",
+      "case_3": "条件3",
+      "case_4": "条件4",
+      "case_5": "条件5",
+      "input_default": "默认输入",
+      "input_1": "输入1",
+      "input_2": "输入2",
+      "input_3": "输入3",
+      "input_4": "输入4",
+      "input_5": "输入5"
+    },
+    "outputs": {
+      "output": "输出"
+    }
+  },
+  "FL_PasteByMask": {
+    "title": "FL 依据遮罩粘贴",
+    "inputs": {
+      "image_base": "基础图像",
+      "image_to_paste": "待粘贴图像",
+      "mask": "遮罩",
+      "mask_mapping_optional": "可选遮罩映射",
+      "resize_behavior": "缩放行为",
+      "blend_mode": "混合模式",
+      "feather_amount": "羽化量"
+    },
+    "widgets": {
+      "resize_behavior": "缩放行为",
+      "blend_mode": "混合模式",
+      "feather_amount": "羽化量",
+      "image_base": "基础图像",
+      "image_to_paste": "待粘贴图像",
+      "mask": "遮罩",
+      "mask_mapping_optional": "遮罩映射"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ModelInspector": {
+    "title": "FL 模型检查器",
+    "widgets": {
+      "ckpt_path": "Ckpt路径",
+      "include_state_dict": "包含状态字典",
+      "include_layer_details": "包含层细节",
+      "show_all_keys": "显示所有键"
+    },
+    "outputs": {
+      "model_info": "模型信息",
+      "model": "模型"
+    },
+    "inputs": {
+      "ckpt_path": "Ckpt路径",
+      "include_state_dict": "包含状态字典",
+      "include_layer_details": "包含层细节",
+      "show_all_keys": "显示所有键"
+    }
+  },
+  "FL_Float": {
+    "title": "FL 浮点数",
+    "widgets": {
+      "value": "值"
+    },
+    "outputs": {
+      "value": "值"
+    },
+    "inputs": {
+      "value": "值"
+    }
+  },
+  "FL_UnloadModel": {
+    "title": "FL 模型卸载",
+    "inputs": {
+      "value": "值",
+      "model": "模型"
+    },
+    "widgets": {
+      "value": "值",
+      "model": "模型"
+    },
+    "outputs": {
+      "*": "输出"
+    }
+  },
+  "FL_UnloadAllModels": {
+    "title": "FL 全部模型卸载",
+    "inputs": {
+      "value": "值"
+    },
+    "widgets": {
+      "value": "值"
+    },
+    "outputs": {
+      "*": "输出"
+    }
+  },
+  "FL_TextOverlayNode": {
+    "title": "FL 文字叠加",
+    "inputs": {
+      "image": "图像",
+      "text": "文本",
+      "font": "字体",
+      "font_size": "字体大小",
+      "font_color_r": "字体颜色 (R)",
+      "font_color_g": "字体颜色 (G)",
+      "font_color_b": "字体颜色 (B)",
+      "x_percent": "X百分比",
+      "y_percent": "Y百分比",
+      "anchor": "锚点"
+    },
+    "widgets": {
+      "font": "字体",
+      "font_size": "字体大小",
+      "font_color_r": "字体颜色 (R)",
+      "font_color_g": "字体颜色 (G)",
+      "font_color_b": "字体颜色 (B)",
+      "x_percent": "位置百分比 (X)",
+      "y_percent": "位置百分比 (Y)",
+      "anchor": "锚点",
+      "image": "图像",
+      "text": "文本"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_Ascii": {
+    "title": "FL 字符艺术转换",
+    "inputs": {
+      "image": "图像",
+      "spacing": "间距",
+      "font_size": "字体大小",
+      "characters": "字符集",
+      "font": "字体",
+      "sequence_toggle": "序列切换",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "spacing": "字符间距",
+      "font_size": "字体大小",
+      "characters": "字符集",
+      "font": "字体",
+      "sequence_toggle": "序列切换",
+      "image": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_Glitch": {
+    "title": "FL 故障艺术",
+    "inputs": {
+      "images": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩",
+      "glitch_amount": "故障程度",
+      "color_offset": "颜色偏移",
+      "seed": "种子"
+    },
+    "widgets": {
+      "glitch_amount": "故障程度",
+      "color_offset": "颜色偏移",
+      "seed": "随机种子",
+      "images": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_Ripple": {
+    "title": "FL 波纹效果",
+    "inputs": {
+      "images": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩",
+      "amplitude": "振幅",
+      "frequency": "频率",
+      "phase": "相位角",
+      "center_x": "中心X",
+      "center_y": "中心Y",
+      "modulation": "调制"
+    },
+    "widgets": {
+      "amplitude": "振幅",
+      "frequency": "频率",
+      "phase": "相位",
+      "center_x": "坐标 (X)",
+      "center_y": "坐标 (Y)",
+      "modulation": "调制",
+      "images": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_PixelSort": {
+    "title": "FL 像素排序",
+    "inputs": {
+      "images": "图像",
+      "direction": "方向",
+      "threshold": "阈值",
+      "smoothing": "平滑度",
+      "rotation": "旋转"
+    },
+    "widgets": {
+      "direction": "方向",
+      "threshold": "阈值",
+      "smoothing": "平滑度",
+      "rotation": "旋转",
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_HexagonalPattern": {
+    "title": "FL 六边形图案",
+    "inputs": {
+      "images": "图像",
+      "hexagon_size": "六边形尺寸",
+      "shadow_offset": "阴影偏移",
+      "shadow_color": "阴影色",
+      "background_color": "背景颜色",
+      "rotation": "旋转",
+      "spacing": "间距"
+    },
+    "widgets": {
+      "hexagon_size": "六边形尺寸",
+      "shadow_offset": "阴影偏移",
+      "shadow_color": "阴影颜色",
+      "background_color": "背景颜色",
+      "rotation": "旋转",
+      "spacing": "间距",
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_HalftonePattern": {
+    "title": "FL 半调效果",
+    "inputs": {
+      "images": "图像",
+      "dot_size": "网点大小",
+      "dot_spacing": "网点间距"
+    },
+    "widgets": {
+      "dot_size": "网点大小",
+      "dot_spacing": "网点间距",
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_Shadertoy": {
+    "title": "FL 着色器玩具",
+    "inputs": {
+      "channel_0": "通道0",
+      "channel_1": "通道1",
+      "channel_2": "通道2",
+      "channel_3": "通道3",
+      "width": "宽度",
+      "height": "高度",
+      "frame_count": "帧数",
+      "fps": "帧率",
+      "source": "源"
+    },
+    "widgets": {
+      "width": "宽度",
+      "height": "高度",
+      "frame_count": "帧数",
+      "fps": "帧率",
+      "source": "源",
+      "channel_0": "通道0",
+      "channel_1": "通道_1",
+      "channel_2": "通道_2",
+      "channel_3": "通道_3"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_PixelArtShader": {
+    "title": "FL 像素艺术",
+    "inputs": {
+      "images": "基础图像",
+      "palette_image": "调色板图像",
+      "mask": "遮罩",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "pixel_size": "像素尺寸",
+      "color_depth": "颜色深度",
+      "use_aspect_ratio": "使用宽高比",
+      "palette_colors": "调色板颜色数"
+    },
+    "widgets": {
+      "pixel_size": "像素尺寸",
+      "color_depth": "颜色深度",
+      "use_aspect_ratio": "使用宽高比",
+      "palette_colors": "调色板颜色数",
+      "images": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩",
+      "palette_image": "调色板图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_InfiniteZoom": {
+    "title": "FL 无限缩放",
+    "inputs": {
+      "images": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩",
+      "scale": "缩放",
+      "mirror": "镜像",
+      "mirror_warp": "镜像扭曲",
+      "iterations": "迭代次数",
+      "speed": "速度",
+      "fps": "帧率"
+    },
+    "widgets": {
+      "scale": "缩放比例",
+      "mirror": "镜像",
+      "mirror_warp": "镜像扭曲",
+      "iterations": "迭代次数",
+      "speed": "速度",
+      "fps": "帧率",
+      "images": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_PaperDrawn": {
+    "title": "FL 手绘纸张效果",
+    "inputs": {
+      "image": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩",
+      "angle_num": "角度数量",
+      "samp_num": "采样数",
+      "line_width": "线宽",
+      "vignette": "暗角",
+      "fps": "帧率"
+    },
+    "widgets": {
+      "angle_num": "角度数量",
+      "samp_num": "采样数",
+      "line_width": "线条宽度",
+      "vignette": "渐晕效果",
+      "fps": "帧率",
+      "image": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_RetroEffect": {
+    "title": "FL 复古效果",
+    "inputs": {
+      "images": "图像",
+      "color_offset": "颜色偏移",
+      "scanline_strength": "扫描线强度",
+      "vignette_strength": "渐晕强度",
+      "noise_strength": "噪波强度"
+    },
+    "widgets": {
+      "color_offset": "颜色偏移",
+      "scanline_strength": "扫描线强度",
+      "vignette_strength": "渐晕强度",
+      "noise_strength": "噪点强度",
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_Dither": {
+    "title": "FL 抖动效果",
+    "inputs": {
+      "images": "图像",
+      "dither_method": "抖动算法",
+      "num_colors": "颜色数量"
+    },
+    "widgets": {
+      "dither_method": "抖动算法",
+      "num_colors": "颜色数量",
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImagePixelator": {
+    "title": "FL 图像像素化",
+    "inputs": {
+      "image": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩",
+      "scale_factor": "缩放因子",
+      "kernel_size": "核大小",
+      "modulation": "调制"
+    },
+    "widgets": {
+      "scale_factor": "缩放因子",
+      "kernel_size": "核大小",
+      "modulation": "调制",
+      "image": "图像",
+      "envelope_json": "envelopeJSON",
+      "blend_intensity": "blend强度",
+      "invert": "反转",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageCollage": {
+    "title": "FL 图像拼贴",
+    "inputs": {
+      "base_image": "基础图像",
+      "tile_image": "拼贴图像",
+      "tile_size": "分块尺寸",
+      "spacing": "间距"
+    },
+    "widgets": {
+      "tile_size": "拼贴尺寸",
+      "spacing": "间距",
+      "base_image": "基础图像",
+      "tile_image": "拼贴图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_VideoCaptionSaver": {
+    "title": "FL 视频字幕保存器",
+    "inputs": {
+      "images": "图像",
+      "folder_name": "文件夹名称",
+      "caption_text": "字幕文本",
+      "video_name": "视频名称",
+      "fps": "帧率",
+      "format": "格式",
+      "quality": "质量",
+      "overwrite": "覆盖"
+    },
+    "widgets": {
+      "folder_name": "文件夹名称",
+      "caption_text": "字幕文本",
+      "video_name": "视频名称",
+      "fps": "帧率",
+      "format": "格式",
+      "quality": "质量",
+      "overwrite": "覆盖",
+      "images": "图像"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_MirrorAndAppendCaptions": {
+    "title": "FL 镜像与字幕追加",
+    "widgets": {
+      "image_directory": "图像目录",
+      "caption_extension": "字幕扩展名",
+      "additional_text": "附加文本",
+      "text_position": "文字位置",
+      "create_mirrors": "创建镜像"
+    },
+    "outputs": {
+      "directory": "目录"
+    },
+    "inputs": {
+      "image_directory": "图像目录",
+      "caption_extension": "字幕扩展名",
+      "additional_text": "附加文本",
+      "text_position": "文字位置",
+      "create_mirrors": "创建镜像"
+    }
+  },
+  "FL_CaptionToCSV": {
+    "title": "FL 字幕转CSV",
+    "widgets": {
+      "image_directory": "图像目录"
+    },
+    "inputs": {
+      "image_directory": "图像目录"
+    },
+    "outputs": {
+      "CSV": "CSV"
+    }
+  },
+  "FL_SaveCSV": {
+    "title": "FL 保存CSV",
+    "inputs": {
+      "csv_data": "CSV数据",
+      "output_directory": "输出目录",
+      "filename": "文件名"
+    },
+    "widgets": {
+      "output_directory": "输出目录",
+      "filename": "文件名",
+      "csv_data": "CSV数据"
+    },
+    "outputs": {}
+  },
+  "FL_OllamaCaptioner": {
+    "title": "FL Ollama图像描述器",
+    "inputs": {
+      "images": "图像",
+      "folder_name": "文件夹名称",
+      "use_llm": "使用大语言模型",
+      "url": "网址",
+      "model": "模型",
+      "overwrite": "覆盖"
+    },
+    "widgets": {
+      "folder_name": "文件夹名称",
+      "use_llm": "使用大语言模型",
+      "url": "地址",
+      "model": "模型",
+      "overwrite": "覆盖",
+      "images": "图像"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_CaptionSaver_V2": {
+    "title": "FL 字幕保存器V2",
+    "inputs": {
+      "images": "图像",
+      "input_type": "输入类型",
+      "caption_input_type": "字幕输入类型",
+      "folder_name": "文件夹名称",
+      "overwrite": "覆盖",
+      "downsize_factor": "缩小因子",
+      "mask_image": "遮罩图像",
+      "input_directory": "输入目录",
+      "single_caption": "单字幕",
+      "multiple_captions": "multiple_captions"
+    },
+    "widgets": {
+      "input_type": "输入类型",
+      "caption_input_type": "字幕输入类型",
+      "folder_name": "文件夹名称",
+      "overwrite": "覆盖",
+      "downsize_factor": "缩小因子",
+      "input_directory": "输入目录",
+      "single_caption": "单字幕",
+      "images": "图像",
+      "mask_image": "遮罩图像",
+      "multiple_captions": "multiple_captions"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_ImageCaptionSaver": {
+    "title": "FL 图像字幕保存器",
+    "inputs": {
+      "images": "图像",
+      "folder_name": "文件夹名称",
+      "caption_text": "字幕文本",
+      "overwrite": "覆盖"
+    },
+    "widgets": {
+      "folder_name": "文件夹名称",
+      "caption_text": "字幕文本",
+      "overwrite": "覆盖",
+      "images": "图像"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_ImageCaptionLayout": {
+    "title": "FL 图像字幕排版",
+    "widgets": {
+      "image_directory": "图像目录",
+      "images_per_row": "每行图像数",
+      "image_size": "图像尺寸",
+      "caption_height": "字幕高度",
+      "font_size": "字体大小",
+      "padding": "内边距"
+    },
+    "inputs": {
+      "image_directory": "图像目录",
+      "images_per_row": "每行图像数",
+      "image_size": "图像大小",
+      "caption_height": "字幕高度",
+      "font_size": "字体大小",
+      "padding": "填充"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageCaptionLayoutPDF": {
+    "title": "FL 图像字幕排版PDF",
+    "widgets": {
+      "image_directory": "图像目录",
+      "images_per_row": "每行图像数",
+      "display_size": "显示尺寸",
+      "caption_height": "字幕高度",
+      "font_size": "字体大小",
+      "padding": "内边距",
+      "output_directory": "输出目录",
+      "output_filename": "输出文件名",
+      "orientation": "方向"
+    },
+    "inputs": {
+      "image_directory": "图像目录",
+      "images_per_row": "每行图像数",
+      "display_size": "显示尺寸",
+      "caption_height": "字幕高度",
+      "font_size": "字体大小",
+      "padding": "填充",
+      "output_directory": "输出目录",
+      "output_filename": "输出文件名",
+      "orientation": "方向"
+    },
+    "outputs": {
+      "STRING": "字符串",
+      "IMAGE": "图像",
+      "PDF": "PDF"
+    }
+  },
+  "FL_ApplyMask": {
+    "title": "FL 应用遮罩",
+    "inputs": {
+      "image": "图像",
+      "mask": "遮罩",
+      "crop_to_mask": "裁剪至遮罩"
+    },
+    "widgets": {
+      "image": "图像",
+      "mask": "遮罩",
+      "crop_to_mask": "裁剪至遮罩"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_AnimeLineExtractor": {
+    "title": "FL 动漫线条提取器",
+    "inputs": {
+      "image": "图像",
+      "line_threshold": "线条阈值",
+      "line_width": "线宽",
+      "detail_level": "细节等级",
+      "noise_reduction": "降噪程度",
+      "invert_output": "反转输出"
+    },
+    "widgets": {
+      "line_threshold": "线条阈值",
+      "line_width": "线条宽度",
+      "detail_level": "细节等级",
+      "noise_reduction": "降噪程度",
+      "invert_output": "反转输出",
+      "image": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_BlackFrameReject": {
+    "title": "FL 黑帧过滤",
+    "inputs": {
+      "images": "图像",
+      "threshold": "阈值",
+      "black_level": "黑度",
+      "channels": "通道",
+      "invert": "反转",
+      "show_progress": "显示进度"
+    },
+    "widgets": {
+      "threshold": "阈值",
+      "black_level": "黑度",
+      "channels": "通道",
+      "invert": "反转",
+      "show_progress": "显示进度",
+      "images": "图像"
+    },
+    "outputs": {
+      "filtered_images": "过滤后图像",
+      "kept_count": "保留数量",
+      "rejected_count": "过滤数量"
+    }
+  },
+  "FL_PaddingRemover": {
+    "title": "FL 填充移除器",
+    "inputs": {
+      "image": "图像",
+      "tolerance": "容差",
+      "min_content_size": "最小内容尺寸",
+      "sides_trim": "侧边裁剪",
+      "top_bottom_trim": "上下裁剪",
+      "debug_view": "调试视图",
+      "use_gpu": "使用GPU"
+    },
+    "widgets": {
+      "tolerance": "容差",
+      "min_content_size": "最小内容尺寸",
+      "sides_trim": "侧边裁剪",
+      "top_bottom_trim": "上下裁剪",
+      "debug_view": "调试视图",
+      "use_gpu": "使用GPU",
+      "image": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageBlank": {
+    "title": "FL 空白图像生成",
+    "widgets": {
+      "width": "宽度",
+      "height": "高度",
+      "red": "红色通道",
+      "green": "绿色通道",
+      "blue": "蓝色通道"
+    },
+    "inputs": {
+      "width": "宽度",
+      "height": "高度",
+      "red": "红色",
+      "green": "绿色",
+      "blue": "蓝色"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageRandomizer": {
+    "title": "FL 图像随机选择器",
+    "widgets": {
+      "mode": "模式",
+      "directory_path": "目录路径",
+      "seed": "随机种子",
+      "search_subdirectories": "搜索子目录"
+    },
+    "outputs": {
+      "image_batch": "图像批次",
+      "selected_path": "选中路径",
+      "image_list": "图像列表",
+      "filename": "文件名"
+    },
+    "inputs": {
+      "mode": "模式",
+      "directory_path": "目录路径",
+      "seed": "种子",
+      "search_subdirectories": "搜索子目录"
+    }
+  },
+  "FL_ImageDimensionDisplay": {
+    "title": "FL 图像尺寸",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "image": "图像"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_ImageAddToBatch": {
+    "title": "FL 图像批次合并",
+    "inputs": {
+      "images1": "图像1",
+      "images2": "图像2"
+    },
+    "widgets": {
+      "images1": "图像1",
+      "images2": "图像2"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageNotes": {
+    "title": "FL 图像标注",
+    "inputs": {
+      "images": "图像",
+      "text": "文本",
+      "bar_height": "标注栏高度",
+      "text_size": "文本大小",
+      "border": "边框",
+      "word_wrap": "自动换行",
+      "bar_position": "标注栏位置"
+    },
+    "widgets": {
+      "bar_height": "标注栏高度",
+      "text_size": "文字大小",
+      "border": "边框",
+      "word_wrap": "自动换行",
+      "bar_position": "标注栏位置",
+      "images": "图像",
+      "text": "文本"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_SaveImages": {
+    "title": "FL 图像保存",
+    "inputs": {
+      "images": "图像",
+      "base_directory": "基础目录",
+      "folder_structure": "文件夹structure",
+      "file_name_template": "文件名模板",
+      "start_index": "起始索引",
+      "auto_increment": "自动递增",
+      "metadata": "元数据"
+    },
+    "widgets": {
+      "base_directory": "基础目录",
+      "file_name_template": "文件名模板",
+      "start_index": "起始索引",
+      "metadata": "元数据",
+      "New Subfolder": "新建子文件夹",
+      "Add Subfolder": "添加子文件夹",
+      "Remove Selected Folder": "移除选中文件夹",
+      "Refresh Folder Structure": "刷新文件夹结构",
+      "images": "图像",
+      "folder_structure": "文件夹structure",
+      "auto_increment": "自动递增"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_LoadImage": {
+    "title": "FL 图像加载",
+    "widgets": {
+      "root_directory": "根目录",
+      "Refresh": "刷新",
+      "Favorites": "收藏夹",
+      "Add to Favorites": "添加到收藏夹",
+      "← Back": "← 返回",
+      "selected_file": "selected文件"
+    },
+    "inputs": {
+      "root_directory": "根目录",
+      "selected_file": "selected文件"
+    },
+    "outputs": {
+      "IMAGE": "图像",
+      "STRING": "字符串"
+    }
+  },
+  "FL_SaveAndDisplayImage": {
+    "title": "FL 图像保存并显示",
+    "inputs": {
+      "images": "图像",
+      "filename_prefix": "文件名前缀"
+    },
+    "widgets": {
+      "filename_prefix": "文件名前缀",
+      "images": "图像"
+    },
+    "outputs": {
+      "images": "图像"
+    }
+  },
+  "FL_ImageAdjuster": {
+    "title": "FL 图像调整器",
+    "inputs": {
+      "image": "图像",
+      "hue": "色调",
+      "saturation": "饱和度",
+      "brightness": "亮度",
+      "contrast": "对比度",
+      "sharpness": "锐度"
+    },
+    "widgets": {
+      "Hue": "色调",
+      "Saturation": "饱和度",
+      "Brightness": "亮度",
+      "Contrast": "对比度",
+      "Sharpness": "锐度",
+      "Reset": "重置",
+      "image": "图像",
+      "hue": "色调",
+      "saturation": "饱和度",
+      "brightness": "亮度",
+      "contrast": "对比度",
+      "sharpness": "锐度"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_SaveWebPImage(SaveImage)": {
+    "title": "FL 保存WebP图像",
+    "inputs": {
+      "images": "图像",
+      "filename_prefix": "文件名前缀",
+      "quality": "质量"
+    },
+    "widgets": {
+      "filename_prefix": "文件名前缀",
+      "quality": "质量",
+      "images": "图像"
+    },
+    "outputs": {
+      "images": "图像"
+    }
+  },
+  "FL_ImageSlicer": {
+    "title": "FL 图像切片器",
+    "inputs": {
+      "image": "图像",
+      "width_subdivisions": "宽度subdivisions",
+      "height_subdivisions": "高度subdivisions"
+    },
+    "widgets": {
+      "x_subdivisions": "水平分割数",
+      "y_subdivisions": "垂直分割数",
+      "image": "图像",
+      "width_subdivisions": "宽度subdivisions",
+      "height_subdivisions": "高度subdivisions"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageSelector": {
+    "title": "FL 图像选择",
+    "inputs": {
+      "images": "图像",
+      "indices": "索引"
+    },
+    "widgets": {
+      "indices": "索引",
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageAspectCropper": {
+    "title": "FL 图像比例裁剪器",
+    "inputs": {
+      "images": "图像",
+      "aspect_ratio_w": "宽比例",
+      "aspect_ratio_h": "高比例"
+    },
+    "widgets": {
+      "aspect_ratio_w": "宽比例",
+      "aspect_ratio_h": "高比例",
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageListToImageBatch": {
+    "title": "FL 图像列表转批次",
+    "inputs": {
+      "images": "图像"
+    },
+    "widgets": {
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageBatchToImageList": {
+    "title": "FL 图像批次转列表",
+    "inputs": {
+      "image": "图像"
+    },
+    "widgets": {
+      "image": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageBatchToGrid": {
+    "title": "FL 图像批次转网格",
+    "inputs": {
+      "images": "图像",
+      "images_per_row": "每行图像数"
+    },
+    "widgets": {
+      "images_per_row": "每行图像数",
+      "images": "图像"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageBatch": {
+    "title": "FL 图像批次",
+    "inputs": {
+      "image_1": "图像1",
+      "image_2": "图像2",
+      "inputcount": "输入数量"
+    },
+    "widgets": {
+      "inputcount": "输入数量",
+      "Update inputs": "更新输入",
+      "image_1": "图像_1",
+      "image_2": "图像2"
+    },
+    "outputs": {
+      "images": "图像"
+    }
+  },
+  "FL_SaveWebM": {
+    "title": "FL 保存WebM动画",
+    "inputs": {
+      "images": "图像",
+      "directory": "路径",
+      "filename_prefix": "文件名前缀",
+      "fps": "帧率",
+      "preserve_alpha": "保留透明度",
+      "loop_count": "循环次数",
+      "quality": "质量",
+      "metadata_comment": "元数据comment"
+    },
+    "widgets": {
+      "directory": "目录",
+      "filename_prefix": "文件名前缀",
+      "fps": "帧率",
+      "preserve_alpha": "保留透明度",
+      "loop_count": "循环次数",
+      "quality": "质量",
+      "images": "图像",
+      "metadata_comment": "元数据comment"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_ReplaceColor": {
+    "title": "FL 替换颜色",
+    "inputs": {
+      "image": "图像",
+      "source_color": "来源颜色",
+      "target_color": "目标颜色",
+      "tolerance": "容差",
+      "expand_pixels": "扩展像素",
+      "contract_pixels": "收缩像素"
+    },
+    "widgets": {
+      "image": "图像",
+      "source_color": "来源颜色",
+      "target_color": "目标颜色",
+      "tolerance": "容差",
+      "expand_pixels": "扩展像素",
+      "contract_pixels": "收缩像素"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageAddNoise": {
+    "title": "FL 图像添加噪声",
+    "inputs": {
+      "image": "图像",
+      "seed": "种子",
+      "strength": "强度"
+    },
+    "widgets": {
+      "image": "图像",
+      "seed": "种子",
+      "strength": "强度"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_WordFrequencyGraph": {
+    "title": "FL 词频图",
+    "inputs": {
+      "directory_path": "目录路径",
+      "title_name": "title名称",
+      "max_words": "最大词数",
+      "min_word_length": "最小wordlength",
+      "image_width": "宽度",
+      "image_height": "高度",
+      "color_scheme": "颜色scheme",
+      "exclude_common_words": "排除常用词"
+    },
+    "widgets": {
+      "directory_path": "目录路径",
+      "title_name": "title名称",
+      "max_words": "最大词数",
+      "min_word_length": "最小wordlength",
+      "image_width": "宽度",
+      "image_height": "高度",
+      "color_scheme": "颜色scheme",
+      "exclude_common_words": "排除常用词"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_DepthBlur": {
+    "title": "FL 深度模糊",
+    "inputs": {
+      "image": "图像",
+      "depth_map": "深度图",
+      "focal_depth": "模拟虚焦",
+      "focal_range": "焦点范围",
+      "max_blur": "最大模糊",
+      "depth_invert": "深度反转",
+      "falloff_curve": "衰减曲线",
+      "near_blur_strength": "near模糊强度",
+      "far_blur_strength": "far模糊强度",
+      "blur_mode": "模糊模式",
+      "quality_steps": "质量步数",
+      "depth_smoothing": "深度smoothing",
+      "depth_remap_low": "深度remaplow",
+      "depth_remap_high": "深度remaphigh",
+      "bokeh_brightness_boost": "散景亮度增强",
+      "mask_feather": "遮罩羽化",
+      "show_preview": "显示预览",
+      "protect_mask": "protect遮罩"
+    },
+    "widgets": {
+      "image": "图像",
+      "depth_map": "深度图",
+      "focal_depth": "模拟虚焦",
+      "focal_range": "焦点范围",
+      "max_blur": "最大模糊",
+      "depth_invert": "深度反转",
+      "falloff_curve": "衰减曲线",
+      "near_blur_strength": "near模糊强度",
+      "far_blur_strength": "far模糊强度",
+      "blur_mode": "模糊模式",
+      "quality_steps": "质量步数",
+      "depth_smoothing": "深度smoothing",
+      "depth_remap_low": "深度remaplow",
+      "depth_remap_high": "深度remaphigh",
+      "bokeh_brightness_boost": "散景亮度增强",
+      "mask_feather": "遮罩羽化",
+      "show_preview": "显示预览",
+      "protect_mask": "protect遮罩"
+    },
+    "outputs": {
+      "image": "图像",
+      "blur_amount_viz": "模糊数量viz",
+      "in_focus_mask": "in焦点遮罩"
+    }
+  },
+  "FL_KsamplerContextWindow": {
+    "title": "FL 上下文窗口K采样器",
+    "inputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "context_length": "上下文长度",
+      "context_overlap": "上下文重叠",
+      "context_schedule": "上下文调度",
+      "context_stride": "上下文步长",
+      "fuse_method": "融合方法",
+      "temporal_unit": "时间单位",
+      "closed_loop": "闭环",
+      "freenoise": "自由噪声",
+      "causal_window_fix": "因果窗口修正",
+      "temporal_dim": "时间维度",
+      "cond_retain_index_list": "condretain索引列表",
+      "split_conds_to_windows": "拆分条件到窗口",
+      "vae": "VAE模型",
+      "image": "图像"
+    },
+    "widgets": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent_image": "Latent图像",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "context_length": "上下文长度",
+      "context_overlap": "上下文重叠",
+      "context_schedule": "上下文调度",
+      "context_stride": "上下文步长",
+      "fuse_method": "融合方法",
+      "temporal_unit": "时间单位",
+      "closed_loop": "闭环",
+      "freenoise": "自由噪声",
+      "causal_window_fix": "因果窗口修正",
+      "temporal_dim": "时间维度",
+      "cond_retain_index_list": "condretain索引列表",
+      "split_conds_to_windows": "拆分条件到窗口",
+      "vae": "VAE模型",
+      "image": "图像"
+    },
+    "outputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent": "Latent（可选）",
+      "vae": "VAE模型",
+      "image": "图像",
+      "debug_info": "调试信息"
+    }
+  },
+  "FL_KsamplerSigma": {
+    "title": "FL Sigma K采样器",
+    "inputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "denoise": "降噪",
+      "sigma_max_hint": "Sigma最大hint",
+      "sigma_min_hint": "Sigma最小hint",
+      "schedule_curve": "调度曲线",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像"
+    },
+    "widgets": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "denoise": "降噪",
+      "sigma_max_hint": "Sigma最大hint",
+      "sigma_min_hint": "Sigma最小hint",
+      "schedule_curve": "调度曲线",
+      "latent_image": "Latent图像",
+      "vae": "VAE模型",
+      "image": "图像"
+    },
+    "outputs": {
+      "model": "模型",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent": "Latent（可选）",
+      "vae": "VAE模型",
+      "image": "图像",
+      "sigmas": "调度器"
+    }
+  },
+  "FL_KsamplerSEG_Regions": {
+    "title": "FL SEG区域K采样器",
+    "inputs": {
+      "num_regions": "数量区域",
+      "relaxation_iterations": "松弛迭代次数",
+      "region_overlap_factor": "region重叠系数",
+      "edge_softness": "边缘柔和度",
+      "context_padding_factor": "context填充系数",
+      "safe_zone_feather_px": "安全区羽化像素",
+      "downscale_ratio": "downscale比例",
+      "seed": "种子",
+      "show_preview": "显示预览",
+      "preview_mode": "预览模式",
+      "image": "图像",
+      "latent": "Latent（可选）",
+      "safe_zone_mask": "安全区域遮罩"
+    },
+    "widgets": {
+      "num_regions": "数量区域",
+      "relaxation_iterations": "松弛迭代次数",
+      "region_overlap_factor": "region重叠系数",
+      "edge_softness": "边缘柔和度",
+      "context_padding_factor": "context填充系数",
+      "safe_zone_feather_px": "安全区羽化像素",
+      "downscale_ratio": "downscale比例",
+      "seed": "种子",
+      "show_preview": "显示预览",
+      "preview_mode": "预览模式",
+      "image": "图像",
+      "latent": "Latent（可选）",
+      "safe_zone_mask": "安全区域遮罩"
+    },
+    "outputs": {
+      "regions": "区域",
+      "preview_image": "预览图像",
+      "effective_count": "effective数量"
+    }
+  },
+  "FL_KsamplerSEG_Captioner": {
+    "title": "FL SEG描述K采样器",
+    "inputs": {
+      "regions": "区域",
+      "source_image": "源图像",
+      "api_key": "API密钥",
+      "model": "模型",
+      "prompt_template": "提示词模板",
+      "prefix": "前缀",
+      "suffix": "后缀",
+      "max_tokens": "最大标记数",
+      "parallel_requests": "并行请求数",
+      "default_negative_prompt": "默认负向提示词",
+      "caption_first_frame_only": "captionfirst帧only",
+      "show_preview": "显示预览"
+    },
+    "widgets": {
+      "regions": "区域",
+      "source_image": "源图像",
+      "api_key": "API密钥",
+      "model": "模型",
+      "prompt_template": "提示词模板",
+      "prefix": "前缀",
+      "suffix": "后缀",
+      "max_tokens": "最大标记数",
+      "parallel_requests": "并行请求数",
+      "default_negative_prompt": "默认负向提示词",
+      "caption_first_frame_only": "captionfirst帧only",
+      "show_preview": "显示预览"
+    },
+    "outputs": {
+      "regions": "区域",
+      "preview_image": "预览图像"
+    }
+  },
+  "FL_KsamplerSEG_Encoder": {
+    "title": "FL SEG编码K采样器",
+    "inputs": {
+      "regions": "区域",
+      "clip": "CLIP模型",
+      "default_positive": "默认正面条件",
+      "default_negative": "默认负面条件"
+    },
+    "widgets": {
+      "regions": "区域",
+      "clip": "CLIP模型",
+      "default_positive": "默认正面条件",
+      "default_negative": "默认负面条件"
+    },
+    "outputs": {
+      "regions": "区域"
+    }
+  },
+  "FL_KsamplerSEG": {
+    "title": "FL SEG K采样器",
+    "inputs": {
+      "model": "模型",
+      "regions": "区域",
+      "latent_image": "Latent图像",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "cascade_start_corner": "cascade开始corner"
+    },
+    "widgets": {
+      "model": "模型",
+      "regions": "区域",
+      "latent_image": "Latent图像",
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "seed": "种子",
+      "steps": "步数",
+      "cfg": "CFG缩放系数",
+      "sampler_name": "采样器",
+      "scheduler": "调度器",
+      "denoise": "降噪",
+      "cascade_start_corner": "cascade开始corner"
+    },
+    "outputs": {
+      "latent": "Latent（可选）"
+    }
+  },
+  "FL_LoadCSV": {
+    "title": "FL 加载CSV",
+    "inputs": {
+      "csv_path": "CSV 文件路径"
+    },
+    "widgets": {
+      "csv_path": "CSV 文件路径"
+    },
+    "outputs": {
+      "csv_data": "CSV数据",
+      "row_count": "行数量"
+    }
+  },
+  "FL_CSVExtractor": {
+    "title": "FL CSV提取器",
+    "inputs": {
+      "csv_data": "CSV数据",
+      "seed": "种子",
+      "column_index": "列索引 (0 为全部，1 开始为指定列)",
+      "skip_header": "跳过表头"
+    },
+    "widgets": {
+      "csv_data": "CSV数据",
+      "seed": "种子",
+      "column_index": "列索引 (0 为全部，1 开始为指定列)",
+      "skip_header": "跳过表头"
+    },
+    "outputs": {
+      "extracted_text": "提取的文本",
+      "selected_row": "选中行",
+      "full_row_data": "full行数据"
+    }
+  },
+  "FL_ImagePicker": {
+    "title": "FL 图像选取器",
+    "inputs": {
+      "images": "图像",
+      "timeout_seconds": "超时秒数"
+    },
+    "widgets": {
+      "images": "图像",
+      "timeout_seconds": "超时秒数"
+    },
+    "outputs": {
+      "selected_images": "选中的图像",
+      "selection_info": "selection信息",
+      "selected_indexes": "选择索引"
+    }
+  },
+  "FL_ImageOverlay": {
+    "title": "FL 图像叠加",
+    "inputs": {
+      "base_image": "基础图像",
+      "overlay_image": "叠加图像",
+      "mask": "遮罩",
+      "x_offset": "X偏移",
+      "y_offset": "Y偏移",
+      "alignment": "对齐到",
+      "resize_overlay": "缩放叠加",
+      "blend_mode": "混合模式",
+      "opacity": "不透明度",
+      "invert_mask": "反转遮罩",
+      "mask_feather": "遮罩羽化",
+      "boundary_behavior": "边界行为",
+      "show_preview": "显示预览"
+    },
+    "widgets": {
+      "base_image": "基础图像",
+      "overlay_image": "叠加图像",
+      "mask": "遮罩",
+      "x_offset": "X偏移",
+      "y_offset": "Y偏移",
+      "alignment": "对齐到",
+      "resize_overlay": "缩放叠加",
+      "blend_mode": "混合模式",
+      "opacity": "不透明度",
+      "invert_mask": "反转遮罩",
+      "mask_feather": "遮罩羽化",
+      "boundary_behavior": "边界行为",
+      "show_preview": "显示预览"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_RegionPNGOverlay": {
+    "title": "FL 区域PNG叠加",
+    "inputs": {
+      "image": "图像",
+      "seed": "种子",
+      "rotation_min": "rotation最小",
+      "rotation_max": "rotation最大",
+      "vignette_enabled": "暗角启用",
+      "vignette_diameter": "暗角diameter",
+      "vignette_skew": "暗角skew",
+      "vignette_opacity": "暗角不透明度",
+      "vignette_offset_x": "暗角偏移X",
+      "vignette_offset_y": "暗角偏移Y",
+      "vignette_rotation_offset": "暗角rotation偏移",
+      "regions_json": "区域JSON",
+      "show_canvas": "显示画布"
+    },
+    "widgets": {
+      "image": "图像",
+      "seed": "种子",
+      "rotation_min": "rotation最小",
+      "rotation_max": "rotation最大",
+      "vignette_enabled": "暗角启用",
+      "vignette_diameter": "暗角diameter",
+      "vignette_skew": "暗角skew",
+      "vignette_opacity": "暗角不透明度",
+      "vignette_offset_x": "暗角偏移X",
+      "vignette_offset_y": "暗角偏移Y",
+      "vignette_rotation_offset": "暗角rotation偏移",
+      "regions_json": "区域JSON",
+      "show_canvas": "显示画布"
+    },
+    "outputs": {
+      "image": "图像"
+    }
+  },
+  "FL_ImageReplace": {
+    "title": "FL 图像替换",
+    "inputs": {
+      "images": "图像",
+      "replacement": "替换内容",
+      "index": "索引",
+      "show_preview": "显示预览",
+      "masks": "遮罩",
+      "replacement_mask": "replacement遮罩"
+    },
+    "widgets": {
+      "images": "图像",
+      "replacement": "替换内容",
+      "index": "索引",
+      "show_preview": "显示预览",
+      "masks": "遮罩",
+      "replacement_mask": "replacement遮罩"
+    },
+    "outputs": {
+      "images": "图像",
+      "masks": "遮罩"
+    }
+  },
+  "FL_CoTracker": {
+    "title": "FL 协同追踪",
+    "inputs": {
+      "images": "图像",
+      "tracking_points": "追踪点",
+      "grid_size": "网格大小",
+      "max_num_of_points": "最大数量of点",
+      "tracking_mask": "追踪遮罩",
+      "confidence_threshold": "置信度阈值",
+      "min_distance": "最小距离",
+      "force_offload": "强制卸载",
+      "enable_backward": "启用backward"
+    },
+    "widgets": {
+      "images": "图像",
+      "tracking_points": "追踪点",
+      "grid_size": "网格大小",
+      "max_num_of_points": "最大数量of点",
+      "tracking_mask": "追踪遮罩",
+      "confidence_threshold": "置信度阈值",
+      "min_distance": "最小距离",
+      "force_offload": "强制卸载",
+      "enable_backward": "启用backward"
+    },
+    "outputs": {
+      "tracking_results": "追踪结果",
+      "image_with_results": "图像with结果"
+    }
+  },
+  "FL_CreateShapeImageOnPath": {
+    "title": "FL 沿路径创建形状图像",
+    "inputs": {
+      "shape": "形状",
+      "coordinates": "坐标",
+      "frame_width": "宽度",
+      "frame_height": "高度",
+      "shape_width": "形状宽度",
+      "shape_height": "形状高度",
+      "shape_color": "形状颜色",
+      "bg_color": "背景颜色",
+      "blur_radius": "模糊半径",
+      "intensity": "强度",
+      "size_multiplier": "尺寸乘数",
+      "trailing": "尾随",
+      "border_width": "边框宽度",
+      "border_color": "边框颜色"
+    },
+    "widgets": {
+      "shape": "形状",
+      "coordinates": "坐标",
+      "frame_width": "宽度",
+      "frame_height": "高度",
+      "shape_width": "形状宽度",
+      "shape_height": "形状高度",
+      "shape_color": "形状颜色",
+      "bg_color": "背景颜色",
+      "blur_radius": "模糊半径",
+      "intensity": "强度",
+      "size_multiplier": "尺寸乘数",
+      "trailing": "尾随",
+      "border_width": "边框宽度",
+      "border_color": "边框颜色"
+    },
+    "outputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    }
+  },
+  "FL_Fal_Kontext": {
+    "title": "FL Fal Kontext接口",
+    "inputs": {
+      "inputcount": "输入数量",
+      "api_key": "API密钥",
+      "seed": "种子",
+      "max_retries": "最大重试次数",
+      "prompt_1": "提示词_1",
+      "guidance_scale": "引导缩放",
+      "num_images": "图像数量",
+      "aspect_ratio": "宽高比",
+      "output_format": "输出格式",
+      "safety_tolerance": "安全容忍度",
+      "image_1": "图像_1",
+      "retry_indefinitely": "无限重试",
+      "sync_mode": "同步模式"
+    },
+    "widgets": {
+      "inputcount": "输入数量",
+      "api_key": "API密钥",
+      "seed": "种子",
+      "max_retries": "最大重试次数",
+      "prompt_1": "提示词_1",
+      "guidance_scale": "引导缩放",
+      "num_images": "图像数量",
+      "aspect_ratio": "宽高比",
+      "output_format": "输出格式",
+      "safety_tolerance": "安全容忍度",
+      "image_1": "图像_1",
+      "retry_indefinitely": "无限重试",
+      "sync_mode": "同步模式"
+    },
+    "outputs": {
+      "images": "图像",
+      "image_urls": "图像网址",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_Fal_GPTImage2_Edit": {
+    "title": "FL Fal GPT-Image-2编辑",
+    "inputs": {
+      "api_key": "API密钥",
+      "image_count": "图像数量",
+      "prompt": "提示词",
+      "image_size": "图像大小",
+      "custom_width": "自定义宽度",
+      "custom_height": "自定义高度",
+      "quality": "质量",
+      "num_images": "图像数量",
+      "output_format": "输出格式",
+      "max_retries": "最大重试次数",
+      "image_ref_1": "图像ref1",
+      "mask": "遮罩",
+      "sync_mode": "同步模式",
+      "retry_indefinitely": "无限重试"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "image_count": "图像数量",
+      "prompt": "提示词",
+      "image_size": "图像大小",
+      "custom_width": "自定义宽度",
+      "custom_height": "自定义高度",
+      "quality": "质量",
+      "num_images": "图像数量",
+      "output_format": "输出格式",
+      "max_retries": "最大重试次数",
+      "image_ref_1": "图像ref1",
+      "mask": "遮罩",
+      "sync_mode": "同步模式",
+      "retry_indefinitely": "无限重试"
+    },
+    "outputs": {
+      "images": "图像",
+      "image_urls": "图像网址",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_Fal_Gemini_ImageEdit": {
+    "title": "FL Fal Gemini图像编辑",
+    "inputs": {
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "num_images": "图像数量",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "output_format": "输出格式",
+      "sync_mode": "同步模式",
+      "seed": "种子",
+      "max_retries": "最大重试次数",
+      "image_1": "图像_1",
+      "image_2": "图像2",
+      "image_3": "图像3",
+      "image_4": "图像_4",
+      "image_5": "图像_5",
+      "image_6": "图像6",
+      "image_7": "图像_7",
+      "image_8": "图像_8",
+      "image_9": "图像_9",
+      "image_10": "图像_10",
+      "enable_web_search": "启用websearch"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "num_images": "图像数量",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "output_format": "输出格式",
+      "sync_mode": "同步模式",
+      "seed": "种子",
+      "max_retries": "最大重试次数",
+      "image_1": "图像_1",
+      "image_2": "图像2",
+      "image_3": "图像3",
+      "image_4": "图像_4",
+      "image_5": "图像_5",
+      "image_6": "图像6",
+      "image_7": "图像_7",
+      "image_8": "图像_8",
+      "image_9": "图像_9",
+      "image_10": "图像_10",
+      "enable_web_search": "启用websearch"
+    },
+    "outputs": {
+      "images": "图像",
+      "image_urls": "图像网址",
+      "description": "描述",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_Fal_Seedance_i2v": {
+    "title": "FL Fal Seedance图生视频",
+    "inputs": {
+      "api_key": "API密钥",
+      "image": "图像",
+      "prompt": "提示词",
+      "cut_prompt_1": "cut提示词1",
+      "cut_prompt_2": "cut提示词2",
+      "cut_prompt_3": "cut提示词3",
+      "cut_prompt_4": "cut提示词4",
+      "resolution": "分辨率",
+      "duration": "时长",
+      "camera_fixed": "固定镜头",
+      "seed": "种子"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "image": "图像",
+      "prompt": "提示词",
+      "cut_prompt_1": "cut提示词1",
+      "cut_prompt_2": "cut提示词2",
+      "cut_prompt_3": "cut提示词3",
+      "cut_prompt_4": "cut提示词4",
+      "resolution": "分辨率",
+      "duration": "时长",
+      "camera_fixed": "固定镜头",
+      "seed": "种子"
+    },
+    "outputs": {
+      "frames": "帧数",
+      "video_url": "视频URL",
+      "status_message": "状态消息"
+    }
+  },
+  "FL_Fal_Seedream_Edit": {
+    "title": "FL Fal Seedream编辑",
+    "inputs": {
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "image_size": "图像大小",
+      "num_images": "图像数量",
+      "seed": "种子",
+      "sync_mode": "同步模式",
+      "max_retries": "最大重试次数",
+      "image_1": "图像_1",
+      "image_2": "图像2",
+      "image_3": "图像3",
+      "image_4": "图像_4",
+      "image_5": "图像_5",
+      "image_6": "图像6",
+      "image_7": "图像_7",
+      "image_8": "图像_8",
+      "image_9": "图像_9",
+      "image_10": "图像_10",
+      "retry_indefinitely": "无限重试",
+      "use_custom_resolution": "使用custom分辨率",
+      "auto_scale_to_minimum": "auto缩放tominimum",
+      "custom_width": "自定义宽度",
+      "custom_height": "自定义高度"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "image_size": "图像大小",
+      "num_images": "图像数量",
+      "seed": "种子",
+      "sync_mode": "同步模式",
+      "max_retries": "最大重试次数",
+      "image_1": "图像_1",
+      "image_2": "图像2",
+      "image_3": "图像3",
+      "image_4": "图像_4",
+      "image_5": "图像_5",
+      "image_6": "图像6",
+      "image_7": "图像_7",
+      "image_8": "图像_8",
+      "image_9": "图像_9",
+      "image_10": "图像_10",
+      "retry_indefinitely": "无限重试",
+      "use_custom_resolution": "使用custom分辨率",
+      "auto_scale_to_minimum": "auto缩放tominimum",
+      "custom_width": "自定义宽度",
+      "custom_height": "自定义高度"
+    },
+    "outputs": {
+      "images": "图像",
+      "image_urls": "图像网址",
+      "seed": "种子",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_Fal_SeedVR_Upscale": {
+    "title": "FL Fal SeedVR放大",
+    "inputs": {
+      "api_key": "API密钥",
+      "image": "图像",
+      "upscale_factor": "放大系数",
+      "seed": "种子"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "image": "图像",
+      "upscale_factor": "放大系数",
+      "seed": "种子"
+    },
+    "outputs": {
+      "upscaled_image": "放大后的图像",
+      "image_url": "图像链接",
+      "width": "宽度",
+      "height": "高度"
+    }
+  },
+  "FL_Fal_Pixverse_Transition": {
+    "title": "FL Fal Pixverse转场",
+    "inputs": {
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "duration": "时长",
+      "seed": "种子",
+      "batch_size": "批次大小",
+      "nth_frame": "帧间隔",
+      "first_image": "第一帧图像",
+      "last_image": "末尾图像",
+      "negative_prompt": "负向提示词",
+      "style": "风格"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "prompt": "提示词",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "duration": "时长",
+      "seed": "种子",
+      "batch_size": "批次大小",
+      "nth_frame": "帧间隔",
+      "first_image": "第一帧图像",
+      "last_image": "末尾图像",
+      "negative_prompt": "负向提示词",
+      "style": "风格"
+    },
+    "outputs": {
+      "frames_1": "帧序列1",
+      "frames_2": "视频帧2",
+      "frames_3": "视频帧3",
+      "frames_4": "视频帧4",
+      "frames_5": "视频帧5",
+      "video_urls": "视频链接",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_Fal_Pixverse_LipSync": {
+    "title": "FL Fal Pixverse口型同步",
+    "inputs": {
+      "api_key": "API密钥",
+      "frames": "帧数",
+      "mode": "模式",
+      "seed": "种子",
+      "nth_frame": "帧间隔",
+      "audio": "音频",
+      "text": "文本",
+      "voice_id": "语音ID"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "frames": "帧数",
+      "mode": "模式",
+      "seed": "种子",
+      "nth_frame": "帧间隔",
+      "audio": "音频",
+      "text": "文本",
+      "voice_id": "语音ID"
+    },
+    "outputs": {
+      "frames": "帧数",
+      "audio": "音频",
+      "video_url": "视频URL",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_Fal_Kling_AIAvatar": {
+    "title": "FL Fal 可灵AI数字人",
+    "inputs": {
+      "api_key": "API密钥",
+      "image": "图像",
+      "audio": "音频",
+      "seed": "种子",
+      "nth_frame": "帧间隔",
+      "prompt": "提示词"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "image": "图像",
+      "audio": "音频",
+      "seed": "种子",
+      "nth_frame": "帧间隔",
+      "prompt": "提示词"
+    },
+    "outputs": {
+      "frames": "帧数",
+      "audio": "音频",
+      "video_url": "视频URL",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_Fal_Sora": {
+    "title": "FL Fal Sora 2视频生成",
+    "inputs": {
+      "fal_api_key": "falAPI密钥",
+      "prompt": "提示词",
+      "use_pro": "使用专业版",
+      "resolution": "分辨率",
+      "aspect_ratio": "宽高比",
+      "duration": "时长",
+      "openai_api_key": "OpenAI API 密钥",
+      "nth_frame": "帧间隔",
+      "image": "图像"
+    },
+    "widgets": {
+      "fal_api_key": "falAPI密钥",
+      "prompt": "提示词",
+      "use_pro": "使用专业版",
+      "resolution": "分辨率",
+      "aspect_ratio": "宽高比",
+      "duration": "时长",
+      "openai_api_key": "OpenAI API 密钥",
+      "nth_frame": "帧间隔",
+      "image": "图像"
+    },
+    "outputs": {
+      "frames": "帧数",
+      "audio": "音频",
+      "video_url": "视频URL",
+      "status_msg": "状态消息"
+    }
+  },
+  "FL_PromptSelectorBasic": {
+    "title": "FL 基础提示词选择器",
+    "inputs": {
+      "prompts": "提示词",
+      "index": "索引"
+    },
+    "widgets": {
+      "prompts": "提示词",
+      "index": "索引"
+    },
+    "outputs": {
+      "STRING": "字符串"
+    }
+  },
+  "FL_StringToLoraName": {
+    "title": "FL 字符串转LoRA名称",
+    "inputs": {
+      "lora_name": "LoRA名称"
+    },
+    "widgets": {
+      "lora_name": "LoRA名称"
+    },
+    "outputs": {
+      "lora_name": "LoRA名称"
+    }
+  },
+  "FL_VideoBatchSplitter": {
+    "title": "FL 视频批次拆分",
+    "inputs": {
+      "images": "图像",
+      "frames_per_batch": "每批次帧数",
+      "output_count": "输出数量"
+    },
+    "widgets": {
+      "images": "图像",
+      "frames_per_batch": "每批次帧数",
+      "output_count": "输出数量"
+    },
+    "outputs": {
+      "batch_1": "批次1",
+      "batch_2": "批次2",
+      "batch_3": "批次3",
+      "batch_4": "批次4",
+      "batch_5": "批次5",
+      "batch_6": "批次6",
+      "batch_7": "批次7",
+      "batch_8": "批次8",
+      "batch_9": "批次9",
+      "batch_10": "批次10",
+      "batch_11": "批次11",
+      "batch_12": "批次12",
+      "batch_13": "批次13",
+      "batch_14": "批次14",
+      "batch_15": "批次15",
+      "batch_16": "批次16",
+      "batch_17": "批次17",
+      "batch_18": "批次18",
+      "batch_19": "批次19",
+      "batch_20": "批次20"
+    }
+  },
+  "FL_VideoCrossfade": {
+    "title": "FL 视频交叉淡化",
+    "inputs": {
+      "images_a": "图像_A",
+      "images_b": "图像_B",
+      "crossfade_frames": "crossfade帧数",
+      "blend_mode": "混合模式",
+      "target_width": "目标宽度",
+      "target_height": "目标高度"
+    },
+    "widgets": {
+      "images_a": "图像_A",
+      "images_b": "图像_B",
+      "crossfade_frames": "crossfade帧数",
+      "blend_mode": "混合模式",
+      "target_width": "目标宽度",
+      "target_height": "目标高度"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_WanVaceToVideoMultiRef": {
+    "title": "FL Wan VACE多参考视频生成",
+    "inputs": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "vae": "VAE模型",
+      "width": "宽度",
+      "height": "高度",
+      "length": "长度",
+      "batch_size": "批次大小",
+      "strength": "强度",
+      "max_reference_frames": "最大参考帧数",
+      "control_video": "控制视频",
+      "control_masks": "控制遮罩",
+      "reference_video": "参考视频"
+    },
+    "widgets": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "vae": "VAE模型",
+      "width": "宽度",
+      "height": "高度",
+      "length": "长度",
+      "batch_size": "批次大小",
+      "strength": "强度",
+      "max_reference_frames": "最大参考帧数",
+      "control_video": "控制视频",
+      "control_masks": "控制遮罩",
+      "reference_video": "参考视频"
+    },
+    "outputs": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent": "Latent（可选）",
+      "trim_latent": "修剪Latent"
+    }
+  },
+  "FL_RIFE": {
+    "title": "FL RIFE补帧",
+    "inputs": {
+      "images": "图像",
+      "ckpt_name": "模型名称",
+      "multiplier": "乘数",
+      "ensemble": "集成模式(提升质量)"
+    },
+    "widgets": {
+      "images": "图像",
+      "ckpt_name": "模型名称",
+      "multiplier": "乘数",
+      "ensemble": "集成模式(提升质量)"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_FILM": {
+    "title": "FL FILM补帧",
+    "inputs": {
+      "images": "图像",
+      "multiplier": "乘数"
+    },
+    "widgets": {
+      "images": "图像",
+      "multiplier": "乘数"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_RunwayAct2": {
+    "title": "FL Runway Act2动作生成",
+    "inputs": {
+      "api_key": "API密钥",
+      "character_type": "character类型",
+      "ratio": "宽高比",
+      "runway_api_version": "API版本",
+      "character_video": "character视频",
+      "character_image": "角色图像",
+      "reference_video": "参考视频",
+      "body_control": "身体控制",
+      "expression_intensity": "表情强度",
+      "seed": "种子",
+      "public_figure_threshold": "公众人物阈值",
+      "polling_interval": "轮询间隔",
+      "max_polling_attempts": "最大轮询次数",
+      "timeout_sdk": "SDK超时",
+      "timeout_download": "下载超时"
+    },
+    "widgets": {
+      "api_key": "API密钥",
+      "character_type": "character类型",
+      "ratio": "宽高比",
+      "runway_api_version": "API版本",
+      "character_video": "character视频",
+      "character_image": "角色图像",
+      "reference_video": "参考视频",
+      "body_control": "身体控制",
+      "expression_intensity": "表情强度",
+      "seed": "种子",
+      "public_figure_threshold": "公众人物阈值",
+      "polling_interval": "轮询间隔",
+      "max_polling_attempts": "最大轮询次数",
+      "timeout_sdk": "SDK超时",
+      "timeout_download": "下载超时"
+    },
+    "outputs": {
+      "video_frames": "视频帧",
+      "status_text": "图像"
+    }
+  },
+  "FL_ImageCrop": {
+    "title": "FL 图像裁剪",
+    "inputs": {
+      "image": "图像",
+      "crop_direction": "裁剪direction",
+      "crop_amount": "裁剪数量"
+    },
+    "widgets": {
+      "image": "图像",
+      "crop_direction": "裁剪direction",
+      "crop_amount": "裁剪数量"
+    },
+    "outputs": {
+      "IMAGE": "图像"
+    }
+  },
+  "FL_ImageToMask": {
+    "title": "FL 图像转遮罩",
+    "inputs": {
+      "image": "图像",
+      "channel": "通道"
+    },
+    "widgets": {
+      "image": "图像",
+      "channel": "通道"
+    },
+    "outputs": {
+      "mask": "遮罩"
+    }
+  },
+  "FL_WanFirstLastFrameToVideo": {
+    "title": "FL Wan首尾帧生成视频",
+    "inputs": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "vae": "VAE模型",
+      "width": "宽度",
+      "height": "高度",
+      "length": "长度",
+      "batch_size": "批次大小",
+      "keyframe_start_position": "keyframe开始位置",
+      "keyframe_end_position": "keyframe结束位置",
+      "interpolation_curve": "插值曲线",
+      "temporal_buffer": "时间缓冲",
+      "clip_vision_start_image": "CLIP视觉起始图像",
+      "clip_vision_end_image": "CLIP视觉结束图像",
+      "start_image": "起始图像",
+      "end_image": "结束图像",
+      "interpolation_mask": "插值遮罩",
+      "mask_feather": "遮罩羽化",
+      "mask_invert": "遮罩反相",
+      "regional_blending": "区域混合"
+    },
+    "widgets": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "vae": "VAE模型",
+      "width": "宽度",
+      "height": "高度",
+      "length": "长度",
+      "batch_size": "批次大小",
+      "keyframe_start_position": "keyframe开始位置",
+      "keyframe_end_position": "keyframe结束位置",
+      "interpolation_curve": "插值曲线",
+      "temporal_buffer": "时间缓冲",
+      "clip_vision_start_image": "CLIP视觉起始图像",
+      "clip_vision_end_image": "CLIP视觉结束图像",
+      "start_image": "起始图像",
+      "end_image": "结束图像",
+      "interpolation_mask": "插值遮罩",
+      "mask_feather": "遮罩羽化",
+      "mask_invert": "遮罩反相",
+      "regional_blending": "区域混合"
+    },
+    "outputs": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent": "Latent（可选）"
+    }
+  },
+  "FL_WanVideoContinue": {
+    "title": "FL Wan视频续写",
+    "inputs": {
+      "input_video_frames": "输入视频帧",
+      "total_output_frames": "total输出帧数",
+      "overlap_frames": "重叠帧数",
+      "empty_frame_fill_level": "empty帧filllevel",
+      "end_video_frames": "结束视频帧数",
+      "control_images": "控制图像",
+      "inpaint_mask": "修复遮罩",
+      "how_to_use_control_images": "howto使用控制图像",
+      "how_to_use_inpaint_masks": "howto使用inpaint遮罩"
+    },
+    "widgets": {
+      "input_video_frames": "输入视频帧",
+      "total_output_frames": "total输出帧数",
+      "overlap_frames": "重叠帧数",
+      "empty_frame_fill_level": "empty帧filllevel",
+      "end_video_frames": "结束视频帧数",
+      "control_images": "控制图像",
+      "inpaint_mask": "修复遮罩",
+      "how_to_use_control_images": "howto使用控制图像",
+      "how_to_use_inpaint_masks": "howto使用inpaint遮罩"
+    },
+    "outputs": {
+      "continuation_video_frames": "continuation视频帧数",
+      "continuation_frame_masks": "continuation帧遮罩"
+    }
+  },
+  "FL_WanVideoBlender": {
+    "title": "FL Wan视频混合",
+    "inputs": {
+      "overlap_frames": "重叠帧数",
+      "video_1": "视频_1",
+      "video_2": "视频2"
+    },
+    "widgets": {
+      "overlap_frames": "重叠帧数",
+      "video_1": "视频_1",
+      "video_2": "视频2"
+    },
+    "outputs": {
+      "blended_video_frames": "blended视频帧数"
+    }
+  },
+  "FL_WanVideoBlender3Way": {
+    "title": "FL Wan三路视频混合",
+    "inputs": {
+      "overlap_frames": "重叠帧数",
+      "video_1": "视频_1",
+      "video_2": "视频2",
+      "video_3": "视频3"
+    },
+    "widgets": {
+      "overlap_frames": "重叠帧数",
+      "video_1": "视频_1",
+      "video_2": "视频2",
+      "video_3": "视频3"
+    },
+    "outputs": {
+      "blended_video_frames": "blended视频帧数"
+    }
+  },
+  "FL_WanVideoContinuationBlender": {
+    "title": "FL Wan视频续写混合",
+    "inputs": {
+      "overlap_frames": "重叠帧数",
+      "video_1": "视频_1",
+      "continuation_video": "continuation视频",
+      "video_2": "视频2"
+    },
+    "widgets": {
+      "overlap_frames": "重叠帧数",
+      "video_1": "视频_1",
+      "continuation_video": "continuation视频",
+      "video_2": "视频2"
+    },
+    "outputs": {
+      "blended_video_frames": "blended视频帧数"
+    }
+  },
+  "FL_ZImageControlNetPatch": {
+    "title": "FL Z-Image ControlNet补丁加载器",
+    "inputs": {
+      "name": "名称",
+      "auto_config": "自动配置",
+      "n_control_layers": "n控制layers",
+      "additional_in_dim": "附加输入维度",
+      "refiner_control": "精炼器控制"
+    },
+    "widgets": {
+      "name": "名称",
+      "auto_config": "自动配置",
+      "n_control_layers": "n控制layers",
+      "additional_in_dim": "附加输入维度",
+      "refiner_control": "精炼器控制"
+    },
+    "outputs": {
+      "MODEL_PATCH": "模型补丁"
+    }
+  },
+  "FL_LTXVMaskedICLoRAGuide": {
+    "title": "FL LTXV遮罩IC-LoRA引导",
+    "inputs": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "vae": "VAE模型",
+      "latent": "Latent（可选）",
+      "image": "图像",
+      "frame_idx": "帧索引",
+      "guide_strength": "guide强度",
+      "denoise_strength": "去噪强度",
+      "attention_strength": "注意力强度",
+      "mask_mode": "遮罩模式",
+      "invert_mask": "反转遮罩",
+      "inpaint_preprocess": "重绘预处理",
+      "write_source_to_latent": "write来源toLatent",
+      "latent_downscale_factor": "Latent 下采样影响",
+      "crop": "裁剪",
+      "use_tiled_encode": "使用分块编码",
+      "tile_size": "分块尺寸",
+      "tile_overlap": "分块重叠",
+      "mask": "遮罩"
+    },
+    "widgets": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "vae": "VAE模型",
+      "latent": "Latent（可选）",
+      "image": "图像",
+      "frame_idx": "帧索引",
+      "guide_strength": "guide强度",
+      "denoise_strength": "去噪强度",
+      "attention_strength": "注意力强度",
+      "mask_mode": "遮罩模式",
+      "invert_mask": "反转遮罩",
+      "inpaint_preprocess": "重绘预处理",
+      "write_source_to_latent": "write来源toLatent",
+      "latent_downscale_factor": "Latent 下采样影响",
+      "crop": "裁剪",
+      "use_tiled_encode": "使用分块编码",
+      "tile_size": "分块尺寸",
+      "tile_overlap": "分块重叠",
+      "mask": "遮罩"
+    },
+    "outputs": {
+      "positive": "正面条件",
+      "negative": "负面条件",
+      "latent": "Latent（可选）"
+    }
+  },
+  "FL_SaveRGBAAnimatedWebP": {
+    "title": "FL 保存RGBA动态WebP",
+    "inputs": {
+      "images_rgb": "图像rgb",
+      "images_alpha": "图像透明度",
+      "filename_prefix": "文件名前缀",
+      "fps": "帧率",
+      "lossless": "无损",
+      "quality": "质量",
+      "method": "方法"
+    },
+    "widgets": {
+      "images_rgb": "图像rgb",
+      "images_alpha": "图像透明度",
+      "filename_prefix": "文件名前缀",
+      "fps": "帧率",
+      "lossless": "无损",
+      "quality": "质量",
+      "method": "方法"
+    },
+    "outputs": {}
+  },
+  "FL_Audio_BPM_Analyzer": {
+    "title": "FL 音频BPM分析",
+    "inputs": {
+      "audio": "音频",
+      "bpm_method": "bpm方式",
+      "half_time": "half时间",
+      "beat_offset_ms": "节拍偏移ms"
+    },
+    "widgets": {
+      "audio": "音频",
+      "bpm_method": "bpm方式",
+      "half_time": "half时间",
+      "beat_offset_ms": "节拍偏移ms"
+    },
+    "outputs": {
+      "audio": "音频",
+      "bpm": "每分钟节拍数",
+      "beat_positions": "节拍位置",
+      "visualization": "图像"
+    }
+  },
+  "FL_Audio_Beat_Visualizer": {
+    "title": "FL 音频节拍可视化",
+    "inputs": {
+      "sequence_json": "序列JSON",
+      "images": "图像",
+      "use_black_white": "使用黑白",
+      "width": "宽度",
+      "height": "高度",
+      "start_with_white": "开始with白色"
+    },
+    "widgets": {
+      "sequence_json": "序列JSON",
+      "images": "图像",
+      "use_black_white": "使用黑白",
+      "width": "宽度",
+      "height": "高度",
+      "start_with_white": "开始with白色"
+    },
+    "outputs": {
+      "frames": "帧数"
+    }
+  },
+  "FL_Audio_Crop": {
+    "title": "FL 音频裁剪",
+    "inputs": {
+      "audio": "音频",
+      "start_time": "开始时间",
+      "end_time": "结束时间"
+    },
+    "widgets": {
+      "audio": "音频",
+      "start_time": "开始时间",
+      "end_time": "结束时间"
+    },
+    "outputs": {
+      "audio": "音频"
+    }
+  },
+  "FL_Audio_Drum_Detector": {
+    "title": "FL 音频鼓点检测",
+    "inputs": {
+      "audio": "音频",
+      "kick_sensitivity": "底鼓灵敏度",
+      "snare_sensitivity": "军鼓灵敏度",
+      "hihat_sensitivity": "踩镲灵敏度"
+    },
+    "widgets": {
+      "audio": "音频",
+      "kick_sensitivity": "底鼓灵敏度",
+      "snare_sensitivity": "军鼓灵敏度",
+      "hihat_sensitivity": "踩镲灵敏度"
+    },
+    "outputs": {
+      "drum_times_json": "drumtimesJSON"
+    }
+  },
+  "FL_Audio_Envelope_Visualizer": {
+    "title": "FL 音频包络可视化",
+    "inputs": {
+      "envelope_json": "envelopeJSON",
+      "width": "宽度",
+      "height": "高度",
+      "intensity": "强度",
+      "invert": "反转"
+    },
+    "widgets": {
+      "envelope_json": "envelopeJSON",
+      "width": "宽度",
+      "height": "高度",
+      "intensity": "强度",
+      "invert": "反转"
+    },
+    "outputs": {
+      "frames": "帧数"
+    }
+  },
+  "FL_Audio_Music_Video_Sequencer": {
+    "title": "FL 音乐视频序列器",
+    "inputs": {
+      "audio": "音频",
+      "beat_positions": "节拍位置",
+      "pattern_A": "pattern_A",
+      "pattern_B": "pattern_B",
+      "pattern_C": "pattern_C",
+      "pattern_D": "pattern_D",
+      "pattern_sequence": "pattern序列",
+      "fps": "帧率",
+      "repeat_pattern": "repeat_pattern",
+      "max_shots": "最大shots"
+    },
+    "widgets": {
+      "audio": "音频",
+      "beat_positions": "节拍位置",
+      "pattern_A": "pattern_A",
+      "pattern_B": "pattern_B",
+      "pattern_C": "pattern_C",
+      "pattern_D": "pattern_D",
+      "pattern_sequence": "pattern序列",
+      "fps": "帧率",
+      "repeat_pattern": "repeat_pattern",
+      "max_shots": "最大shots"
+    },
+    "outputs": {
+      "sequence_json": "序列JSON",
+      "total_shots": "total_shots"
+    }
+  },
+  "FL_Audio_Reactive_Brightness": {
+    "title": "FL 音频响应亮度",
+    "inputs": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "mask": "遮罩",
+      "base_brightness": "base亮度",
+      "brightness_intensity": "亮度强度",
+      "invert": "反转",
+      "clamp_output": "钳制输出"
+    },
+    "widgets": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "mask": "遮罩",
+      "base_brightness": "base亮度",
+      "brightness_intensity": "亮度强度",
+      "invert": "反转",
+      "clamp_output": "钳制输出"
+    },
+    "outputs": {
+      "frames": "帧数"
+    }
+  },
+  "FL_Audio_Reactive_Edge_Glow": {
+    "title": "FL 音频响应边缘发光",
+    "inputs": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "edge_frames": "边缘帧数",
+      "edge_threshold": "边缘阈值",
+      "glow_intensity": "glow强度",
+      "envelope_intensity": "envelope强度",
+      "glow_color": "辉光色",
+      "blend_mode": "混合模式"
+    },
+    "widgets": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "edge_frames": "边缘帧数",
+      "edge_threshold": "边缘阈值",
+      "glow_intensity": "glow强度",
+      "envelope_intensity": "envelope强度",
+      "glow_color": "辉光色",
+      "blend_mode": "混合模式"
+    },
+    "outputs": {
+      "frames": "帧数"
+    }
+  },
+  "FL_Audio_Reactive_Envelope": {
+    "title": "FL 音频响应包络",
+    "inputs": {
+      "drum_times_json": "drumtimesJSON",
+      "fps": "帧率",
+      "kick_attack_frames": "kickattack帧数",
+      "kick_decay_frames": "kickdecay帧数",
+      "kick_sustain_level": "kick_sustain_level",
+      "kick_release_frames": "kickrelease帧数",
+      "snare_attack_frames": "snareattack帧数",
+      "snare_decay_frames": "snaredecay帧数",
+      "snare_sustain_level": "snare_sustain_level",
+      "snare_release_frames": "snarerelease帧数",
+      "hihat_attack_frames": "hihatattack帧数",
+      "hihat_decay_frames": "hihatdecay帧数",
+      "hihat_sustain_level": "hihat_sustain_level",
+      "hihat_release_frames": "hihatrelease帧数"
+    },
+    "widgets": {
+      "drum_times_json": "drumtimesJSON",
+      "fps": "帧率",
+      "kick_attack_frames": "kickattack帧数",
+      "kick_decay_frames": "kickdecay帧数",
+      "kick_sustain_level": "kick_sustain_level",
+      "kick_release_frames": "kickrelease帧数",
+      "snare_attack_frames": "snareattack帧数",
+      "snare_decay_frames": "snaredecay帧数",
+      "snare_sustain_level": "snare_sustain_level",
+      "snare_release_frames": "snarerelease帧数",
+      "hihat_attack_frames": "hihatattack帧数",
+      "hihat_decay_frames": "hihatdecay帧数",
+      "hihat_sustain_level": "hihat_sustain_level",
+      "hihat_release_frames": "hihatrelease帧数"
+    },
+    "outputs": {
+      "kick_envelope_json": "kickenvelopeJSON",
+      "snare_envelope_json": "snareenvelopeJSON",
+      "hihat_envelope_json": "hihatenvelopeJSON"
+    }
+  },
+  "FL_Audio_Reactive_Saturation": {
+    "title": "FL 音频响应饱和度",
+    "inputs": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "mask": "遮罩",
+      "base_saturation": "base_saturation",
+      "saturation_intensity": "saturation强度",
+      "invert": "反转"
+    },
+    "widgets": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "mask": "遮罩",
+      "base_saturation": "base_saturation",
+      "saturation_intensity": "saturation强度",
+      "invert": "反转"
+    },
+    "outputs": {
+      "frames": "帧数"
+    }
+  },
+  "FL_Audio_Reactive_Scale": {
+    "title": "FL 音频响应缩放",
+    "inputs": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "mask": "遮罩",
+      "base_scale": "base缩放",
+      "scale_intensity": "缩放强度",
+      "interpolation": "插值方式",
+      "maintain_aspect": "保持宽高比"
+    },
+    "widgets": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "mask": "遮罩",
+      "base_scale": "base缩放",
+      "scale_intensity": "缩放强度",
+      "interpolation": "插值方式",
+      "maintain_aspect": "保持宽高比"
+    },
+    "outputs": {
+      "frames": "帧数"
+    }
+  },
+  "FL_Audio_Reactive_Speed": {
+    "title": "FL 音频响应速度",
+    "inputs": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "mask": "遮罩",
+      "base_speed": "base_speed",
+      "speed_intensity": "speed强度",
+      "interpolation": "插值方式",
+      "invert": "反转"
+    },
+    "widgets": {
+      "frames": "帧数",
+      "envelope_json": "envelopeJSON",
+      "mask": "遮罩",
+      "base_speed": "base_speed",
+      "speed_intensity": "speed强度",
+      "interpolation": "插值方式",
+      "invert": "反转"
+    },
+    "outputs": {
+      "frames": "帧数"
+    }
+  },
+  "FL_Audio_Segment_Extractor": {
+    "title": "FL 音频片段提取",
+    "inputs": {
+      "audio": "音频",
+      "beat_positions": "节拍位置",
+      "start_beat": "起始节拍",
+      "beat_count": "节拍数量",
+      "fps": "帧率",
+      "start_frame": "起始帧"
+    },
+    "widgets": {
+      "audio": "音频",
+      "beat_positions": "节拍位置",
+      "start_beat": "起始节拍",
+      "beat_count": "节拍数量",
+      "fps": "帧率",
+      "start_frame": "起始帧"
+    },
+    "outputs": {
+      "audio_segment": "音频分段",
+      "frame_count": "帧数",
+      "end_frame": "结束帧"
+    }
+  },
+  "FL_Audio_Separation": {
+    "title": "FL 音频分离",
+    "inputs": {
+      "audio": "音频",
+      "chunk_length": "块长度",
+      "chunk_overlap": "块重叠",
+      "chunk_fade_shape": "块渐变形状"
+    },
+    "widgets": {
+      "audio": "音频",
+      "chunk_length": "块长度",
+      "chunk_overlap": "块重叠",
+      "chunk_fade_shape": "块渐变形状"
+    },
+    "outputs": {
+      "bass": "bass",
+      "drums": "drums",
+      "other": "其他",
+      "vocals": "人声音频"
+    }
+  },
+  "FL_Audio_Shot_Iterator": {
+    "title": "FL 音频镜头迭代器",
+    "inputs": {
+      "sequence_json": "序列JSON",
+      "shot_index": "shot索引"
+    },
+    "widgets": {
+      "sequence_json": "序列JSON",
+      "shot_index": "shot索引"
+    },
+    "outputs": {
+      "frame_count": "帧数",
+      "start_frame": "起始帧",
+      "end_frame": "结束帧",
+      "start_beat": "起始节拍",
+      "beat_count": "节拍数量",
+      "start_time": "开始时间",
+      "duration": "时长",
+      "is_last_shot": "is_last_shot",
+      "total_frames": "总帧数"
+    }
+  },
+  "FL_AudioFrameCalculator": {
+    "title": "FL 音频帧计算器",
+    "inputs": {
+      "audio": "音频",
+      "fps": "帧率"
+    },
+    "widgets": {
+      "audio": "音频",
+      "fps": "帧率"
+    },
+    "outputs": {
+      "frame_count": "帧数"
+    }
+  },
+  "FL_QwenImageEditStrength": {
+    "title": "FL Qwen图像编辑强度",
+    "inputs": {
+      "clip": "CLIP模型",
+      "prompt": "提示词",
+      "interpolation_method": "插值方法",
+      "vae": "VAE模型",
+      "image1": "图像1",
+      "image1_strength": "图像1强度",
+      "image2": "图像2",
+      "image2_strength": "图像2强度",
+      "image3": "图像3",
+      "image3_strength": "图像3强度"
+    },
+    "widgets": {
+      "clip": "CLIP模型",
+      "prompt": "提示词",
+      "interpolation_method": "插值方法",
+      "vae": "VAE模型",
+      "image1": "图像1",
+      "image1_strength": "图像1强度",
+      "image2": "图像2",
+      "image2_strength": "图像2强度",
+      "image3": "图像3",
+      "image3_strength": "图像3强度"
+    },
+    "outputs": {
+      "CONDITIONING": "条件"
+    }
+  },
+  "FL_IntToFloat": {
+    "title": "FL 整数转浮点数",
+    "inputs": {
+      "int_value": "整数"
+    },
+    "widgets": {
+      "int_value": "整数"
+    },
+    "outputs": {
+      "float_value": "浮动值"
+    }
+  },
+  "FL_FloatToInt": {
+    "title": "FL 浮点数转整数",
+    "inputs": {
+      "float_value": "浮动值",
+      "rounding_mode": "取整模式"
+    },
+    "widgets": {
+      "float_value": "浮动值",
+      "rounding_mode": "取整模式"
+    },
+    "outputs": {
+      "int_value": "整数"
+    }
+  },
+  "FL_AnimatedShapePatterns": {
+    "title": "FL 动态形状图案",
+    "inputs": {
+      "pattern_type": "pattern类型",
+      "frame_count": "帧数",
+      "frame_width": "宽度",
+      "frame_height": "高度",
+      "shape": "形状",
+      "shape_size": "形状尺寸",
+      "shape_color": "形状颜色",
+      "bg_color": "背景颜色",
+      "count": "计数",
+      "speed": "速度",
+      "amplitude": "振幅",
+      "frequency": "频率",
+      "blur_radius": "模糊半径",
+      "trail_length": "轨迹长度",
+      "size_variation": "尺寸variation",
+      "rotation": "旋转",
+      "phase_offset": "phase偏移",
+      "intensity": "强度",
+      "border_width": "边框宽度",
+      "border_color": "边框颜色",
+      "seed": "种子"
+    },
+    "widgets": {
+      "pattern_type": "pattern类型",
+      "frame_count": "帧数",
+      "frame_width": "宽度",
+      "frame_height": "高度",
+      "shape": "形状",
+      "shape_size": "形状尺寸",
+      "shape_color": "形状颜色",
+      "bg_color": "背景颜色",
+      "count": "计数",
+      "speed": "速度",
+      "amplitude": "振幅",
+      "frequency": "频率",
+      "blur_radius": "模糊半径",
+      "trail_length": "轨迹长度",
+      "size_variation": "尺寸variation",
+      "rotation": "旋转",
+      "phase_offset": "phase偏移",
+      "intensity": "强度",
+      "border_width": "边框宽度",
+      "border_color": "边框颜色",
+      "seed": "种子"
+    },
+    "outputs": {
+      "image": "图像",
+      "mask": "遮罩"
+    }
+  },
+  "FL_PathAnimator": {
+    "title": "FL 路径动画器",
+    "inputs": {
+      "frame_width": "宽度",
+      "frame_height": "高度",
+      "frame_count": "帧数",
+      "shape": "形状",
+      "shape_size": "形状尺寸",
+      "shape_color": "形状颜色",
+      "bg_color": "背景颜色",
+      "blur_radius": "模糊半径",
+      "trail_length": "轨迹长度",
+      "rotation_speed": "旋转速度",
+      "border_width": "边框宽度",
+      "border_color": "边框颜色",
+      "paths_data": "paths数据",
+      "image": "图像",
+      "timeout_seconds": "超时秒数"
+    },
+    "widgets": {
+      "frame_width": "宽度",
+      "frame_height": "高度",
+      "frame_count": "帧数",
+      "shape": "形状",
+      "shape_size": "形状尺寸",
+      "shape_color": "形状颜色",
+      "bg_color": "背景颜色",
+      "blur_radius": "模糊半径",
+      "trail_length": "轨迹长度",
+      "rotation_speed": "旋转速度",
+      "border_width": "边框宽度",
+      "border_color": "边框颜色",
+      "paths_data": "paths数据",
+      "image": "图像",
+      "timeout_seconds": "超时秒数"
+    },
+    "outputs": {
+      "image": "图像",
+      "mask": "遮罩",
+      "coordinates": "坐标"
+    }
+  },
+  "FL_RandomShapeGenerator": {
+    "title": "FL 随机形状生成器",
+    "inputs": {
+      "width": "宽度",
+      "height": "高度",
+      "batch_size": "批次大小",
+      "num_shapes": "数量shapes",
+      "min_shape_size": "最小shape尺寸",
+      "max_shape_size": "最大形状尺寸",
+      "shape_types": "shape_types",
+      "color_mode": "颜色模式",
+      "opacity_min": "不透明度最小",
+      "opacity_max": "不透明度最大",
+      "background_color": "背景颜色",
+      "seed": "种子",
+      "vae": "VAE模型"
+    },
+    "widgets": {
+      "width": "宽度",
+      "height": "高度",
+      "batch_size": "批次大小",
+      "num_shapes": "数量shapes",
+      "min_shape_size": "最小shape尺寸",
+      "max_shape_size": "最大形状尺寸",
+      "shape_types": "shape_types",
+      "color_mode": "颜色模式",
+      "opacity_min": "不透明度最小",
+      "opacity_max": "不透明度最大",
+      "background_color": "背景颜色",
+      "seed": "种子",
+      "vae": "VAE模型"
+    },
+    "outputs": {
+      "image": "图像",
+      "latent": "Latent（可选）"
+    }
+  },
+  "FL_KartelJobInput": {
+    "title": "FL Kartel任务输入",
+    "inputs": {
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "user_email": "user_email",
+      "app_name": "app名称",
+      "callback_url": "callback网址",
+      "params_json": "参数JSON"
+    },
+    "widgets": {
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "user_email": "user_email",
+      "app_name": "app名称",
+      "callback_url": "callback网址",
+      "params_json": "参数JSON"
+    },
+    "outputs": {
+      "job_id": "任务ID",
+      "user_id": "用户ID",
+      "user_email": "user_email",
+      "app_name": "app名称",
+      "callback_url": "callback网址",
+      "string_1": "字符串_1",
+      "string_2": "字符串_2",
+      "string_3": "字符串_3",
+      "string_4": "字符串_4",
+      "int_1": "整数_1",
+      "int_2": "整数_2",
+      "int_3": "整数3",
+      "int_4": "整数4",
+      "float_1": "浮点1",
+      "float_2": "浮点2",
+      "float_3": "浮点3",
+      "float_4": "浮点4",
+      "bool_1": "布尔值1",
+      "bool_2": "布尔值2",
+      "bool_3": "布尔值3",
+      "bool_4": "布尔值4",
+      "image_1": "图像_1",
+      "image_2": "图像2",
+      "image_3": "图像3",
+      "image_4": "图像_4"
+    }
+  },
+  "FL_KartelJobOutput": {
+    "title": "FL Kartel任务输出",
+    "inputs": {
+      "images": "图像",
+      "job_id": "任务ID",
+      "callback_url": "callback网址",
+      "user_id": "用户ID",
+      "user_email": "user_email",
+      "app_name": "app名称"
+    },
+    "widgets": {
+      "images": "图像",
+      "job_id": "任务ID",
+      "callback_url": "callback网址",
+      "user_id": "用户ID",
+      "user_email": "user_email",
+      "app_name": "app名称"
+    },
+    "outputs": {}
+  },
+  "FL_ShowText": {
+    "title": "FL 显示文本",
+    "inputs": {
+      "text": "文本"
+    },
+    "widgets": {
+      "text": "文本"
+    },
+    "outputs": {
+      "text": "文本"
+    }
+  },
+  "FL_Veo3VideoGen": {
+    "title": "FL Vertex Veo 3视频生成",
+    "inputs": {
+      "prompt": "提示词",
+      "service_account_json": "serviceaccountJSON",
+      "model": "模型",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "max_retries": "最大重试次数",
+      "polling_interval": "轮询间隔",
+      "max_wait_time": "最大wait时间",
+      "negative_prompt": "负向提示词",
+      "seed": "种子",
+      "reference_image": "参考图像",
+      "enable_person_generation": "启用persongeneration"
+    },
+    "widgets": {
+      "prompt": "提示词",
+      "service_account_json": "serviceaccountJSON",
+      "model": "模型",
+      "aspect_ratio": "宽高比",
+      "resolution": "分辨率",
+      "max_retries": "最大重试次数",
+      "polling_interval": "轮询间隔",
+      "max_wait_time": "最大wait时间",
+      "negative_prompt": "负向提示词",
+      "seed": "种子",
+      "reference_image": "参考图像",
+      "enable_person_generation": "启用persongeneration"
+    },
+    "outputs": {
+      "frames": "帧数",
+      "video_path": "视频路径",
+      "API_Response": "API响应"
+    }
+  },
+  "FL_VertexGemini25FlashImage": {
+    "title": "FL Vertex Gemini 2.5 Flash图像",
+    "inputs": {
+      "prompt": "提示词",
+      "service_account_json": "serviceaccountJSON",
+      "batch_count": "个数",
+      "temperature": "温度",
+      "seed": "种子",
+      "reference_image_1": "参考图像1",
+      "reference_image_2": "参考图像2",
+      "reference_image_3": "参考图像3"
+    },
+    "widgets": {
+      "prompt": "提示词",
+      "service_account_json": "serviceaccountJSON",
+      "batch_count": "个数",
+      "temperature": "温度",
+      "seed": "种子",
+      "reference_image_1": "参考图像1",
+      "reference_image_2": "参考图像2",
+      "reference_image_3": "参考图像3"
+    },
+    "outputs": {
+      "images": "图像",
+      "API_Response": "API响应"
+    }
+  }
 }
